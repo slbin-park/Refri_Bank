@@ -23,8 +23,7 @@ function Liketable({table,history}) {
 
     const Create_like_table = ({ user }) => {
         const rcp_change = (e) => {
-            console.log(123)
-            e.preventDefault();
+            
             history.push("/recipe/" + user.foodid)
         }
     

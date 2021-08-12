@@ -4,7 +4,9 @@ import Mainpage from '../components/mypage/mainpage';
 import '../style/mypage/mypage.css';
 import Informationpage from '../components/mypage/information';
 import Likeit from '../components/mypage/like/likeit';
+import Myigd  from '../components/mypage/igd/igdmanage';
 import Axios from 'axios'
+
 
 
 
@@ -14,6 +16,7 @@ function Mypage({ history,information }) {
     const [like_count,set_like_count] = useState()
     
     useEffect(()=>{
+        if(information.id != ''){
         Axios.post("https://qkrtmfqls.gabia.io/likeitpage", {
             id: information.id,
         })
@@ -25,14 +28,16 @@ function Mypage({ history,information }) {
             .catch((error) => {
                 console.log(error);
             });
+        }
     },[information])
 
     return (
-        <div className="mypage_main" style={{ height: '900px' }}>
+        <div className="mypage_main" style={{ height: '100vh' }}>
             <div className='mypage_main_div'>
                 <Sidebar set_admin_page={set_admin_page}/>
-                {my_page === 'main'?<Mainpage like_count={like_count}/> :''}
+                {my_page === 'main' ? <Mainpage like_count={like_count}/> :''}
                 {my_page === 'like' ? <Likeit history={history} like_table={like_table}/>:''}
+                {my_page === 'my_igd' ? <Myigd history={history} like_table={like_table} information={information}/>:''}
             </div>
         </div>
     )

@@ -31,13 +31,7 @@
   --g-bg-color-disabled-dark: #727272;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-  height: 100%;
-  width: 100%;
-}
+
 
 input,
 label,
@@ -58,19 +52,6 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  box-sizing: border-box;
-  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 code {
@@ -630,12 +611,6 @@ code {
 
 ._qCt7a {
   margin: 4px;
-}
-
-._1gHjR,
-._2So3v,
-._2TuLn {
-
 }
 
 ._28vIk,

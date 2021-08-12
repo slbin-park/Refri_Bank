@@ -36,38 +36,37 @@ function Bodymain({ like_count}) {
                             </CardContent>
 
                         </Card>
-                    </div>                     <div className='body_card_one'>
+                    </div>              
+                    <div className='body_card_one'>
                         <Card>
                             <CardContent>
-                                <br />
                                 <div className='body_card_header'>
-                                    <H6 >
-                                        좋아요 개수
-                            </H6>
+
+                                        좋아요수
+
                                 </div>
                                 <div className='body_card_footer'>
                                     <div className='body_card_icon'>
-                                        아이콘
+                                
                             </div>
                                     <div className='chip_number'>
-                                        <Chip type='info'>{like_count&&like_count}</Chip>
+                                        <Chip type='info'>{like_count}</Chip>
                                     </div>
                                 </div>
                             </CardContent>
 
                         </Card>
-                    </div>                     <div className='body_card_one'>
+                    </div>                           <div className='body_card_one'>
                         <Card>
                             <CardContent>
-                                <br />
                                 <div className='body_card_header'>
-                                    <H6 >
-                                        게시글 개수
-                            </H6>
+
+                                        방문수
+
                                 </div>
                                 <div className='body_card_footer'>
                                     <div className='body_card_icon'>
-                                        아이콘
+                                
                             </div>
                                     <div className='chip_number'>
                                         <Chip type='info'>1</Chip>
@@ -76,7 +75,7 @@ function Bodymain({ like_count}) {
                             </CardContent>
 
                         </Card>
-                    </div> 
+                    </div>    
                 </div>
                 <div className='body_main'>
                 </div>

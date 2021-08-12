@@ -68,7 +68,6 @@ function Func_filter_find_ingredient({result_box_list, setresult_box_list, infor
             let new_igdname =[];
             res_igdname && res_igdname.map((v,index)=> v !== '' ? new_igdname.push({result_igdname : v, eprd : res_eprname[index]}) : 0);
             setresult_box_list(new_igdname);
-
         })
         .catch((error)=> {
             console.log(error);
@@ -118,7 +117,7 @@ function Func_filter_find_ingredient({result_box_list, setresult_box_list, infor
                         <div className="rfg-result-img-form">
                             <img className="ingredient-img" src={ingredient_img[result_igdname]} alt={result_igdname}/>
                         </div>
-                        <div className="rfg-result-name-formㄴ">
+                        <div className="rfg-result-name-form">
                             <span className="ingredient-name" children={result_igdname}>{result_igdname}</span>
                         </div>
                     </div> 
