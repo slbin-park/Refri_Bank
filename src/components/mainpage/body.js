@@ -12,7 +12,7 @@ const Body = ({text,settext,gettable}) => {
 
 
   return (
-    <div className="body-box" >
+    <>
         <button className = "toggle_btn" onClick= {()=>{settoggle(!toggle)}} > 
             { toggle ? <img className = "toggle_img1" align="center" src={this_body_menu_logo} width='100' height='50' />   : 
         <img className = "toggle_img2" align="center" src={this_body_ingredient_logo} width='140' height='90' /> }
@@ -20,7 +20,7 @@ const Body = ({text,settext,gettable}) => {
   
         <input className="search_bar" onChange={e => settext(e.target.value)} value={     text} onKeyPress={(e)=> {if(e.key==='Enter')  gettable()}} type="text" placeholder="     Search"></input>
         <button className="search_btn" onClick={gettable} > <img align="center" src={this_body_show_searchimg} width='50' height='50' /></button>
-    </div>
+    </>
   )
 }
     

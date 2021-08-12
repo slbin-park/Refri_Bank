@@ -43,15 +43,18 @@ const App = ({ history }) => {
 
     return (
         <>
-            <div className="body-form">
+            <div className="body-top-form">
                 <Body gettable={gettable} settext={settext} text={text} history={history} />
             </div>
-            <div className="footer-form">
-                <Footer ftable={ftable} history={history} />
+            <div className="body-bottom-form">
+                <div className="footer-form">
+                    <Footer ftable={ftable} history={history} />
+                </div>
+                <div className="aside-form">
+                    <Aside livetable={livetable} history={history}/>
+                </div>
             </div>
-            <div className="aside-form">
-                <Aside livetable={livetable} history={history}/>
-            </div>
+            
         </>
     )
 }

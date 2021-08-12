@@ -97,6 +97,9 @@ const Header = ({location, information, setinformation, history ,page,setpage}) 
             {/* 이거 컴포넌트 나눠서 해줘요 */}
             <div className="header-form">
                 <div className="header-top-box">
+                    <div className="header-null-form">
+                        hello
+                    </div>
                     <div className="header-logo-form">
                         <img className="header-logo-img" onClick={() => Func_header_move_home()} src={this_header_show_logo} />
                         {/* 로고이미지 ( 왼쪽 상단에 ) */}

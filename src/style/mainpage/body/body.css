@@ -4,30 +4,38 @@
     background-color: white;
     width: 100%;
     height: 100%;
+    /* min-width: 1000px; */
 }
-.body-form{
+.body-top-form{
     /* position: relative; */
     background-clip: border-box;
     width: 100%;
-    height: 100%;
+    height: 20%;
+    border: red 5px solid;
+    /* min-width: none; */
     margin: 0;
     padding: 0;
     /* margin-left: 13%; */ 
     /* text-align: center; */
 }
+.body-bottom-form {
+    width: 100%;
+    height: 80%;
+    display: flex;
+}
 .search_bar {
     /* margin-left: 2%;
     margin-right: 2%; */
     /* margin-bottom: 3%; */
-    width: 40%;
-    height: 50px;
+    width: 33.3%;
+    height: 100%;
     border-radius: 20px;
     /* margin: 0; */
     padding: 0;
     background-color: #F3F6F8;
-    border: none;
+    /* border: none; */
     /* opacity: 0.7; */
-    /* border: 3px black solid; */
+    border: 5px yellow solid;
 }
 
 @font-face {
@@ -39,9 +47,10 @@
     /* margin-top: 5%; */
     /* margin-left: 11%; */
     /* border-radius: 20px; */
-    width: 10%;
+    width: 33.3%;
+    height: 100%;
     /* height: 32%; */
-    border: 0;
+    border: 5px blueviolet solid;
     /* font-size: 25px;  */
     /* margin: 0;
     padding: 0; */
@@ -72,9 +81,9 @@
 .search_btn {
     /* margin-left: 0; */
     /* margin-right: 1%; */
-    width: 5%;
-    height: 10%;
-    border : 0;
+    width: 33.3%;
+    height: 100%;
+    border : 5px red solid;
     /* margin-top: 3%; */
     background-color: transparent;
     /* 부모의 배경색을 가져와서 자식으로 물려주는 ?  */
@@ -96,16 +105,4 @@
     /* margin-top: 1%; */
     /* margin-top: 10%; */
     /* padding-top: 10px; */
-}
-
-.body-box {
-    display: flex;
-    width: 100%;
-    height: 100%;
-
-    margin-top: 5%;
-    /* text-align: center; */
-    margin-left: 22%;
-
-    padding: 0;
 }

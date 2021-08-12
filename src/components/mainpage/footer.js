@@ -6,30 +6,37 @@ function footer({ ftable, history }) {
   // console.log(showtable)
 
   const Show = () => {
-    console.log("his", history);
-    return (
-      <>
-        {ftable && ftable.slice(0, 20).map(({ FoodId, FoodV, FoodN, FoodT, FoodC }) => {
-          return (
-            <div key={FoodId} className="footer_block" onClick={() => history.push("/recipe/" + FoodId)}>
-              <div className="footer_food">
-                <img className="footer_food_img" src={FoodV} />
-              </div>
+    let psum_li = [];
+    let four_li = [];
+    console.log(ftable);
+    {ftable && ftable.slice(0, 20).map(({ FoodId, FoodV, FoodN, FoodT, FoodC }, index) => {
+      four_li.push(
+        <div key={FoodId} className="footer_block" onClick={() => history.push("/recipe/" + FoodId)}>
+          <div className="footer_food">
+            <img className="footer_food_img" src={FoodV} />
+          </div>
 
-              <div className="footer_text">
-                <p className="footer_text_style1"> {FoodN} </p>
-                <p className="footer_text_style2">
-                  {' '}
-                  {FoodC && FoodC.includes('.') ? (FoodC.includes('kcal') ? FoodC : FoodC + 'l') : ''}{' '}
-                  <br />
-                </p>
-                <p className="footer_text_style3"> {FoodT} </p>
-              </div>
-            </div>
-          )
-        })}
-      </>
-    )
+          <div className="footer_text">
+            <p className="footer_text_style1"> {FoodN} </p>
+            <p className="footer_text_style2">
+              {' '}
+              {FoodC && FoodC.includes('.') ? (FoodC.includes('kcal') ? FoodC : FoodC + 'l') : ''}{' '}
+              <br />
+            </p>
+            <p className="footer_text_style3"> {FoodT} </p>
+          </div>
+        </div>
+      );
+      if((index+1)/4>=1 && (index+1)%4 == 0) {
+        psum_li.push(
+        <div className="food_four_box">
+          {four_li}
+        </div>
+        );
+        four_li = [];
+      }
+    })}
+    return psum_li;
   }
 
   return (
