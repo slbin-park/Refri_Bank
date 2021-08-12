@@ -15,8 +15,10 @@ function App({ history, information }) {
   const [freeboardtoggle, setfreeboardtoggle] = useState(true);
   const [notice_table, set_notice_table] = useState();
   const [free_table, set_free_table] = useState();
-  const [free_select_num, set_free_select_num] = useState({ number: '', id: '', nickname: '', title: '', description: '' });
+
+  const [free_select_num, set_free_select_num] = useState({ number: '', id: '', nickname: '', title: '', description: ''});
   const [reply_table, set_reply_table] = useState();
+  
 
   const [modalOn, setModalOn] = React.useState(false);
 
@@ -28,8 +30,11 @@ function App({ history, information }) {
   //     console.log(error);
   // });
   useEffect(() => {
-    Axios.post("https://qkrtmfqls.gabia.io/getfree", {
+    get_free_table()
+  }, [])
 
+  const get_free_table = async()=>{
+    await Axios.post("http://qkrtmfqls.gabia.io/getfree", {
     })
       .then((response) => {
         set_free_table(response.data);
@@ -37,7 +42,7 @@ function App({ history, information }) {
       .catch((error) => {
         console.log(error);
       })
-  }, [])
+  }
 
   useEffect(() => {
     console.log("number", free_select_num.number);
@@ -82,8 +87,8 @@ function App({ history, information }) {
   const Modal = () => {
     return (
       <div className="modal" data-aos="zoom-in">
-        <div className="closebtnbox"><img className="closebtn" role="button" src={xbuttom} onClick={onCloseModal} width="30px" height="30px" /></div>
-        {free_select_num && <Func_freecontent_show_freecontent content={free_select_num} information={information} reply_table={reply_table} />}
+        <div className="closebtnbox"><img className="closebtn" role="button" src={xbuttom} onClick={onCloseModal} width="30px" height="30px"/></div>
+        <Func_freecontent_show_freecontent content={free_select_num} information={information} reply_table={reply_table}/>
       </div>
     );
   };
@@ -98,19 +103,19 @@ function App({ history, information }) {
       </div>
 
       <div className="middle-content-form">
-        <div className="middle-content-form-left">왼쪽 </div>
-        <div className="middle-content-form-right">
-          <div className="right-img-box">
-            <img className="email_img" src={xbuttom} width="50" height="50" ></img>
+          <div className="middle-content-form-left">왼쪽 </div>
+          <div className="middle-content-form-right">
+            <div className="right-img-box">
+              <img className="email_img" src={xbuttom} width="50" height="50" ></img>
+            </div>
+            <div className="right-text-box">
+              <h3> 이메일 문의하기</h3>
+              <p> 찾으시는 답변이 없으신가요 ? </p>
+            </div>
+            <div className="right-btn-box">
+              <button className="send-btn">E-mail 보내기 </button>
+            </div>
           </div>
-          <div className="right-text-box">
-            <h3> 이메일 문의하기</h3>
-            <p> 찾으시는 답변이 없으신가요 ? </p>
-          </div>
-          <div className="right-btn-box">
-            <button className="send-btn">E-mail 보내기 </button>
-          </div>
-        </div>
       </div>
 
       <div className="subcontent-form">
@@ -124,10 +129,10 @@ function App({ history, information }) {
           </div>
         </div>
         <div className="maincontent-form">
-          {noticeboardtoggle && <Func_noticeboard_show_noticeboard notice_table={notice_table} history={history} />}
+          {noticeboardtoggle && <Func_noticeboard_show_noticeboard notice_table={notice_table} history={history}/>}
           <div className="allcontent-block">
+            {freeboardtoggle && <Func_freeboard_show_freeboard get_free_tabl={get_free_table} free_select_num={free_select_num} set_free_select_num={set_free_select_num} free_table={free_table} information={information} history={history} setModalOn={setModalOn}/>}
 
-            {freeboardtoggle && <Func_freeboard_show_freeboard free_select_num={free_select_num} set_free_select_num={set_free_select_num} free_table={free_table} history={history} setModalOn={setModalOn} />}
           </div>
         </div>
       </div>

@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
 
 
-
 .eachcontent-block{
     background: white;
     /* border-left: 1rem solid #8a8a8a; */
@@ -19,6 +18,13 @@
     border: 2px solid gray;
     border-radius: 30px;
 }
+
+
+.eachcontent-block:hover {
+    background: rgb(236, 244, 255);
+    cursor: pointer;
+}
+
 
 .eachcontent {
     display: flex;

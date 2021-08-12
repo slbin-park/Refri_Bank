@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import '../style/signup_page/register.css';
-import logo from '../img/main_body_img/123.png';
+import logo from '../img/main_body_img/login-logo.png';
 import Axios from 'axios'
 
 function App({ history, setthis_signup_set_inputs, this_signup_set_inputs }) {
@@ -50,11 +50,15 @@ function App({ history, setthis_signup_set_inputs, this_signup_set_inputs }) {
             <input type="password" onChange={e => setregister({ ...register, pwd: e.target.value })} value={register.pwd} placeholder="Password" />
             <input type="password" placeholder="Check Password" onChange={e => setregister({ ...register, pwdcheck: e.target.value })} value={register.pwdcheck} />
             <button onClick={Func_signup_check_password}>
-              <span>Check Password</span>
+              <div>
+                <span>Check Password</span>
+              </div>
             </button>
             <input type="text" placeholder="Nickname" onChange={e => setregister({ ...register, name: e.target.value })} value={register.name} />
             <button onClick={user_register}> 
-              <span>Submit</span>
+              <div>
+                <span>Submit</span>
+              </div>
             </button>
           </div>
         </div>

@@ -17,6 +17,7 @@ const App = ({ history }) => {
 
     useEffect(()=> {
         Axios.post("https://qkrtmfqls.gabia.io/liverank", {})
+
         .then((response) => {
             setftable(response.data)
             setlivetable(response.data);

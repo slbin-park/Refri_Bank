@@ -7,11 +7,9 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { Redirect } from "react-router-dom";
 
-function Func_writeform_write_des({history}) {
-
+function Func_writeform_write_des({history, information}) {
+    console.log(information);
     const [freeinputdes, setfreeinputdes] = useState({
-        id: "",
-        nickname: "jenny",
         title: '',
         description: '',
         // createdate: '2021-08-09'
@@ -28,9 +26,10 @@ function Func_writeform_write_des({history}) {
 
     
     const Func_writeform_post_freeinputdes = (e) => {
-        Axios.post("https://qkrtmfqls.gabia.io", {
-            id: freeinputdes.id,
-            nickname: freeinputdes.nickname,
+
+        Axios.post("http://qkrtmfqls.gabia.io/addfree", {
+            id: information.id,
+            nickname: information.nickname,
             title: freeinputdes.title,
             description: freeinputdes.description,
             // createdate: freeinputdes.createdate

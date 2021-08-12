@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import '../style/login_page/login.css';
-import logo from '../img/main_body_img/123.png';
+import logo from '../img/main_body_img/login-logo.png';
 import Axios from 'axios';
 
 const Login = ({ information, setinformation, history, setpage }) => {
@@ -54,10 +54,14 @@ const Login = ({ information, setinformation, history, setpage }) => {
             <input className="login-wait-id" name="id" type="text" placeholder="Id" onChange={e => setlogintext({ ...logintext, id: e.target.value })} />
             <input className="login-wait-psword" name="pwd" type="password" placeholder="Password" onChange={e => setlogintext({ ...logintext, pwd: e.target.value })} />
             <button className="loginpage_login_btn" onClick={TokenLogin}> 
-              <span>Login</span> 
+              <div>
+                <span>Login</span> 
+              </div>
             </button>
             <button className="loginpage_signup_btn" onClick={Func_login_move_signup}> 
-              <span>Signup</span> 
+              <div>
+                <span>Signup</span> 
+              </div>
             </button>
           </div>
         </div>
