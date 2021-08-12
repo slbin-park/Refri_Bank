@@ -1,6 +1,7 @@
 {
   
   "proxy": "http://qkrtmfqls.gabia.io:8080",
+  
   "name": "myreact",
   "version": "0.1.0",
   "private": true,
