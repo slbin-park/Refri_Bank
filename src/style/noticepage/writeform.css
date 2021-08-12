@@ -1,0 +1,51 @@
+.writeform-wrapper-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .writeform-wrapper{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .title-input {
+    width: 79%;
+    height: 40px;
+    margin: 10px;
+  }
+  
+  .submit-button-box {
+    width: 80%;
+  }
+
+  .submit-button {
+    width: 95px;
+    height: 20px;
+    font-size: 10px;
+    border: none;
+    background: rgb(191, 178, 178);
+    box-shadow: none;
+    margin-top: 1%;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .submit-button:hover {
+    background-color: rgb(63, 63, 96);
+    color: white;
+  }
+  
+  .ck.ck-reset.ck-editor.ck-rounded-corners {
+    width: 80%;
+  }
+
+  .ck.ck-editor__editable:not(.ck-editor__nested-editable) {
+    min-height: 280px;
+  }
