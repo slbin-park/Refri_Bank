@@ -125,13 +125,13 @@ const Header = ({location, information, setinformation, history ,page,setpage}) 
                                 
                                 <div className="header-move-rfgpage-btn">
                                     <button className="header-myrfg-btn" onClick={() => Func_header_move_myrfg()}>
-                                        <img align="center" src={this_header_show_rgfimg} width='80' height='70' />
+                                        <img align="center" src={this_header_show_rgfimg}/>
                                     </button>
                                 </div>
                                 
                                 <div className="header-logout-btn">
                                     <button className="logout-move-mainpage-btn" onClick={(e) => Func_header_logout()}>
-                                        <img align="center" src={this_header_logout_btn} width='50' height='50' />
+                                        <img align="center" src={this_header_logout_btn} />
                                     </button>
                                 </div>
                             </div>

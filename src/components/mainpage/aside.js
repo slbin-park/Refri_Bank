@@ -4,28 +4,6 @@ import '../../style/mainpage/aside/aside.css';
 const Aside = ( {livetable, history} ) => {
   const [recommand_onoff_btn, setrecommand_onoff_btn] = useState(false);
 
-  // const AsideBottomLi = () =>{
-  //   return (
-  //     <div className="aside-bottom-box">
-  //       {livetable && livetable.slice(0,10).map(({ FoodId,FoodN, FoodT, FoodC }, index) => {
-  //        return (
-  //           <div className="aside-food-block">
-  //             <div className="aside-food-num"> 
-  //               {index+1}
-  //             </div>
-  //             <div className="aside-food-name">
-  //                 {FoodN}
-  //             </div>
-  //             <div className="aside-up-icon">
-  //               ▴
-  //             </div>
-  //           </div>
-  //         )
-  //        })} 
-  //     </div>
-  //   )
-  // }
-
   const Func_recommand_onoff_btn = (e) => {
     setrecommand_onoff_btn(!recommand_onoff_btn)
   }

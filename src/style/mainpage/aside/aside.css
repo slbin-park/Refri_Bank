@@ -1,7 +1,7 @@
 .aside-form {
   /* position: sticky; */
   /* display: inline-; */
-  width: 15%;
+  width: 20%;
   height: 100%;
   background-color: white;
   border: blue 5px solid;
@@ -89,13 +89,15 @@
 }
 
 .recommand_onoff_btn {
-  width:70%;
+  width:50%;
   height: 20%;
+  margin-left: 25%;
+  /* align-content: center; */
   /* background-color:#aac1dd; */
   border-radius: 15px;
   border: none;
-  margin-right: 5%;
-  margin-bottom: 10px;
+  /* margin-right: 5%; */
+  /* margin-bottom: 10px; */
 }
 
 @keyframes dropdown {
