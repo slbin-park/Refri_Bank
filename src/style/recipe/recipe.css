@@ -6,6 +6,10 @@
 @import "./recipe-thumbnail.css";
 @import "./recipe-info.css";
 
+.recipe_page_body_form {
+    width:100%;
+    height: 70%;
+}
 
 .alice-carouselprev-btn,
 .alice-carouselprev-btn-item {
