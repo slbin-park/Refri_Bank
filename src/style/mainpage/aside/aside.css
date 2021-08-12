@@ -1,0 +1,140 @@
+.aside-form {
+  /* position: sticky; */
+  /* display: inline-; */
+  width: 15%;
+  /* height: 450px; */
+  background-color: white;
+  /* margin-left: 5%; */
+  float: left;
+  padding-top: 5%;
+}
+body.aside-form {
+  position: sticky;
+}
+
+.aside-top-box {
+  /* align-items: center; */
+  text-align: center;
+  width : 100%;
+  height : 45%;
+  /* border: red 5px solid; */
+  border: none;
+  margin: 5px 5px 5px 5px;
+  /* margin-bottom: 10px; */
+  
+}
+.aside-bottom-box {
+  
+  width : 100%;
+  height: 45%;
+  /* border: blue 5px solid; */
+  /* margin: 5px 5px 5px 5px */
+  margin-left: 0;
+  margin-right: 8px;
+  margin-top: 5px;
+  /* margin-bottom: 5px; */
+  /* border: red 5px solid; */
+  /* float: left; */
+  /* margin-right: 5px; */
+
+}
+
+.aside-bottom-box p{
+  color: blue;
+  /* margin: 5px 5px 5px 5px; */
+  margin-right: 10px;
+}
+.aside-food-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  /* margin : 15px; */
+  /* border: black 5px solid; */
+
+}
+.aside-food-num {
+  color: #fbb032;
+  /* border: red 5px solid; */
+  width: 10%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  font-size: 13px;
+}
+.aside-food-name {
+
+  width: 90%;
+  height: 100%;
+  color: rgba(1, 1, 1, 0.8);
+  /* border: blue 5px solid; */
+
+  font-size: 16px;
+
+}
+.aside-up-icon {
+  width: 10%;
+  height: 100%;
+  color: tomato;
+  /* border: green 5px solid; */
+}
+
+.aside-top-box h4{
+  font-weight: bolder;
+  font-size: 16px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  text-align: center;
+  color: #404552;
+}
+
+.recommand_onoff_btn {
+  width:70%;
+  height: 20%;
+  /* background-color:#aac1dd; */
+  border-radius: 15px;
+  border: none;
+  margin-right: 5%;
+  margin-bottom: 10px;
+}
+
+@keyframes dropdown {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.aside-bottom-box .aside-food-block{
+  overflow: hidden;
+  /* line-height: 1.2; */
+  transition: all 2s;
+  opacity: 0;
+  height: 0;
+}
+
+.recommand_onoff_btn:active ~ .aside-bottom-box .aside-food-block{
+  /* background-color: black; */
+  /* max-height: 6em; */
+  opacity: 1;
+  height:25px;
+}
+.hint_msg {
+  width: 70%;
+  float: left;
+ text-align: center;
+ font-size: 13px;
+ color: #404552;
+ margin-bottom: 10px;
+}
+
+
+
+.Big{
+  /* margin-left:20%;
+  margin-right:20%; */
+}
