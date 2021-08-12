@@ -1,0 +1,59 @@
+.mypage_main{
+    height: 100vh;
+    background-color: transparent;
+    padding: 5%;
+
+}
+
+.mypage_main_div{
+    border-bottom: 3px solid #babcbf;
+    display: flex;
+    border-radius: 5%;
+    height: 100%;
+    border: 0px;
+}
+
+.mypage_content {
+    display: flex;
+
+    height: 70px;
+
+    border-bottom: 1px solid #babcbf;
+    align-items: center;
+}
+
+
+/* 카드 class */
+
+.body_card_all{
+    justify-content: center;
+    display: flex;
+    padding:1%;
+    width:100%
+}
+.body_card_one{
+    text-align: center;
+    padding: 4%;
+    width: 33%;
+}
+.body_card_header{
+    padding: 3%;
+    /* border-bottom: 2px solid #97afcb; */
+}
+.body_card_footer{
+    height: 100%;
+    font-size: 130%;
+    justify-content: center;
+    display: flex;
+    padding: 6%;
+}
+.body_card_icon{
+    /* border-right: 2px solid #97afcb; */
+    width :50%;
+}
+
+.chip_number{
+    width :50%;
+}
+
+

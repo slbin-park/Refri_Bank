@@ -1,0 +1,41 @@
+.igd_main_div{
+    border-radius: 20px;
+    color: #333333;
+    background: whitesmoke;
+    flex: 8;
+    height: 100%;
+}
+.igd_content_div{
+    text-align: center;
+    padding : 5%;
+}
+.igd_title_div{
+    padding: 3%;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 2vh;
+    height: 2vh;
+}
+.igd_body_div{ 
+    padding : 2%;
+    height: 80%;
+    justify-content: center;
+}
+.igd_img_div{
+    width: 33.33%;
+    flex-wrap: wrap;
+}
+.igd_img_div_box{
+    
+    width: 12vh;
+    height: 12vh;
+}
+.idg_body_three{
+    padding: 3%;
+    display: flex;
+    height: 23%;
+}
+.igd_img_div_text{
+    height: 2vh;
+    font-size: large;
+}

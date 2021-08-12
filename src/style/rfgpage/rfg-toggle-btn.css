@@ -1,0 +1,65 @@
+.rfg-toggle-btn {
+    
+    margin-top: 5%;
+    margin-left: 3%;
+    border-radius: 20px;
+    margin-right: 1%;
+    width: 8%;
+    height: 32%;
+    border: none;
+    font-size: 30px;
+    background-color: white;
+}
+
+.rfg-toggle-btn:hover {
+    background-color: #F4DFD0;
+}
+
+
+.filter-container {
+    width: 80%;
+    height: 80%;
+}
+
+
+
+section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+section div {
+    position: relative;
+    display: flex;
+}
+
+#line {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    color: rgba(0,0,0,0.35);
+    font-size: 25px;
+    margin: 8px 0px;
+    padding-left: 40px;
+}
+
+#line::before {
+    content: "";
+    flex-grow: 1;
+    margin: 0px 16px;
+    background:rgba(0,0,0,0.35);
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+}
+
+#line::after {
+    content: "";
+    flex-grow: 1;
+    margin: 0px 16px;
+    background: rgba(0,0,0,0.35);
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+}

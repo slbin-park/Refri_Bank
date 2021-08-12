@@ -1,0 +1,91 @@
+.body_mypage{
+    border-radius: 20px;
+    margin-right: 1%;
+    color:#333333;;
+    background: white;
+    flex:8;
+}
+
+.body_title{
+    border-radius: 12px;
+    padding: 3%;
+    text-align: center;
+    background-color: #f0f0f5;
+    height:5%;
+    font-weight: bold;
+}
+
+.body_main{
+    height: 60%;
+}
+
+.body_header{
+    font-weight: bold;
+    display: flex;
+    height: 10%;
+    border-bottom: 1px solid #babcbf;
+    align-items: center;
+    
+}
+
+.admin_id {
+    width: 20%;
+    text-align: center;
+}
+
+.admin_nick {
+    width: 20%;
+    text-align: center;
+}
+.admin_view{
+    width: 20%;
+    text-align: center;
+}
+.admin_change{
+    width: 20%;
+    text-align: center;
+}
+.admin_kick{
+    width: 20%;
+    text-align: center;
+}
+
+/* 버튼 따로 둠 */
+.admin_change_btn{
+    border-radius: 12px;
+    background-color: #d7e1ed;
+    width: 50%;
+    height: 60%;
+    text-align: center;
+}
+.admin_kick_btn{
+    border-radius: 12px;
+    background-color: #d7e1ed;
+    width: 50%;
+    height: 55%;
+    text-align: center;
+}
+
+.body_content{
+    padding: 5%;
+    height: 90vh;
+}
+
+
+.body_footer{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 17%;
+}
+
+.page_btn{
+    height: 30%;
+    border-radius: 7px;
+    margin-left: 3%;
+    margin-right: 3%;
+    background-color: #f0f0f5;
+    width: 6%;
+    text-align: center;
+    
+}

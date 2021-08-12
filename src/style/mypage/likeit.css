@@ -1,0 +1,109 @@
+.likeit_body{
+    padding: 2%;
+    border-radius: 20px;
+    color:#333333;;
+    background: white;
+    flex:8;
+}
+
+.likeit_header{
+    justify-content: center;
+    border-radius: 12px;
+    padding: 3%;
+    text-align: center;
+    background-color: #e4ebf5;
+    font-weight: bold;
+}
+
+.likeit_content{
+    padding: 2%;
+    height: 90%;
+}
+
+
+.body_main{
+    font-size :medium;
+    font-weight:bold;
+    height: 60%;
+}
+
+.body_header{
+    font-size :large;
+    font-weight: bolder;
+    display: flex;
+    height: 7%;
+    align-items: center;
+}
+
+
+/* 버튼 따로 둠 */
+.admin_change_btn{
+    border-radius: 12px;
+    background-color: #d7e1ed;
+    width: 50%;
+    height: 60%;
+    text-align: center;
+}
+.admin_kick_btn{
+    border-radius: 12px;
+    background-color: #d7e1ed;
+    width: 50%;
+    height: 55%;
+    text-align: center;
+}
+
+
+
+.body_footer{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 17%;
+}
+
+.page_btn{
+    height: 30%;
+    border-radius: 7px;
+    margin-left: 3%;
+    margin-right: 3%;
+    background-color: #f0f0f5;
+    width: 6%;
+    text-align: center;
+    
+}
+
+
+/* 테이블 */
+
+
+
+/* 바디 테이블들 */
+.likeit_no {
+    width: 20%;
+    text-align: center;
+}
+
+.likeit_name {
+    width: 60%;
+    text-align: center;
+}
+.likeit_cancel{
+    width: 20%;
+    text-align: center;
+}
+.likeit_cancel_btn{
+    border-radius: 12px;
+    background-color: #d7e1ed;
+    width: 50%;
+    height: 55%;
+    text-align: center;
+}
+
+.likeit_content_one {
+    display: flex;
+
+    height: 17%;
+
+    border-bottom: 1px solid #babcbf;
+    align-items: center;
+}
