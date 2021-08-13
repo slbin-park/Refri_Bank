@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import '../../style/noticepage/noticepage.css';
 // import notice from '../../img/category_notice_img/notice_img.jpg';
 import xbuttom from '../../img/board/xbutton.jpg';
+import email from '../../img/board/email.png';
+
 import Func_noticeboard_show_noticeboard from '../../components/noticepage/noticeboard';
 import Func_freeboard_show_freeboard from '../../components/noticepage/freeboard';
 import Func_freecontent_show_freecontent from '../../components/noticepage/freecontent';
@@ -106,7 +108,7 @@ function App({ history, information }) {
           <div className="middle-content-form-left">왼쪽 </div>
           <div className="middle-content-form-right">
             <div className="right-img-box">
-              <img className="email_img" src={xbuttom} width="50" height="50" ></img>
+              <img className="email_img" src={email} ></img>
             </div>
             <div className="right-text-box">
               <h3> 이메일 문의하기</h3>
@@ -121,7 +123,9 @@ function App({ history, information }) {
       <div className="subcontent-form">
         <div className="notice-nav-form">
           <div className="notice-nav">
-            <div role="button" className="noticeboard-select-btn" onClick={Func_noticepage_toggle_noticeboard}>Notice</div>
+            <div className="noticeboard-select-btn" onClick={Func_noticepage_toggle_noticeboard}>
+              <button>Notice</button>
+            </div>
             <div role="button" className="freeboard-select-btn selectedboard-btn" onClick={Func_noticepage_toggle_freeboard}>BulletinBoard</div>
           </div>
           <div className="search_box">

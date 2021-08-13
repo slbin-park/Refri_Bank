@@ -18,7 +18,7 @@
 }
 
 .subcontent-form {
-    display: flex;
+    display: block;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -33,19 +33,18 @@
 .notice-nav-form {
     width: 80%;
     height: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
     display: flex;
     /* position: relative; 추후 박스 하단에 추가 버튼을 위치시키기 위한 설정 */
     background: white;
-    /* background-repeat: repeat-y; */
-    /* border-radius: 16px; */
-    /* box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04); */
 
     border-bottom: 5px gray solid ;
 }
 
 .maincontent-form {
     width: 100%;
-    height: 100%;
+    height: 50%;
 
     display: flex;
     /* position: relative; 추후 박스 하단에 추가 버튼을 위치시키기 위한 설정 */
@@ -61,7 +60,7 @@
 }
 
 .notice-box {
-    width: 90%;
+    width: 80%;
     margin-top: 10px;
 }
 
@@ -90,29 +89,31 @@
 }
 
 .notice-nav {
-    width: 100%;
+    width: 70%;
     height: 100%;
     display: flex;
-    margin: 10px;
-    
-   
+    /* margin: 10px; */
 }
 .notice-nav div{
-    /* width: 30%; */
-    height: 35px;
-    margin: 5px;
-    /* border: 8px blue solid; */
+    /* width: 10%; */
+    height: 4vh;
+    margin-right: 2%;
+    margin-bottom: 2%; 
+    border: 1px rgba(1, 1, 1, 0.5) solid;
     border-radius: 20px;
-    float: right;
+    /* font-size: 1rem; */
+    display:inline-block;
+    /* float: right; */
 }
 
 .noticeboard-select-btn {
-    /* background-color: rgb(221, 218, 215); */
+    
     width: 10%;
-    height: 20%;
+    height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+   
+    font-size: 100%;
+    
     /* margin-bottom: 1%; */
     cursor: pointer;
     /* padding: 1%; */
@@ -122,24 +123,24 @@
 .freeboard-select-btn {
     /* background-color: rgb(221, 218, 215); */
     width: 20%;
-    height: 20%;
+    height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
+    font-size: 100%;
+
+    /* align-items: center;
+    justify-content: center; */
     /* margin-bottom: 1%; */
     cursor: pointer;
     /* padding: 1%; */
 }
-.noticeboard-select-btn:hover { 
-    box-shadow: 200px 0 0 0 rgba(0,0,0,0.25) inset,
-                -200px 0 0 0 rgba(0,0,0,0.25) inset; 
-}
+
  
-.selectedboard-btn {
-    /* background-color: rgb(181, 181, 181); */
-    /* color: white; */
+ .selectedboard-btn {
+    background-color: rgba(1, 1, 1, 0.2);
+    color: rgba(1, 1, 1, 0.75); 
     border: 1px solid gray;
-}
+} 
 
 .main-content {
     display: flex;
@@ -192,6 +193,8 @@
 
 .allcontent-block {
     /* height: 100%; */
+    width: 100%;
+    height:100%;
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -309,47 +312,64 @@
     display: flex;
 }
 
-.middle-content-form-right .right-img-box {
-    width: 15%;
-    margin: 20px;
-    padding: 0;
-}
-.middle-content-form-right .right-text-box {
-    width: 60%;
-    margin: 0;
-    padding: 0;
-}
-.middle-content-form-right .right-btn-box {
+.right-img-box {
     width: 25%;
-    margin-right :20px;
+    height: 100%;
+    /* margin: 20px; */
     padding: 0;
+}
+.right-img-box img {
+    /* text-align: center; */
+    width: 80%;
+    height: 80%;
+    margin: 10%
+    
+}
+.right-text-box {
+    width: 50%;
+    height : 100%;
+    margin: 0;
+    margin-top: 3%;
+    padding: 0;
+}
+.right-btn-box {
+    width: 25%;
+    /* margin-right :20px; */
+    padding: 0;
+    height: 100%;
+    margin-top: 5%;
+    margin-right: 3%;
 }
 .send-btn{
-    margin-top: 35px;
-    margin-bottom: 20px;
-    width: 100px;
-    height: 30px;
+    /* margin-top: 35px; */
+    /* margin-bottom: 20px; */
+    width: 100%;
+    height: 100%; 
     border-radius: 20px;
     color: white;
     background-color: #404552;
+    cursor: pointer;
 }
+
 .right-text-box h3 {
-    font-size: 23px;
-    margin-top: 25px;
-    margin-bottom: 5px;
+    margin-top: 3%;
+    font-size: 1.3rem;
+    /* margin-top: 25px;
+    margin-bottom: 5px; */
     color: #4d4d4d;
 }
   
 .right-text-box p {
     font-size: 15px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .search_box {
-    margin-top: 20px;
+    width: 30%;
+    /* margin-top: 20px; */
 }
 .search {
-    height: 30px;
+    /* height: 30px; */
     border-radius: 20px;
     border: 1px gray solid;
 }

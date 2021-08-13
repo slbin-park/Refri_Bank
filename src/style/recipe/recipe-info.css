@@ -30,6 +30,7 @@
 .alice-content-sub-form {
     width: 60vw;   
     height: 70vh;
+    overflow: scroll;
 }
 
 .alice-content-img-form {

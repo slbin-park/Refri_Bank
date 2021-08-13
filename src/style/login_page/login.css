@@ -60,6 +60,9 @@
   font-size: 1.1rem;
   border-radius: 13px;
 }
+.login-sub-form input::placeholder {
+  padding-left: 3%;
+}
 
 .login-input-sub-form button {
   text-transform: uppercase;
