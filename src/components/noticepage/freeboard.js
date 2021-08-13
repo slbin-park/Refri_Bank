@@ -34,6 +34,7 @@ function Func_freeboard_show_freeboard({get_free_table,set_free_table,modalOn, s
                         <div className="eachcontent-block" >
                             <div className="eachcontent"  border-color="#008554">
                                 <div style={{ height: '80%' }}>
+                                    
                                 <div className="content-header" onClick={(e) => Func_this_select_content( e, number, id, nickname, title, description, createdate )}> 
 
                                     <div className="nickname">{nickname}</div>
@@ -45,12 +46,17 @@ function Func_freeboard_show_freeboard({get_free_table,set_free_table,modalOn, s
                                 </div>
 
                                 </div>
-                                <div className='reaction-box' style={{ height: '20%' }}>
-                                    <img src={heart_img} width='30px'/>
-                                    <span>14</span>
+                                <div className='reaction-box'>
+                                    <div className="heart_img_box">
+                                        <img className="heart_img" src={heart_img}/>
+                                        <span>14</span>
+                                    </div>
+                                    <div className="comment_img_box">
+                                        <img className="comment_img" src={comment_img} />
+                                        <span>37</span>
+                                    </div>
                                     {/* <div>{좋아요수}</div> */}
-                                    <img src={comment_img} width='27px'/>
-                                    <span>37</span>
+                                    
                                     {/* <div>{댓글수}</div> */}
                                     {/* 밖으로 빼야함 */}
                                     {id == information.id ? <button onClick={(e)=>Func_this_delete_content(e, number)}>게시글 삭제</button> : ""}

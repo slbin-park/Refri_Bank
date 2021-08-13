@@ -43,13 +43,13 @@
 .profile {
     background-color: transparent;
     position: relative;
-    
 }
 
 .profile-contents {
     position: absolute;
     left: 0;
     bottom: 0;
+
     padding: 3%;
 }
 
