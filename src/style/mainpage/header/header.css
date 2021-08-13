@@ -13,36 +13,47 @@
   /* z-index: 3; */
   /* background-color: white; */
   width: 100%;
-  height: 20%;
+  height: 20%; 
   display: block;
 }
 
+.header-null-form {
+  width: 33.3%;
+  height: 100%;
+  /* border: 5px green solid; */
+}
+
 .login-window-form {
-  width: 30%;
+  width: 33.3%;
+  height: 100%;
   display: flex;
+  /* border: #FBB032 5px solid; */
 }
 
 .header-top-box {
+  width: 100%;
+  height: 70%;
   display: flex;
   border-bottom: 1px rgb(161, 161, 161) solid;
   /* margin-bottom: 5px; */
   background-color: white;
-
+  /* border: 5px red solid; */
 }
 
 .header-bottom-box {
   display: flex;
   /* position: sticky; */
   width: 100%;
-  height: 40%;
+  height: 30%;
+  /* border: chocolate 5px solid; */
   /* margin-left: 5%;
   margin-top: 3%; */
   justify-content: center;
   /* align-items: center; */
   text-align: center;
   align-items: center;
-  margin-left:10px;
-  margin-right:10px;
+  /* margin-left:10px;
+  margin-right:10px; */
   /* justify-content: flex-start; */
 
   background-color: white;
@@ -50,14 +61,18 @@
 
 .header-category-btn {
   display: inline-block;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  /* margin-top: 15px; */
+  /* margin-bottom: 15px; */
   border: 0;
   background-color: transparent;
   font-size: 17px;
   color: #404552;
   font-weight: bolder;
   padding: 0;
+  margin-top: 1.5vh;
+  cursor: pointer;
+
+  /* border: coral 5px solid; */
   /* font-family: 'neon'; */
 }
 
@@ -70,21 +85,35 @@
   border-bottom: #FBB032 1px solid;
 }
 
-.header-logo-form {
-  width: 70%;
+.header-logo-main-form {
+  margin-top: 5px;
+  width: 33.3%;
   height: 100%;
   /* margin-left: 200px; */
-  /* justify-content: center;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  text-align: center; */
+}  
+
+.header-logo-sub-form {
+  width: 19vw;
+  height: 11vh;
+  margin-left: 10%;
+  margin-bottom: 1%;
+  margin-top: 2%;
 }
 
 .header-logo-img {
   /* position: sticky; */
-  width: 300px;
-  height: 100px;
-  margin-left: 60%;
-  margin-top: 10px;
+  width: 100%;
+  cursor: pointer;
+  height: 100%;
+  margin-bottom: 2vh;
+  min-width: 50%;
+  min-height: 20%;
+  /* margin-left: 60%;
+  margin-top: 10px; */
+  /* border: 5px blue solid; */
 }
 
 .header-right-big-box {

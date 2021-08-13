@@ -1,3 +1,4 @@
+
 import '../../style/noticepage/freeboard.css';
 import heart_img from '../../img/board/heart.png';
 import comment_img from '../../img/board/comment.png'
@@ -68,5 +69,5 @@ function Func_freeboard_show_freeboard({get_free_table,set_free_table,modalOn, s
             <Func_freeboard_show_eachcontent/>
       )
   }
-  
+
 export default Func_freeboard_show_freeboard;

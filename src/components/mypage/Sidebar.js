@@ -18,14 +18,20 @@ function Sidebar({ history ,set_admin_page}) {
                                 </ul>:''} */}
                             </ul>
                             <ul className="big_menu">
-                                <li onClick={()=>set_admin_page('like')} >좋아요 게시글 <i className="arrow fas fa-angle-right"></i></li>
+                                <li onClick={()=>set_admin_page('like')} >좋아요 레시피 <i className="arrow fas fa-angle-right"></i></li>
                                 {/* {menu2 ?<ul className="small_menu">
                                     <li><a href="#">소메뉴2-1</a></li>
                                     <li><a href="#">소메뉴2-2</a></li>
                                 </ul>:''} */}
                             </ul>
                             <ul className="big_menu">
-                                <li>MYPAGE</li>
+                                <li onClick={()=>set_admin_page('my_write')}>내가 쓴 글</li>
+                            </ul>
+                            <ul className="big_menu">
+                                <li onClick={()=>set_admin_page('my_igd')}>재료관리</li>
+                            </ul>
+                            <ul className="big_menu">
+                                <li>정보변경</li>
                             </ul>
                     </div>
                 </div>

@@ -17,7 +17,9 @@ function recipe_info({ data, history }) {
                         <div className="alice-content-main-form">
                             <div className="alice-content-sub-form">
                                 <div className="alice-content-img-form">   
-                                    <img src={data[0][key]} className="alice-content-img" />
+                                    <div className="alice-content-img-flex">
+                                        <img src={data[0][key]} className="alice-content-img" />
+                                    </div>
                                 </div>
                                 <div className="alice-content-text-form">
                                     <p>{data[0][key.replace("I", "T")]}</p>

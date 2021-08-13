@@ -97,9 +97,13 @@ const Header = ({location, information, setinformation, history ,page,setpage}) 
             {/* 이거 컴포넌트 나눠서 해줘요 */}
             <div className="header-form">
                 <div className="header-top-box">
-                    <div className="header-logo-form">
-                        <img className="header-logo-img" onClick={() => Func_header_move_home()} src={this_header_show_logo} />
-                        {/* 로고이미지 ( 왼쪽 상단에 ) */}
+                    <div className="header-null-form">
+                    </div>
+                    <div className="header-logo-main-form">
+                        <div className="header-logo-sub-form">
+                            <img className="header-logo-img" onClick={() => Func_header_move_home()} src={this_header_show_logo} />
+                            {/* 로고이미지 ( 왼쪽 상단에 ) */}
+                        </div>
                     </div>
             
                     <div className="login-window-form">
@@ -107,7 +111,7 @@ const Header = ({location, information, setinformation, history ,page,setpage}) 
                             <>
                                 <div className="login-wait-form">
                                     <button className="login-move-loginpage-btn" onClick={() => Func_header_move_loginpage()}>
-                                        <img src={this_header_login_btn} width='50' height='50'></img>
+                                        <img src={this_header_login_btn} className="login-move-loginpage-img"></img>
                                     </button>
                                 </div>
                             </> 
@@ -122,13 +126,13 @@ const Header = ({location, information, setinformation, history ,page,setpage}) 
                                 
                                 <div className="header-move-rfgpage-btn">
                                     <button className="header-myrfg-btn" onClick={() => Func_header_move_myrfg()}>
-                                        <img align="center" src={this_header_show_rgfimg} width='80' height='70' />
+                                        <img align="center" src={this_header_show_rgfimg}/>
                                     </button>
                                 </div>
                                 
                                 <div className="header-logout-btn">
                                     <button className="logout-move-mainpage-btn" onClick={(e) => Func_header_logout()}>
-                                        <img align="center" src={this_header_logout_btn} width='50' height='50' />
+                                        <img align="center" src={this_header_logout_btn} />
                                     </button>
                                 </div>
                             </div>

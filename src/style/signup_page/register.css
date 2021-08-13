@@ -8,11 +8,11 @@
 }
 .register-sub-form {
 background: #EEF1F5;
-width: 45%;
-height: 80%;
+width: 40vw;
+height: 60vh;
 border-radius: 8%;
 box-shadow: -10px 15px grey;
-margin-left: 4%;
+margin-left: 3%;
 }
 
 
@@ -25,12 +25,11 @@ align-items: center;
 }
 
 .register-logo-img-form {
-max-width: 150px;
-max-height: 150px;
+  max-width: 9vw;
+  max-height: 13vh;
 display: flex;
 justify-content: center;
 align-items: center;
-
 margin-left: 3%;
 
 }
@@ -61,7 +60,7 @@ border: 0;
 margin-bottom: 3%;
 box-sizing: border-box;
 
-font-size: 1rem;
+font-size: 1.1rem;
 border-radius: 13px;
 padding: 15px ;
 }
@@ -73,9 +72,11 @@ padding: 15px ;
   width: 100%;
   height: 12%;
   border: 0;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   border-radius: 13px;
   margin-bottom: 5%;
+  display: flex;
+  align-items: center;
 }
 
 
@@ -137,7 +138,7 @@ padding: 15px ;
   }
   .register-input-sub-form button:hover:before {
 
-    height: 97%;
+    height: 84%;
   }
   .register-input-sub-form button:hover:after {
     width: 100%;
@@ -165,7 +166,7 @@ padding: 15px ;
     width: 0%;
   }
   .register-input-sub-form button span:hover:before {
-    height: 100%;
+    height: 116%;
   }
   .register-input-sub-form button span:hover:after {
     width: 100%;

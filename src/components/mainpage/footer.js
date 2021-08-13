@@ -15,6 +15,10 @@ function footer({ ftable, history }) {
           <div className="footer_food">
             <img className="footer_food_img" src={FoodV} />
           </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0e4dec8bf5657edb756a12f20a52857476fb7e1c
           <div className="footer_text">
             <p className="footer_text_style1"> {FoodN} </p>
             <p className="footer_text_style2">
@@ -28,7 +32,11 @@ function footer({ ftable, history }) {
       );
       if((index+1)/4>=1 && (index+1)%4 == 0) {
         psum_li.push(
+<<<<<<< HEAD
         <div className="abc">
+=======
+        <div className="food_four_box">
+>>>>>>> 0e4dec8bf5657edb756a12f20a52857476fb7e1c
           {four_li}
         </div>
         );
