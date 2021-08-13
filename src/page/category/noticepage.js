@@ -131,7 +131,7 @@ function App({ history, information }) {
         <div className="maincontent-form">
           {noticeboardtoggle && <Func_noticeboard_show_noticeboard notice_table={notice_table} history={history}/>}
           <div className="allcontent-block">
-            {freeboardtoggle && <Func_freeboard_show_freeboard get_free_tabl={get_free_table} free_select_num={free_select_num} set_free_select_num={set_free_select_num} free_table={free_table} information={information} history={history} setModalOn={setModalOn}/>}
+            {freeboardtoggle && <Func_freeboard_show_freeboard get_free_table={get_free_table} free_select_num={free_select_num} set_free_select_num={set_free_select_num} free_table={free_table} information={information} history={history} setModalOn={setModalOn}/>}
 
           </div>
         </div>
