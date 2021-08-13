@@ -25,7 +25,7 @@ function Sidebar({ history ,set_admin_page}) {
                                 </ul>:''} */}
                             </ul>
                             <ul className="big_menu">
-                                <li>내가 쓴 글</li>
+                                <li onClick={()=>set_admin_page('my_write')}>내가 쓴 글</li>
                             </ul>
                             <ul className="big_menu">
                                 <li onClick={()=>set_admin_page('my_igd')}>재료관리</li>
