@@ -5,15 +5,22 @@ import '../../style/noticepage/freecontent.css';
 import likeimg from '../../img/board/likeimg.jpg';
 import commentimg from '../../img/board/commentimg.jpg';
 
-const Func_freecontent_show_freecontent = ({ content, information, reply_table }) => {
+const Func_freecontent_show_freecontent = ({set_reply_table, content, information, reply_table }) => {
 
     // 지금 입력한 내용
-
     const [commentinput, setcommentinput] = useState('');
 
-    // 저장된 댓글 불러온 테이블
-    const [comment_table, setcomment_table] = useState();
-
+    const get_reply = async () => {
+        await Axios.post("https://qkrtmfqls.gabia.io/getreply/" + content.number, {
+    
+        })
+          .then((response) => {
+            set_reply_table(response.data);
+          })
+          .catch((error) => {
+            console.log('reply', error);
+          })
+      }
 
     // 댓글 등록 버튼 누르면 post 요청으로 입력내용 보냄
     const Func_freecontent_post_commentimput = (e) => {
@@ -24,6 +31,7 @@ const Func_freecontent_show_freecontent = ({ content, information, reply_table }
             description: commentinput
         })
             .then((response) => {
+                get_reply()
                 console.log(response);
             })
             .catch((error) => {
@@ -88,4 +96,4 @@ const Func_freecontent_show_freecontent = ({ content, information, reply_table }
     )
 }
 
-export default Func_freecontent_show_freecontent;
+export default React.memo(Func_freecontent_show_freecontent);

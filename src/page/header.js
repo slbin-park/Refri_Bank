@@ -17,9 +17,8 @@ import Axios from 'axios';
 const Header = ({location, information, setinformation, history ,page,setpage}) => {
     // 함수가 아니고 컴포넌트 처음 시작은 무조건 대문자
 
-    const [nickname,setnickname] = useState(information.nickname);
+    const [nickname,setnickname] = useState(information && information.nickname);
     const [where_category,setwhere_category] = useState('default')
-    
     useEffect(() => {
         let token = window.localStorage.getItem("token")
         token && token_check()
@@ -27,7 +26,7 @@ const Header = ({location, information, setinformation, history ,page,setpage}) 
     //로케이션이 바뀔때마다 토큰 체크
 
     useEffect(() => {
-        setnickname(information.nickname)
+        information && setnickname(information.nickname)
     }, [information])
     //로그인 정보가 변할때마다
 
@@ -45,9 +44,8 @@ const Header = ({location, information, setinformation, history ,page,setpage}) 
             token: window.localStorage.getItem("token")
         })
             .then((response) => {
-                let token = window.localStorage.getItem("token")
                 if (response.data.token.success) {
-                    if(information.id==''){
+                    if(information == undefined){
                     setinformation({ id: response.data.token.token.id, nickname: response.data.token.token.nickname })
                 }
                     setpage(true)

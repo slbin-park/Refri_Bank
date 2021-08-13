@@ -8,7 +8,7 @@ function footer({ ftable, history }) {
   const Show = () => {
     let psum_li = [];
     let four_li = [];
-    console.log(ftable);
+    // console.log(ftable);
     {ftable && ftable.slice(0, 20).map(({ FoodId, FoodV, FoodN, FoodT, FoodC }, index) => {
       four_li.push(
         <div key={FoodId} className="footer_block" onClick={() => history.push("/recipe/" + FoodId)}>

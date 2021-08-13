@@ -8,7 +8,6 @@ import Func_noticeboard_show_noticeboard from '../../components/noticepage/notic
 import Func_freeboard_show_freeboard from '../../components/noticepage/freeboard';
 import Func_freecontent_show_freecontent from '../../components/noticepage/freecontent';
 import Axios from "axios";
-import Aos from "aos";
 import 'aos/dist/aos.css';
 
 function App({ history, information }) {
@@ -18,24 +17,21 @@ function App({ history, information }) {
   const [notice_table, set_notice_table] = useState();
   const [free_table, set_free_table] = useState();
 
-  const [free_select_num, set_free_select_num] = useState({ number: '', id: '', nickname: '', title: '', description: ''});
+
+  const [free_select_num, set_free_select_num] = useState({ number: '', id: '', nickname: '', title: '', description: '' });
   const [reply_table, set_reply_table] = useState();
+
   
 
-  const [modalOn, setModalOn] = React.useState(false);
+  const [modalOn, setModalOn] = useState(false);
 
-  // Axios.post("/getnotice", {})
-  // .then((response) => {
-  //     set_notice_table(response.data)
-  // })
-  // .catch((error) => {
-  //     console.log(error);
-  // });
+  
   useEffect(() => {
     get_free_table()
   }, [])
 
-  const get_free_table = async()=>{
+  const get_free_table = async () => {
+    console.log('렌더링 1번함')
     await Axios.post("http://qkrtmfqls.gabia.io/getfree", {
     })
       .then((response) => {
@@ -47,17 +43,10 @@ function App({ history, information }) {
   }
 
   useEffect(() => {
-    console.log("number", free_select_num.number);
-    Axios.post("https://qkrtmfqls.gabia.io/getreply/" + free_select_num.number, {
+    setModalOn(true);
+  }, [reply_table])
 
-    })
-      .then((response) => {
-        set_reply_table(response.data);
-      })
-      .catch((error) => {
-        console.log('reply', error);
-      })
-  }, [free_select_num]);
+
 
 
   const Func_noticepage_move_writeform = (e) => {
@@ -87,13 +76,18 @@ function App({ history, information }) {
   }
 
   const Modal = () => {
+
     return (
-      <div className="modal" data-aos="zoom-in">
-        <div className="closebtnbox"><img className="closebtn" role="button" src={xbuttom} onClick={onCloseModal} width="30px" height="30px"/></div>
-        <Func_freecontent_show_freecontent content={free_select_num} information={information} reply_table={reply_table}/>
-      </div>
+      <>
+        { reply_table &&
+          <div className="modal" data-aos="zoom-in">
+            <div className="closebtnbox"><img className="closebtn" role="button" src={xbuttom} onClick={onCloseModal} width="30px" height="30px" /></div>
+            <Func_freecontent_show_freecontent set_reply_table={set_reply_table}content={free_select_num} information={information} reply_table={reply_table} />
+          </div>}
+      </>
     );
   };
+
 
 
   return (
@@ -105,37 +99,37 @@ function App({ history, information }) {
       </div>
 
       <div className="middle-content-form">
-          <div className="middle-content-form-left">왼쪽 </div>
-          <div className="middle-content-form-right">
-            <div className="right-img-box">
-              <img className="email_img" src={email} ></img>
-            </div>
-            <div className="right-text-box">
-              <h3> 이메일 문의하기</h3>
-              <p> 찾으시는 답변이 없으신가요 ? </p>
-            </div>
-            <div className="right-btn-box">
-              <button className="send-btn">E-mail 보내기 </button>
-            </div>
+        <div className="middle-content-form-left">왼쪽 </div>
+        <div className="middle-content-form-right">
+          <div className="right-img-box">
+            <img className="email_img" src={email} ></img>
           </div>
+          <div className="right-text-box">
+            <h3> 이메일 문의하기</h3>
+            <p> 찾으시는 답변이 없으신가요 ? </p>
+          </div>
+          <div className="right-btn-box">
+            <button className="send-btn">E-mail 보내기 </button>
+          </div>
+        </div>
       </div>
 
       <div className="subcontent-form">
         <div className="notice-nav-form">
           <div className="notice-nav">
-            <div className="noticeboard-select-btn" onClick={Func_noticepage_toggle_noticeboard}>
+            <div className="noticeboard-select-btn" onClick={() => Func_noticepage_toggle_noticeboard}>
               <button>Notice</button>
             </div>
-            <div role="button" className="freeboard-select-btn selectedboard-btn" onClick={Func_noticepage_toggle_freeboard}>BulletinBoard</div>
+            <div role="button" className="freeboard-select-btn selectedboard-btn" onClick={() => Func_noticepage_toggle_freeboard}>BulletinBoard</div>
           </div>
           <div className="search_box">
             <input className="search"></input>
           </div>
         </div>
         <div className="maincontent-form">
-          {noticeboardtoggle && <Func_noticeboard_show_noticeboard notice_table={notice_table} history={history}/>}
+          {noticeboardtoggle && <Func_noticeboard_show_noticeboard notice_table={notice_table} history={history} />}
           <div className="allcontent-block">
-            {freeboardtoggle && <Func_freeboard_show_freeboard get_free_table={get_free_table} free_select_num={free_select_num} set_free_select_num={set_free_select_num} free_table={free_table} information={information} history={history} setModalOn={setModalOn}/>}
+            {freeboardtoggle && free_table != undefined ? <Func_freeboard_show_freeboard set_reply_table={set_reply_table} set_free_select_num={set_free_select_num} free_table={free_table} information={information} /> : ''}
 
           </div>
         </div>
