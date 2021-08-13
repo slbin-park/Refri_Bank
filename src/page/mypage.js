@@ -9,7 +9,7 @@ import Myigd  from '../components/mypage/igd/igdmanage';
 import Axios from 'axios'
 
 function Mypage({ history,information }) {
-    const [my_page,set_admin_page] = useState('main')
+    const [my_page,set_admin_page] = useState('my_igd')
     const [like_table,set_like_table] = useState()
     const [like_count,set_like_count] = useState()
 
@@ -49,12 +49,16 @@ function Mypage({ history,information }) {
 
     return (
         <div className="mypage_main" style={{ height: '100vh' }}>
+            <button onClick={()=>set_admin_page('like')}>
+                이거누르셈
+
+                </button>
             <div className='mypage_main_div'>
-                <Sidebar set_admin_page={set_admin_page}/>
+                {/* <Sidebar set_admin_page={set_admin_page}/> */}
                 {my_page === 'main' ? <Mainpage like_count={like_count}/> :''}
-                {my_page === 'like' ? <Likeit history={history} like_table={like_table}/>:''}
+                {my_page === 'like' ? <Likeit history={history} like_table={like_table} information={information}/>:''}
                 {my_page === 'my_igd' ? <Myigd history={history} like_table={like_table} information={information}/>:''}
-                {my_page === 'my_write' ? <Mywrite history={history} mywrite_table={mywrite_table} information={information}/>:''}
+                {/* {my_page === 'my_write' ? <Mywrite history={history} mywrite_table={mywrite_table} information={information}/>:''} */}
             </div>
         </div>
     )

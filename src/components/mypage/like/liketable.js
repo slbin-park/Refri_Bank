@@ -3,11 +3,7 @@ import '../../../style/mypage/index.css'
 import '../../../style/mypage/likeit.css';
 
 
-
-
-
-
-function Liketable({table,history}) {
+function Liketable({table,history, information}) {
     const [page_slice,set_page_slice] = useState({start:0,end:7})
 
     const return_like_table = () => {
@@ -23,16 +19,19 @@ function Liketable({table,history}) {
 
     const Create_like_table = ({ user }) => {
         const rcp_change = (e) => {
-            
             history.push("/recipe/" + user.foodid)
         }
     
         return (
-            <div key={user.foodid} className='likeit_content_one'>
-                <div className='likeit_no'>{user.foodid}</div>
-                <div onClick={(e)=>rcp_change()} className='likeit_name'>{user.foodname}</div>
-                <div className='likeit_cancel' style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
-                    <button  className='likeit_cancel_btn'>취소</button>
+            <div className="body_sub_form">
+                <div key={user.foodid} className='likeit_content_one'>
+                    <div className='likeit_no'>{user.foodid}</div>
+                    <div onClick={(e)=>rcp_change()} className='likeit_title_content'>{user.foodname}</div>
+                    <div className="likeit_nickname">{information.nickname}</div>
+                    <div className="likeit_date">{information.nickname}</div>
+                    <div className='likeit_cancel' style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
+                        <button  className='likeit_cancel_btn'>취소</button>
+                    </div>
                 </div>
             </div>
         )
