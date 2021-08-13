@@ -98,11 +98,12 @@ const Header = ({location, information, setinformation, history ,page,setpage}) 
             <div className="header-form">
                 <div className="header-top-box">
                     <div className="header-null-form">
-                        hello
                     </div>
-                    <div className="header-logo-form">
-                        <img className="header-logo-img" onClick={() => Func_header_move_home()} src={this_header_show_logo} />
-                        {/* 로고이미지 ( 왼쪽 상단에 ) */}
+                    <div className="header-logo-main-form">
+                        <div className="header-logo-sub-form">
+                            <img className="header-logo-img" onClick={() => Func_header_move_home()} src={this_header_show_logo} />
+                            {/* 로고이미지 ( 왼쪽 상단에 ) */}
+                        </div>
                     </div>
             
                     <div className="login-window-form">
@@ -110,7 +111,7 @@ const Header = ({location, information, setinformation, history ,page,setpage}) 
                             <>
                                 <div className="login-wait-form">
                                     <button className="login-move-loginpage-btn" onClick={() => Func_header_move_loginpage()}>
-                                        <img src={this_header_login_btn} width='50' height='50'></img>
+                                        <img src={this_header_login_btn} className="login-move-loginpage-img"></img>
                                     </button>
                                 </div>
                             </> 

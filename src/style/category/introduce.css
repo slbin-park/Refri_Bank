@@ -29,15 +29,15 @@
 }
 .left-first-box img {
     text-align: center;
-    margin-top: 3%;
+    margin-top: 6%;
     margin-left: 10%;
     width: 220px;
     height: 170px;
  }
 .left-first-box h3 {
    text-align: center;
-   margin-top: 8%;
-   font-size: 15px;
+   margin-top: 10%;
+   font-size: 1.2rem;
     color: gray;
 }
 
@@ -58,7 +58,7 @@
 }
 
 .hello-box  p{
-    font-size: 18.5px;
+    font-size: 15.5px;
     color:gray;
     margin-top: 50px;
 }
@@ -108,7 +108,7 @@
     display: flex;
     /* border: cyan 5px solid; */
     margin-top: 5%;
-    margin-left: 5%;
+    margin-left: 22%;
     margin-right: 5%;
 }
 .introduce-bottom-left {

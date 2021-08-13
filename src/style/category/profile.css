@@ -49,7 +49,11 @@
     position: absolute;
     left: 0;
     bottom: 0;
+<<<<<<< HEAD
     padding: 2%;
+=======
+    padding: 3%;
+>>>>>>> 650c264b9873e84976b7ffe38206c665faf61a11
 }
 
 .profile-contents h2 {
