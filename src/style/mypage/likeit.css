@@ -93,6 +93,7 @@
 }
 .likeit_cancel_btn{
     border-radius: 12px;
+    border-color: #d7e1ed;
     background-color: #d7e1ed;
     width: 50%;
     height: 55%;
