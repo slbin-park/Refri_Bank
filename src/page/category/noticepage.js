@@ -123,9 +123,9 @@ function App({ history, information }) {
       <div className="subcontent-form">
         <div className="notice-nav-form">
           <div className="notice-nav">
-            <div className="noticeboard-select-btn" onClick={Func_noticepage_toggle_noticeboard}>
-              <button>Notice</button>
-            </div>
+            <div role ="button" className="noticeboard-select-btn" onClick={Func_noticepage_toggle_noticeboard}>Notice</div>
+              
+
             <div role="button" className="freeboard-select-btn selectedboard-btn" onClick={Func_noticepage_toggle_freeboard}>BulletinBoard</div>
           </div>
           <div className="search_box">
