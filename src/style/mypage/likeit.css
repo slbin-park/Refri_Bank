@@ -167,3 +167,28 @@
     border-bottom: 1px solid #babcbf;
     align-items: center;
 }
+
+.likeit_bottom_box {
+    height: 10%;
+    margin-top: 4%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.like_select_num_btn_form {
+    width: 40%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.like_select_num_btn_sub_form {
+    width: 10%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

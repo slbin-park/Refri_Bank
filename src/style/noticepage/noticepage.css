@@ -49,7 +49,7 @@
     display: flex;
     /* position: relative; 추후 박스 하단에 추가 버튼을 위치시키기 위한 설정 */
     background: white;
-    background-repeat: repeat-y;
+    /* background-repeat: repeat-y; */
     /* border-radius: 16px; */
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04);
     flex-direction: column;
@@ -89,47 +89,47 @@
 }
 
 .notice-nav {
-    width: 70%;
+    width: 80%;
     height: 100%;
     display: flex;
     /* margin: 10px; */
 }
 .notice-nav div{
     /* width: 10%; */
-    height: 4vh;
+    /* height: 100%; */
     margin-right: 2%;
     margin-bottom: 2%; 
     border: 1px rgba(1, 1, 1, 0.5) solid;
     border-radius: 20px;
     /* font-size: 1rem; */
-    display:inline-block;
+    /* display:inline-block; */
     /* float: right; */
 }
 
 .noticeboard-select-btn {
     
     width: 10%;
-    height: 100%;
+    height: 4vh;
     display: flex;
-   
-    font-size: 100%;
-    
+    font-size: 1.1rem;
+   align-items: center;
     /* margin-bottom: 1%; */
+    justify-content: center;
     cursor: pointer;
     /* padding: 1%; */
-    transition:all 0.9s, color 0.3;
+    /* transition:all 0.9s, color 0.3; */
 }
 
 .freeboard-select-btn {
     /* background-color: rgb(221, 218, 215); */
     width: 20%;
-    height: 100%;
+    height: 4vh;
     display: flex;
     text-align: center;
-    font-size: 100%;
+    font-size: 1.1rem;
 
-    /* align-items: center;
-    justify-content: center; */
+    align-items: center;
+    justify-content: center;
     /* margin-bottom: 1%; */
     cursor: pointer;
     /* padding: 1%; */
@@ -365,10 +365,14 @@
 }
 
 .search_box {
-    width: 30%;
+    display: flex;
+    width: 20%;
     /* margin-top: 20px; */
 }
 .search {
+    width: 100%;
+    height: 60%;
+    /* margin-bottom: 40%; */
     /* height: 30px; */
     border-radius: 20px;
     border: 1px gray solid;
