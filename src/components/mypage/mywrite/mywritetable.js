@@ -18,6 +18,7 @@ function Mywritetable({mywrite_table,set_table_number,set_modal_table }) {
 
     
     const get_table = (number) =>{
+        set_table_number(number)
             Axios.post("https://qkrtmfqls.gabia.io/free" + number, {
             })
                 .then((response) => {

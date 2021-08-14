@@ -6,6 +6,8 @@ import Informationpage from '../components/mypage/information';
 import Likeit from '../components/mypage/like/likeit';
 import Myigd  from '../components/mypage/igd/igdmanage';
 import Mywrite from '../components/mypage/mywrite/mywrite';
+import xbuttom from '../img/board/xbutton.jpg';
+import Func_mywritecontent_show_mywritecontent from '../components/mypage/mywrite/mywritecontent';
 import Axios from 'axios'
 
 function Mypage({ history,information }) {
@@ -15,6 +17,7 @@ function Mypage({ history,information }) {
     const [like_count,set_like_count] = useState()
 
     const [mywrite_table,set_mywrite_table] = useState()
+    const [reply_table, set_reply_table] = useState();
 
 
     // 좋아요한 레시피
@@ -25,15 +28,14 @@ function Mypage({ history,information }) {
         Axios.post("https://qkrtmfqls.gabia.io/likeitpage", {
             id: information.id,
         })
-            .then((response) => {
-                console.log(response.data)
-                set_like_table(response.data.data)
-                set_like_page_cnt(parseInt(response.data.data.length/10) + (response.data.data.length%10 == 0 ? 0 : 1));
-                set_like_count(response.data.data.length)
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+        .then((response) => {
+            console.log(response.data)
+            set_like_table(response.data.data)
+            set_like_count(response.data.data.length)
+        })
+        .catch((error) => {
+            console.log(error);
+        });
         }
     },[information])
 
@@ -51,6 +53,10 @@ function Mypage({ history,information }) {
         });
     }
 
+
+
+
+
     return (
         <>
         <div className="mypage_main" style={{ height: '100vh' }}>
@@ -64,9 +70,9 @@ function Mypage({ history,information }) {
             <div className='mypage_main_div'>
                 {/* <Sidebar set_admin_page={set_admin_page}/> */}
                 {my_page === 'main' ? <Mainpage like_count={like_count}/> :''}
-                {my_page === 'like' ? <Likeit history={history} like_table={like_table} information={information} like_page_cnt={like_page_cnt}/>:''}
+                {my_page === 'like' ? <Likeit history={history} like_table={like_table} information={information}/>:''}
                 {my_page === 'my_igd' ? <Myigd history={history} like_table={like_table} information={information}/>:''}
-                {my_page === 'my_write' ? <Mywrite history={history} information={information}  mywrite_table={mywrite_table} />:''}
+                {my_page === 'my_write' ? <Mywrite history={history} information={information}  mywrite_table={mywrite_table} reply_table={reply_table} set_reply_table={set_reply_table}/>:''}
             </div>
         </div>
         </>

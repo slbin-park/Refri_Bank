@@ -23,7 +23,7 @@ function Mywrite({ information, history, mywrite_table }) {
                 {
                     <div className="modal" data-aos="zoom-in">
                         <div className="closebtnbox"><img className="closebtn" role="button" src={xbuttom} onClick={onCloseModal} width="30px" height="30px" /></div>
-                        <Open_modal get_modal_table={get_modal_table[0]} information={information} />
+                        <Open_modal get_table_number={get_table_number}get_modal_table={get_modal_table[0]} information={information} />
                     </div>}
             </>
         );
@@ -63,7 +63,7 @@ function Mywrite({ information, history, mywrite_table }) {
                     </div>
                 </div>
                 <div className='body_main_form'>
-                    <Mywritetable information={information} set_modal_table={set_modal_table} set_modal_table={set_modal_table} mywrite_table={mywrite_table}></Mywritetable>
+                    <Mywritetable information={information}set_table_number={set_table_number} set_modal_table={set_modal_table} set_modal_table={set_modal_table} mywrite_table={mywrite_table}></Mywritetable>
                 </div>
             </div>
 
