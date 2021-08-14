@@ -15,7 +15,10 @@ function App({ history, information }) {
   const [freeboardtoggle, setfreeboardtoggle] = useState(true);
   const [notice_table, set_notice_table] = useState();
   const [free_table, set_free_table] = useState();
-  const [free_select_num, set_free_select_num] = useState({ number: '', id: '', nickname: '', title: '', description: ''});
+
+
+
+  const [get_free_number, set_get_free_number] = useState();
   const [reply_table, set_reply_table] = useState();
   
   const [modalOn, setModalOn] = React.useState(false);
@@ -89,6 +92,7 @@ function App({ history, information }) {
   };
 
 
+
   return (
     <div className="notice-form">
       
@@ -115,7 +119,8 @@ function App({ history, information }) {
 
       <div className="subcontent-form">
         <div className="notice-nav-form">
-          <div className="notice-nav">
+
+        <div className="notice-nav">
             <div role="button" className="noticeboard-select-btn" onClick={Func_noticepage_toggle_noticeboard}>Notice</div>
             <div role="button" className="freeboard-select-btn selectedboard-btn" onClick={Func_noticepage_toggle_freeboard}>BulletinBoard</div>
           </div>
