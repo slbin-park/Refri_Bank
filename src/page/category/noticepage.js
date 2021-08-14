@@ -17,7 +17,6 @@ function App({ history, information }) {
   const [free_table, set_free_table] = useState();
 
 
-
   const [get_free_number, set_get_free_number] = useState();
   const [reply_table, set_reply_table] = useState();
 
@@ -35,7 +34,6 @@ function App({ history, information }) {
     })
       .then((response) => {
         set_free_table(response.data);
-        console.log(free_table)
       })
       .catch((error) => {
         console.log(error);
@@ -82,12 +80,14 @@ function App({ history, information }) {
     );
   };
 
+
+
   return (
     <div className="notice-form">
       {modalOn ? <Modal /> : ''}
       <div className="topcontent-form">
         <h1> 자주 묻는 질문 </h1>
-        <p> 찾는 내용이 없으시다면 고객센터를 방문해주세요! </p>
+        <p> 찾는 내용이 없으시다면 고객센터를 방문해바라 이 말이다</p>
       </div>
 
       <div className="middle-content-form">
@@ -108,12 +108,9 @@ function App({ history, information }) {
 
       <div className="subcontent-form">
         <div className="notice-nav-form">
-          <div className="notice-nav">
-
-            <div className="noticeboard-select-btn" >
-              <button onClick={() => Func_noticepage_toggle_noticeboard}>Notice</button>
-            </div>
-            <div role="button" className="freeboard-select-btn selectedboard-btn" onClick={() => Func_noticepage_toggle_freeboard}>BulletinBoard</div>
+        <div className="notice-nav">
+            <div role="button" className="noticeboard-select-btn" onClick={Func_noticepage_toggle_noticeboard}>Notice</div>
+            <div role="button" className="freeboard-select-btn selectedboard-btn" onClick={Func_noticepage_toggle_freeboard}>BulletinBoard</div>
           </div>
           <div className="search_box">
             <input className="search"></input>
