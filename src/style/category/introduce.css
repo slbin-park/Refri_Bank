@@ -54,7 +54,7 @@
     height: 100%;
  }
 .left-first-box h3 {
-   font-size: 1.2rem;
+   font-size: 1.2vw;
     color: rgba(1, 1, 1, 0.4);
 }
 
@@ -77,14 +77,14 @@
 }
 
 .hello-box  p{
-    font-size: 15.5px;
+    font-size: 1.7vh;
     color:gray;
-    margin-top: 50px;
+    /* margin-top: 50px; */
 }
 
 .hello-box {
     margin: 5% 5% 5% 5%;
-    margin-top: 90px;
+    margin-top: 11vh
     /* border : 5px blueviolet solid; */
 
 }
@@ -167,7 +167,7 @@
 }
 
 .front-end-box  ul{
-    font-size: 1.2rem;
+    font-size: 1.3vw;
 }
 .back-end-box {
     /* border: rgb(234, 0, 255) 5px solid; */
@@ -202,7 +202,7 @@
 .introduce-bottom-box{
     display: flex;
     width: 78%;
-    height: 20vh;
+    height: 15%;
     margin-left: 22%;
     margin-top: 5%;
 }
@@ -210,7 +210,8 @@
 
 .introduce-bottom-left {
     width: 40%;
-    height: 100%;
+    height: 90%;
+    margin-top: 10%;
 }
 
 .introduce-bottom-img-form {
@@ -221,41 +222,47 @@
 }
 
 .introduce-bottom-box .culcha{
-    font-size: 1.1rem;
+    font-size: 2.5vh;
     color: gray;
 }
 .where-is-from{
     margin-top: 2%;
     margin-bottom: 2%;
     color: gray ;
+    font-size: 2vh;
 }
 
 
- .refribank-img-form {
+ /* .refribank-img-form {
     width: 30%;
     height: 65%;
     margin-right: 10%;
-}
+} */
 
 .refribank-img-form img {
-    width: 100%;
-    height: 100%;
+    margin-top: 10vh;
+    width: 8vw;
+    height: 8vh;
 }
 
-.project-img-form {
+/* .project-img-form {
     width: 40%;
     height: 65%;
-}
+} */
 
 .project-img-form img {
-    width: 100%;
-    height: 100%;
+    margin-top: 10vh;
+    width: 12vw;
+    margin-left: 3vw;
+    height: 8vh;
 }
 
 
 .introduce-bottom-right {
     /* width: 20%; */
     width: 60%;
+    height: 90%;
+    margin-top: 10%;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -7,6 +7,7 @@
 
   .writeform-wrapper{
     width: 80%;
+    padding-top: 10vh;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -25,20 +26,22 @@
   }
 
   .submit-button {
-    width: 95px;
-    height: 20px;
-    font-size: 10px;
+    width:20vw;
+    height: 5vh;
+    font-size: 1.3vw;
     border: none;
-    background: rgb(191, 178, 178);
-    box-shadow: none;
-    margin-top: 1%;
-    vertical-align: middle;
-    text-align: center;
+    background: #e6e6e6;
+    /* box-shadow: none; */
+    margin-top: 3%;
+    /* vertical-align: middle; */
+    /* text-align: center; */
     cursor: pointer;
+    color: #666666;
+    border-radius: 20px;
   }
 
   .submit-button:hover {
-    background-color: rgb(63, 63, 96);
+    background-color: #fbb03b;
     color: white;
   }
   

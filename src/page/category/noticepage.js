@@ -17,7 +17,8 @@ function App({ history, information }) {
   const [free_table, set_free_table] = useState();
 
 
-  const [free_select_num, set_free_select_num] = useState({ number: '', id: '', nickname: '', title: '', description: '' });
+
+  const [get_free_number, set_get_free_number] = useState();
   const [reply_table, set_reply_table] = useState();
 
 
@@ -34,6 +35,7 @@ function App({ history, information }) {
     })
       .then((response) => {
         set_free_table(response.data);
+        console.log(free_table)
       })
       .catch((error) => {
         console.log(error);
@@ -74,20 +76,18 @@ function App({ history, information }) {
         { reply_table &&
           <div className="modal" data-aos="zoom-in">
             <div className="closebtnbox"><img className="closebtn" role="button" src={xbuttom} onClick={onCloseModal} width="30px" height="30px" /></div>
-            <Func_freecontent_show_freecontent set_reply_table={set_reply_table} content={free_select_num} information={information} reply_table={reply_table} />
+            <Func_freecontent_show_freecontent set_reply_table={set_reply_table} get_free_number={get_free_number} information={information} reply_table={reply_table} />
           </div>}
       </>
     );
   };
-
-
 
   return (
     <div className="notice-form">
       {modalOn ? <Modal /> : ''}
       <div className="topcontent-form">
         <h1> 자주 묻는 질문 </h1>
-        <p> 찾는 내용이 없으시다면 고객센터를 방문해바라 이 말이다</p>
+        <p> 찾는 내용이 없으시다면 고객센터를 방문해주세요! </p>
       </div>
 
       <div className="middle-content-form">
@@ -122,7 +122,7 @@ function App({ history, information }) {
         <div className="maincontent-form">
           {page =='notice' ?   <Func_noticeboard_show_noticeboard notice_table={notice_table} history={history} /> : ''}
           <div className="allcontent-block">
-            {page =='free' ?  free_table != undefined ? <Func_freeboard_show_freeboard set_reply_table={set_reply_table} set_free_select_num={set_free_select_num} free_table={free_table} information={information} /> : '' : ''}
+            {page =='free' ?  free_table != undefined ? <Func_freeboard_show_freeboard set_reply_table={set_reply_table} set_free_table={set_get_free_number} free_table={free_table} information={information} /> : '' : ''}
 
           </div>
         </div>
