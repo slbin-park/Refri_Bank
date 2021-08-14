@@ -84,8 +84,8 @@ function Likeit({ history, like_table, information, like_page_cnt }) {
                     <div className='body_header_sub_form'>
                         <div className='likeit_no'>No</div>
                         <div className='likeit_title'>제목</div>
-                        <div className='likeit_nickname'>작성자</div>
-                        <div className='likeit_date'>등록일</div>
+                        {/* <div className='likeit_nickname'>작성자</div>
+                        <div className='likeit_date'>등록일</div> */}
                         <div className='likeit_cancel'>취소</div>
                     </div>
                 </div>
