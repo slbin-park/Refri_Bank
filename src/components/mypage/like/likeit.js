@@ -40,6 +40,7 @@ function Likeit({ history, like_table, information, like_page_cnt }) {
         }
         // 예외처리
         if(like_page_btn_arr.length != 0) psum_like_page_btn_arr.push(like_page_btn_arr);
+        console.log("123",psum_like_page_btn_arr);
         // 처음에 안됐던거는 page color 가 바뀔때 for 문을 돌아야하는데 안돌아 그래서 함수에 넣어줌 => 눌리고 나서 다시 for 문 돌면서 확인 (색깔 체크)
         set_like_page_button(psum_like_page_btn_arr);
     }

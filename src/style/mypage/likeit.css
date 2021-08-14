@@ -17,6 +17,7 @@
 
 .likeit_header_title_form {
     font-weight: 700;
+
     font-size: 1.7vw;
     width: 100%;
     height: 50%;
@@ -72,6 +73,7 @@
 .body_header_sub_form {
     width: 90%;
     height: 100%;
+
     font-size :1.3vw;
     color: rgba(1, 1, 1, 0.75);
     display: flex;
@@ -161,6 +163,7 @@
     height: 100%;
     border-bottom: 1px solid #babcbf;
     align-items: center;
+
     color: rgba(1, 1, 1, 0.65);
     font-size: 1.2vw;
 }
@@ -212,6 +215,9 @@
     align-items: center;
 }
 
+.like_select_num_btn_left {
+    transform: scaleX(-1);
+}
 .likeit_cancel_btn { 
     display:block; 
     width:50%; 
