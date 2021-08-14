@@ -15,7 +15,6 @@ function Likeit({ history, like_table, information, like_page_cnt }) {
     }   
 
     useEffect(()=>{
-        console.log("page", page_color);
         create_button();
     },[page_color])
     // 페이지 컬러가 변할때미다 create_button 을 호출
@@ -28,7 +27,7 @@ function Likeit({ history, like_table, information, like_page_cnt }) {
         let like_page_btn_arr = [];
         for(let i=0; i<like_page_cnt; i++) {
             like_page_btn_arr.push(
-                <div onClick={(e)=>Func_click_page_slice_btn(e, i)} style={page_color==i ? {color: 'rgba(1, 1, 1, 0.8)'} : {color:'rgba(1, 1, 1, 0.4)'}} className="like_select_num_btn_sub_form abc"  >
+                <div onClick={(e)=>Func_click_page_slice_btn(i)} style={page_color==i ? {color: 'rgba(1, 1, 1, 0.8)'} : {color:'rgba(1, 1, 1, 0.4)'}} className="like_select_num_btn_sub_form abc"  >
                     {i+1}
                 </div>
             )
@@ -52,7 +51,6 @@ function Likeit({ history, like_table, information, like_page_cnt }) {
         )
     }
     useEffect(()=> {
-        console.log("default", default_page_slice);
         set_page_color(default_page_slice * 5);
         Func_click_page_slice_btn(default_page_slice * 5);
         Like_paging_btn();

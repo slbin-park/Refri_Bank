@@ -17,7 +17,7 @@
 
 .likeit_header_title_form {
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.5vw;
     width: 100%;
     height: 50%;
     display: flex;
@@ -71,7 +71,8 @@
 .body_header_sub_form {
     width: 90%;
     height: 100%;
-    font-size :1.3rem;
+    font-size :1.4rem;
+    color: rgba(1, 1, 1, 0.75);
     display: flex;
     align-items: center;
     border-top: 3px rgba(1, 1, 1, 0.5) solid;
@@ -123,6 +124,7 @@
 /* 바디 테이블들 */
 .likeit_no {
     width: 10%;
+    
     text-align: center;
 }
 
@@ -163,9 +165,10 @@
     display: flex;
     width: 90%;
     height: 100%;
-
     border-bottom: 1px solid #babcbf;
     align-items: center;
+    color: rgba(1, 1, 1, 0.75);
+    font-size: 1.2rem;
 }
 
 .likeit_bottom_box {
@@ -191,4 +194,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.like_select_num_btn_left {
+    transform: scaleX(-1);
 }
