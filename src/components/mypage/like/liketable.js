@@ -27,15 +27,9 @@ function Liketable({table, history, information, like_page_slice}) {
                 <div key={user.foodid} className='likeit_content_one'>
                     <div className='likeit_no'>{user.foodid}</div>
                     <div onClick={(e)=>rcp_change()} className='likeit_title_content'>{user.foodname}</div>
-<<<<<<< HEAD
                     <div className="likeit_nickname">{information.nickname}</div>
                     <div className="likeit_date">{information.nickname}</div>
                     <div className='likeit_cancel'>
-=======
-                    {/* <div className="likeit_nickname">{information.nickname}</div>
-                    <div className="likeit_date">{information.nickname}</div> */}
-                    <div className='likeit_cancel' style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
->>>>>>> ac1abdd1401bf7f40d34109e01c507281fd07382
                         <button  className='likeit_cancel_btn'>취소</button>
                     </div>
                 </div>

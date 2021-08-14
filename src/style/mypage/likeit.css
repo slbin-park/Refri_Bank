@@ -139,7 +139,12 @@
 
 }
 
-.mywrite_date {
+.likeit_nickname {
+    width: 10%;
+    text-align: center;
+}
+
+.likeit_date {
     width: 10%;
     text-align: center;
 }
@@ -218,4 +223,3 @@
     border: none;
     border-radius: 20px;
 } 
-
