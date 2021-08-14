@@ -17,11 +17,8 @@ function App({ history, information }) {
   const [free_table, set_free_table] = useState();
 
 
-<<<<<<< HEAD
-  const [free_select_num, set_free_select_num] = useState({ number: '', id: '', nickname: '', title: '', description: '', created: '' });
-=======
+
   const [get_free_number, set_get_free_number] = useState();
->>>>>>> e1aa1d29b69d78c0f5819a8ed55bb216e5025c7d
   const [reply_table, set_reply_table] = useState();
 
 

@@ -8,18 +8,10 @@ import Axios from "axios";
 function Func_freeboard_show_freeboard({ set_reply_table, set_free_table, information, free_table }) {
     console.log(free_table)
     console.log(information);
-<<<<<<< HEAD
-    const Func_this_select_content = (e, number, id, nickname, title, description, created) => {
-        get_reply(number)
-        set_free_select_num({number:number, id:id, nickname:nickname, title:title, description:description, created:created});       
-
-    }   
-=======
     const Func_this_select_content = (e, number) => {
         get_reply(number)
         set_free_table(number);
     }
->>>>>>> e1aa1d29b69d78c0f5819a8ed55bb216e5025c7d
 
     // 게시글 클릭시 댓글 가져옴
     const get_reply = async (number) => {
@@ -55,21 +47,6 @@ function Func_freeboard_show_freeboard({ set_reply_table, set_free_table, inform
         return (
             <>
                 {/* slice 넣어야함 */}
-<<<<<<< HEAD
-                {free_table && free_table.slice(0,6).map(({number, id, nickname, title, description, created}) => {
-                    return (
-                        <div className="eachcontent-block" onClick={(e) => Func_this_select_content( e, number, id, nickname, title, description, created )} >
-                            <div className="eachcontent"  border-color="#008554">
-                                <div style={{ height: '80%' }}>
-                                <div className="content-header" > 
-
-                                    <div className="nickname">{nickname}</div>
-                                </div>
-                                <div className="content-maincontent">
-                                    <div className="title" dangerouslySetInnerHTML={ {__html: title}}></div>
-                                    <div className="description" dangerouslySetInnerHTML={ {__html: description}}></div>
-                                </div>
-=======
                 {free_table && free_table.slice(0, 6).map(({ number, id, nickname, title, description, createdate, count, likeit, index }) => {
                     return (
                         <div key={index} className="eachcontent-block"  >
@@ -84,7 +61,7 @@ function Func_freeboard_show_freeboard({ set_reply_table, set_free_table, inform
                                         <div className="title" dangerouslySetInnerHTML={{ __html: title }}></div>
                                         <div className="description" dangerouslySetInnerHTML={{ __html: description }}></div>
                                     </div>
->>>>>>> e1aa1d29b69d78c0f5819a8ed55bb216e5025c7d
+
 
                                 </div>
                                 <div className='reaction-box' style={{ height: '20%' }}>
