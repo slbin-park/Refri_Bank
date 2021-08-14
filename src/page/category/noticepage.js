@@ -16,20 +16,17 @@ function App({ history, information }) {
   const [freeboardtoggle, setfreeboardtoggle] = useState(true);
   const [notice_table, set_notice_table] = useState();
   const [free_table, set_free_table] = useState();
+  const [page,setpage] = useState('free')
   const [write_toggle, set_write_toggle] = useState(false);
 
   const [get_free_number, set_get_free_number] = useState();
+
+  const [free_select_num, set_free_select_num] = useState();
   const [reply_table, set_reply_table] = useState();
   
-  const [modalOn, setModalOn] = React.useState(false);
+  const [modalOn, setModalOn] = useState(false);
 
-  // Axios.post("/getnotice", {})
-  // .then((response) => {
-  //     set_notice_table(response.data)
-  // })
-  // .catch((error) => {
-  //     console.log(error);
-  // });
+
   useEffect(() => {
     Axios.post("https://qkrtmfqls.gabia.io/getfree", {
 
@@ -43,17 +40,8 @@ function App({ history, information }) {
   }, [])
 
   useEffect(() => {
-    console.log("number", free_select_num.number);
-    Axios.post("https://qkrtmfqls.gabia.io/getreply/"+free_select_num.number, {
-      
-    })
-    .then((response) => {
-      set_reply_table(response.data);
-    })  
-    .catch((error) => {
-      console.log('reply',error);
-    })
-  }, [free_select_num]);  
+    setModalOn(true);
+  }, [reply_table])
 
 
   const Func_noticepage_move_writeform = (e) => {
@@ -72,16 +60,14 @@ function App({ history, information }) {
 
   // 공지사항
   const Func_noticepage_toggle_noticeboard = () => {
-    setnoticeboardtoggle(true);
-    setfreeboardtoggle(false);
+    setpage('notice');
     document.querySelector('.noticeboard-select-btn').classList.add('selectedboard-btn');
     document.querySelector('.freeboard-select-btn').classList.remove('selectedboard-btn');
   }
 
   // 자유게시판
   const Func_noticepage_toggle_freeboard = () => {
-    setnoticeboardtoggle(false);
-    setfreeboardtoggle(true);
+    setpage('free');
     document.querySelector('.freeboard-select-btn').classList.add('selectedboard-btn');
     document.querySelector('.noticeboard-select-btn').classList.remove('selectedboard-btn');
   }
@@ -94,10 +80,13 @@ function App({ history, information }) {
 
   const Modal = () => {
     return (
-      <div className="modal" data-aos="zoom-in">
-        <div className="closebtnbox"><img className="closebtn" role="button" src={xbuttom} onClick={onCloseModal} width="30px" height="30px"/></div>
-        {free_select_num&&<Func_freecontent_show_freecontent content={free_select_num} information={information} reply_table={reply_table}/>}
-      </div>
+      <>
+        { reply_table &&
+          <div className="modal" data-aos="zoom-in">
+            <div className="closebtnbox"><img className="closebtn" role="button" src={xbuttom} onClick={onCloseModal} width="30px" height="30px" /></div>
+            <Func_freecontent_show_freecontent set_reply_table={set_reply_table} get_free_number={get_free_number} information={information} reply_table={reply_table} />
+          </div>}
+      </>
     );
   };
 
@@ -106,7 +95,7 @@ function App({ history, information }) {
     <>
     { write_toggle == false ? 
     <div className="notice-form">
-      
+      { modalOn ? <Modal/>:''}
       <div className="topcontent-form">
         <h1> 자주 묻는 질문 </h1>
         <p> 찾는 내용이 없으시다면 고객센터를 방문해바라 이 말이다</p>

@@ -12,7 +12,6 @@ function Func_noticeboard_show_noticeboard({history}) {
     Axios.post("http://qkrtmfqls.gabia.io/getnotice", {
     })
       .then((response) => {
-        console.log(response.data)
         setnotice_list(response.data)
       })
       .catch((error) => {
