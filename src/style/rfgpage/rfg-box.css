@@ -1,27 +1,39 @@
 
 .hello-rfg-form p {
-    font-size: 1.5vw;
+    font-size: 1.3rem;
     text-align: center;
+    color: rgba(1, 1, 1, 0.75);
 }
 .hello-rfg-form h1 {
     padding-top: 5vh;
-    font-size: 2.4vw;
+    font-size: 2.5rem;
     text-align: center;
-    
+    font-style: none;
+    color: rgba(1, 1, 1, 0.75);
     font-family: 'neon';
 }
 /* 선택하는 상자 담는 상자 분리 */
 .rfg-form {
-    width: 100%;
-    height: 60vh;
+    /* display: flex;
+    flex-direction: column; */
+    /* flex-wrap: wrap; */
+    width: 90%;
+    height: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1.5%;
+    margin-bottom: 5%;
 }
 
 .rfg-body-form {
-    height: 370px;
-    display: flex;
-    position: relative;
+    height: 0vh;
+    display: block;
     justify-content: center;
+    overflow: hidden;
+    transition: all 0.7s ease-in-out;
+    border-bottom: rgba(1, 1, 1, 0.5) 1px solid;
 }
+
 
 /* .rfg-body-form-open {
     height: 370px;
@@ -31,20 +43,27 @@
 } */
 
 .ingredient-toggle-btn {
-    margin: 50px 50px 30px 50px;
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(1, 1, 1, 0.75); 
+    font-weight: 500;  
+    border-top: rgba(1, 1, 1, 0.4) 3px solid;
+    border-bottom: rgba(1, 1, 1, 0.4) 3px solid;
 }
+
 
 /* 재료상자 */
 .rfg-ingredient-box {
-    height: 315px;
+    height: 70%;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     background-color: #fff;
     align-items: center;
     justify-content: center;
-    margin-left: 50px;
-    margin-right: 50px;
     overflow: scroll;
     overflow: auto;
 }
@@ -52,16 +71,19 @@
 /* 담는상자 */
 .rfg-result-box {
     display: block;
-    width: 30%;
-    height: 315px;
-    margin-right: 50px;
+    width: 100%;
+    height: 30vh;
+    border-bottom: rgba(1, 1, 1, 0.4) 1px  solid;
+    /* margin-right: 50px; */
 }
 
 .rfg-select-box {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
-    height: 285px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 25vh;
     align-items: center;
     justify-content: center;
     
@@ -69,13 +91,17 @@
     align-items: center;
     justify-content: center;
     overflow: scroll;
-    overflow: auto;
+    /* overflow: auto; */
+    overflow-x: hidden;
+    scrollbar-color: transparent;
 }
+
 
 .rfg-select-btn {
     width: 100%;
     display: flex;
     text-align: center;
+    background-color: rgba(1, 1, 1, 0.05);
 }
 
 .rfg-select-btn button{
@@ -175,3 +201,43 @@
     color: tomato;
 }
 
+
+.rfg-big-box {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.rfg-up-box {
+    display: flex;
+    border-bottom: rgba(1, 1, 1, 0.4) 1px solid;
+    height: 60%;
+    /* border-bottom: gray 3px solid; */
+}
+
+.rfg-ingredient-up-box{
+    width: 66%;
+    height: 100%;
+    display: block;
+    margin-left: 2%;
+}
+.rfg-ingredient-text-box {
+    margin-top: 4vh;
+    margin-bottom: 3vh;
+    text-align: center;
+    width: 100%;
+    height: 10%;
+}
+.rfg-result-text-box {
+    margin-top: 5vh;
+    margin-bottom:5vh;
+    text-align: center;
+    width: 100%;
+    height: 10%;
+}
+
+.rfg-recommend-text-box {
+    text-align: center;
+    width: 100%;
+    height: 10vh;
+}
