@@ -29,13 +29,12 @@ function Func_noticeboard_show_noticeboard({history}) {
     );
   }
 
-  function Func_notice_content({no, title, day, description}) {
-    let eprdate = moment(day).format('YY-MM-DD')
+  function Func_notice_content({v}) {
+    let eprdate = moment(v.createdate).format('YY-MM-DD')
     return (
       <div className="notice_each_content">    
-        <div className="notice_no">{no}</div>
-        {/* 해당 게시글의 정보 (notice_list)를 들고 가야함 */}
-        <div role='button' className="notice_title" >{title}</div>
+        <div className="notice_no">{v.number}</div>
+        <div role='button' className="notice_title" >{v.title}</div>
         <div className="notice_day">{eprdate}</div>
       </div> 
     );
@@ -45,7 +44,7 @@ function Func_noticeboard_show_noticeboard({history}) {
     <div className="notice-box">
       <div className="main-content">
           <Func_notice_title/>
-          {notice_list != undefined ? notice_list.map(v => <Func_notice_content no={v.number} title={v.title} day={v.createdate} />):''}
+          {notice_list != undefined ? notice_list.map(v => <Func_notice_content v={v} />):''}
       </div>
     </div>
 );

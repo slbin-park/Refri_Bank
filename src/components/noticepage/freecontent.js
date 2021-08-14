@@ -34,7 +34,6 @@ const Func_freecontent_show_freecontent = ({ set_reply_table, get_free_number, i
                 description: commentinput
             })
                 .then((response) => {
-                    //get_free_table()
                     get_reply()
                 })
                 .catch((error) => {
