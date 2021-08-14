@@ -19,10 +19,10 @@ import Mypage from "./page/mypage"
 
 const App = () => {
   const [this_header_set_inputs, setthis_header_set_inputs] = useState({ id: "", pwd: "" });
-  const [information,setinformation] = useState({id :'',nickname:''})
+  const [information,setinformation] = useState()
   const [page,setpage] = useState(false)
   useEffect(()=>{
-    console.log(information)
+    // console.log(information)
   },[information])
   return (
     <div className="main-form">
