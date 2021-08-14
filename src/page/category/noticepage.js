@@ -18,7 +18,7 @@ function App({ history, information }) {
   const [free_table, set_free_table] = useState();
 
 
-  const [free_select_num, set_free_select_num] = useState({ number: '', id: '', nickname: '', title: '', description: '' });
+  const [free_select_num, set_free_select_num] = useState({ number: '', id: '', nickname: '', title: '', description: '', created: '' });
   const [reply_table, set_reply_table] = useState();
 
   
@@ -36,6 +36,7 @@ function App({ history, information }) {
     })
       .then((response) => {
         set_free_table(response.data);
+        console.log(free_table)
       })
       .catch((error) => {
         console.log(error);
@@ -87,8 +88,6 @@ function App({ history, information }) {
       </>
     );
   };
-
-
 
   return (
     <div className="notice-form">

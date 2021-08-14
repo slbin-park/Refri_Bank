@@ -71,14 +71,14 @@ const Func_freecontent_show_freecontent = ({set_reply_table, content, informatio
             <div className="thumbnail-content-box">
                 <div className="thumbnail-content-title">
                     <span>{content.title}</span>
+                    <div className="thumbnail-content-createdate"><span>{content.created}</span></div>
                 </div>
                 <div className="thumbnail-content-description">
                     <span>{content.description}</span>
                 </div>
                 {/* <div className="thumbnail-content-innerbox">
-                    <div className="thumbnail-content-nickname"><span>작성자: Kate</span></div> 
-                    <div className="thumbnail-content-createdate"><span>게시일: 2021-08-10</span></div>
-    </div> */}
+                    <div className="thumbnail-content-nickname"><span>작성자: Kate</span></div>      
+                </div> */}
                 {/* 댓글 */}
                 <div className="reaction-num">
                     <img src={likeimg} width="20px" height="20px"/>
