@@ -46,7 +46,7 @@ const Func_freecontent_show_freecontent = ({ set_reply_table, get_free_number, i
     const get_free_table = () => {
         console.log(get_free_number)
         Axios.post("https://qkrtmfqls.gabia.io/free" + get_free_number, {
-            })
+        })
             .then((response) => {
                 set_free_board(response.data[0])
                 console.log(response.data)

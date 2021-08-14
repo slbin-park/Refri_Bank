@@ -59,19 +59,21 @@ function Func_filter_find_ingredient({result_box_list, setresult_box_list, infor
 
     //get 버튼을 클릭시 DB에 저장된 재료리스트 불러옴
     const Func_reqbutton_getquery = (e) => {
-        Axios.post("https://qkrtmfqls.gabia.io/getrfg", {
-            id: information.id
-        })
-        .then((response)=> {
-            let res_igdname = response.data[0].Igdname.split(",");
-            let res_eprname = response.data[0].Eprdate.split(",");
-            let new_igdname =[];
-            res_igdname && res_igdname.map((v,index)=> v !== '' ? new_igdname.push({result_igdname : v, eprd : res_eprname[index]}) : 0);
-            setresult_box_list(new_igdname);
-        })
-        .catch((error)=> {
-            console.log(error);
-        });
+        if(information !== undefined) {
+            Axios.post("https://qkrtmfqls.gabia.io/getrfg", {
+                id: information.id
+            })
+            .then((response)=> {
+                let res_igdname = response.data[0].Igdname.split(",");
+                let res_eprname = response.data[0].Eprdate.split(",");
+                let new_igdname =[];
+                res_igdname && res_igdname.map((v,index)=> v !== '' ? new_igdname.push({result_igdname : v, eprd : res_eprname[index]}) : 0);
+                setresult_box_list(new_igdname);
+            })
+            .catch((error)=> {
+                console.log(error);
+            });
+        }
     }
         
     useEffect(()=> {
@@ -128,13 +130,24 @@ function Func_filter_find_ingredient({result_box_list, setresult_box_list, infor
     }
 
     return (
-        <>  
-            <div className="rfg-calendar-box">
+
+        <div className="rfg-big-box">  
+            <div className="rfg-up-box">
+                
+                <div className="rfg-calendar-box">
                 <Calendar onChange={setdate} value={date}/> 
+                </div>
+                <div className="rfg-ingredient-up-box">
+                    <div className="rfg-ingredient-text-box">
+                        <h2>재료 찾아보기</h2>
+                    </div>
+                    <div className="rfg-ingredient-box">                
+                        <Select_ingredient_thumbnail/>
+                    </div>
+                </div>
+                
             </div>
-            <div className="rfg-ingredient-box">                
-                <Select_ingredient_thumbnail/>
-            </div>
+            
             {/* v가 재료고 재료별로 클릭시 해당 v와 상대적인 위치에 달력을 보영주는거. 토클을 v한테 줘서 처음에는 전부 달력을 안가져오는 toggle 다줘.
             클릭시 focus시 그 v만 달력을 부르도록 toggle을 바꿔줘. 
 
@@ -152,16 +165,16 @@ function Func_filter_find_ingredient({result_box_list, setresult_box_list, infor
             달력을 component로 만들 수있다면? -> onClick 시 달력 component를 불러오는.
             <달력 /> 토글을 여기선언  */}
             <div className="rfg-result-box">
+                <div className="rfg-result-text-box">
+                    <h2>장바구니</h2>
+                </div> 
                 <div className="rfg-select-box">
                     {/*  버튼 클릭시 보여지는 페이지*/}
                     <Result_ingredient_thumbnail/>               
-                </div>
-                <div className="rfg-select-btn">
                     <button onClick={()=> Func_reqbutton_diquery()}>submit</button> 
-                    <button onClick={()=> Func_reqbutton_getquery()}>get</button>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 
