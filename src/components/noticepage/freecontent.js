@@ -5,52 +5,68 @@ import '../../style/noticepage/freecontent.css';
 import likeimg from '../../img/board/likeimg.jpg';
 import commentimg from '../../img/board/commentimg.jpg';
 
-const Func_freecontent_show_freecontent = ({set_reply_table, content, information, reply_table }) => {
+const Func_freecontent_show_freecontent = ({ set_reply_table, content, information, reply_table }) => {
 
-    // 지금 입력한 내용
     const [commentinput, setcommentinput] = useState('');
 
     const get_reply = async () => {
         await Axios.post("https://qkrtmfqls.gabia.io/getreply/" + content.number, {
-    
-        })
-          .then((response) => {
-            set_reply_table(response.data);
-          })
-          .catch((error) => {
-            console.log('reply', error);
-          })
-      }
 
-    // 댓글 등록 버튼 누르면 post 요청으로 입력내용 보냄
-    const Func_freecontent_post_commentimput = (e) => {
-        Axios.post("https://qkrtmfqls.gabia.io/addreply", {
-            number: content.number,
-            userid: information.id,
-            nickname: information.nickname,
-            description: commentinput
         })
             .then((response) => {
-                get_reply()
-                console.log(response);
+                set_reply_table(response.data);
             })
             .catch((error) => {
-                console.log(error);
-            });
+                console.log('reply', error);
+            })
     }
 
-    const Func_test = (e) => {
-        setcommentinput(e.target.value);
+    const Func_freecontent_post_commentimput = (e) => {
+        if (information != undefined) {
+            Axios.post("https://qkrtmfqls.gabia.io/addreply", {
+                number: content.number,
+                userid: information.id,
+                nickname: information.nickname,
+                description: commentinput
+            })
+                .then((response) => {
+                    get_reply()
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        }
     }
 
+    const update_likeit = () => {
+        if (information != undefined) {
+            Axios.post("https://qkrtmfqls.gabia.io/updatelikeit", {
+                number: content.number,
+                userid: information.id,
+                title: content.title
+            })
+                .then((response) => {
+                    if(response.data.success){
+                    alert('좋아요 버튼을 눌렀습니다.')
+                }
+                else{
+                    alert('이미 좋아요를 눌렀습니다.')
+                }
+                    console.log(response.data)
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        }
+    }
 
     const Func_freecontent_show_commentlist = () => {
         AOS.init();
         return (
             <>
-                {reply_table && reply_table.slice(0, 6).map(({ number, id, nickname, description, created }) => {
+                {reply_table && reply_table.slice(0, 6).map(({ number, id, nickname, description, created, index }) => {
                     return (
-                        <div className="eachcomment-block">
+                        <div key={index} className="eachcomment-block">
                             <div className="comment-header">
                                 <div className="comment-nickname">{nickname}</div>
                                 <div createdate="comment-createdate">{created}</div>
@@ -75,21 +91,21 @@ const Func_freecontent_show_freecontent = ({set_reply_table, content, informatio
                 <div className="thumbnail-content-description">
                     <span>{content.description}</span>
                 </div>
-                {/* <div className="thumbnail-content-innerbox">
-                    <div className="thumbnail-content-nickname"><span>작성자: Kate</span></div> 
-                    <div className="thumbnail-content-createdate"><span>게시일: 2021-08-10</span></div>
-    </div> */}
                 {/* 댓글 */}
                 <div className="reaction-num">
-                    <img src={likeimg} width="20px" height="20px"/>
-                    <div>17</div>
-                    <img src={commentimg} width="20px" height="20px"/>
-                    <div>17</div>
+                    <img onClick={update_likeit} src={likeimg} width="20px" height="20px" />
+                    <div>{content.likeit}</div>
+                    <img src={commentimg} width="20px" height="20px" />
+                    <div>{content.count}</div>
                 </div>
-                <form className="eachcomment-input">
+
+                {/* 로그인 안할시에 입력창 안뜸 */}
+                {information && <form className="eachcomment-input">
                     <input required autoFocus className="comment-input" type='text' placeholder='댓글을 입력하세요...' onChange={e => setcommentinput(e.target.value)} value={commentinput} />
                     <a role="button" className="commentsubmit-button" onClick={() => { Func_freecontent_post_commentimput() }}>등록</a>
-                </form>
+                </form>}
+                {/* 로그인 안할시에 처리 끝 */}
+
                 <Func_freecontent_show_commentlist />
             </div>
         </div>

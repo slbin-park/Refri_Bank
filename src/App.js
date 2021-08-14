@@ -22,7 +22,7 @@ const App = () => {
   const [information,setinformation] = useState()
   const [page,setpage] = useState(false)
   useEffect(()=>{
-    console.log(information)
+    // console.log(information)
   },[information])
   return (
     <div className="main-form">

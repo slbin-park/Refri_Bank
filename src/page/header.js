@@ -86,6 +86,7 @@ const Header = ({location, information, setinformation, history ,page,setpage}) 
 
     const Func_header_logout = (e) => {                 // 로그아웃 하기
         window.localStorage.clear();
+        setinformation();
         setpage(false)
         history.push('/')
     }
