@@ -3,12 +3,12 @@ import '../../../style/mypage/index.css'
 import '../../../style/mypage/likeit.css';
 
 
-function Liketable({table,history, information}) {
-    const [page_slice,set_page_slice] = useState({start:0,end:7})
-
+function Liketable({table, history, information, like_page_slice}) {
+    
+    console.log("like", like_page_slice);
     const return_like_table = () => {
         const arr = [];
-        table&&table.slice(page_slice.start,page_slice.end).map((v) => arr.push(<Create_like_table user={v}/>))
+        table&&table.slice(like_page_slice.start,like_page_slice.end).map((v) => arr.push(<Create_like_table user={v}/>))
         return (
             <>
                 {table && arr}
@@ -39,7 +39,7 @@ function Liketable({table,history, information}) {
     
     return (
         <>
-        {return_like_table()}
+            {return_like_table()}
         </>
     )
 }

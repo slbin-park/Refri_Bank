@@ -25,14 +25,15 @@ function Mypage({ history,information }) {
         Axios.post("https://qkrtmfqls.gabia.io/likeitpage", {
             id: information.id,
         })
-        .then((response) => {
-            console.log(response.data)
-            set_like_table(response.data.data)
-            set_like_count(response.data.data.length)
-        })
-        .catch((error) => {
-            console.log(error);
-        });
+            .then((response) => {
+                console.log(response.data)
+                set_like_table(response.data.data)
+                set_like_page_cnt(parseInt(response.data.data.length/10) + (response.data.data.length%10 == 0 ? 0 : 1));
+                set_like_count(response.data.data.length)
+            })
+            .catch((error) => {
+                console.log(error);
+            });
         }
     },[information])
 
@@ -63,7 +64,7 @@ function Mypage({ history,information }) {
             <div className='mypage_main_div'>
                 {/* <Sidebar set_admin_page={set_admin_page}/> */}
                 {my_page === 'main' ? <Mainpage like_count={like_count}/> :''}
-                {my_page === 'like' ? <Likeit history={history} like_table={like_table} information={information}/>:''}
+                {my_page === 'like' ? <Likeit history={history} like_table={like_table} information={information} like_page_cnt={like_page_cnt}/>:''}
                 {my_page === 'my_igd' ? <Myigd history={history} like_table={like_table} information={information}/>:''}
                 {my_page === 'my_write' ? <Mywrite history={history} information={information}  mywrite_table={mywrite_table} />:''}
             </div>

@@ -12,26 +12,28 @@ import 'aos/dist/aos.css';
 
 function App({ history, information }) {
 
-  const [noticeboardtoggle, setnoticeboardtoggle] = useState(false);
-  const [freeboardtoggle, setfreeboardtoggle] = useState(true);
+  const [page, setpage] = useState('free');
   const [notice_table, set_notice_table] = useState();
   const [free_table, set_free_table] = useState();
 
 
+<<<<<<< HEAD
   const [free_select_num, set_free_select_num] = useState({ number: '', id: '', nickname: '', title: '', description: '', created: '' });
+=======
+  const [get_free_number, set_get_free_number] = useState();
+>>>>>>> e1aa1d29b69d78c0f5819a8ed55bb216e5025c7d
   const [reply_table, set_reply_table] = useState();
 
-  
+
 
   const [modalOn, setModalOn] = useState(false);
 
-  
+
   useEffect(() => {
     get_free_table()
   }, [])
 
   const get_free_table = async () => {
-    console.log('렌더링 1번함')
     await Axios.post("http://qkrtmfqls.gabia.io/getfree", {
     })
       .then((response) => {
@@ -54,36 +56,30 @@ function App({ history, information }) {
     history.push('/writeform');
   }
 
-  // 공지사항
   const Func_noticepage_toggle_noticeboard = () => {
-    setnoticeboardtoggle(true);
-    setfreeboardtoggle(false);
+    setpage('notice');
     document.querySelector('.noticeboard-select-btn').classList.add('selectedboard-btn');
     document.querySelector('.freeboard-select-btn').classList.remove('selectedboard-btn');
   }
 
-  // 자유게시판
   const Func_noticepage_toggle_freeboard = () => {
-    setnoticeboardtoggle(false);
-    setfreeboardtoggle(true);
+    setpage('free');
     document.querySelector('.freeboard-select-btn').classList.add('selectedboard-btn');
     document.querySelector('.noticeboard-select-btn').classList.remove('selectedboard-btn');
   }
 
 
   const onCloseModal = () => {
-    // 해당 게시글 토글
     setModalOn(!modalOn);
   }
 
   const Modal = () => {
-
     return (
       <>
         { reply_table &&
           <div className="modal" data-aos="zoom-in">
             <div className="closebtnbox"><img className="closebtn" role="button" src={xbuttom} onClick={onCloseModal} width="30px" height="30px" /></div>
-            <Func_freecontent_show_freecontent set_reply_table={set_reply_table}content={free_select_num} information={information} reply_table={reply_table} />
+            <Func_freecontent_show_freecontent set_reply_table={set_reply_table} get_free_number={get_free_number} information={information} reply_table={reply_table} />
           </div>}
       </>
     );
@@ -116,8 +112,9 @@ function App({ history, information }) {
       <div className="subcontent-form">
         <div className="notice-nav-form">
           <div className="notice-nav">
-            <div className="noticeboard-select-btn" onClick={() => Func_noticepage_toggle_noticeboard}>
-              <button>Notice</button>
+
+            <div className="noticeboard-select-btn" >
+              <button onClick={() => Func_noticepage_toggle_noticeboard}>Notice</button>
             </div>
             <div role="button" className="freeboard-select-btn selectedboard-btn" onClick={() => Func_noticepage_toggle_freeboard}>BulletinBoard</div>
           </div>
@@ -126,14 +123,14 @@ function App({ history, information }) {
           </div>
         </div>
         <div className="maincontent-form">
-          {noticeboardtoggle && <Func_noticeboard_show_noticeboard notice_table={notice_table} history={history} />}
+          {page =='notice' ?   <Func_noticeboard_show_noticeboard notice_table={notice_table} history={history} /> : ''}
           <div className="allcontent-block">
-            {freeboardtoggle && free_table != undefined ? <Func_freeboard_show_freeboard set_reply_table={set_reply_table} set_free_select_num={set_free_select_num} free_table={free_table} information={information} /> : ''}
+            {page =='free' ?  free_table != undefined ? <Func_freeboard_show_freeboard set_reply_table={set_reply_table} set_free_table={set_get_free_number} free_table={free_table} information={information} /> : '' : ''}
 
           </div>
         </div>
       </div>
-      <button className="move_writeform_btn" onClick={Func_noticepage_move_writeform}>게시글 작성하기</button>
+      {information && <button className="move_writeform_btn" onClick={Func_noticepage_move_writeform}>게시글 작성하기</button>}
     </div>
   );
 }

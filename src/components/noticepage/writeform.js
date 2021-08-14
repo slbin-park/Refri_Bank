@@ -8,11 +8,10 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { Redirect } from "react-router-dom";
 
 function Func_writeform_write_des({history, information}) {
-    console.log(information);
     const [freeinputdes, setfreeinputdes] = useState({
         title: '',
         description: '',
-        // createdate: '2021-08-09'
+        //  createdate: new Date()
     });
 
     const getValue = (e) => {
@@ -21,7 +20,6 @@ function Func_writeform_write_des({history, information}) {
             ...freeinputdes,
             [name]: value
         })
-        console.log(freeinputdes);
     };
 
     
@@ -32,7 +30,7 @@ function Func_writeform_write_des({history, information}) {
             nickname: information.nickname,
             title: freeinputdes.title,
             description: freeinputdes.description,
-            // createdate: freeinputdes.createdate
+            createdate: new Date()
         })
         .then((response) => {
             // <Redirect to="/noticepage"></Redirect>

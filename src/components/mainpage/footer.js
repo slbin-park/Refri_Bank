@@ -15,7 +15,6 @@ function footer({ ftable, history }) {
           <div className="footer_food">
             <img className="footer_food_img" src={FoodV} />
           </div>
-
           <div className="footer_text">
             <p className="footer_text_style1"> {FoodN} </p>
             <p className="footer_text_style2">
