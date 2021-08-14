@@ -5,13 +5,12 @@ import comment_img from '../../img/board/comment.png'
 import React, { useEffect } from 'react'
 import Axios from "axios";
 //4번 렌더링
-function Func_freeboard_show_freeboard({ set_reply_table, set_free_select_num, information, free_table }) {
+function Func_freeboard_show_freeboard({ set_reply_table, set_free_table, information, free_table }) {
     console.log(free_table)
     console.log(information);
-    const Func_this_select_content = (e, number, id, nickname, title, description, createdate, count, likeit) => {
+    const Func_this_select_content = (e, number) => {
         get_reply(number)
-        set_free_select_num({ number: number, id: id, nickname: nickname, title: title, description: description, createdate: createdate, count: count, likeit: likeit });
-
+        set_free_table(number);
     }
 
     // 게시글 클릭시 댓글 가져옴
