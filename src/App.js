@@ -54,9 +54,6 @@ const App = () => {
             <Route path="/mypage" exact component={Mypage}>
               <Mypage history={history}information={information}/>
             </Route>
-            <Route exact path="/writeform" >
-              <Writeform information={information} history={history}></Writeform>
-            </Route>
           </React.Fragment>
         )}
         />

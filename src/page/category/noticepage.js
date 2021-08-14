@@ -7,6 +7,7 @@ import email from '../../img/board/email.png';
 import Func_noticeboard_show_noticeboard from '../../components/noticepage/noticeboard';
 import Func_freeboard_show_freeboard from '../../components/noticepage/freeboard';
 import Func_freecontent_show_freecontent from '../../components/noticepage/freecontent';
+import Write_form from '../../components/noticepage/writeform'
 import Axios from "axios";
 import 'aos/dist/aos.css';
 
@@ -15,7 +16,7 @@ function App({ history, information }) {
   const [page, setpage] = useState('free');
   const [notice_table, set_notice_table] = useState();
   const [free_table, set_free_table] = useState();
-
+  const [write_toggle, set_write_toggle] = useState(false);
 
   const [get_free_number, set_get_free_number] = useState();
   const [reply_table, set_reply_table] = useState();
@@ -48,7 +49,17 @@ function App({ history, information }) {
 
 
   const Func_noticepage_move_writeform = (e) => {
-    history.push('/writeform');
+    if(page=='notice'){
+      if(information.id == 'smpts00' || information.id == '1'){
+    set_write_toggle(!write_toggle)
+      }
+      else{
+        alert('관리자만 가능합니다.')
+      }
+    }
+    else{
+    set_write_toggle(!write_toggle)
+  }
   }
 
   const Func_noticepage_toggle_noticeboard = () => {
@@ -83,6 +94,8 @@ function App({ history, information }) {
 
 
   return (
+    <>
+    { write_toggle == false ? 
     <div className="notice-form">
       {modalOn ? <Modal /> : ''}
       <div className="topcontent-form">
@@ -108,7 +121,7 @@ function App({ history, information }) {
 
       <div className="subcontent-form">
         <div className="notice-nav-form">
-        <div className="notice-nav">
+          <div className="notice-nav">
             <div role="button" className="noticeboard-select-btn" onClick={Func_noticepage_toggle_noticeboard}>Notice</div>
             <div role="button" className="freeboard-select-btn selectedboard-btn" onClick={Func_noticepage_toggle_freeboard}>BulletinBoard</div>
           </div>
@@ -117,15 +130,17 @@ function App({ history, information }) {
           </div>
         </div>
         <div className="maincontent-form">
-          {page =='notice' ?   <Func_noticeboard_show_noticeboard notice_table={notice_table} history={history} /> : ''}
+          {page == 'notice' ? <Func_noticeboard_show_noticeboard notice_table={notice_table} history={history} /> : ''}
           <div className="allcontent-block">
-            {page =='free' ?  free_table != undefined ? <Func_freeboard_show_freeboard set_reply_table={set_reply_table} set_free_table={set_get_free_number} free_table={free_table} information={information} /> : '' : ''}
+            {page == 'free' ? free_table != undefined ? <Func_freeboard_show_freeboard set_reply_table={set_reply_table} set_free_table={set_get_free_number} free_table={free_table} information={information} /> : '' : ''}
 
           </div>
         </div>
       </div>
       {information && <button className="move_writeform_btn" onClick={Func_noticepage_move_writeform}>게시글 작성하기</button>}
     </div>
+  : <Write_form set_write_toggle={set_write_toggle} page={page} information={information}/>}
+    </>
   );
 }
 
