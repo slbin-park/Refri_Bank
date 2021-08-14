@@ -16,13 +16,9 @@ function App({ history, information }) {
   const [freeboardtoggle, setfreeboardtoggle] = useState(true);
   const [notice_table, set_notice_table] = useState();
   const [free_table, set_free_table] = useState();
-<<<<<<< HEAD
   const [write_toggle, set_write_toggle] = useState(false);
 
   const [get_free_number, set_get_free_number] = useState();
-=======
-  const [free_select_num, set_free_select_num] = useState({ number: '', id: '', nickname: '', title: '', description: ''});
->>>>>>> dae1e3bebc77833e55ca2f8c2ed88381a89b1a08
   const [reply_table, set_reply_table] = useState();
   
   const [modalOn, setModalOn] = React.useState(false);
