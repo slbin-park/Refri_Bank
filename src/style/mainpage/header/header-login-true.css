@@ -13,7 +13,7 @@ height: 80%;
  /*margin-top: 38px;
  margin-left: 30%; */
  padding: 0;
- font-size: 1.5rem;
+ font-size: 2vw;
  color: rgb(109, 109, 170);
  font-weight: bolder;
  margin-top: 7%;
@@ -24,7 +24,7 @@ display: inline-block;
 width: 33,3%;
 margin: 0;
 padding: 0;
-font-size: 0.8rem;
+font-size: 1vw;
 color: rgb(109, 109, 170);
 font-weight: bolder;
 }
