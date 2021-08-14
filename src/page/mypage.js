@@ -17,7 +17,7 @@ function Mypage({ history,information }) {
     // const [mywrite_table,set_mywrite_table] = useState()
     
     useEffect(()=>{
-        if(information.id != ''){
+        if(information != undefined){
         Axios.post("https://qkrtmfqls.gabia.io/likeitpage", {
             id: information.id,
         })

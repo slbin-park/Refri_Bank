@@ -15,6 +15,7 @@ function Idgmanage({ like_count, information }) {
     }, [])
 
     const Func_req_idginfo = async (e) => {
+        if(information != undefined){
         await Axios.post("https://qkrtmfqls.gabia.io/getrfg", {
             id: information.id
         })
@@ -28,6 +29,7 @@ function Idgmanage({ like_count, information }) {
             .catch((error) => {
                 console.log(error);
             });
+        }
     }
 
     return (

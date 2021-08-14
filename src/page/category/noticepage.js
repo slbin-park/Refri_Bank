@@ -87,7 +87,7 @@ function App({ history, information }) {
       {modalOn ? <Modal /> : ''}
       <div className="topcontent-form">
         <h1> 자주 묻는 질문 </h1>
-        <p> 찾는 내용이 없으시다면 고객센터를 방문해바라 이 말이다</p>
+        <p> 찾는 내용이 없으시다면 고객센터를 방문해주세요! </p>
       </div>
 
       <div className="middle-content-form">

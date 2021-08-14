@@ -12,12 +12,12 @@
 
 .likeit_header_main_form{
     width: 100%;
-    height: 20%;
+    height: 15%;
 }
 
 .likeit_header_title_form {
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.7vw;
     width: 100%;
     height: 50%;
     display: flex;
@@ -30,30 +30,31 @@
 .likeit_header_sub_form {
     display: flex;
     justify-content: center;
-    font-weight: 100;
-    font-size: 1.4rem;
+    font-weight: 400;
+    font-size: 1.3vw;
     width: 100%;
-    height: 40%;
-    align-items: flex-end;
+    height: 50%;
+    align-items: center;
     /* 저기 */
     color: rgba(1, 1, 1, 0.6);
 }
 
 .likeit_content{
     padding: 2%;
-    height: 80%;
+    padding-left:10%;
+    padding-right: 10%;
+    height: 60%;
 }
 
 
 .body_main_form{
-    font-size :medium;
-    font-weight:bold;
+    font-size : 1.2rem;
     width:100%;
     height: 90%;
 }
 
 .body_sub_form {
-    height: 10%;
+    height: 12%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -71,7 +72,8 @@
 .body_header_sub_form {
     width: 90%;
     height: 100%;
-    font-size :1.3rem;
+    font-size :1.3vw;
+    color: rgba(1, 1, 1, 0.75);
     display: flex;
     align-items: center;
     border-top: 3px rgba(1, 1, 1, 0.5) solid;
@@ -123,6 +125,7 @@
 /* 바디 테이블들 */
 .likeit_no {
     width: 10%;
+    
     text-align: center;
 }
 
@@ -150,31 +153,25 @@
     width: 10%;
     text-align: center;
 }
-.likeit_cancel_btn{
-    border-radius: 12px;
-    border-color: #d7e1ed;
-    background-color: #d7e1ed;
-    width: 50%;
-    height: 55%;
-    text-align: center;
-}
+
 
 .likeit_content_one {
     display: flex;
     width: 90%;
     height: 100%;
-
     border-bottom: 1px solid #babcbf;
     align-items: center;
+    color: rgba(1, 1, 1, 0.65);
+    font-size: 1.2vw;
 }
 
 .likeit_bottom_box {
     height: 10%;
-    margin-top: 4%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 15%;
 }
 
 .like_select_num_btn_form {
@@ -191,4 +188,39 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
+
+.like_select_num_btn_left {
+    transform: scaleX(-1);
+    font-size: 3rem;
+    cursor: pointer;
+    color: #FBB032;
+}
+
+.like_select_num_btn_right {
+    font-size: 3rem;
+    color: #FBB032;
+    cursor: pointer;
+}
+
+.likeit_cancel {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.likeit_cancel_btn { 
+    display:block; 
+    width:50%; 
+    height:50%; 
+    background-color:#fbb03b; 
+    text-align:center; 
+    cursor: pointer; 
+    color:white; 
+    border: none;
+    border-radius: 20px;
+} 
+

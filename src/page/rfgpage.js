@@ -67,8 +67,11 @@ function App({ history,information }) {
 
   return (
     <>
+    <div className="hello-rfg-form">
+        <h1> 나만의 냉장고 </h1>
+        <p> 재료 관리 서비스를 마음껏 이용해 보세요! </p>
+      </div>
     <div className="rfg-form">
-      
       <div className="rfg-select-btn"><button className = "ingredient-toggle-btn" onClick= {()=>{settoggle(!toggle)}}>{ toggle ? "그만 담고 검색하기" : '내 냉장고에 재료 추가하기'}</button></div>
       {Func_show_ingredient()}
     </div>

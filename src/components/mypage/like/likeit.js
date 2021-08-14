@@ -28,7 +28,7 @@ function Likeit({ history, like_table, information, like_page_cnt }) {
         let like_page_btn_arr = [];
         for(let i=0; i<like_page_cnt; i++) {
             like_page_btn_arr.push(
-                <div onClick={(e)=>Func_click_page_slice_btn(e, i)} style={page_color==i ? {color: 'rgba(1, 1, 1, 0.8)'} : {color:'rgba(1, 1, 1, 0.4)'}} className="like_select_num_btn_sub_form abc"  >
+                <div onClick={(e)=>Func_click_page_slice_btn(i)} style={page_color==i ? {color: 'rgba(1, 1, 1, 0.8)'} : {color:'rgba(1, 1, 1, 0.4)'}} className="like_select_num_btn_sub_form"  >
                     {i+1}
                 </div>
             )
@@ -52,7 +52,6 @@ function Likeit({ history, like_table, information, like_page_cnt }) {
         )
     }
     useEffect(()=> {
-        console.log("default", default_page_slice);
         set_page_color(default_page_slice * 5);
         Func_click_page_slice_btn(default_page_slice * 5);
         Like_paging_btn();
@@ -77,7 +76,7 @@ function Likeit({ history, like_table, information, like_page_cnt }) {
                     <h2>좋아요 게시글</h2>
                 </div>
                 <div className="likeit_header_sub_form">
-                    <h4>고객 여러분의 소중한 의견을 귀담아 듣도록 최선을 다하겠습니다..</h4>
+                    <p>고객 여러분의 소중한 의견을 귀담아 듣도록 최선을 다하겠습니다..</p>
                 </div>
             </div>
             <div className='likeit_content'>
@@ -96,11 +95,11 @@ function Likeit({ history, like_table, information, like_page_cnt }) {
                 <div className="likeit_bottom_box">
                     <div className="like_select_num_btn_form">
                         <div className="like_select_num_btn_left" onClick={(e) => Func_paging_minus()}>
-                            ▹
+                            ‣    
                         </div>
                         <Like_paging_btn/>
                         <div className="like_select_num_btn_right" onClick={(e)=>Func_paging_plus()}>
-                            ▹
+                            ‣
                         </div>
                     </div>    
                 </div>
