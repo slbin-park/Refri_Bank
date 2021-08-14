@@ -42,8 +42,8 @@
 }
 
 .alice-content-img-flex {
-    width: 60vw;
-    height: 60vh;
+    width: 600px;
+    height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,7 +52,6 @@
 .alice-content-img {
     width: 60%;
     height: 80%;
-    object-fit: cover;
 }
 
 
