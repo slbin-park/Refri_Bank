@@ -19,7 +19,11 @@ const App = ({ history }) => {
         Axios.post("https://qkrtmfqls.gabia.io/liverank", {})
 
         .then((response) => {
-            setftable(response.data)
+            let new_arr = response.data.slice();
+            new_arr.sort(function(a, b){
+                return a.likeit - b.likeit;
+            })
+            setftable(new_arr);
             setlivetable(response.data);
         })
         .catch((error) => {
