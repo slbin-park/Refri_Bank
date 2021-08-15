@@ -4,7 +4,7 @@ import '../../../style/mypage/likeit.css';
 import Axios from 'axios'
 function Mywritetable({get_my_table,mywrite_table,set_table_number,set_modal_table, mywrite_page_slice}) {
 
-    console.log("like", mywrite_page_slice);
+    // console.log("like", mywrite_page_slice);
 
     const return_mywrite_table = () => {
         const arr = [];
@@ -42,8 +42,8 @@ function Mywritetable({get_my_table,mywrite_table,set_table_number,set_modal_tab
 
         })
             .then((response) => {
-                get_my_table()
-                alert('게시글 삭제에 성공하셨습니다 ! ')
+                get_my_table();
+                alert('게시글 삭제에 성공하셨습니다 ! ');
             })
             .catch((error) => {
                 console.log(error);
@@ -66,7 +66,7 @@ function Mywritetable({get_my_table,mywrite_table,set_table_number,set_modal_tab
     
     return (
         <>
-        {return_mywrite_table()}
+            {return_mywrite_table()}
         </>
     )
 }
