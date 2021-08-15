@@ -16,7 +16,6 @@ function Liketable({table, history, information, like_page_slice}) {
         )
     }
 
-
     const Create_like_table = ({ user }) => {
         const rcp_change = (e) => {
             history.push("/recipe/" + user.foodid)
@@ -27,9 +26,8 @@ function Liketable({table, history, information, like_page_slice}) {
                 <div key={user.foodid} className='likeit_content_one'>
                     <div className='likeit_no'>{user.foodid}</div>
                     <div onClick={(e)=>rcp_change()} className='likeit_title_content'>{user.foodname}</div>
-                    <div className="likeit_nickname">{information.nickname}</div>
-                    <div className="likeit_date">{information.nickname}</div>
                     <div className='likeit_cancel'>
+                        {/* <button className='likeit_cancel_btn' onClick={(e) => Func_this_delete_content(e, number)}>취소</button> */}
                         <button  className='likeit_cancel_btn'>취소</button>
                     </div>
                 </div>

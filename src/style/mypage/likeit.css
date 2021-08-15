@@ -121,41 +121,53 @@
 
 
 /* 테이블 */
-
-
-
-/* 바디 테이블들 */
 .likeit_no {
-    width: 10%;
+    width: 15%;
     
     text-align: center;
 }
 
 .likeit_title {
-    width: 60%;
+    width: 70%;
     text-align: center;
 }
 
 .likeit_title_content {
+    width:70%;
+
+}
+
+.likeit_cancel{
+    width: 15%;
+    text-align: center;
+}
+
+/* 바디 테이블들 */
+.mywrite_no {
+    width: 15%;
+    
+    text-align: center;
+}
+
+.mywrite_title {
+    width: 60%;
+    text-align: center;
+}
+
+.mywrite_title_content {
     width:60%;
 
 }
 
-.likeit_nickname {
-    width: 10%;
+.mywrite_date {
+    width: 15%;
     text-align: center;
 }
 
-.likeit_date {
+.mywrite_cancel{
     width: 10%;
     text-align: center;
 }
-
-.likeit_cancel{
-    width: 10%;
-    text-align: center;
-}
-
 
 .likeit_content_one {
     display: flex;
