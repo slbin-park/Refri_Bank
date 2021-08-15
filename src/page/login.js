@@ -16,6 +16,7 @@ const Login = ({ information, setinformation, history, setpage }) => {
       pwd: logintext.pwd
     })
       .then((response) => {
+        console.log(response.data)
         if (response.data.success)//로그인 성공시
         {
           console.log(response.data)
@@ -55,21 +56,21 @@ const Login = ({ information, setinformation, history, setpage }) => {
           <div className="login-input-sub-form">
             <input className="login-wait-id" name="id" type="text" placeholder="Id" onChange={e => setlogintext({ ...logintext, id: e.target.value })} />
             <input className="login-wait-psword" name="pwd" type="password" placeholder="Password" onChange={e => setlogintext({ ...logintext, pwd: e.target.value })} />
-            <button className="loginpage_login_btn" onClick={TokenLogin}> 
+            <button className="loginpage_login_btn" onClick={TokenLogin}>
               <div>
-                <span>Login</span> 
+                <span>Login</span>
               </div>
             </button>
-            <button className="loginpage_signup_btn" onClick={Func_login_move_signup}> 
+            <button className="loginpage_signup_btn" onClick={Func_login_move_signup}>
               <div>
-                <span>Signup</span> 
+                <span>Signup</span>
               </div>
             </button>
           </div>
         </div>
 
         {/* <input type="text" placeholder="Nickname"onChange={e => setregister({ ...register, name: e.target.value })} value={register.name} /> */}
-        
+
       </div>
     </div>
 
