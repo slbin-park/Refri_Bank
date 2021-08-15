@@ -19,6 +19,7 @@ const App = ({ location, history, match, recipe_set_page,information}) => {
         // if(information.id != ''){
         //     id = information.id
         // }
+        if(information != undefined){
         Axios.post("https://qkrtmfqls.gabia.io/getrcp/" + foodid, {
             id: foodid,
             userid : information.id
@@ -30,6 +31,7 @@ const App = ({ location, history, match, recipe_set_page,information}) => {
             .catch((error) => {
                 console.log(error); 
             });
+        }
     },[information])
 
     return (

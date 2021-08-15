@@ -178,6 +178,7 @@
 
 .notice_title {
     width: 70%;
+    text-align: center;
     cursor: pointer;
 }
 

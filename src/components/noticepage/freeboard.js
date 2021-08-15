@@ -6,8 +6,7 @@ import React, { useEffect } from 'react'
 import Axios from "axios";
 //4번 렌더링
 function Func_freeboard_show_freeboard({ set_reply_table, set_free_table, information, free_table }) {
-    console.log(free_table)
-    console.log(information);
+
     const Func_this_select_content = (e, number) => {
         get_reply(number)
         set_free_table(number);

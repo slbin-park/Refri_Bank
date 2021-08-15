@@ -31,7 +31,7 @@ function thumbnail_info({ data,  click_like , setclick_like, information }) {
     }
     const Func_this_likeit_plus = () => {
         console.log(information)
-        if(information.id == '') {
+        if(information == undefined) {
             alert('로그인을하세요.');
         } 
         else if(click_like){
@@ -44,6 +44,7 @@ function thumbnail_info({ data,  click_like , setclick_like, information }) {
                 foodname: data[0].FoodN
             })
             .then((response) => {
+                alert('좋아요를 눌렀습니다.ㅂ')
                 setclick_like(true);
             })
             .catch((error) => {

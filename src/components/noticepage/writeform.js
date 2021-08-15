@@ -7,7 +7,7 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { Redirect } from "react-router-dom";
 
-function Func_writeform_write_des({history, information}) {
+function Func_writeform_write_des({set_write_toggle,page, information}) {
     const [freeinputdes, setfreeinputdes] = useState({
         title: '',
         description: '',
@@ -22,9 +22,21 @@ function Func_writeform_write_des({history, information}) {
         })
     };
 
-    
-    const Func_writeform_post_freeinputdes = (e) => {
+    const add_notice = ()=>{
+        Axios.post("http://qkrtmfqls.gabia.io/addnotice", {
+            id: information.id,
+            title: freeinputdes.title,
+            description: freeinputdes.description,
+            createdate: new Date()
+        })
+        .then((response) => {
+            set_write_toggle(false)
+        })
+        .catch((error) => {
+        });
+    }
 
+    const add_free = () =>{
         Axios.post("http://qkrtmfqls.gabia.io/addfree", {
             id: information.id,
             nickname: information.nickname,
@@ -33,11 +45,23 @@ function Func_writeform_write_des({history, information}) {
             createdate: new Date()
         })
         .then((response) => {
-            // <Redirect to="/noticepage"></Redirect>
-            history.push('/noticepage');
+            set_write_toggle(false)
+
         })
         .catch((error) => {
         });
+    }
+
+    
+    const Func_writeform_post_freeinputdes = (e) => {
+        console.log(page)
+        if(page =='notice'){
+            add_notice()
+        }
+        else if(page == 'free'){
+            add_free()
+        }
+
     }
 
     return (
