@@ -2,28 +2,28 @@
 import '../../style/noticepage/freeboard.css';
 import heart_img from '../../img/board/heart.png';
 import comment_img from '../../img/board/comment.png'
-import React, { useState , useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Axios from "axios";
 //4번 렌더링
-function Func_freeboard_show_freeboard({ setModalOn, set_get_free_number, information}) {
+function Func_freeboard_show_freeboard({ setModalOn, set_get_free_number, information }) {
     const [free_table, set_free_table] = useState(); //전체 게시글 데이터
 
 
     useEffect(() => {
         get_free_tableall()
-      }, [])
+    }, [])
 
     const get_free_tableall = () => {
         Axios.post("https://qkrtmfqls.gabia.io/getfree", {
-    
+
         })
-          .then((response) => {
-            set_free_table(response.data);
-          })
-          .catch((error) => {
-            console.log(error);
-          })
-      }
+            .then((response) => {
+                set_free_table(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }
 
     const Click_free = (e, number) => {
         setModalOn(true)

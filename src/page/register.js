@@ -22,7 +22,7 @@ function App({ history, setthis_signup_set_inputs, this_signup_set_inputs }) {
           alert('회원가입을 축하드립니다!')
           history.push('/')
         }
-        else{
+        else {
           alert(response.data.msg)
         }
       })
@@ -59,7 +59,7 @@ function App({ history, setthis_signup_set_inputs, this_signup_set_inputs }) {
               </div>
             </button>
             <input type="text" placeholder="Nickname" onChange={e => setregister({ ...register, name: e.target.value })} value={register.name} />
-            <button onClick={user_register}> 
+            <button onClick={user_register}>
               <div>
                 <span>Submit</span>
               </div>

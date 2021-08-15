@@ -28,7 +28,7 @@ const Func_freecontent_show_freecontent = ({ get_free_number, information }) => 
 
     const Add_reply = (e) => {
         e.preventDefault();
-        
+
         if (information != undefined) {
             Axios.post("https://qkrtmfqls.gabia.io/addreply", {
                 number: get_free_number,
@@ -102,7 +102,7 @@ const Func_freecontent_show_freecontent = ({ get_free_number, information }) => 
 
                     {/* 로그인 안할시에 입력창 안뜸 */}
                     {information && <form className="eachcomment-input">
-                        <input required autoFocus className="comment-input" type='text' placeholder='댓글을 입력하세요...' onKeyPress={(e)=>e.key == 'Enter'? Add_reply:''} onChange={e => setcommentinput(e.target.value)} value={commentinput} />
+                        <input required autoFocus className="comment-input" type='text' placeholder='댓글을 입력하세요...' onKeyPress={(e) => e.key == 'Enter' ? Add_reply : ''} onChange={e => setcommentinput(e.target.value)} value={commentinput} />
                         <button className="commentsubmit-button" onClick={Add_reply}>등록</button>
                     </form>}
                     {/* 로그인 안할시에 처리 끝 */}

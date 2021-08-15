@@ -1,12 +1,12 @@
 import '../../style/noticepage/writeform.css';
 
-import {useState} from 'react';
+import { useState } from 'react';
 import Axios from 'axios';
 
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
-function Func_writeform_write_des({set_write_toggle,page, information}) {
+function Func_writeform_write_des({ set_write_toggle, page, information }) {
     const [freeinputdes, setfreeinputdes] = useState({
         title: '',
         description: '',
@@ -21,21 +21,21 @@ function Func_writeform_write_des({set_write_toggle,page, information}) {
         })
     };
 
-    const add_notice = ()=>{
+    const add_notice = () => {
         Axios.post("https://qkrtmfqls.gabia.io/addnotice", {
             id: information.id,
             title: freeinputdes.title,
             description: freeinputdes.description,
             createdate: new Date()
         })
-        .then((response) => {
-            set_write_toggle(false)
-        })
-        .catch((error) => {
-        });
+            .then((response) => {
+                set_write_toggle(false)
+            })
+            .catch((error) => {
+            });
     }
 
-    const add_free = () =>{
+    const add_free = () => {
         Axios.post("https://qkrtmfqls.gabia.io/addfree", {
             id: information.id,
             nickname: information.nickname,
@@ -43,20 +43,20 @@ function Func_writeform_write_des({set_write_toggle,page, information}) {
             description: freeinputdes.description,
             createdate: new Date()
         })
-        .then((response) => {
-            set_write_toggle(false)
+            .then((response) => {
+                set_write_toggle(false)
 
-        })
-        .catch((error) => {
-        });
+            })
+            .catch((error) => {
+            });
     }
 
-    
+
     const Func_writeform_post_freeinputdes = (e) => {
-        if(page =='notice'){
+        if (page == 'notice') {
             add_notice()
         }
-        else if(page == 'free'){
+        else if (page == 'free') {
             add_free()
         }
 
@@ -65,20 +65,20 @@ function Func_writeform_write_des({set_write_toggle,page, information}) {
     return (
         <div className="writeform-wrapper-block">
             <div className='writeform-wrapper'>
-                <input className="title-input" type='text' placeholder='제목' onChange={getValue} name='title'/>
+                <input className="title-input" type='text' placeholder='제목' onChange={getValue} name='title' />
                 <CKEditor
-                editor={ClassicEditor}
-                data=""
-                onChange={(event, editor) => {
-                    const data = editor.getData();
-                    setfreeinputdes({
-                      ...freeinputdes,
-                      description: data
-                    })
-                }}
+                    editor={ClassicEditor}
+                    data=""
+                    onChange={(event, editor) => {
+                        const data = editor.getData();
+                        setfreeinputdes({
+                            ...freeinputdes,
+                            description: data
+                        })
+                    }}
                 />
             </div>
-            <button className="submit-button" onClick={() => {Func_writeform_post_freeinputdes()}}>게시물로 등록하기</button>
+            <button className="submit-button" onClick={() => { Func_writeform_post_freeinputdes() }}>게시물로 등록하기</button>
         </div>
     );
 }
