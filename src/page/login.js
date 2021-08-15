@@ -25,7 +25,6 @@ const Login = ({ information, setinformation, history, setpage }) => {
           console.log('토큰넣었습니다.')
           localStorage.setItem('token', response.data.token);
           alert('로그인에 성공하셨습니다!')
-
           history.push('/');
         } else if (response.data.token.success == false) {
           window.localStorage.clear();

@@ -13,6 +13,7 @@ const Func_freecontent_show_freecontent = ({ get_free_number, information }) => 
     useEffect(() => {
         get_free_table()
         get_reply()
+
     }, [])
 
     const get_reply = async () => {

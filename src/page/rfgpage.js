@@ -1,5 +1,4 @@
 import Func_filter_find_ingredient from "../components/rfgpage/filter";
-import Func_filterresult_filterresult from "../components/rfgpage/filterresult";
 import Footer from '../components/mainpage/footer';
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
@@ -57,7 +56,7 @@ function App({ history, information }) {
 
   const Func_show_ingredient = () => {
     return (
-      <div className="rfg-body-form" style={toggle === true ? {height: '80vh'} : {height:'0vh'}}>
+      <div className="rfg-body-form" style={toggle === true ? { height: '80vh' } : { height: '0vh' }}>
         <Func_filter_find_ingredient information={information} result_box_list={result_box_list} setresult_box_list={setresult_box_list}>
         </Func_filter_find_ingredient>
       </div>
