@@ -80,6 +80,7 @@ const Header = ({location, information, setinformation, history ,page,setpage}) 
     const Func_header_move_page = (e) => {              // 시크릿 페이지
         alert(" 아직 준비중인 페이지입니다 ! ")
     }
+
     const Func_header_move_loginpage = (e) => {         //  로그인 페이지
         history.push('/login')
     }
@@ -179,7 +180,15 @@ const Header = ({location, information, setinformation, history ,page,setpage}) 
                         { where_category === "/page" ? 
                         <button className="header-category-btn" id="header-category-button5" onClick={Func_header_move_page}>페이지</button>
                         : 
-                        <button className="header-category-btn" id="header-category-button5" onClick={Func_header_move_page}>Page</button>
+                        <button className="header-category-btn" id="header-category-button5" onClick={Func_header_move_page}>Page
+                            <div className="header-category-btn-mypage-div">
+                                <ul className="header-category-btn-mypage-ul">
+                                    <li className="header-category-btn-mypage-li">재료 관리</li>
+                                    <li className="header-category-btn-mypage-li">좋아요한 레시피</li>
+                                    <li className="header-category-btn-mypage-li">내가 작성한 게시글</li>
+                                </ul>
+                            </div>    
+                        </button>
                         }
                     </div>
                 </div>

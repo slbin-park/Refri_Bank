@@ -53,6 +53,7 @@
   padding: 0;
   margin-top: 1.5vh;
   cursor: pointer;
+  position: relative;
 }
 
 .header-category-btn:hover {
@@ -108,4 +109,51 @@
   color: #9badc7;
   font-size: 13px;
   font-weight: bolder;
+}
+
+/* page 드롭다운 */
+@keyframes dropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.header-category-btn-mypage-div {
+  visibility:hidden;
+  /* margin-top: 1%; */
+  position: absolute;
+  top: 2.5vh;
+  padding-top: 2vh;
+  left: -6.7vh;
+  font-size: 1vw;
+}
+
+.header-category-btn-mypage-ul {
+  display: flex;
+  flex-direction: column ;
+}
+
+.header-category-btn-mypage-li {
+  min-width: 40vh;
+  margin-top: 2%; 
+  text-align: left;
+  background-color: white;
+}
+
+#header-category-button5:hover .header-category-btn-mypage-div {
+  visibility: visible;
+  font-size: 1vw;
+  font-weight: 400;
+  animation-name: dropdown;
+  animation-duration: 0.7s;
+  animation-direction: normal;
+}
+
+.header-category-btn-mypage-li:hover {
+  color: black;
+  font-weight: 700;
 }
