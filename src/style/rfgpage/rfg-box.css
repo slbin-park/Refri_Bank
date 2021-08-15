@@ -4,6 +4,7 @@
     text-align: center;
     color: rgba(1, 1, 1, 0.75);
 }
+
 .hello-rfg-form h1 {
     padding-top: 5vh;
     font-size: 2.5rem;
@@ -12,16 +13,14 @@
     color: rgba(1, 1, 1, 0.75);
     font-family: 'neon';
 }
+
 /* 선택하는 상자 담는 상자 분리 */
 .rfg-form {
-    /* display: flex;
-    flex-direction: column; */
-    /* flex-wrap: wrap; */
-    width: 90%;
+    width: 80%;
     height: 100%;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 1.5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
     margin-bottom: 5%;
 }
 
@@ -34,14 +33,6 @@
     border-bottom: rgba(1, 1, 1, 0.5) 1px solid;
 }
 
-
-/* .rfg-body-form-open {
-    height: 370px;
-    display: flex;
-    position: relative;
-    justify-content: center;
-} */
-
 .ingredient-toggle-btn {
     width: 100%;
     height: 5vh;
@@ -50,10 +41,9 @@
     justify-content: center;
     color: rgba(1, 1, 1, 0.75); 
     font-weight: 500;  
-    border-top: rgba(1, 1, 1, 0.4) 3px solid;
+    border-top: rgba(7, 3, 3, 0.4) 3px solid;
     border-bottom: rgba(1, 1, 1, 0.4) 3px solid;
 }
-
 
 /* 재료상자 */
 .rfg-ingredient-box {
@@ -73,33 +63,18 @@
     display: block;
     width: 100%;
     height: 30vh;
-    border-bottom: rgba(1, 1, 1, 0.4) 1px  solid;
-    /* margin-right: 50px; */
 }
 
 .rfg-select-box {
     display: flex;
-    flex-wrap: wrap;
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    height: 25vh;
-    align-items: center;
-    justify-content: center;
-    
+    width: 100%;
+    height: 80%;
     background-color: #fff;
-    align-items: center;
-    justify-content: center;
-    overflow: scroll;
-    /* overflow: auto; */
-    overflow-x: hidden;
-    scrollbar-color: transparent;
 }
 
-
 .rfg-select-btn {
+    cursor: pointer;
     width: 100%;
-    display: flex;
     text-align: center;
     background-color: rgba(1, 1, 1, 0.05);
 }
@@ -112,7 +87,6 @@
     height: 30px;
     color: #fff;
     border-radius: 5px;
-    /* padding: 10px 25px; */
     font-family: 'Lato', sans-serif;
     font-weight: 500;
     text-align: center;
@@ -143,9 +117,7 @@
 }
 
 .rfg-select-btn button:hover{
-    /* transform: scale(1.125); */
     color: #fff;
-
 }
 
 .rfg-select-btn button:hover:after {
@@ -187,7 +159,11 @@
     font-weight: 600;
 }
 
-.ingredient-form, .rfg-result-form {
+.rfg-result-form {
+    cursor: pointer;
+    transition: transform 100ms ease-in-out;
+}
+.ingredient-form {
     cursor: pointer;
     transition: transform 100ms ease-in-out;
 }
@@ -201,7 +177,6 @@
     color: tomato;
 }
 
-
 .rfg-big-box {
     display: block;
     height: 100%;
@@ -212,32 +187,70 @@
     display: flex;
     border-bottom: rgba(1, 1, 1, 0.4) 1px solid;
     height: 60%;
-    /* border-bottom: gray 3px solid; */
 }
 
 .rfg-ingredient-up-box{
     width: 66%;
     height: 100%;
     display: block;
-    margin-left: 2%;
 }
 .rfg-ingredient-text-box {
-    margin-top: 4vh;
+    margin-top: 2vh;
     margin-bottom: 3vh;
     text-align: center;
     width: 100%;
     height: 10%;
-}
-.rfg-result-text-box {
-    margin-top: 5vh;
-    margin-bottom:5vh;
-    text-align: center;
-    width: 100%;
-    height: 10%;
+    color: rgba(1, 1, 1, 0.75);
+    font-size: 1.6vw;
+    font-weight: 500;
 }
 
+
+.rfg-result-text-box {
+    text-align: center;
+    width: 100%;
+    height: 19%;
+    margin-top: 1%;
+    color: rgba(1, 1, 1, 0.75);
+    font-size: 1.6vw;
+    font-weight: 500;
+}
 .rfg-recommend-text-box {
     text-align: center;
     width: 100%;
     height: 10vh;
+}
+
+.rfg-select-box-submit-btn{
+    width: 20%;
+    height: 100%;
+    /* border: blue 3px solid; */
+}
+
+.rfg-select-box-submit-btn button {
+    background-color: rgb(255, 163, 43);
+    border-radius: 20px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 20%;
+    margin-top: 17vh;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.rfg-select-box-submit-btn button:hover {
+    color: black;
+    background-color: rgb(255, 201, 119);
+}
+
+.rfg-select-box-thumbnail-box{
+    display: flex;
+    height: 100%;
+    overflow: scroll;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
 }

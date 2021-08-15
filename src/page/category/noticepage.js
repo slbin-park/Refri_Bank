@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import '../../style/noticepage/noticepage.css';
 // import notice from '../../img/category_notice_img/notice_img.jpg';
 import xbuttom from '../../img/board/xbutton.jpg';
+import email_img from '../../img/board/email.png';
+
 import Func_noticeboard_show_noticeboard from '../../components/noticepage/noticeboard';
 import Func_freeboard_show_freeboard from '../../components/noticepage/freeboard';
 import Func_freecontent_show_freecontent from '../../components/noticepage/freecontent';
@@ -73,9 +75,15 @@ function App({ history, information }) {
   }
 
 
+
   const onCloseModal = () => {
     // 해당 게시글 토글
     setModalOn(!modalOn);
+  }
+
+  //이메일 전송 링크
+  const Func_email_click_btn = () => {
+    window.location.href = "https://www.naver.com/";
   }
 
   const Modal = () => {
@@ -89,6 +97,7 @@ function App({ history, information }) {
       </>
     );
   };
+
 
 
   return (
@@ -105,14 +114,14 @@ function App({ history, information }) {
           <div className="middle-content-form-left">왼쪽 </div>
           <div className="middle-content-form-right">
             <div className="right-img-box">
-              <img className="email_img" src={xbuttom} width="50" height="50" ></img>
+              <img className="email_img" src={email_img} width="50" height="50" ></img>
             </div>
             <div className="right-text-box">
               <h3> 이메일 문의하기</h3>
               <p> 찾으시는 답변이 없으신가요 ? </p>
             </div>
             <div className="right-btn-box">
-              <button className="send-btn">E-mail 보내기 </button>
+              <button className="send-btn" onClick={()=> window.open("mailto:ds4ouj@gmail.com", '_blank')}>E-mail 보내기 </button>
             </div>
           </div>
       </div>

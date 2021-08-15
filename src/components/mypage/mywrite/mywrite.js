@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import '../../../style/mypage/index.css';
 import '../../../style/mypage/likeit.css';
 import xbuttom from '../../../img/board/xbutton.jpg';
+
 import Open_modal from './mywritecontent';
 import Axios from 'axios';
 import Mywritetable from './mywritetable';

@@ -1,9 +1,9 @@
 .igd_main_div{
     color: #333333;
-
     flex: 10;
     height: 150vh;
 }
+
 .igd_content_div{
     background: whitesmoke;
     text-align: center;
@@ -11,46 +11,41 @@
     height: 110vh;
     border-radius: 4vh;
 }
+
 .igd_title_div{
     text-align: center;
-
-
     background-color: white;
-
     height: 13vh;
 }
+
 .igd_body_div{ 
-
     height: 90%;
-
 }
+
 .igd_img_div{
     width: 33.33%;
     flex-wrap: wrap;
 }
+
 .igd_img_div_box{
     width: 12vh;
     height: 12vh;
 }
+
 .idg_body_three{
     padding: 3%;
     display: flex;
     height: 23%;
 }
+
 .igd_img_div_text{
     height: 2vh;
     font-size: large;
 }
 
-
-
-
 .igd_body_div{
     display: flex;
-    
-
     height:100%;
-
     padding:1%
 }
 
@@ -59,7 +54,6 @@
     width: 50%;
 }
 
-
 .igd_box_left_top_1{
     padding: 2vh;
     height: 20vh;
@@ -67,9 +61,9 @@
     align-content: center;
     align-items: center;
 }
+
 .igd_box_1{
     padding: 2vh;
-
     width: 100%;
     height: 20vh;
 }

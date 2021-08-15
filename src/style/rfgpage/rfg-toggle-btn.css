@@ -1,5 +1,4 @@
 .rfg-toggle-btn {
-    
     margin-top: 5%;
     margin-left: 3%;
     border-radius: 20px;
@@ -14,7 +13,6 @@
 .rfg-toggle-btn:hover {
     background-color: #F4DFD0;
 }
-
 
 .filter-container {
     width: 80%;

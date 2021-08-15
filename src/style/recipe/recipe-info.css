@@ -9,7 +9,6 @@
     font-size: 2rem;
     font-weight: 700;
     background-color: white;
-
     font-family: 'neon';
 }
 
@@ -17,7 +16,6 @@
     width: 100%;
     height: 70vh;
 }
-
 
 .alice-content-main-form {
     width: 100%;
@@ -53,7 +51,6 @@
     width: 60%;
     height: 80%;
 }
-
 
 .alice-content-text-form {
     display: flex;

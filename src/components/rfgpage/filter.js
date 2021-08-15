@@ -17,6 +17,7 @@ function Func_filter_find_ingredient({result_box_list, setresult_box_list, infor
     const Func_igdlist_select = ((e)=> {
         document.querySelector('.rfg-calendar-box').classList.toggle('calendar-toggle');
     })
+    //123
     
     const basketInput = () => {
         const select_eprdate = moment(date).format('YY-MM-DD');
@@ -139,7 +140,7 @@ function Func_filter_find_ingredient({result_box_list, setresult_box_list, infor
                 </div>
                 <div className="rfg-ingredient-up-box">
                     <div className="rfg-ingredient-text-box">
-                        <h2>재료 찾아보기</h2>
+                        <p>재료 찾아보기</p>
                     </div>
                     <div className="rfg-ingredient-box">                
                         <Select_ingredient_thumbnail/>
@@ -166,12 +167,16 @@ function Func_filter_find_ingredient({result_box_list, setresult_box_list, infor
             <달력 /> 토글을 여기선언  */}
             <div className="rfg-result-box">
                 <div className="rfg-result-text-box">
-                    <h2>장바구니</h2>
+                    <p>장바구니</p>
                 </div> 
                 <div className="rfg-select-box">
                     {/*  버튼 클릭시 보여지는 페이지*/}
-                    <Result_ingredient_thumbnail/>               
-                    <button onClick={()=> Func_reqbutton_diquery()}>submit</button> 
+                    <div className="rfg-select-box-thumbnail-box">
+                        <Result_ingredient_thumbnail/>               
+                    </div>
+                    <div className="rfg-select-box-submit-btn">
+                        <button onClick={()=> Func_reqbutton_diquery()}>submit</button> 
+                    </div>
                 </div>
             </div>
         </div>
