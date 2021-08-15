@@ -9,6 +9,7 @@ function App({ history, setthis_signup_set_inputs, this_signup_set_inputs }) {
 
 
   const user_register = async e => {
+    console.log(1)
     e.preventDefault();
     await Axios.post("https://qkrtmfqls.gabia.io/register", {
       id: register.id,
@@ -20,6 +21,9 @@ function App({ history, setthis_signup_set_inputs, this_signup_set_inputs }) {
         if (response.data.success) {
           alert('회원가입을 축하드립니다!')
           history.push('/')
+        }
+        else {
+          alert(response.data.msg)
         }
       })
       .catch((error) => {
@@ -55,7 +59,7 @@ function App({ history, setthis_signup_set_inputs, this_signup_set_inputs }) {
               </div>
             </button>
             <input type="text" placeholder="Nickname" onChange={e => setregister({ ...register, name: e.target.value })} value={register.name} />
-            <button onClick={user_register}> 
+            <button onClick={user_register}>
               <div>
                 <span>Submit</span>
               </div>
