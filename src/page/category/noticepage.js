@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import '../../style/noticepage/noticepage.css';
 import 'aos/dist/aos.css';
 
@@ -10,7 +9,7 @@ import Noticeboard from '../../components/noticepage/noticeboard';
 import Freeboard from '../../components/noticepage/freeboard';
 import Freecontent from '../../components/noticepage/freecontent';
 import Write_form from '../../components/noticepage/writeform'
-
+import Alert from "../alert";
 
 function App({ information }) {
 
@@ -25,7 +24,7 @@ function App({ information }) {
         set_write_toggle(!write_toggle)
       }
       else {
-        alert('관리자만 가능합니다.')
+        Alert("Board", "관리자만 가능합니다.");
       }
     }
     else {

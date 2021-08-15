@@ -1,8 +1,9 @@
 
 import '../../style/noticepage/freeboard.css';
 import heart_img from '../../img/board/heart.png';
-import comment_img from '../../img/board/comment.png'
-import React, { useState, useEffect } from 'react'
+import comment_img from '../../img/board/comment.png';
+import React, { useState, useEffect } from 'react';
+import Alert from "../../page/alert";
 import Axios from "axios";
 //4번 렌더링
 function Func_freeboard_show_freeboard({ setModalOn, set_get_free_number, information }) {
@@ -38,7 +39,7 @@ function Func_freeboard_show_freeboard({ setModalOn, set_get_free_number, inform
         })
             .then((response) => {
                 get_free_tableall()
-                alert('게시글 삭제에 성공하셨습니다 ! ')
+                Alert('board','게시글 삭제에 성공하셨습니다!');
             })
             .catch((error) => {
                 console.log(error);

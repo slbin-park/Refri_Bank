@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import '../style/login_page/login.css';
 import logo from '../img/main_body_img/login-logo.png';
+import Alert from "./alert";
 import Axios from 'axios';
 
 const Login = ({ information, setinformation, history, setpage }) => {
@@ -22,15 +23,14 @@ const Login = ({ information, setinformation, history, setpage }) => {
           console.log(response.data)
           setpage(true)
           setinformation({ id: response.data.id, nickname: response.data.nickname })
-          console.log('토큰넣었습니다.')
           localStorage.setItem('token', response.data.token);
-          alert('로그인에 성공하셨습니다!')
+          Alert("Login", "로그인에 성공하셨습니다.");
 
           history.push('/');
         } else if (response.data.token.success == false) {
           window.localStorage.clear();
           setpage(false)
-          alert(response.data.msg);//실패사유 출력
+          Alert("Login", response.data.msg);//실패사유 출력
         }
       })
       .catch((error) => {
@@ -40,7 +40,6 @@ const Login = ({ information, setinformation, history, setpage }) => {
   }
 
   const Func_login_move_signup = (e) => {
-    console.log("회원가입 페이지로 이동")
     history.push('/signup');
   }
 
