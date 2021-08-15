@@ -1,10 +1,10 @@
 /* 재료클릭시 나오는 달력 숨김, position*/
 .rfg-calendar-box {
-    width: 34%;
+    width: 36%;
     height: 100%;
-    margin-left: 2%;
     display: flex;
     align-items: center;
+    margin-left: 2%;
 }
 
 /* 아래부터 달력 css */
@@ -15,8 +15,6 @@
     overflow: hidden;
     background: white;
     line-height: 1.125em;
-    margin-top: 5%;
-    margin-bottom: 5%;
     padding: 2% 2%;
     border: rgba(1, 1, 1, 0.3) 1px solid;
     border-radius: 15px;
@@ -156,5 +154,5 @@
 }
 
 .react-calendar__tile {
-  font-size: 0.vw;
+  font-size: 0.7vw;
 }
