@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 import like from "../../img/recipe/like.jpg";
 import time from "../../img/recipe/time.jpg";
 import kcal from "../../img/recipe/kcal.jpg";
-import Axios from 'axios'
+import Alert from "../../page/alert";
+import Axios from 'axios';
 
 function thumbnail_info({ data,  click_like , setclick_like, information }) {
     //foodid 는 axios요청할때 푸드아이디
@@ -31,11 +32,11 @@ function thumbnail_info({ data,  click_like , setclick_like, information }) {
     }
     const Func_this_likeit_plus = () => {
         console.log(information)
-        if(information.id == '') {
-            alert('로그인을하세요.');
+        if(information == undefined) {
+            Alert("Recipe", "로그인 후 이용할 수있습니다.");
         } 
         else if(click_like){
-            alert('이미 좋아요를 눌렀습니다.')
+            Alert("Recipe", "이미 좋아요를 눌렀습니다.");
         }
         else {
             Axios.post("https://qkrtmfqls.gabia.io/addlike", {
@@ -44,6 +45,7 @@ function thumbnail_info({ data,  click_like , setclick_like, information }) {
                 foodname: data[0].FoodN
             })
             .then((response) => {
+                Alert("Recipe", "좋아요를 눌렀습니다.");
                 setclick_like(true);
             })
             .catch((error) => {

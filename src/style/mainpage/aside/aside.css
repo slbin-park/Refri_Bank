@@ -1,65 +1,32 @@
 .aside-form {
-  /* position: sticky; */
-  /* display: inline-; */
   width: 20vw;
   height: 100%;
   background-color: white;
   margin-top: 6%;
-  /* min-width: 300px; */
-  /* min-width:  20vw; */
-
-  /* border: blue 5px solid; */
-  /* margin-left: 5%; */
-  /* float: right; */
-  /* padding-top: 5%; */
-  /* min-width: 100px; */
 }
 
 .aside-top-box {
-  /* align-items: center; */
   text-align: center;
   width : 100%;
   height : 50%;
-  /* border: red 5px solid; */
   border: none;
-  /* margin: 5px 5px 5px 5px; */
-  /* margin-bottom: 10px; */
   
 }
 .aside-bottom-box {
   
   width : 100%;
   height: 50%;
-  /* text-align: center; */
-  /* border: blue 5px solid; */
-  /* margin: 5px 5px 5px 5px */
-  /* margin-left: 0; */
-  /* margin-right: 8px; */
-  /* margin-top: 5px; */
-  /* margin-bottom: 5px; */
-  /* border: red 5px solid; */
-  /* float: left; */
-  /* margin-right: 5px; */
 
 }
 
 .aside-food-block {
-  /* border: red 5px solid; */
   display: flex;
-  /* align-items: center;
-  justify-content: center; */
-  /* margin-top: 5px; */
-  /* margin : 15px; */
-  /* border: black 5px solid; */
 
 }
 .aside-food-num {
   color: #fbb032;
-  /* border: red 5px solid; */
   width: 10%;
   height: 100%;
-  /* text-align: center; */
-  /* justify-content: center; */
   font-size: 1vw;
 
   margin-left: 17%;
@@ -69,7 +36,6 @@
   width: 90%;
   height: 100%;
   color: rgba(1, 1, 1, 0.8);
-  /* border: blue 5px solid; */
 
   font-size: 1vw;
 
@@ -78,7 +44,6 @@
   width: 10%;
   height: 100%;
   color: tomato;
-  /* border: green 5px solid; */
 }
 
 .aside-top-box h4{
@@ -86,7 +51,6 @@
   font-size: 1.2vw;
   margin-top: 3px;
   margin-bottom: 3px;
-  /* text-align: center; */
   color: #404552;
 }
 
@@ -94,16 +58,9 @@
   width:55%;
   height: 20%;
   cursor: pointer;
-
-  /* margin-left: 10%; */
-  /* align-content: center; */
-  /* background-color:#aac1dd; */
   border-radius: 15px;
   border: none;
-  /* text-align: center; */
   margin-bottom: 5%;
-  /* margin-right: 5%; */
-  /* margin-bottom: 10px; */
 
   margin-left: 22.5%;
   margin-right: 22.5%;
@@ -122,40 +79,25 @@
 
 .aside-bottom-box .aside-food-block{
   overflow: hidden;
-  /* line-height: 1.2; */
   transition: all 2s;
   opacity: 0;
   height: 0;
 }
 
 .recommand_onoff_btn:active ~ .aside-bottom-box .aside-food-block{
-  /* background-color: black; */
-  /* max-height: 6em; */
   opacity: 1;
   height:25px;
 }
 .hint_msg {
   width: 100%;
   height: 10%;
-  /* float: left; */
  text-align: center;
  font-size: 0.8vw;
  color: #404552;
  margin-bottom: 3%;
- /* margin-bottom: 10px; */
-
- /* border: green 5px solid; */
 }
-
-
 
 .Big {
-  /* margin-left:20%;
-  margin-right:20%; */
   width: 100%;
   height: 50%;
-
-  /* margin-top: 5%; */
-  /* border: darksalmon 5px solid; */
 }
-

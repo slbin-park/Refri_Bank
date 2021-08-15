@@ -1,5 +1,4 @@
 .rfg-toggle-btn {
-    
     margin-top: 5%;
     margin-left: 3%;
     border-radius: 20px;
@@ -15,13 +14,10 @@
     background-color: #F4DFD0;
 }
 
-
 .filter-container {
     width: 80%;
     height: 80%;
 }
-
-
 
 section {
     position: relative;

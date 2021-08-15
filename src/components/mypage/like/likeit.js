@@ -65,9 +65,8 @@ function Likeit({ history, like_table, information, like_page_cnt }) {
     const Func_paging_plus = () => {
         set_default_page_slice(default_page_slice + 1);
         // [0,1,2,3,4] , [5,6,7,8,9] , ~~
-        
-
     }
+    
     return (
 
         <div className='likeit_body'>
@@ -85,14 +84,13 @@ function Likeit({ history, like_table, information, like_page_cnt }) {
                     <div className='body_header_sub_form'>
                         <div className='likeit_no'>No</div>
                         <div className='likeit_title'>제목</div>
-                        <div className='likeit_nickname'>작성자</div>
-                        <div className='likeit_date'>등록일</div>
                         <div className='likeit_cancel'>취소</div>
                     </div>
                 </div>
                 <div className='body_main_form'>
                     <Liketable history={history} table={like_table} information={information} like_page_slice={like_page_slice}></Liketable>
                 </div>
+
                 <div className="likeit_bottom_box">
                     <div className="like_select_num_btn_form">
                         <div className="like_select_num_btn_left" onClick={(e) => Func_paging_minus()}>
