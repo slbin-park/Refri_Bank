@@ -9,10 +9,10 @@ import introduce from './page/category/introduce';
 import Noticepage from './page/category/noticepage';
 import Recipe from './page/recipe';
 import Login from "./page/login";
-import Admin from "./page/admin"
-import Mypage from "./page/mypage"
-
-
+import Admin from "./page/admin";
+import Myigd from "./components/mypage/igd/igdmanage";
+import Likeit from './components/mypage/like/likeit';
+import Mywrite from './components/mypage/mywrite/mywrite';
 
 const App = () => {
   const [this_header_set_inputs, setthis_header_set_inputs] = useState({ id: "", pwd: "" });
@@ -46,8 +46,14 @@ const App = () => {
               <Noticepage history={history} information={information}/>
             </Route>
             <Route  path="/admin" exact component={Admin} />
-            <Route path="/mypage" exact component={Mypage}>
-              <Mypage history={history}information={information}/>
+            <Route path="/my_igd" exact component={Myigd}>
+              <Myigd history={history}information={information}/>
+            </Route>
+            <Route path="/like" exact component={Likeit}>
+              <Likeit history={history}information={information}/>
+            </Route>
+            <Route path="/my_write" exact component={Mywrite}>
+              <Mywrite history={history}information={information}/>
             </Route>
           </React.Fragment>
         )}

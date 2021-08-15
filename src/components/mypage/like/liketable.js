@@ -5,7 +5,7 @@ import '../../../style/mypage/likeit.css';
 
 function Liketable({table, history, information, like_page_slice}) {
     
-    console.log("like", like_page_slice);
+    // console.log("like", like_page_slice);
     const return_like_table = () => {
         const arr = [];
         table&&table.slice(like_page_slice.start,like_page_slice.end).map((v) => arr.push(<Create_like_table user={v}/>))

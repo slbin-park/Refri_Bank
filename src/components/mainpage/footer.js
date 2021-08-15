@@ -2,14 +2,12 @@ import React from 'react'
 import '../../style/mainpage/footer/footer.css'
 
 
-function footer({ ftable, history }) {
-  // console.log(showtable)
-
+function footer({ ftable, history, page_slice}) {
   const Show = () => {
     let psum_li = [];
     let four_li = [];
     // console.log(ftable);
-    {ftable && ftable.slice(0, 20).map(({ FoodId, FoodV, FoodN, FoodT, FoodC }, index) => {
+    {ftable && ftable.slice(page_slice.start, page_slice.end).map(({ FoodId, FoodV, FoodN, FoodT, FoodC }, index) => {
       four_li.push(
         <div key={FoodId} className="footer_block" onClick={() => history.push("/recipe/" + FoodId)}>
           <div className="footer_food">

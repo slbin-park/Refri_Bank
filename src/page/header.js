@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-
 import '../style/mainpage/header/header.css';
+import Alert from "./alert";
 // css 파일
 
 // import this_header_show_logo from '../../img/logo.png';
@@ -14,11 +14,11 @@ import this_header_logout_btn from '../img/main_body_img/logout_btn.jpeg'
 import Axios from 'axios';
 
 
-const Header = ({location, information, setinformation, history ,page,setpage}) => {
+const Header = ({ location, information, setinformation, history, page, setpage }) => {
     // 함수가 아니고 컴포넌트 처음 시작은 무조건 대문자
 
-    const [nickname,setnickname] = useState(information && information.nickname);
-    const [where_category,setwhere_category] = useState('default')
+    const [nickname, setnickname] = useState(information && information.nickname);
+    const [where_category, setwhere_category] = useState('default')
     useEffect(() => {
         let token = window.localStorage.getItem("token")
         token && token_check()
@@ -38,20 +38,20 @@ const Header = ({location, information, setinformation, history ,page,setpage}) 
     }, [location])
     // 로케이션이 변할때마다
 
-    
+
     const token_check = async () => {
         await Axios.post("https://qkrtmfqls.gabia.io/tokencheck", {
             token: window.localStorage.getItem("token")
         })
             .then((response) => {
                 if (response.data.token.success) {
-                    if(information == undefined){
-                    setinformation({ id: response.data.token.token.id, nickname: response.data.token.token.nickname })
-                }
+                    if (information == undefined) {
+                        setinformation({ id: response.data.token.token.id, nickname: response.data.token.token.nickname })
+                    }
                     setpage(true)
                 }
                 else {
-                    alert('토큰이 만료되었습니다.')
+                    Alert("Login", '토큰이 만료되었습니다.');
                     window.localStorage.clear();
                 }
             })
@@ -75,10 +75,19 @@ const Header = ({location, information, setinformation, history ,page,setpage}) 
         history.push('/noticepage');
     }
     const Func_header_move_secret = (e) => {            // 시크릿 페이지
-        alert(" 아직 준비중인 페이지입니다 ! ")
+        Alert("Page", "준비중인 페이지입니다.");
     }
-    const Func_header_move_page = (e) => {              // 시크릿 페이지
-        alert(" 아직 준비중인 페이지입니다 ! ")
+
+    const Func_header_move_page_like = (e) => {         // 마이 페이지
+        history.push('/like');
+    }
+
+    const Func_header_move_page_my_igd = (e) => {
+        history.push('/my_igd');
+    }
+
+    const Func_header_move_page_my_write = (e) => {     // 마이 페이지
+        history.push('/my_write');
     }
 
     const Func_header_move_loginpage = (e) => {         //  로그인 페이지
@@ -105,7 +114,7 @@ const Header = ({location, information, setinformation, history ,page,setpage}) 
                             {/* 로고이미지 ( 왼쪽 상단에 ) */}
                         </div>
                     </div>
-            
+
                     <div className="login-window-form">
                         {page != true ?
                             <>
@@ -114,8 +123,8 @@ const Header = ({location, information, setinformation, history ,page,setpage}) 
                                         <img src={this_header_login_btn} className="login-move-loginpage-img"></img>
                                     </button>
                                 </div>
-                            </> 
-                            
+                            </>
+
                             :
 
                             <div className="header-right-big-box">
@@ -123,13 +132,13 @@ const Header = ({location, information, setinformation, history ,page,setpage}) 
                                     {nickname} 님
                                     <span className="login-success-msg2">Have a good day 🌈</span>
                                 </div>
-                                
+
                                 <div className="header-move-rfgpage-btn">
                                     <button className="header-myrfg-btn" onClick={() => Func_header_move_myrfg()}>
-                                        <img align="center" src={this_header_show_rgfimg}/>
+                                        <img align="center" src={this_header_show_rgfimg} />
                                     </button>
                                 </div>
-                                
+
                                 <div className="header-logout-btn">
                                     <button className="logout-move-mainpage-btn" onClick={(e) => Func_header_logout()}>
                                         <img align="center" src={this_header_logout_btn} />
@@ -143,52 +152,52 @@ const Header = ({location, information, setinformation, history ,page,setpage}) 
 
                 <div className="header-bottom-box" >
                     <div className="introduce_box">
-                        { where_category === "/introduce" ? 
-                        <button className="header-category-btn" onClick={() => Func_header_move_introduce()} id="header-category-button1">웹 소개</button> 
-                        : 
-                        <button className="header-category-btn" onClick={() => Func_header_move_introduce()} id="header-category-button1">Introduce</button>  
+                        {where_category === "/introduce" ?
+                            <button className="header-category-btn" onClick={() => Func_header_move_introduce()} id="header-category-button1">웹 소개</button>
+                            :
+                            <button className="header-category-btn" onClick={() => Func_header_move_introduce()} id="header-category-button1">Introduce</button>
                         }
 
                     </div>
 
                     <div className="profile_box">
-                        { where_category === "/profile" ? 
-                        <button className="header-category-btn" onClick={Func_header_move_profile} id="header-category-button4">개발자 프로필</button>
-                        : 
-                        <button className="header-category-btn" onClick={Func_header_move_profile} id="header-category-button4">Profile</button>
+                        {where_category === "/profile" ?
+                            <button className="header-category-btn" onClick={Func_header_move_profile} id="header-category-button4">개발자 프로필</button>
+                            :
+                            <button className="header-category-btn" onClick={Func_header_move_profile} id="header-category-button4">Profile</button>
                         }
                     </div>
 
                     <div className="board_box">
-                        { where_category === "/noticepage" ? 
-                        <button className="header-category-btn" id="header-category-button2" onClick={Func_header_move_noticepage}>커뮤니티</button>
-                        : 
-                        <button className="header-category-btn" id="header-category-button2" onClick={Func_header_move_noticepage}>Board</button>
+                        {where_category === "/noticepage" ?
+                            <button className="header-category-btn" id="header-category-button2" onClick={Func_header_move_noticepage}>커뮤니티</button>
+                            :
+                            <button className="header-category-btn" id="header-category-button2" onClick={Func_header_move_noticepage}>Board</button>
                         }
                     </div>
 
                     <div>
-                        { where_category === "/secret" ?
-                        <button className="header-category-btn" id="header-category-button3" onClick={Func_header_move_secret}>시크릿</button>
-                        : 
-                        <button className="header-category-btn" id="header-category-button3" onClick={Func_header_move_secret}>Secret</button>
+                        {where_category === "/secret" ?
+                            <button className="header-category-btn" id="header-category-button3" onClick={Func_header_move_secret}>시크릿</button>
+                            :
+                            <button className="header-category-btn" id="header-category-button3" onClick={Func_header_move_secret}>Secret</button>
                         }
 
                     </div>
 
                     <div>
-                        { where_category === "/page" ? 
-                        <button className="header-category-btn" id="header-category-button5" onClick={Func_header_move_page}>페이지</button>
-                        : 
-                        <button className="header-category-btn" id="header-category-button5" onClick={Func_header_move_page}>Page
+                        {where_category === "/page" ?
+                            <button className="header-category-btn" id="header-category-button5">페이지</button>
+                            :
+                            <button className="header-category-btn" id="header-category-button5">Page
                             <div className="header-category-btn-mypage-div">
-                                <ul className="header-category-btn-mypage-ul">
-                                    <li className="header-category-btn-mypage-li">재료 관리</li>
-                                    <li className="header-category-btn-mypage-li">좋아요한 레시피</li>
-                                    <li className="header-category-btn-mypage-li">내가 작성한 게시글</li>
-                                </ul>
-                            </div>    
-                        </button>
+                                    <ul className="header-category-btn-mypage-ul">
+                                        <li className="header-category-btn-mypage-li" onClick={Func_header_move_page_my_igd}>재료 관리</li>
+                                        <li className="header-category-btn-mypage-li" onClick={Func_header_move_page_like}>좋아요한 레시피</li>
+                                        <li className="header-category-btn-mypage-li" onClick={Func_header_move_page_my_write}>내가 작성한 게시글</li>
+                                    </ul>
+                                </div>
+                            </button>
                         }
                     </div>
                 </div>

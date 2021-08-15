@@ -1,13 +1,13 @@
 
 import '../../style/noticepage/freeboard.css';
 import heart_img from '../../img/board/heart.png';
-import comment_img from '../../img/board/comment.png'
-import React, { useState, useEffect } from 'react'
+import comment_img from '../../img/board/comment.png';
+import React, { useState, useEffect } from 'react';
+import Alert from "../../page/alert";
 import Axios from "axios";
 //4번 렌더링
-function Func_freeboard_show_freeboard({ setModalOn, set_get_free_number, information }) {
+function Func_freeboard_show_freeboard({ setModalOn, set_get_free_number, information, set_button_cnt, page_slice }) {
     const [free_table, set_free_table] = useState(); //전체 게시글 데이터
-
 
     useEffect(() => {
         get_free_tableall()
@@ -18,6 +18,7 @@ function Func_freeboard_show_freeboard({ setModalOn, set_get_free_number, inform
 
         })
             .then((response) => {
+                set_button_cnt(response.data.length / 10)
                 set_free_table(response.data);
             })
             .catch((error) => {
@@ -38,7 +39,7 @@ function Func_freeboard_show_freeboard({ setModalOn, set_get_free_number, inform
         })
             .then((response) => {
                 get_free_tableall()
-                alert('게시글 삭제에 성공하셨습니다 ! ')
+                Alert('board','게시글 삭제에 성공하셨습니다!');
             })
             .catch((error) => {
                 console.log(error);
@@ -50,7 +51,7 @@ function Func_freeboard_show_freeboard({ setModalOn, set_get_free_number, inform
         return (
             <>
                 {/* slice 넣어야함 */}
-                {free_table && free_table.slice(0, 6).map(({ number, id, nickname, title, description, createdate, count, likeit, index }) => {
+                {free_table && free_table.slice(page_slice.start, page_slice.end).map(({ number, id, nickname, title, description, createdate, count, likeit, index }) => {
                     return (
                         <div key={index} className="eachcontent-block"  >
                             <div className="eachcontent" border-color="#008554">

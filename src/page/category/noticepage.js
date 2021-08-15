@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-
 import '../../style/noticepage/noticepage.css';
 import 'aos/dist/aos.css';
+import '../../style/mypage/likeit.css';
 
 import email_img from '../../img/board/email.png';
 import xbuttom from '../../img/board/xbutton.jpg';
@@ -10,6 +10,11 @@ import Noticeboard from '../../components/noticepage/noticeboard';
 import Freeboard from '../../components/noticepage/freeboard';
 import Freecontent from '../../components/noticepage/freecontent';
 import Write_form from '../../components/noticepage/writeform'
+import Notice_content from '../../components/noticepage/noticecontent'
+import Page_button from '../../components/noticepage/pagebutton'
+
+import Alert from "../alert";
+
 
 
 function App({ information }) {
@@ -17,15 +22,21 @@ function App({ information }) {
   const [page, setpage] = useState('free') // 공지 , 자유게시판 구분용
   const [write_toggle, set_write_toggle] = useState(false); // 게시글 작성하기 위한 토글
   const [get_free_number, set_get_free_number] = useState(); // 게시판 고유 번호
+  const [get_notice_number, set_notice_number] = useState();
   const [modalOn, setModalOn] = useState(false); // 모달창을 위한 토글
+  const [button_cnt, set_button_cnt] = useState();
+  const [page_slice, set_page_slice] = useState({ start: 0, end: 10 }) //페이징 버튼 시작 , 끝
 
+  useEffect(() => {
+    console.log(button_cnt)
+  }, [button_cnt])
   const Write_open = (e) => {
     if (page == 'notice') {
       if (information.id == 'smpts00' || information.id == '1') {
         set_write_toggle(!write_toggle)
       }
       else {
-        alert('관리자만 가능합니다.')
+        Alert("Board", "관리자만 가능합니다.");
       }
     }
     else {
@@ -51,17 +62,15 @@ function App({ information }) {
     setModalOn(!modalOn);
   }
 
-  //이메일 전송 링크
-  const Func_email_click_btn = () => {
-    window.location.href = "https://www.naver.com/";
-  }
-
   const Modal = () => {
     return (
       <>
         <div className="modal" data-aos="zoom-in">
           <div className="closebtnbox"><img className="closebtn" role="button" src={xbuttom} onClick={onCloseModal} width="30px" height="30px" /></div>
-          <Freecontent get_free_number={get_free_number} information={information} />
+          {page == 'free' ?
+            <Freecontent get_free_number={get_free_number} information={information} /> :
+            <Notice_content get_notice_number={get_notice_number} />
+          }
         </div>
       </>
     );
@@ -107,15 +116,19 @@ function App({ information }) {
             </div>
             <div className="maincontent-form">
 
-              {page == 'notice' ? <Noticeboard /> : ''}
+              {page == 'notice' ? <Noticeboard page_slice={page_slice} set_button_cnt={set_button_cnt} setModalOn={setModalOn} set_notice_number={set_notice_number} /> : ''}
 
               <div className="allcontent-block">
-                {page == 'free' ? <Freeboard setModalOn={setModalOn} set_get_free_number={set_get_free_number} information={information} /> : ''}
+                {page == 'free' ? <Freeboard page_slice={page_slice} set_button_cnt={set_button_cnt} setModalOn={setModalOn} set_get_free_number={set_get_free_number} information={information} /> : ''}
               </div>
 
             </div>
           </div>
-
+          <div style={{ width: '100%', height: '80%', display: 'flex', 'justify-content': 'center', 'align-items': 'center' }}>
+            <div className="like_select_num_btn_form">
+              <Page_button page={page} button_cnt={button_cnt} set_page_slice={set_page_slice} page_slice={page_slice} />
+            </div>
+          </div>
           {information != undefined ? <button className="move_writeform_btn" onClick={Write_open}>게시글 작성하기</button> : ''}
 
         </div>

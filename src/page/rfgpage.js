@@ -1,8 +1,10 @@
 import Func_filter_find_ingredient from "../components/rfgpage/filter";
-import Func_filterresult_filterresult from "../components/rfgpage/filterresult";
 import Footer from '../components/mainpage/footer';
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
+import Footer_bottom from '../components/mainpage/footer-bottom';
+import '../style/mypage/index.css';
+import '../style/mypage/likeit.css';
 
 // import SearchResult from '../components/SearchResult';
 
@@ -11,6 +13,11 @@ function App({ history, information }) {
   const [thumb_table, set_thumb_table] = useState();
   const [result_box_list, setresult_box_list] = useState([]);
   const [random_select, set_random_select] = useState([]);
+  const [page_slice, set_page_slice] = useState({ start: 0, end: 16 })
+  // page_slice - > 이거는 한페이지에서 자르는 개수를 정하는 변수
+
+  const [ftable_cnt,set_ftable_cnt] = useState();
+  //ftable_cnt 버튼의 개수
 
   useEffect(() => {
     if (random_select.length != 0) {
@@ -19,6 +26,7 @@ function App({ history, information }) {
       })
         .then((response) => {
           set_thumb_table(response.data);
+          set_ftable_cnt(response.data.length/16)
         })
         .catch((error) => {
           console.log(error);
@@ -57,7 +65,7 @@ function App({ history, information }) {
 
   const Func_show_ingredient = () => {
     return (
-      <div className="rfg-body-form" style={toggle === true ? {height: '80vh'} : {height:'0vh'}}>
+      <div className="rfg-body-form" style={toggle === true ? { height: '80vh' } : { height: '0vh' }}>
         <Func_filter_find_ingredient information={information} result_box_list={result_box_list} setresult_box_list={setresult_box_list}>
         </Func_filter_find_ingredient>
       </div>
@@ -83,7 +91,17 @@ function App({ history, information }) {
         <h2>추천 레시피</h2>
       </div>
       <div className="fg-result-box">
-        <Footer ftable={thumb_table} history={history} />
+        <Footer ftable={thumb_table} history={history} page_slice={page_slice} />
+      </div>
+      <div className="move-footer-form">
+          <div style={{ width: '100%', height: '80%', display: 'flex', 'justify-content': 'center', 'align-items': 'center' }}>
+          <div className="like_select_num_btn_form">
+              {
+                ftable_cnt &&
+                <Footer_bottom set_page_slice={set_page_slice} ftable_cnt ={ftable_cnt}/>
+              }
+          </div>
+        </div>
       </div>
     </>
   );

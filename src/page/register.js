@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import '../style/signup_page/register.css';
 import logo from '../img/main_body_img/login-logo.png';
-import Axios from 'axios'
+import Alert from "./alert";
+import Axios from 'axios';
 
 function App({ history, setthis_signup_set_inputs, this_signup_set_inputs }) {
   // 만약에 전달안해줬는데? 여기서 히스토리 받았자나 => 그럼 안되지
@@ -9,7 +10,6 @@ function App({ history, setthis_signup_set_inputs, this_signup_set_inputs }) {
 
 
   const user_register = async e => {
-    console.log(1)
     e.preventDefault();
     await Axios.post("https://qkrtmfqls.gabia.io/register", {
       id: register.id,
@@ -17,13 +17,12 @@ function App({ history, setthis_signup_set_inputs, this_signup_set_inputs }) {
       name: register.name,
     })
       .then((response) => {
-        console.log(response.data)
         if (response.data.success) {
-          alert('회원가입을 축하드립니다!')
+          Alert("Register",'회원가입을 축하드립니다!');
           history.push('/')
         }
         else {
-          alert(response.data.msg)
+          Alert("Register", response.data.msg);
         }
       })
       .catch((error) => {
@@ -34,10 +33,10 @@ function App({ history, setthis_signup_set_inputs, this_signup_set_inputs }) {
   const Func_signup_check_password = (e) => {
     e.preventDefault();
     // 버튼을 누를시 수행하는 고유 동작을 중단시킴
-    if (register.pwd === register.pwdcheck) alert("일치합니다.")
+    if (register.pwd === register.pwdcheck) Alert("Register", "비밀번호가 일치합니다.");
     // 로그인 성공 했을때에만 냉장고 버튼 생기게 해줘야 함
     // 로그인 안하면 ( 쿠키 없을 때 ) 버튼 생기면 안됨
-    else alert("Check your PWD.")
+    else Alert("Register", "비밀번호가 일치하지 않습니다.");
   }
 
   return (

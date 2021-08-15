@@ -10,9 +10,6 @@ import Rodal from 'rodal';
 import Axios from 'axios';
 
 function Bodymain({ like_count}) {
-
-    
-    
     return (
         <div className='body_mypage'>
             <div className='body_content'>

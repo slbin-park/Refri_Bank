@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import '../style/login_page/login.css';
 import logo from '../img/main_body_img/login-logo.png';
+import Alert from "./alert";
 import Axios from 'axios';
 
 const Login = ({ information, setinformation, history, setpage }) => {
@@ -16,20 +17,19 @@ const Login = ({ information, setinformation, history, setpage }) => {
       pwd: logintext.pwd
     })
       .then((response) => {
+        console.log(response.data)
         if (response.data.success)//로그인 성공시
         {
           console.log(response.data)
           setpage(true)
           setinformation({ id: response.data.id, nickname: response.data.nickname })
-          console.log('토큰넣었습니다.')
           localStorage.setItem('token', response.data.token);
-          alert('로그인에 성공하셨습니다!')
-
+          Alert("Login", "로그인에 성공하셨습니다.");
           history.push('/');
         } else if (response.data.token.success == false) {
           window.localStorage.clear();
           setpage(false)
-          alert(response.data.msg);//실패사유 출력
+          Alert("Login", response.data.msg);//실패사유 출력
         }
       })
       .catch((error) => {
@@ -39,7 +39,6 @@ const Login = ({ information, setinformation, history, setpage }) => {
   }
 
   const Func_login_move_signup = (e) => {
-    console.log("회원가입 페이지로 이동")
     history.push('/signup');
   }
 
@@ -55,21 +54,21 @@ const Login = ({ information, setinformation, history, setpage }) => {
           <div className="login-input-sub-form">
             <input className="login-wait-id" name="id" type="text" placeholder="Id" onChange={e => setlogintext({ ...logintext, id: e.target.value })} />
             <input className="login-wait-psword" name="pwd" type="password" placeholder="Password" onChange={e => setlogintext({ ...logintext, pwd: e.target.value })} />
-            <button className="loginpage_login_btn" onClick={TokenLogin}> 
+            <button className="loginpage_login_btn" onClick={TokenLogin}>
               <div>
-                <span>Login</span> 
+                <span>Login</span>
               </div>
             </button>
-            <button className="loginpage_signup_btn" onClick={Func_login_move_signup}> 
+            <button className="loginpage_signup_btn" onClick={Func_login_move_signup}>
               <div>
-                <span>Signup</span> 
+                <span>Signup</span>
               </div>
             </button>
           </div>
         </div>
 
         {/* <input type="text" placeholder="Nickname"onChange={e => setregister({ ...register, name: e.target.value })} value={register.name} /> */}
-        
+
       </div>
     </div>
 

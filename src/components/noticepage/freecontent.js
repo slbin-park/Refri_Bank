@@ -3,7 +3,8 @@ import Axios from 'axios';
 import '../../style/noticepage/freecontent.css';
 import likeimg from '../../img/board/likeimg.jpg';
 import commentimg from '../../img/board/commentimg.jpg';
-import Free_reply from './Freereply'
+import Free_reply from './Freereply';
+import Alert from "../../page/alert";
 import Aos from "aos";
 
 const Func_freecontent_show_freecontent = ({ get_free_number, information }) => {
@@ -13,6 +14,7 @@ const Func_freecontent_show_freecontent = ({ get_free_number, information }) => 
     useEffect(() => {
         get_free_table()
         get_reply()
+
     }, [])
 
     const get_reply = async () => {
@@ -69,12 +71,11 @@ const Func_freecontent_show_freecontent = ({ get_free_number, information }) => 
                     if (response.data.success) {
                         get_free_table()
                         get_reply()
-                        alert('좋아요 버튼을 눌렀습니다.')
+                        Alert("Board", '좋아요 버튼을 눌렀습니다.');
                     }
                     else {
-                        alert('이미 좋아요를 눌렀습니다.')
+                        Alert("Board", '이미 좋아요를 눌렀습니다.');
                     }
-                    console.log(response.data)
                 })
                 .catch((error) => {
                     console.log(error);
