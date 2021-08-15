@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import '../style/mainpage/header/header.css';
 // css 파일
 
@@ -77,8 +76,17 @@ const Header = ({location, information, setinformation, history ,page,setpage}) 
     const Func_header_move_secret = (e) => {            // 시크릿 페이지
         alert(" 아직 준비중인 페이지입니다 ! ")
     }
-    const Func_header_move_page = (e) => {              // 시크릿 페이지
-        alert(" 아직 준비중인 페이지입니다 ! ")
+
+    const Func_header_move_page_like = (e) => {         // 마이 페이지
+        history.push('/like');   
+    }
+
+    const Func_header_move_page_my_igd = (e) => {       
+        history.push('/my_igd');
+    }
+
+    const Func_header_move_page_my_write = (e) => {     // 마이 페이지
+        history.push('/my_write');
     }
 
     const Func_header_move_loginpage = (e) => {         //  로그인 페이지
@@ -178,14 +186,14 @@ const Header = ({location, information, setinformation, history ,page,setpage}) 
 
                     <div>
                         { where_category === "/page" ? 
-                        <button className="header-category-btn" id="header-category-button5" onClick={Func_header_move_page}>페이지</button>
+                        <button className="header-category-btn" id="header-category-button5">페이지</button>
                         : 
-                        <button className="header-category-btn" id="header-category-button5" onClick={Func_header_move_page}>Page
+                        <button className="header-category-btn" id="header-category-button5">Page
                             <div className="header-category-btn-mypage-div">
                                 <ul className="header-category-btn-mypage-ul">
-                                    <li className="header-category-btn-mypage-li">재료 관리</li>
-                                    <li className="header-category-btn-mypage-li">좋아요한 레시피</li>
-                                    <li className="header-category-btn-mypage-li">내가 작성한 게시글</li>
+                                    <li className="header-category-btn-mypage-li" onClick={Func_header_move_page_my_igd}>재료 관리</li>
+                                    <li className="header-category-btn-mypage-li" onClick={Func_header_move_page_like}>좋아요한 레시피</li>
+                                    <li className="header-category-btn-mypage-li" onClick={Func_header_move_page_my_write}>내가 작성한 게시글</li>
                                 </ul>
                             </div>    
                         </button>

@@ -124,7 +124,6 @@
 
 .header-category-btn-mypage-div {
   visibility:hidden;
-  /* margin-top: 1%; */
   position: absolute;
   top: 2.5vh;
   padding-top: 2vh;
@@ -146,7 +145,6 @@
 
 #header-category-button5:hover .header-category-btn-mypage-div {
   visibility: visible;
-  font-size: 1vw;
   font-weight: 400;
   animation-name: dropdown;
   animation-duration: 0.7s;
