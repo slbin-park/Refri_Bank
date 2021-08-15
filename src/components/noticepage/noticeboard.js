@@ -9,7 +9,7 @@ function Func_noticeboard_show_noticeboard({history}) {
   const [notice_list, setnotice_list] = useState()
 
   useEffect(()=>{
-    Axios.post("http://qkrtmfqls.gabia.io/getnotice", {
+    Axios.post("https://qkrtmfqls.gabia.io/getnotice", {
     })
       .then((response) => {
         setnotice_list(response.data)

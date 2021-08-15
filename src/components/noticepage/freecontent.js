@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from "react";
 import Axios from 'axios';
-import AOS from "aos";
 import '../../style/noticepage/freecontent.css';
 import likeimg from '../../img/board/likeimg.jpg';
 import commentimg from '../../img/board/commentimg.jpg';
+import Free_reply from './Freereply'
+import Aos from "aos";
 
-const Func_freecontent_show_freecontent = ({ set_reply_table, get_free_number, information, reply_table }) => {
-
+const Func_freecontent_show_freecontent = ({ get_free_number, information }) => {
     const [commentinput, setcommentinput] = useState('');
-    const [free_board, set_free_board] = useState();
-
+    const [free_board, set_free_board] = useState(); //게시글 내용이 들어가있음
+    const [reply_table, set_reply_table] = useState(); //댓글 데이터
     useEffect(() => {
         get_free_table()
-    }, [reply_table])
+        get_reply()
+    }, [])
 
     const get_reply = async () => {
         await Axios.post("https://qkrtmfqls.gabia.io/getreply/" + get_free_number, {
@@ -25,7 +26,9 @@ const Func_freecontent_show_freecontent = ({ set_reply_table, get_free_number, i
             })
     }
 
-    const Func_freecontent_post_commentimput = (e) => {
+    const Add_reply = (e) => {
+        e.preventDefault();
+        
         if (information != undefined) {
             Axios.post("https://qkrtmfqls.gabia.io/addreply", {
                 number: get_free_number,
@@ -34,6 +37,8 @@ const Func_freecontent_show_freecontent = ({ set_reply_table, get_free_number, i
                 description: commentinput
             })
                 .then((response) => {
+                    setcommentinput('')
+                    get_free_table()
                     get_reply()
                 })
                 .catch((error) => {
@@ -62,8 +67,9 @@ const Func_freecontent_show_freecontent = ({ set_reply_table, get_free_number, i
             })
                 .then((response) => {
                     if (response.data.success) {
-                        alert('좋아요 버튼을 눌렀습니다.')
+                        get_free_table()
                         get_reply()
+                        alert('좋아요 버튼을 눌렀습니다.')
                     }
                     else {
                         alert('이미 좋아요를 눌렀습니다.')
@@ -75,28 +81,7 @@ const Func_freecontent_show_freecontent = ({ set_reply_table, get_free_number, i
                 });
         }
     }
-
-    const Func_freecontent_show_commentlist = () => {
-        AOS.init();
-        return (
-            <>
-                {reply_table && reply_table.slice(0, 6).map(({ number, id, nickname, description, created, index }) => {
-                    return (
-                        <div key={index} className="eachcomment-block">
-                            <div className="comment-header">
-                                <div className="comment-nickname">{nickname}</div>
-                                <div createdate="comment-createdate">{created}</div>
-                            </div>
-                            <div className="comment-description">
-                                <div className="description" >{description}</div>
-                            </div>
-                        </div>
-                    )
-                })}
-            </>
-        )
-    }
-
+    Aos.init()
     return (
         <>
             {free_board && <div className="thumbnail-content-bigbox">
@@ -117,13 +102,13 @@ const Func_freecontent_show_freecontent = ({ set_reply_table, get_free_number, i
 
                     {/* 로그인 안할시에 입력창 안뜸 */}
                     {information && <form className="eachcomment-input">
-                        <input required autoFocus className="comment-input" type='text' placeholder='댓글을 입력하세요...' onKeyPress={(e) => { if (e.key == 'Enter') Func_freecontent_post_commentimput() }} onChange={e => setcommentinput(e.target.value)} value={commentinput} />
-                        <a role="button" className="commentsubmit-button" onClick={() => { Func_freecontent_post_commentimput() }}>등록</a>
+                        <input required autoFocus className="comment-input" type='text' placeholder='댓글을 입력하세요...' onKeyPress={(e)=>e.key == 'Enter'? Add_reply:''} onChange={e => setcommentinput(e.target.value)} value={commentinput} />
+                        <button className="commentsubmit-button" onClick={Add_reply}>등록</button>
                     </form>}
                     {/* 로그인 안할시에 처리 끝 */}
 
                     {/* 댓글 */}
-                    <Func_freecontent_show_commentlist />
+                    {reply_table && <Free_reply reply_table={reply_table} />}
                 </div>
             </div>}
         </>

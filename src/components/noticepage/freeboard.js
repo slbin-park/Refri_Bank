@@ -5,7 +5,7 @@ import comment_img from '../../img/board/comment.png'
 import React, { useState , useEffect } from 'react'
 import Axios from "axios";
 //4번 렌더링
-function Func_freeboard_show_freeboard({ set_reply_table, set_get_free_number, information}) {
+function Func_freeboard_show_freeboard({ setModalOn, set_get_free_number, information}) {
     const [free_table, set_free_table] = useState(); //전체 게시글 데이터
 
 
@@ -25,29 +25,16 @@ function Func_freeboard_show_freeboard({ set_reply_table, set_get_free_number, i
           })
       }
 
-    const Func_this_select_content = (e, number) => {
-        get_reply(number)
+    const Click_free = (e, number) => {
+        setModalOn(true)
         set_get_free_number(number);
     }
-      
-    // 게시글 클릭시 댓글 가져옴
-    const get_reply = async (number) => {
-        await Axios.post("https://qkrtmfqls.gabia.io/getreply/" + number, {
-        })
-            .then((response) => {
-                set_reply_table(response.data);
-            })
-            .catch((error) => {
-                console.log('reply', error);
-            })
-    }
-    // 게시글 클릭 끝
+
 
     //게시글 삭제버튼 시작
     const Func_this_delete_content = (e, number) => {
         e.preventDefault();
         Axios.post("https://qkrtmfqls.gabia.io/deletefree/" + number, {
-
         })
             .then((response) => {
                 get_free_tableall()
@@ -67,7 +54,7 @@ function Func_freeboard_show_freeboard({ set_reply_table, set_get_free_number, i
                     return (
                         <div key={index} className="eachcontent-block"  >
                             <div className="eachcontent" border-color="#008554">
-                                <div onClick={(e) => Func_this_select_content(e, number, id, nickname, title, description, createdate, count, likeit)} style={{ height: '80%' }}>
+                                <div onClick={(e) => Click_free(e, number)} style={{ height: '80%' }}>
                                     <div className="content-header" >
 
                                         <div className="nickname">{nickname}</div>
@@ -94,7 +81,6 @@ function Func_freeboard_show_freeboard({ set_reply_table, set_get_free_number, i
     }
 
     return (
-        // 4개 묶는 div
         <Func_freeboard_show_eachcontent />
     )
 }

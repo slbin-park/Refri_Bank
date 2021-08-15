@@ -7,9 +7,6 @@ import Header from './page/header';
 import Profile from './page/category/profile';
 import introduce from './page/category/introduce';
 import Noticepage from './page/category/noticepage';
-import noticecontent from './components/noticepage/noticecontent';
-
-import Writeform from './components/noticepage/writeform';
 import Recipe from './page/recipe';
 import Login from "./page/login";
 import Admin from "./page/admin"
@@ -45,9 +42,7 @@ const App = () => {
             <Route  path="/profile" exact component={Profile} >
             </Route>
             <Route path="/introduce" component={introduce} />
-            <Route path="/noticepage" component={Noticepage} information={information} history={history} >
-            {/* 공지사항 번호에 해당하는 url로 이동 */}
-            <Route exact path="/noticepage/:no" component={noticecontent} />
+            <Route path="/noticepage" component={Noticepage} >
               <Noticepage history={history} information={information}/>
             </Route>
             <Route  path="/admin" exact component={Admin} />

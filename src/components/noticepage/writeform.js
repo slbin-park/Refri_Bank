@@ -5,7 +5,6 @@ import Axios from 'axios';
 
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { Redirect } from "react-router-dom";
 
 function Func_writeform_write_des({set_write_toggle,page, information}) {
     const [freeinputdes, setfreeinputdes] = useState({
@@ -23,7 +22,7 @@ function Func_writeform_write_des({set_write_toggle,page, information}) {
     };
 
     const add_notice = ()=>{
-        Axios.post("http://qkrtmfqls.gabia.io/addnotice", {
+        Axios.post("https://qkrtmfqls.gabia.io/addnotice", {
             id: information.id,
             title: freeinputdes.title,
             description: freeinputdes.description,
@@ -37,7 +36,7 @@ function Func_writeform_write_des({set_write_toggle,page, information}) {
     }
 
     const add_free = () =>{
-        Axios.post("http://qkrtmfqls.gabia.io/addfree", {
+        Axios.post("https://qkrtmfqls.gabia.io/addfree", {
             id: information.id,
             nickname: information.nickname,
             title: freeinputdes.title,
@@ -54,7 +53,6 @@ function Func_writeform_write_des({set_write_toggle,page, information}) {
 
     
     const Func_writeform_post_freeinputdes = (e) => {
-        console.log(page)
         if(page =='notice'){
             add_notice()
         }

@@ -4,7 +4,6 @@ import '../../style/noticepage/noticepage.css';
 import 'aos/dist/aos.css';
 import xbuttom from '../../img/board/xbutton.jpg';
 
-
 import Noticeboard from '../../components/noticepage/noticeboard';
 import Freeboard from '../../components/noticepage/freeboard';
 import Freecontent from '../../components/noticepage/freecontent';
@@ -13,20 +12,10 @@ import Write_form from '../../components/noticepage/writeform'
 
 function App({ information }) {
 
-
   const [page, setpage] = useState('free') // 공지 , 자유게시판 구분용
   const [write_toggle, set_write_toggle] = useState(false); // 게시글 작성하기 위한 토글
   const [get_free_number, set_get_free_number] = useState(); // 게시판 고유 번호
-  const [reply_table, set_reply_table] = useState(); //댓글 데이터
   const [modalOn, setModalOn] = useState(false); // 모달창을 위한 토글
-
-  // 첫번째 렌더링 모든 게시글들 불러옴
-
-
-  useEffect(() => {
-    setModalOn(true);
-  }, [reply_table])
-
 
   const Write_open = (e) => {
     if (page == 'notice') {
@@ -57,28 +46,27 @@ function App({ information }) {
   }
 
   const onCloseModal = () => {
-    // 해당 게시글 토글
     setModalOn(!modalOn);
   }
 
   const Modal = () => {
     return (
       <>
-        { reply_table &&
           <div className="modal" data-aos="zoom-in">
             <div className="closebtnbox"><img className="closebtn" role="button" src={xbuttom} onClick={onCloseModal} width="30px" height="30px" /></div>
-            <Freecontent set_reply_table={set_reply_table} get_free_number={get_free_number} information={information} reply_table={reply_table} />
-          </div>}
+            <Freecontent get_free_number={get_free_number} information={information}  />
+          </div>
       </>
     );
   };
-
 
   return (
     <>
       { write_toggle == false ?
         <div className="notice-form">
+
           {modalOn ? <Modal /> : ''}
+
           <div className="topcontent-form">
             <h1> 자주 묻는 질문 </h1>
             <p> 찾는 내용이 없으시다면 고객센터를 방문해바라 이 말이다</p>
@@ -111,14 +99,18 @@ function App({ information }) {
               </div>
             </div>
             <div className="maincontent-form">
-              {page == 'notice' ? <Noticeboard  /> : ''}
-              <div className="allcontent-block">
-                {page == 'free' ?<Freeboard set_reply_table={set_reply_table} set_get_free_number={set_get_free_number}  information={information} /> : ''}
 
+              {page == 'notice' ? <Noticeboard  /> : ''}
+
+              <div className="allcontent-block">
+                {page == 'free' ?<Freeboard setModalOn={setModalOn} set_get_free_number={set_get_free_number}  information={information} /> : ''}
               </div>
+
             </div>
           </div>
+          
           {information!=undefined ? <button className="move_writeform_btn" onClick={Write_open}>게시글 작성하기</button>:''}
+
         </div>
         : <Write_form set_write_toggle={set_write_toggle} page={page} information={information} />}
     </>
