@@ -25,7 +25,6 @@ const Login = ({ information, setinformation, history, setpage }) => {
           setinformation({ id: response.data.id, nickname: response.data.nickname })
           localStorage.setItem('token', response.data.token);
           Alert("Login", "로그인에 성공하셨습니다.");
-
           history.push('/');
         } else if (response.data.token.success == false) {
           window.localStorage.clear();

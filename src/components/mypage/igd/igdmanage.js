@@ -35,45 +35,123 @@ function Idgmanage({ information, history }) {
     }
 
     return (
-        <div className="mypage_main" style={{ height: '100vh' }}>
+        <div className='igd_main_div'>
+            <div className='igd_title_div'>
+                <div style={{ 'font-size': '5vh' }}> 재료관리</div>
+                <br />
+                   리프레 뱅크 재료 관리 서비스를 마음껏 이용해보세요.<br />
+            </div>
+            <div className='igd_content_div'>
 
-            <div className='mypage_main_div'>
-                <div className='igd_main_div'>
-                    <div className='igd_title_div'>
-                        <div style={{ 'font-size': '5vh' }}> 재료관리</div>
-                        <br />
-                        리프레 뱅크 재료 관리 서비스를 마음껏 이용해보세요.<br />
-                    </div>
-                    <div className='igd_content_div'>
+                <div className='igd_body_div'>
+                    <div className='igd_left_box'>
+                        {/* 위에2개 시작 */}
+                        <div className='igd_box_left_top_1'>
+                            <div className='igd_box_1'>
+                                <div className='igd_box_1_content'>
+                                    <img className='igd_box_img' src={Dairy}></img>
+                                    <br />
+                        햄버거<br />
+                        21-08-30<br />
+                        d-15<br />
+                                </div>
+                            </div>
 
-                        <div className='igd_body_div'>
-                            <div className='igd_left_box'>
-                                {/* 위에2개 시작 */}
-                                <div className='igd_box_left_top_1'>
-                                    <div className='igd_box_1'>
-                                        <div className='igd_box_1_content'>
+                            <div className='igd_box_1'>
+                                <div className='igd_box_1_content'>
+
+                                    <img className='igd_box_img' src={Dairy}></img>
+
+                                    <br />
+                        햄버거<br />
+                        21-08-30<br />
+                        d-15<br />
+                                </div>
+                            </div>
+                        </div>
+                        {/* 위에2개 끝 */}
+                        {/* 오른쪽 첫번째 끝 */}
+
+
+                        <div className='igd_box_right_top_1'>
+                            <div className='igd_box_2_all'>
+                                <div className='igd_box_2'>
+
+                                    <div className='igd_box_top1_img'>
+                                        <div >
                                             <img className='igd_box_img' src={Dairy}></img>
                                             <br />
-                                            햄버거<br />
-                                            21-08-30<br />
-                                            d-15<br />
+                                햄버거<br />
+                                21-08-30<br />
+                                d-15<br />
                                         </div>
                                     </div>
-
-                                    <div className='igd_box_1'>
-                                        <div className='igd_box_1_content'>
+                                    <div className='igd_box_top1_img'>
+                                        <div >
 
                                             <img className='igd_box_img' src={Dairy}></img>
-
                                             <br />
-                                            햄버거<br />
-                                            21-08-30<br />
-                                            d-15<br />
+                                햄버거<br />
+                                21-08-30<br />
+                                d-15<br />
                                         </div>
                                     </div>
                                 </div>
-                                {/* 위에2개 끝 */}
-                                {/* 오른쪽 첫번째 끝 */}
+                            </div>
+                        </div>
+                        {/* 오른쪽 첫번째 끝 */}
+
+
+
+
+
+                        {/* 위에2개 시작 */}
+                        <div className='igd_box_left_top_1'>
+                            <div className='igd_box_1_cover'>
+                                <div className='igd_box_1'>
+
+                                    <div className='igd_box_1_content'>
+                                        <div className="igd_box_img_form">
+                                            <img className='igd_box_img' src={Dairy}></img>
+                                        </div>
+                                    </div>
+                                    <div style={{ height: '20%', 'font-size': '20%' }}>
+                                        <br />
+                        햄버거<br />
+                        21-08-30<br />
+                        d-15<br />
+                                    </div>
+                                </div>
+
+                                <div className='igd_box_1'>
+                                    <div className='igd_box_1_content'>
+
+                                        <img className='igd_box_img' src={Dairy}></img>
+
+                                        <br />
+                        햄버거<br />
+                        21-08-30<br />
+                        d-15<br />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* 위에2개 끝 */}
+
+
+
+
+                        {/* 위에2개 시작 */}
+                        <div className='igd_box_left_top_1'>
+                            <div className='igd_box_1'>
+                                <div className='igd_box_1_content'>
+                                    <img className='igd_box_img' src={Dairy}></img>
+                                    <br />
+                        햄버거<br />
+                        21-08-30<br />
+                        d-15<br />
+                                </div>
+                                {/* 오른쪽 첫번째 끝 */}                         {/* 오른쪽 첫번째 끝 */}
 
 
                                 <div className='igd_box_right_top_1'>
@@ -103,58 +181,6 @@ function Idgmanage({ information, history }) {
                                     </div>
                                 </div>
                                 {/* 오른쪽 첫번째 끝 */}
-
-                                {/* 위에2개 시작 */}
-                                <div className='igd_box_left_top_1'>
-                                    <div className='igd_box_1'>
-                                        <div className='igd_box_1_content'>
-                                            <img className='igd_box_img' src={Dairy}></img>
-                                            <br />
-                                            햄버거<br />
-                                            21-08-30<br />
-                                            d-15<br />
-                                        </div>
-                                    </div>
-
-                                    <div className='igd_box_1'>
-                                        <div className='igd_box_1_content'>
-
-                                            <img className='igd_box_img' src={Dairy}></img>
-
-                                            <br />
-                                            햄버거<br />
-                                            21-08-30<br />
-                                            d-15<br />
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* 위에2개 끝 */}
-
-                                {/* 위에2개 시작 */}
-                                <div className='igd_box_left_top_1'>
-                                    <div className='igd_box_1'>
-                                        <div className='igd_box_1_content'>
-                                            <img className='igd_box_img' src={Dairy}></img>
-                                            <br />
-                                            햄버거<br />
-                                            21-08-30<br />
-                                            d-15<br />
-                                        </div>
-                                    </div>
-
-                                    <div className='igd_box_1'>
-                                        <div className='igd_box_1_content'>
-
-                                            <img className='igd_box_img' src={Dairy}></img>
-
-                                            <br />
-                                            햄버거<br />
-                                            21-08-30<br />
-                                            d-15<br />
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* 위에2개 끝 */}
 
 
                             </div>
@@ -171,9 +197,9 @@ function Idgmanage({ information, history }) {
                                                 <div >
                                                     <img className='igd_box_img' src={Dairy}></img>
                                                     <br />
-                                                    햄버거<br />
-                                                    21-08-30<br />
-                                                    d-15<br />
+                                햄버거<br />
+                                21-08-30<br />
+                                d-15<br />
                                                 </div>
                                             </div>
                                             <div className='igd_box_top1_img'>
@@ -181,38 +207,9 @@ function Idgmanage({ information, history }) {
 
                                                     <img className='igd_box_img' src={Dairy}></img>
                                                     <br />
-                                                    햄버거<br />
-                                                    21-08-30<br />
-                                                    d-15<br />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* 오른쪽 첫번째 끝 */}                         {/* 오른쪽 첫번째 끝 */}
-
-
-                                <div className='igd_box_right_top_1'>
-                                    <div className='igd_box_2_all'>
-                                        <div className='igd_box_2'>
-
-                                            <div className='igd_box_top1_img'>
-                                                <div >
-                                                    <img className='igd_box_img' src={Dairy}></img>
-                                                    <br />
-                                                    햄버거<br />
-                                                    21-08-30<br />
-                                                    d-15<br />
-                                                </div>
-                                            </div>
-                                            <div className='igd_box_top1_img'>
-                                                <div >
-
-                                                    <img className='igd_box_img' src={Dairy}></img>
-                                                    <br />
-                                                    햄버거<br />
-                                                    21-08-30<br />
-                                                    d-15<br />
+                                햄버거<br />
+                                21-08-30<br />
+                                d-15<br />
                                                 </div>
                                             </div>
                                         </div>
@@ -229,9 +226,9 @@ function Idgmanage({ information, history }) {
                                                 <div >
                                                     <img className='igd_box_img' src={Dairy}></img>
                                                     <br />
-                                                    햄버거<br />
-                                                    21-08-30<br />
-                                                    d-15<br />
+                                햄버거<br />
+                                21-08-30<br />
+                                d-15<br />
                                                 </div>
                                             </div>
                                             <div className='igd_box_top1_img'>
@@ -239,9 +236,38 @@ function Idgmanage({ information, history }) {
 
                                                     <img className='igd_box_img' src={Dairy}></img>
                                                     <br />
-                                                    햄버거<br />
-                                                    21-08-30<br />
-                                                    d-15<br />
+                                햄버거<br />
+                                21-08-30<br />
+                                d-15<br />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* 오른쪽 첫번째 끝 */}                         {/* 오른쪽 첫번째 끝 */}
+
+
+                                <div className='igd_box_right_top_1'>
+                                    <div className='igd_box_2_all'>
+                                        <div className='igd_box_2'>
+
+                                            <div className='igd_box_top1_img'>
+                                                <div >
+                                                    <img className='igd_box_img' src={Dairy}></img>
+                                                    <br />
+                                햄버거<br />
+                                21-08-30<br />
+                                d-15<br />
+                                                </div>
+                                            </div>
+                                            <div className='igd_box_top1_img'>
+                                                <div >
+
+                                                    <img className='igd_box_img' src={Dairy}></img>
+                                                    <br />
+                                햄버거<br />
+                                21-08-30<br />
+                                d-15<br />
                                                 </div>
                                             </div>
                                         </div>
@@ -250,10 +276,8 @@ function Idgmanage({ information, history }) {
                                 {/* 오른쪽 첫번째 끝 */}
 
 
+                                {/* {igd_info && <Func_idg_info igd_info={igd_info}/>} */}
                             </div>
-
-
-                            {/* {igd_info && <Func_idg_info igd_info={igd_info}/>} */}
                         </div>
                     </div>
                 </div>
