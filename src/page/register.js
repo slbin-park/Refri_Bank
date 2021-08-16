@@ -17,8 +17,9 @@ function App({ history, setthis_signup_set_inputs, this_signup_set_inputs }) {
       name: register.name,
     })
       .then((response) => {
+        console.log(response.data)
         if (response.data.success) {
-          Alert("Register",'회원가입을 축하드립니다!');
+          Alert("Register", '회원가입을 축하드립니다!');
           history.push('/')
         }
         else {

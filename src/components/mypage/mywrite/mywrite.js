@@ -22,6 +22,9 @@ function Mywrite({ information, history }) {
 
 
     useEffect(() => {
+        console.log(mywrite_page_cnt)
+    }, [mywrite_page_cnt])
+    useEffect(() => {
         if (get_modal_table != undefined) {
             setModalOn(!modalOn)
         }
@@ -141,7 +144,7 @@ function Mywrite({ information, history }) {
 
             <div className='mypage_main_div'>
                 <div className='likeit_body'>
-                    
+
                     {modalOn ? <Modal /> : ''}
                     <div className='likeit_header_main_form'>
                         <div className="likeit_header_title_form">
@@ -169,7 +172,7 @@ function Mywrite({ information, history }) {
                                 <div className="like_select_num_btn_left" onClick={(e) => Func_paging_minus()}>
                                     ‣
                                 </div>
-                                <Like_paging_btn />
+                                {<Like_paging_btn />}
                                 <div className="like_select_num_btn_right" onClick={(e) => Func_paging_plus()}>
                                     ‣
                                 </div>

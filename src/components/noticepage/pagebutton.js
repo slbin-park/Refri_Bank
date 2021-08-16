@@ -60,4 +60,4 @@ function Likeit({ button_cnt, page, set_page_slice }) {
     )
 }
 
-export default Likeit;
+export default React.memo(Likeit);

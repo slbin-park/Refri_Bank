@@ -15,8 +15,6 @@ import Page_button from '../../components/noticepage/pagebutton'
 
 import Alert from "../alert";
 
-
-
 function App({ information }) {
 
   const [page, setpage] = useState('free') // 공지 , 자유게시판 구분용

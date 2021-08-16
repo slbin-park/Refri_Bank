@@ -3,7 +3,7 @@ import Axios from 'axios';
 import moment from 'moment'
 
 
-function Func_noticeboard_show_noticeboard({ set_notice_number, setModalOn, set_button_cnt, page_slice }) {
+function Func_noticeboard_show_noticeboard({ set_notice_number, setModalOn, set_button_cnt }) {
 
   // 여기서 post로 전부 불러옴
   const [notice_list, setnotice_list] = useState()
