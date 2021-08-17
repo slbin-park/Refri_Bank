@@ -29,7 +29,7 @@ const App = () => {
     <div className="main-form">
       <Router>
         <Route
-          render={({ location, history, render }) => (
+          render={({ location, history }) => (
             <React.Fragment>
               <Header
                 information={information}
@@ -42,41 +42,35 @@ const App = () => {
                 setthis_header_set_inputs={setthis_header_set_inputs}
                 history={history}
               />
-              <Route path="/errorpage" exact component={Error}></Route>
 
-              <Route
-                exact
-                path="/"
-                this_header_set_inputs={this_header_set_inputs}
-                setthis_header_set_inputs={setthis_header_set_inputs}
-                component={mainpage}
-              />
+              <Route exact path="/" this_header_set_inputs={this_header_set_inputs} setthis_header_set_inputs={setthis_header_set_inputs} component={mainpage} />
 
-              <Route path="/rfgpage" component={Rfgpage}>
+              <Route exact path="/rfgpage" component={Rfgpage}>
                 <Rfgpage information={information} history={history}></Rfgpage>
               </Route>
-              <Route path="/signup" component={signup} />
-              <Route path="/login" component={Login}>
+              <Route exact path="/signup" component={signup} />
+              <Route exact path="/login" component={Login}>
                 <Login setpage={setpage} history={history} information={information} setinformation={setinformation}></Login>
               </Route>
               <Route exact path="/recipe/:id" component={Recipe}>
-                <Recipe location={location} information={information}></Recipe>
+                <Recipe exact location={location} information={information}></Recipe>
               </Route>
-              <Route path="/profile" exact component={Profile}></Route>
-              <Route path="/introduce" component={introduce} />
-              <Route path="/noticepage" component={Noticepage}>
+              <Route exact path="/profile" component={Profile}></Route>
+              <Route exact path="/introduce" component={introduce} />
+              <Route exact path="/noticepage" component={Noticepage}>
                 <Noticepage history={history} information={information} />
               </Route>
-              <Route path="/admin" exact component={Admin} />
-              <Route path="/my_igd" exact component={Myigd}>
+              <Route exact path="/admin" component={Admin} />
+              <Route exact path="/my_igd" component={Myigd}>
                 <Myigd history={history} information={information} />
               </Route>
-              <Route path="/like" exact component={Likeit}>
+              <Route exact path="/like" exact component={Likeit}>
                 <Likeit history={history} information={information} />
               </Route>
-              <Route path="/my_write" exact component={Mywrite}>
+              <Route exact path="/my_write" exact component={Mywrite}>
                 <Mywrite history={history} information={information} />
               </Route>
+              <Route exact path="/errorpage" component={Error} />
             </React.Fragment>
           )}
         />

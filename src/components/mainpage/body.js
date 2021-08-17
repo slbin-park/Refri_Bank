@@ -8,6 +8,8 @@ const Body = ({ setftable, setftable_cnt }) => {
   const [toggle, settoggle] = useState(true);
   const [text, settext] = useState('');
 
+  //gettable
+
   const gettable = () => {
     if (text != '') {
       Axios.post('https://qkrtmfqls.gabia.io/gettable', {
@@ -26,11 +28,7 @@ const Body = ({ setftable, setftable_cnt }) => {
     <>
       <div className="toggle_btn_box">
         <button className="toggle_btn">
-          <img
-            className="toggle_img1"
-            align="center"
-            src={this_body_menu_logo}
-          />
+          <img className="toggle_img1" align="center" src={this_body_menu_logo} />
         </button>
       </div>
 
@@ -48,12 +46,7 @@ const Body = ({ setftable, setftable_cnt }) => {
       </div>
       <button className="search_btn" onClick={gettable}>
         {' '}
-        <img
-          align="center"
-          src={this_body_show_searchimg}
-          width="50"
-          height="50"
-        />
+        <img align="center" src={this_body_show_searchimg} width="50" height="50" />
       </button>
     </>
   );

@@ -66,11 +66,7 @@ function App({ history, information }) {
   const Func_show_ingredient = () => {
     return (
       <div className="rfg-body-form" style={toggle === true ? { height: '80vh' } : { height: '0vh' }}>
-        <Func_filter_find_ingredient
-          information={information}
-          result_box_list={result_box_list}
-          setresult_box_list={setresult_box_list}
-        ></Func_filter_find_ingredient>
+        <Func_filter_find_ingredient information={information} result_box_list={result_box_list} setresult_box_list={setresult_box_list}></Func_filter_find_ingredient>
       </div>
     );
   };
@@ -96,10 +92,10 @@ function App({ history, information }) {
         <h2>추천 레시피</h2>
       </div>
       <div className="fg-result-box">
-        <Footer ftable={thumb_table} history={history} page_slice={page_slice} />
+        <Footer ftable={thumb_table} history={history} page_slice={page_slice} aside_check={false} />
       </div>
       <div className="move-footer-form">
-        <div style={{ width: '100%', height: '80%', display: 'flex', 'justify-content': 'center', 'align-items': 'center' }}>
+        <div style={{ width: '100%', height: '80%', 'margin-top': '5%', 'margin-bottom': '5%', display: 'flex', 'justify-content': 'center', 'align-items': 'center' }}>
           <div className="like_select_num_btn_form">{ftable_cnt && <Footer_bottom set_page_slice={set_page_slice} ftable_cnt={ftable_cnt} />}</div>
         </div>
       </div>
