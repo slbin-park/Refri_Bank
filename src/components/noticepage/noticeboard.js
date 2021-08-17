@@ -37,7 +37,7 @@ function Func_noticeboard_show_noticeboard({ set_notice_number, setModalOn, set_
   }
 
   function Func_notice_content({ v }) {
-    let eprdate = moment(v.createdate).format('YY-MM-DD')
+    let eprdate = moment(v.createdate).format('YY-MM-DD');
     return (
       <div className="notice_each_content">
         <div className="notice_no">{v.number}</div>

@@ -28,7 +28,7 @@ const Footer_bottom = ({ ftable_cnt, set_page_slice }) => {
 
 
     useEffect(() => {
-        console.log("page", page_color);
+        
         create_button();
     }, [page_color])
 

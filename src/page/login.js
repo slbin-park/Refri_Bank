@@ -16,18 +16,21 @@ const Login = ({ information, setinformation, history, setpage }) => {
     }
     // 비밀번호 체크
     if (logintext.pwd.length < 1 || logintext.pwd.length > 10) {
-      Alert('PWD Check, PWD는 최소 1글자 이상, 최대 10글자 이하입니다.');
+      Alert('PWD Check', 'PWD는 최소 1글자 이상, 최대 10글자 이하입니다.');
       return;
     }
 
     console.log('login id = ', logintext.id);
+
     e.preventDefault();
     Axios.post('https://qkrtmfqls.gabia.io/login', {
       id: logintext.id,
       pwd: logintext.pwd,
     })
+
       .then((response) => {
-        console.log(response.data);
+        console.log('response.data = ', response.data);
+
         if (response.data.success) {
           //로그인 성공시
           console.log(response.data);
@@ -39,13 +42,19 @@ const Login = ({ information, setinformation, history, setpage }) => {
           localStorage.setItem('token', response.data.token);
           Alert('Login', '로그인에 성공하셨습니다.');
           history.push('/');
-        } else if (response.data.token.success == false) {
+        }
+        if (response.data.success == false) {
+          console.log('로그인 실패');
           window.localStorage.clear();
           setpage(false);
-          Alert('Login', response.data.msg); //실패사유 출력
+          Alert('Login', response.data.msg);
+          //실패사유 출력
+
+          // history.push('/errorpage');
         }
       })
       .catch((error) => {
+        // console.log('로그인 실패하셨어용');
         console.log(error);
       });
   };
@@ -64,33 +73,20 @@ const Login = ({ information, setinformation, history, setpage }) => {
         </div>
         <div className="login-input-main-form">
           <div className="login-input-sub-form">
-            <input
-              className="login-wait-id"
-              name="id"
-              type="text"
-              placeholder="Id"
-              onChange={(e) =>
-                setlogintext({ ...logintext, id: e.target.value })
-              }
-            />
+            <input className="login-wait-id" name="id" type="text" placeholder="Id" onChange={(e) => setlogintext({ ...logintext, id: e.target.value })} />
             <input
               className="login-wait-psword"
               name="pwd"
               type="password"
               placeholder="Password"
-              onChange={(e) =>
-                setlogintext({ ...logintext, pwd: e.target.value })
-              }
+              onChange={(e) => setlogintext({ ...logintext, pwd: e.target.value })}
             />
             <button className="loginpage_login_btn" onClick={TokenLogin}>
               <div>
                 <span>Login</span>
               </div>
             </button>
-            <button
-              className="loginpage_signup_btn"
-              onClick={Func_login_move_signup}
-            >
+            <button className="loginpage_signup_btn" onClick={Func_login_move_signup}>
               <div>
                 <span>Signup</span>
               </div>

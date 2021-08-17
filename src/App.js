@@ -27,9 +27,6 @@ const App = () => {
   }, [information]);
   return (
     <div className="main-form">
-      {/* <Error /> */}
-      {/*  에러 페이지 */}
-
       <Router>
         <Route
           render={({ location, history, render }) => (
@@ -45,6 +42,8 @@ const App = () => {
                 setthis_header_set_inputs={setthis_header_set_inputs}
                 history={history}
               />
+              <Route path="/errorpage" exact component={Error}></Route>
+
               <Route
                 exact
                 path="/"
@@ -52,17 +51,13 @@ const App = () => {
                 setthis_header_set_inputs={setthis_header_set_inputs}
                 component={mainpage}
               />
+
               <Route path="/rfgpage" component={Rfgpage}>
                 <Rfgpage information={information} history={history}></Rfgpage>
               </Route>
               <Route path="/signup" component={signup} />
               <Route path="/login" component={Login}>
-                <Login
-                  setpage={setpage}
-                  history={history}
-                  information={information}
-                  setinformation={setinformation}
-                ></Login>
+                <Login setpage={setpage} history={history} information={information} setinformation={setinformation}></Login>
               </Route>
               <Route exact path="/recipe/:id" component={Recipe}>
                 <Recipe location={location} information={information}></Recipe>

@@ -1,5 +1,6 @@
 import ingredient_img from "../../img/ingredient_img/ingredient-img";
 import { useEffect, useState, Component } from "react";
+import Rfgfooter from "./rfgfooter";
 import '../../style/rfgpage/rfg.css';
 import Calendar from 'react-calendar';
 import Axios from 'axios';
