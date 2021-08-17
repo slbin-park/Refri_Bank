@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import '../../style/noticepage/noticepage.css';
 import 'aos/dist/aos.css';
 import '../../style/mypage/likeit.css';
-
 import email_img from '../../img/board/email.png';
 import xbuttom from '../../img/board/xbutton.jpg';
 
@@ -18,7 +17,6 @@ import Alert from "../alert";
 
 
 function App({ information }) {
-
   const [page, setpage] = useState('free') // 공지 , 자유게시판 구분용
   const [write_toggle, set_write_toggle] = useState(false); // 게시글 작성하기 위한 토글
   const [get_free_number, set_get_free_number] = useState(); // 게시판 고유 번호
@@ -28,8 +26,9 @@ function App({ information }) {
   const [page_slice, set_page_slice] = useState({ start: 0, end: 10 }) //페이징 버튼 시작 , 끝
 
   useEffect(() => {
-    console.log(button_cnt)
-  }, [button_cnt])
+    
+  }, [button_cnt]);
+
   const Write_open = (e) => {
     if (page == 'notice') {
       if (information.id == 'smpts00' || information.id == '1') {

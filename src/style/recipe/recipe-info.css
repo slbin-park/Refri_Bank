@@ -40,8 +40,8 @@
 }
 
 .alice-content-img-flex {
-    width: 600px;
-    height: 600px;
+    width: 50vw;
+    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,7 +49,7 @@
 
 .alice-content-img {
     width: 60%;
-    height: 80%;
+    height: 90%;
 }
 
 .alice-content-text-form {
@@ -67,4 +67,5 @@
 .alice-content-text-form p {
     width: 75%;
     height: 100%;
+    padding: 5% 5%;
 }

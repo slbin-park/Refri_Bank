@@ -6,22 +6,22 @@ import kcal from "../../img/recipe/kcal.jpg";
 import Alert from "../../page/alert";
 import Axios from 'axios';
 
-function thumbnail_info({ data,  click_like , setclick_like, information }) {
+function thumbnail_info({ data, information }) {
     //foodid 는 axios요청할때 푸드아이디
     //like 는 좋아요를 안눌렀을떄
-    
+
     const set_show_recipe_igdcnt = () => {
         const igdcnt_list = [];
         let indexKey = 0;
-        for(let key in data[0]) {
-            if(key.includes("IgdN") && data[0][key] != null) {
+        for (let key in data[0]) {
+            if (key.includes("IgdN") && data[0][key] != null) {
                 indexKey += 1;
                 igdcnt_list.push(
                     <div key={indexKey} className='recipe-thumbnail-ingredient-ul'>
                         <div className="recipe-thumbnail-ingredient-li">
                             0{indexKey}.
                             <div className="recipe-thunmbnail-ingredient-name">
-                                {data[0][key]} 
+                                {data[0][key]}
                             </div>
                         </div>
                     </div>
@@ -30,33 +30,31 @@ function thumbnail_info({ data,  click_like , setclick_like, information }) {
         }
         return igdcnt_list;
     }
+
     const Func_this_likeit_plus = () => {
         console.log(information)
-        if(information == undefined) {
+        if (information === undefined) {
             Alert("Recipe", "로그인 후 이용할 수있습니다.");
-        } 
-        else if(click_like){
-            Alert("Recipe", "이미 좋아요를 눌렀습니다.");
         }
         else {
             Axios.post("https://qkrtmfqls.gabia.io/addlike", {
                 id: data[0].FoodId,
-                userid : information.id,
+                userid: information.id,
                 foodname: data[0].FoodN
             })
-            .then((response) => {
-                Alert("Recipe", "좋아요를 눌렀습니다.");
-                setclick_like(true);
-            })
-            .catch((error) => {
-                console.log(error); 
-            });
+                .then((response) => {
+                    if (response.data.success) Alert("Recipe", "좋아요를 눌렀습니다.");
+                    else Alert("Recipe", "이미 좋아요를 눌렀습니다.");
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         }
     }
 
 
 
-    
+
     const set_show_time_kcal = () => {
         return (
             <>
@@ -88,7 +86,7 @@ function thumbnail_info({ data,  click_like , setclick_like, information }) {
                         <div className="recipe-thumbnail-icon-content-form">
                             {data[0].FoodC}
                         </div>
-                        
+
                     </div> : ''}
                 <div className="recipe-thumbnail-icon-content" onClick={(e) => Func_this_likeit_plus()}>
                     <div className="recipe-thumbnail-icon-img-form">
@@ -133,7 +131,6 @@ function thumbnail_info({ data,  click_like , setclick_like, information }) {
                         </div>
                     </div>
                 </div>
-                
             </div>
         </>
     )
