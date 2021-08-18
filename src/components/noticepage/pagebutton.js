@@ -4,6 +4,7 @@ import '../../style/mypage/likeit.css';
 
 function Likeit({ button_cnt, page, set_page_slice }) {
 
+
     const [page_color, set_page_color] = useState(0);
     const [arrow_page, set_arrow_page] = useState(0);
 
@@ -20,16 +21,13 @@ function Likeit({ button_cnt, page, set_page_slice }) {
 
 
     useEffect(() => {
-        console.log("page", page_color);
         create_button();
     }, [page_color])
 
     const create_button = () => {
         let table_button = []
-        console.log('실행')
         for (let i = (arrow_page * 5); i < (arrow_page * 5) + 5; i++) {
             if (i > button_cnt) break;
-            console.log(i)
             table_button.push(
                 <div onClick={(e) => Func_click_page_slice_btn(i)} style={page_color == i ? { color: 'rgba(1, 1, 1, 0.8)' } : { color: 'rgba(1, 1, 1, 0.4)' }} className="like_select_num_btn_sub_form"  >
                     {i + 1}

@@ -12,22 +12,20 @@ import moment from 'moment'
 
 
 
-function Idgmanage({ information, history }) {
-    //이거머임 좋아요한 레시피개수?
-    const igd_key_value = ['닭', '오리', '돼지', '소', '소세지', '양파', '당근', '마늘', '버섯', '부추', '고추', '파', '상추', '토마토', '새우', '고등어', '게', '전복', '조개', '바지락', '홍합', '오징어', '생선', '멸치', '간장', '된장', '고추장', '쌈장', '참기름', '깨', '가루', '면', '밀가루', '밥', '계란', '우유', '치즈', '요거트'];
+function Idgmanage({ information }) {
+
     const [igd_info, setigd_info] = useState();
     useEffect(() => {
-        console.log(igd_info)
-    }, [igd_info])
+        console.log('실행')
+    })
+
     const [igd_slice, set_igd_slice] = useState({ start: 0 })
     const [igd_btn, set_igd_btn] = useState(1)
 
-    // useEffect(() => {
-    //     Func_req_idginfo();
-    // }, []);
-
     useEffect(() => {
-        Func_req_idginfo();
+        if (information != undefined) {
+            Func_req_idginfo();
+        }
     }, [information])
 
     // ingredient_img[igd_info.result_igdname] -> 이미지
@@ -38,27 +36,25 @@ function Idgmanage({ information, history }) {
     // let last_date = eprdate.diff(eprddate, 'days') // - > 남은유통기한
 
     const Func_req_idginfo = async (e) => {
-        if (information != undefined) {
-            await Axios.post("https://qkrtmfqls.gabia.io/getrfg", {
-                id: information.id
+        await Axios.post("https://qkrtmfqls.gabia.io/getrfg", {
+            id: information.id
+        })
+            .then((response) => {
+                let res_igdname = response.data[0].Igdname.split(",");
+                let res_eprname = response.data[0].Eprdate.split(",");
+                let new_igdname = [];
+                res_igdname && res_igdname.map((v, index) => v !== '' ?
+                    new_igdname.push({
+                        result_igdname: v,
+                        eprd: res_eprname[index],
+                        eprd_remain: moment(res_eprname[index], 'YY-MM-DD').diff(moment(new Date(), 'YY-MM-DD'), 'days')
+                    }) : 0);
+                setigd_info(new_igdname);
+                set_igd_btn(new_igdname.length / 13)
             })
-                .then((response) => {
-                    let res_igdname = response.data[0].Igdname.split(",");
-                    let res_eprname = response.data[0].Eprdate.split(",");
-                    let new_igdname = [];
-                    res_igdname && res_igdname.map((v, index) => v !== '' ?
-                        new_igdname.push({
-                            result_igdname: v,
-                            eprd: res_eprname[index],
-                            eprd_remain: moment(res_eprname[index], 'YY-MM-DD').diff(moment(new Date(), 'YY-MM-DD'), 'days')
-                        }) : 0);
-                    setigd_info(new_igdname);
-                    set_igd_btn(new_igdname.length / 13)
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
-        }
+            .catch((error) => {
+                console.log(error);
+            });
     }
 
     return (

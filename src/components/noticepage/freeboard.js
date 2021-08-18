@@ -39,7 +39,7 @@ function Func_freeboard_show_freeboard({ setModalOn, set_get_free_number, inform
         })
             .then((response) => {
                 get_free_tableall()
-                Alert('board','게시글 삭제에 성공하셨습니다!');
+                Alert('board', '게시글 삭제에 성공하셨습니다!');
             })
             .catch((error) => {
                 console.log(error);
@@ -55,7 +55,7 @@ function Func_freeboard_show_freeboard({ setModalOn, set_get_free_number, inform
                     return (
                         <div key={index} className="eachcontent-block"  >
                             <div className="eachcontent" border-color="#008554">
-                                <div onClick={(e) => Click_free(e, number)} style={{ height: '80%' }}>
+                                <div onClick={(e) => Click_free(e, number)}>
                                     <div className="content-header" >
 
                                         <div className="nickname">{nickname}</div>
@@ -66,11 +66,11 @@ function Func_freeboard_show_freeboard({ setModalOn, set_get_free_number, inform
                                         <div className="description" dangerouslySetInnerHTML={{ __html: description }}></div>
                                     </div>
                                 </div>
-                                <div className='reaction-box' style={{ height: '20%' }}>
-                                    <img src={heart_img} width='30px' />
-                                    <span>{likeit}</span>
-                                    <img src={comment_img} width='27px' />
-                                    <span>{count}</span>
+                                <div className='reaction-box' >
+                                    <img src={heart_img} width='40px' height='40px' style={{ 'margin-right': '5px' }} />
+                                    <span style={{ 'margin-right': '15px', 'font-size': '20px' }}>{likeit}</span>
+                                    <img src={comment_img} width='40px' height='40px' style={{ 'margin-right': '5px' }} />
+                                    <span style={{ 'font-size': '20px' }}>{count}</span>
                                     {information && id == information.id ? <button onClick={(e) => Func_this_delete_content(e, number)}>게시글 삭제</button> : ""}
                                 </div>
                             </div>

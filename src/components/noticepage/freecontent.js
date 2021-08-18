@@ -65,7 +65,7 @@ const Func_freecontent_show_freecontent = ({ get_free_number, information }) => 
             Axios.post("https://qkrtmfqls.gabia.io/updatelikeit", {
                 number: get_free_number,
                 userid: information.id,
-                title: get_free_number.title
+                title: free_board.title
             })
                 .then((response) => {
                     if (response.data.success) {

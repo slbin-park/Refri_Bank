@@ -86,30 +86,34 @@ function App({ information }) {
             <p> 찾는 내용이 없으시다면 고객센터를 방문해바라 이 말이다</p>
           </div>
 
-          <div className="middle-content-form">
-            <div className="middle-content-form-left">왼쪽 </div>
-            <div className="middle-content-form-right">
-              <div className="right-img-box">
-                <img className="email_img" src={email_img} width="50" height="50" ></img>
-              </div>
-              <div className="right-text-box">
-                <h3> 이메일 문의하기</h3>
-                <p> 찾으시는 답변이 없으신가요 ? </p>
-              </div>
-              <div className="right-btn-box">
-                <button className="send-btn" onClick={() => window.open("mailto:ds4ouj@gmail.com", '_blank')}>E-mail 보내기 </button>
+          <div className='middle-flex-form'>
+            <div className="middle-content-form">
+              <div className="middle-content-form-left">왼쪽 </div>
+              <div className="middle-content-form-right">
+                <div className="right-img-box">
+                  <img className="email_img" src={email_img} width="50px" height="50px" ></img>
+                </div>
+                <div className="right-text-box">
+                  <h3 > 이메일 문의하기</h3>
+                  <p style={{ 'font-size': '15px' }}> 찾으시는 답변이 없으신가요 ? </p>
+                </div>
+                <div className="right-btn-box">
+                  <button className="send-btn" onClick={() => window.open("mailto:ds4ouj@gmail.com", '_blank')}>E-mail 보내기 </button>
+                </div>
               </div>
             </div>
           </div>
 
           <div className="subcontent-form">
-            <div className="notice-nav-form">
-              <div className="notice-nav">
-                <div role="button" className="noticeboard-select-btn" onClick={Func_noticepage_toggle_noticeboard}>Notice</div>
-                <div role="button" className="freeboard-select-btn selectedboard-btn" onClick={Func_noticepage_toggle_freeboard}>BulletinBoard</div>
-              </div>
-              <div className="search_box">
-                <input className="search"></input>
+            <div className='notice-nav-flex-form'>
+              <div className="notice-nav-form">
+                <div className="notice-nav">
+                  <div role="button" className="noticeboard-select-btn" onClick={Func_noticepage_toggle_noticeboard}>Notice</div>
+                  <div role="button" className="freeboard-select-btn selectedboard-btn" onClick={Func_noticepage_toggle_freeboard}>BulletinBoard</div>
+                </div>
+                <div className="search_box">
+                  <input className="search"></input>
+                </div>
               </div>
             </div>
             <div className="maincontent-form">
@@ -124,7 +128,7 @@ function App({ information }) {
           </div>
           <div style={{ width: '100%', height: '80%', display: 'flex', 'justify-content': 'center', 'align-items': 'center' }}>
             <div className="like_select_num_btn_form">
-              <Page_button page={page} button_cnt={button_cnt} set_page_slice={set_page_slice} page_slice={page_slice} />
+              {page != undefined && button_cnt != undefined ? <Page_button page={page} button_cnt={button_cnt} set_page_slice={set_page_slice} /> : ''}
             </div>
           </div>
           {information != undefined ? <button className="move_writeform_btn" onClick={Write_open}>게시글 작성하기</button> : ''}
