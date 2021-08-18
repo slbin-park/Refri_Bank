@@ -1,0 +1,9 @@
+diff a/src/components/mainpage/body.js b/src/components/mainpage/body.js	(rejected hunks)
+@@ -17,7 +17,7 @@
+       })
+         .then((response) => {
+           setftable(response.data);
++          setftable_cnt(response.data.length / 8);
+         })
+         .catch((error) => {
+           console.log(error);

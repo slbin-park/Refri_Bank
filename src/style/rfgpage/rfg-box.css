@@ -1,256 +1,252 @@
-
 .hello-rfg-form p {
-    font-size: 1.3rem;
-    text-align: center;
-    color: rgba(1, 1, 1, 0.75);
+  font-size: 1rem;
+  text-align: center;
+  color: rgba(1, 1, 1, 0.75);
 }
 
 .hello-rfg-form h1 {
-    padding-top: 5vh;
-    font-size: 2.5rem;
-    text-align: center;
-    font-style: none;
-    color: rgba(1, 1, 1, 0.75);
-    font-family: 'neon';
+  padding-top: 4vh;
+  font-size: 1.7rem;
+  text-align: center;
+  font-style: none;
+  color: rgba(1, 1, 1, 0.75);
+  font-family: 'neon';
 }
 
 /* 선택하는 상자 담는 상자 분리 */
 .rfg-form {
-    width: 80%;
-    height: 100%;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 5%;
-    margin-bottom: 5%;
+  width: 60%;
+  height: 100%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 2%;
+  margin-bottom: 5%;
 }
 
 .rfg-body-form {
-    height: 0vh;
-    display: block;
-    justify-content: center;
-    overflow: hidden;
-    transition: all 0.7s ease-in-out;
-    border-bottom: rgba(1, 1, 1, 0.5) 1px solid;
+  height: 0vh;
+  display: block;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.7s ease-in-out;
+  border-bottom: rgba(1, 1, 1, 0.5) 1px solid;
 }
 
 .ingredient-toggle-btn {
-    width: 100%;
-    height: 5vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(1, 1, 1, 0.75); 
-    font-weight: 500;  
-    border-top: rgba(7, 3, 3, 0.4) 3px solid;
-    border-bottom: rgba(1, 1, 1, 0.4) 3px solid;
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(1, 1, 1, 0.75);
+  font-weight: 500;
+  border-top: rgba(7, 3, 3, 0.4) 3px solid;
+  border-bottom: rgba(1, 1, 1, 0.4) 3px solid;
 }
 
 /* 재료상자 */
 .rfg-ingredient-box {
-    height: 70%;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #fff;
-    align-items: center;
-    justify-content: center;
-    overflow: scroll;
-    overflow: auto;
+  height: 70%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+  overflow: scroll;
+  overflow: auto;
 }
 
 /* 담는상자 */
 .rfg-result-box {
-    display: block;
-    width: 100%;
-    height: 30vh;
+  display: block;
+  width: 100%;
+  height: 30vh;
 }
 
 .rfg-select-box {
-    display: flex;
-    width: 100%;
-    height: 80%;
-    background-color: #fff;
+  display: flex;
+  width: 100%;
+  height: 80%;
+  background-color: #fff;
 }
 
 .rfg-select-btn {
-    cursor: pointer;
-    width: 100%;
-    text-align: center;
-    background-color: rgba(1, 1, 1, 0.05);
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(1, 1, 1, 0.05);
 }
 
-.rfg-select-btn button{
-    background: #969b98;
-    border: none;
-    z-index: 1;
-    width: 100%;
-    height: 30px;
-    color: #fff;
-    border-radius: 5px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 500;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-    7px 7px 20px 0px rgba(0,0,0,.1),
-    4px 4px 5px 0px rgba(0,0,0,.1);
-    outline: none;
+.rfg-select-btn button {
+  background: #969b98;
+  border: none;
+  z-index: 1;
+  width: 100%;
+  height: 30px;
+  color: #fff;
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
 }
 
-.rfg-select-btn button:after{
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 100%;
-    top: 0;
-    right: 0;
-    z-index: -1;
-    background-color: #98adca;
-    border-radius: 5px;
-    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-    7px 7px 20px 0px rgba(0,0,0,.1),
-    4px 4px 5px 0px rgba(0,0,0,.1);
-    transition: all 0.3s ease;
+.rfg-select-btn button:after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #98adca;
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
-.rfg-select-btn button:hover{
-    color: #fff;
+.rfg-select-btn button:hover {
+  color: #fff;
 }
 
 .rfg-select-btn button:hover:after {
-    left: 0;
-    width: 100%;
-  }
-  .rfg-select-btn button:active {
-    top: 2px;
+  left: 0;
+  width: 100%;
 }
-
+.rfg-select-btn button:active {
+  top: 2px;
+}
 
 /* 각각의 재료 이미지+글자 */
 .ingredient-img-form,
 .rfg-result-img-form {
-    background-color: white;
-    width: 100px;
-    height: 100px;
-    border: #FFF9F8 1px solid;
-    margin: 10px;
-    display: flex;
-    align-items: center;
-    border-radius: 50%;
-    justify-content: center;
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  border: #fff9f8 1px solid;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  justify-content: center;
 }
 
 .ingredient-img {
-    width: 70%;
-    height: 70%;
-    border-top-left-radius: 20%;
-    border-top-right-radius: 20%;
+  width: 70%;
+  height: 70%;
+  border-top-left-radius: 20%;
+  border-top-right-radius: 20%;
 }
 
 .ingredient-name {
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    color: #4b6584;
-    font-weight: 600;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  color: #4b6584;
+  font-weight: 600;
 }
 
 .rfg-result-form {
-    cursor: pointer;
-    transition: transform 100ms ease-in-out;
+  cursor: pointer;
+  transition: transform 100ms ease-in-out;
 }
 .ingredient-form {
-    cursor: pointer;
-    transition: transform 100ms ease-in-out;
+  cursor: pointer;
+  transition: transform 100ms ease-in-out;
 }
 
 .ingredient-form:hover,
 .ingredient-form:hover .ingredient-name,
 .rfg-result-form:hover,
 .rfg-result-form:hover .ingredient-name {
-    transform: scale(1.125);
-    z-index: 1000;
-    color: tomato;
+  transform: scale(1.125);
+  z-index: 1000;
+  color: tomato;
 }
 
 .rfg-big-box {
-    display: block;
-    height: 100%;
-    width: 100%;
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 
 .rfg-up-box {
-    display: flex;
-    border-bottom: rgba(1, 1, 1, 0.4) 1px solid;
-    height: 60%;
+  display: flex;
+  border-bottom: rgba(1, 1, 1, 0.4) 1px solid;
+  height: 60%;
 }
 
-.rfg-ingredient-up-box{
-    width: 66%;
-    height: 100%;
-    display: block;
+.rfg-ingredient-up-box {
+  width: 66%;
+  height: 100%;
+  display: block;
 }
 .rfg-ingredient-text-box {
-    margin-top: 2vh;
-    margin-bottom: 3vh;
-    text-align: center;
-    width: 100%;
-    height: 10%;
-    color: rgba(1, 1, 1, 0.75);
-    font-size: 1.6vw;
-    font-weight: 500;
+  margin-top: 2vh;
+  margin-bottom: 1vh;
+  text-align: center;
+  width: 100%;
+  height: 10%;
+  color: rgba(1, 1, 1, 0.75);
+  font-size: 1.3vw;
+  font-weight: 500;
 }
-
 
 .rfg-result-text-box {
-    text-align: center;
-    width: 100%;
-    height: 19%;
-    margin-top: 1%;
-    color: rgba(1, 1, 1, 0.75);
-    font-size: 1.6vw;
-    font-weight: 500;
+  text-align: center;
+  width: 100%;
+  height: 19%;
+  margin-top: 2%;
+  color: rgba(1, 1, 1, 0.75);
+  font-size: 1.3vw;
+  font-weight: 500;
 }
 .rfg-recommend-text-box {
-    text-align: center;
-    width: 100%;
-    height: 10vh;
+  text-align: center;
+  width: 100%;
+  height: 10vh;
 }
 
-.rfg-select-box-submit-btn{
-    width: 20%;
-    height: 100%;
-    /* border: blue 3px solid; */
+.rfg-select-box-submit-btn {
+  width: 20%;
+  height: 100%;
+  /* border: blue 3px solid; */
 }
 
 .rfg-select-box-submit-btn button {
-    background-color: rgb(255, 163, 43);
-    border-radius: 20px;
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    height: 20%;
-    margin-top: 17vh;
-    border: none;
-    color: white;
-    cursor: pointer;
+  background-color: rgb(255, 163, 43);
+  border-radius: 20px;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 20%;
+  margin-top: 17vh;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
 .rfg-select-box-submit-btn button:hover {
-    color: black;
-    background-color: rgb(255, 201, 119);
+  color: black;
+  background-color: rgb(255, 201, 119);
 }
 
-.rfg-select-box-thumbnail-box{
-    display: flex;
-    height: 100%;
-    overflow: scroll;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    overflow: auto;
+.rfg-select-box-thumbnail-box {
+  display: flex;
+  width: 80%;
+  height: 100%;
+  overflow: scroll;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
 }

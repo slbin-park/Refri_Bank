@@ -7,7 +7,7 @@ const Igd_button = ({ ftable_cnt, set_page_slice }) => {
     const [page_color, set_page_color] = useState(0);
 
     const Func_click_page_slice_btn = (i) => {
-        set_page_slice({ start: (i) * 13 });
+        set_page_slice({ start: (i) * 18 });
         set_page_color(i);
     }
 

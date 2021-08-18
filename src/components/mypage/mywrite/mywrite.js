@@ -109,7 +109,6 @@ function Mywrite({ information, history }) {
         }
         // 예외처리
         if (like_page_btn_arr.length != 0) psum_like_page_btn_arr.push(like_page_btn_arr);
-        // console.log("123",psum_like_page_btn_arr);
         // 처음에 안됐던거는 page color 가 바뀔때 for 문을 돌아야하는데 안돌아 그래서 함수에 넣어줌 => 눌리고 나서 다시 for 문 돌면서 확인 (색깔 체크)
         set_like_page_button(psum_like_page_btn_arr);
     }
@@ -140,7 +139,7 @@ function Mywrite({ information, history }) {
 
     return (
 
-        <div className="mypage_main" style={{ height: '100vh' }}>
+        <div className="mypage_main">
 
             <div className='mypage_main_div'>
                 <div className='likeit_body'>
@@ -165,7 +164,7 @@ function Mywrite({ information, history }) {
                             </div>
                         </div>
                         <div className='body_main_form'>
-                            <Mywritetable get_my_table={get_my_table} information={information} set_table_number={set_table_number} set_modal_table={set_modal_table} set_modal_table={set_modal_table} mywrite_table={mywrite_table} mywrite_page_slice={mywrite_page_slice}></Mywritetable>
+                            {mywrite_table &&< Mywritetable get_my_table={get_my_table} information={information} set_table_number={set_table_number} set_modal_table={set_modal_table} set_modal_table={set_modal_table} mywrite_table={mywrite_table} mywrite_page_slice={mywrite_page_slice}></Mywritetable>}
                         </div>
                         <div className="likeit_bottom_box">
                             <div className="like_select_num_btn_form">

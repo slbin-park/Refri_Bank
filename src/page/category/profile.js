@@ -49,7 +49,7 @@ const Profile =({})=> {
                             <div className="profile-contents">
                                 <h2 className="name3">SexyPig</h2>
                                 <h3 className="job3">Front-end</h3>
-                                <p className="coffee3">Drink : Icetea Shot chuga </p>
+                                <p className="coffee3">Drink : Icetea shot chuga </p>
                                 <p className="myself3">"The way to get started something is to quit talking and begin doing first"</p>
                             </div>
                         </div>

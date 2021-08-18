@@ -50,7 +50,7 @@ function Idgmanage({ information }) {
                         eprd_remain: moment(res_eprname[index], 'YY-MM-DD').diff(moment(new Date(), 'YY-MM-DD'), 'days')
                     }) : 0);
                 setigd_info(new_igdname);
-                set_igd_btn(new_igdname.length / 13)
+                set_igd_btn(new_igdname.length / 18)
             })
             .catch((error) => {
                 console.log(error);
@@ -60,9 +60,8 @@ function Idgmanage({ information }) {
     return (
         <div className='igd_main_div'>
             <div className='igd_title_div'>
-                <div style={{ 'font-size': '5vh' }}> 재료관리</div>
-                <br />
-                   리프레 뱅크 재료 관리 서비스를 마음껏 이용해보세요.<br />
+                <div className="igd_header_title_form"> 재료관리</div>
+                <div className="igd_header_sub_form">레프리 뱅크에서 내 재료와 유통기한을 확인하세요.</div>
             </div>
             <div className='igd_content_div'>
                 <div className='igd_body_color'>
@@ -105,7 +104,9 @@ function Idgmanage({ information }) {
                                 {/* 위에2개 끝 */}
                             </div>
 
+
                             {/* 오른쪽 첫번째 끝 */}
+
 
 
                             <div className='igd_box_right_top_1'>
@@ -130,6 +131,17 @@ function Idgmanage({ information }) {
                                                     {igd_info[igd_slice.start + 3].eprd}<br />
                                                 D {igd_info[igd_slice.start + 3].eprd_remain}<br />
                                                 </div> : ''}
+
+                                        </div>
+                                        <div className='igd_box_top1_img'>
+                                            {igd_info && igd_info.length > igd_slice.start + 4 && igd_info != undefined ?
+                                                <div className="igd_box_img_form">
+                                                    <img className='igd_box_img' src={ingredient_img[igd_info[igd_slice.start + 4].result_igdname]}></img>
+                                                    <br />{igd_info[igd_slice.start + 4].result_igdname}<br />
+                                                    {igd_info[igd_slice.start + 4].eprd}<br />
+                                                D {igd_info[igd_slice.start + 4].eprd_remain}<br />
+                                                </div> : ''}
+
                                         </div>
                                     </div>
                                 </div>
@@ -143,100 +155,90 @@ function Idgmanage({ information }) {
                             {/* 위에2개 시작 */}
                             <div style={{ padding: '2vh' }}>
 
-                                <div className='igd_box_left_top_1'>
-                                    <div className='igd_box_1_cover'>
-                                        <div className='igd_box_1'>
 
-                                            <div className='igd_box_1_content'>
-                                                {igd_info && igd_info.length > igd_slice.start + 4 && igd_info != undefined ?
-                                                    <div className="igd_box_img_form">
-                                                        <img className='igd_box_img' src={ingredient_img[igd_info[igd_slice.start + 4].result_igdname]}></img>
-                                                        <br />{igd_info[igd_slice.start + 4].result_igdname}<br />
-                                                        {igd_info[igd_slice.start + 4].eprd}<br />
-                                                D {igd_info[igd_slice.start + 4].eprd_remain}<br />
-                                                    </div> : ''}
+                                {/* 위에2개 시작 */}
+                                <div style={{ padding: '2vh' }}>
 
-                                            </div>
-                                        </div>
-
-                                        <div className='igd_box_1'>
-
-                                            <div className='igd_box_1_content'>
-                                                {igd_info && igd_info.length > igd_slice.start + 5 && igd_info != undefined ?
-                                                    <div className="igd_box_img_form">
-                                                        <img className='igd_box_img' src={ingredient_img[igd_info[igd_slice.start + 5].result_igdname]}></img>
-                                                        <br />{igd_info[igd_slice.start + 5].result_igdname}<br />
-                                                        {igd_info[igd_slice.start + 5].eprd}<br />
+                                    <div className='igd_box_left_top_1'>
+                                        <div className='igd_box_1_cover'>
+                                            <div className='igd_box_1'>
+                                                <div className='igd_box_1_content'>
+                                                    {igd_info && igd_info.length > igd_slice.start + 5 && igd_info != undefined ?
+                                                        <div className="igd_box_img_form">
+                                                            <img className='igd_box_img' src={ingredient_img[igd_info[igd_slice.start + 5].result_igdname]}></img>
+                                                            <br />{igd_info[igd_slice.start + 5].result_igdname}<br />
+                                                            {igd_info[igd_slice.start + 5].eprd}<br />
                                                 D {igd_info[igd_slice.start + 5].eprd_remain}<br />
-                                                    </div> : ''}
+                                                        </div> : ''}
 
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* 위에2개 끝 */}
 
-
-
-
-
-                            {/* 위에2개 시작 */}
-                            <div style={{ padding: '2vh' }}>
-
-                                <div className='igd_box_left_top_1'>
-                                    <div className='igd_box_1_cover'>
-                                        <div className='igd_box_1'>
-
-                                            <div className='igd_box_1_content'>
-                                                {igd_info && igd_info.length > igd_slice.start + 6 && igd_info != undefined ?
-                                                    <div className="igd_box_img_form">
-                                                        <img className='igd_box_img' src={ingredient_img[igd_info[igd_slice.start + 6].result_igdname]}></img>
-                                                        <br />{igd_info[igd_slice.start + 6].result_igdname}<br />
-                                                        {igd_info[igd_slice.start + 6].eprd}<br />
+                                            <div className='igd_box_1'>
+                                                <div className='igd_box_1_content'>
+                                                    {igd_info && igd_info.length > igd_slice.start + 6 && igd_info != undefined ?
+                                                        <div className="igd_box_img_form">
+                                                            <img className='igd_box_img' src={ingredient_img[igd_info[igd_slice.start + 6].result_igdname]}></img>
+                                                            <br />{igd_info[igd_slice.start + 6].result_igdname}<br />
+                                                            {igd_info[igd_slice.start + 6].eprd}<br />
                                                 D {igd_info[igd_slice.start + 6].eprd_remain}<br />
-                                                    </div> : ''}
-
-                                            </div>
-                                        </div>
-
-                                        <div className='igd_box_1'>
-
-                                            <div className='igd_box_1_content'>
-                                                {igd_info && igd_info.length > igd_slice.start + 7 && igd_info != undefined ?
-                                                    <div className="igd_box_img_form">
-                                                        <img className='igd_box_img' src={ingredient_img[igd_info[igd_slice.start + 7].result_igdname]}></img>
-                                                        <br />{igd_info[igd_slice.start + 7].result_igdname}<br />
-                                                        {igd_info[igd_slice.start + 7].eprd}<br />
-                                                D {igd_info[igd_slice.start + 7].eprd_remain}<br />
-                                                    </div> : ''}
-
+                                                        </div> : ''}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            {/* 위에2개 끝 */}
+                                {/* 위에2개 끝 */}
 
+
+
+
+
+                                {/* 위에2개 시작 */}
+                                <div style={{ padding: '2vh' }}>
+
+                                    <div className='igd_box_left_top_1'>
+                                        <div className='igd_box_1_cover'>
+                                            <div className='igd_box_1'>
+
+                                                <div className='igd_box_1_content'>
+                                                    {igd_info && igd_info.length > igd_slice.start + 7 && igd_info != undefined ?
+                                                        <div className="igd_box_img_form">
+                                                            <img className='igd_box_img' src={ingredient_img[igd_info[igd_slice.start + 7].result_igdname]}></img>
+                                                            <br />{igd_info[igd_slice.start + 7].result_igdname}<br />
+                                                            {igd_info[igd_slice.start + 7].eprd}<br />
+                                                D {igd_info[igd_slice.start + 7].eprd_remain}<br />
+                                                        </div> : ''}
+                                                </div>
+                                            </div>
+
+                                            <div className='igd_box_1'>
+                                                <div className='igd_box_1_content'>
+                                                    {igd_info && igd_info.length > igd_slice.start + 8 && igd_info != undefined ?
+                                                        <div className="igd_box_img_form">
+                                                            <img className='igd_box_img' src={ingredient_img[igd_info[igd_slice.start + 8].result_igdname]}></img>
+                                                            <br />{igd_info[igd_slice.start + 8].result_igdname}<br />
+                                                            {igd_info[igd_slice.start + 8].eprd}<br />
+                                                    D {igd_info[igd_slice.start + 8].eprd_remain}<br />
+                                                        </div> : ''}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* 위에2개 끝 */}
+
+                            </div>
                         </div>
 
                         <div className='igd_right_box'>
                             {/* 오른쪽 첫번째 끝 */}
 
 
-                            <div className='igd_box_right_top_1' style={{ 'padding-bottom': '6.5vh' }}>
+
+                            <div className='igd_box_right_top_1'>
                                 <div className='igd_box_2_all'>
                                     <div className='igd_box_2'>
-
-                                        <div className='igd_box_top1_img'>
-                                            {igd_info && igd_info.length > igd_slice.start + 8 && igd_info != undefined ?
-                                                <div >
-                                                    <img className='igd_box_img' src={ingredient_img[igd_info[igd_slice.start + 8].result_igdname]}></img>
-                                                    <br />{igd_info[igd_slice.start + 8].result_igdname}<br />
-                                                    {igd_info[igd_slice.start + 8].eprd}<br />
-                                                D {igd_info[igd_slice.start + 8].eprd_remain}<br />
-                                                </div> : ''}
-                                        </div>
                                         <div className='igd_box_top1_img'>
                                             {igd_info && igd_info.length > igd_slice.start + 9 && igd_info != undefined ?
                                                 <div >
@@ -246,16 +248,6 @@ function Idgmanage({ information }) {
                                                 D {igd_info[igd_slice.start + 9].eprd_remain}<br />
                                                 </div> : ''}
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* 오른쪽 첫번째 끝 */}                         {/* 오른쪽 첫번째 끝 */}
-
-
-                            <div className='igd_box_right_top_1' style={{ 'padding-bottom': '6.5vh', 'padding-top': '6.5vh' }} >
-                                <div className='igd_box_2_all'>
-                                    <div className='igd_box_2'>
-
                                         <div className='igd_box_top1_img'>
                                             {igd_info && igd_info.length > igd_slice.start + 10 && igd_info != undefined ?
                                                 <div >
@@ -280,10 +272,10 @@ function Idgmanage({ information }) {
                             {/* 오른쪽 첫번째 끝 */}                         {/* 오른쪽 첫번째 끝 */}
 
 
-                            <div className='igd_box_right_top_1' style={{ 'padding-top': '6.5vh' }}>
+
+                            <div className='igd_box_right_top_1' style={{ 'padding-bottom': '3vh', 'padding-top': '4vh' }} >
                                 <div className='igd_box_2_all'>
                                     <div className='igd_box_2'>
-
                                         <div className='igd_box_top1_img'>
                                             {igd_info && igd_info.length > igd_slice.start + 12 && igd_info != undefined ?
                                                 <div >
@@ -302,6 +294,52 @@ function Idgmanage({ information }) {
                                                 D {igd_info[igd_slice.start + 13].eprd_remain}<br />
                                                 </div> : ''}
                                         </div>
+                                        <div className='igd_box_top1_img'>
+                                            {igd_info && igd_info.length > igd_slice.start + 14 && igd_info != undefined ?
+                                                <div >
+                                                    <img className='igd_box_img' src={ingredient_img[igd_info[igd_slice.start + 14].result_igdname]}></img>
+                                                    <br />{igd_info[igd_slice.start + 14].result_igdname}<br />
+                                                    {igd_info[igd_slice.start + 14].eprd}<br />
+                                                D {igd_info[igd_slice.start + 14].eprd_remain}<br />
+                                                </div> : ''}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* 오른쪽 첫번째 끝 */}                         {/* 오른쪽 첫번째 끝 */}
+
+
+
+                            <div className='igd_box_right_top_1' style={{ 'padding-top': '4vh' }}>
+                                <div className='igd_box_2_all'>
+                                    <div className='igd_box_2'>
+                                        <div className='igd_box_top1_img'>
+                                            {igd_info && igd_info.length > igd_slice.start + 15 && igd_info != undefined ?
+                                                <div >
+                                                    <img className='igd_box_img' src={ingredient_img[igd_info[igd_slice.start + 15].result_igdname]}></img>
+                                                    <br />{igd_info[igd_slice.start + 15].result_igdname}<br />
+                                                    {igd_info[igd_slice.start + 15].eprd}<br />
+                                                D {igd_info[igd_slice.start + 15].eprd_remain}<br />
+                                                </div> : ''}
+                                        </div>
+                                        <div className='igd_box_top1_img'>
+                                            {igd_info && igd_info.length > igd_slice.start + 16 && igd_info != undefined ?
+                                                <div >
+                                                    <img className='igd_box_img' src={ingredient_img[igd_info[igd_slice.start + 16].result_igdname]}></img>
+                                                    <br />{igd_info[igd_slice.start + 16].result_igdname}<br />
+                                                    {igd_info[igd_slice.start + 16].eprd}<br />
+                                                D {igd_info[igd_slice.start + 16].eprd_remain}<br />
+                                                </div> : ''}
+                                        </div>
+                                        <div className='igd_box_top1_img'>
+                                            {igd_info && igd_info.length > igd_slice.start + 17 && igd_info != undefined ?
+                                                <div >
+                                                    <img className='igd_box_img' src={ingredient_img[igd_info[igd_slice.start + 17].result_igdname]}></img>
+                                                    <br />{igd_info[igd_slice.start + 17].result_igdname}<br />
+                                                    {igd_info[igd_slice.start + 17].eprd}<br />
+                                                D {igd_info[igd_slice.start + 17].eprd_remain}<br />
+                                                </div> : ''}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -309,6 +347,7 @@ function Idgmanage({ information }) {
 
 
                             {/* {igd_info && <Func_idg_info igd_info={igd_info}/>} */}
+
                         </div>
 
                     </div>
@@ -319,8 +358,8 @@ function Idgmanage({ information }) {
                     </div>
 
 
-                </div>
 
+                </div>
             </div>
         </div>
     );

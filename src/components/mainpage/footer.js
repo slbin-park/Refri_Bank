@@ -1,7 +1,6 @@
 import React from 'react'
 import '../../style/mainpage/footer/footer.css'
 
-
 function footer({ ftable, history, page_slice}) {
   const Show = () => {
     let psum_li = [];

@@ -8,8 +8,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
 
 .header-form {
-  position: sticky;
-  width: 100%;
+  /* position: sticky; */
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  /* width: 100%; */
+  /* min-width: 500px; */
   height: 20%; 
   display: block;
 }
@@ -83,19 +87,28 @@
 }
 
 .header-logo-img {
-  width: 100%;
+  width: 290px;
   cursor: pointer;
-  height: 100%;
+  height: 80px;
   margin-bottom: 2vh;
-  min-width: 50%;
-  min-height: 20%;
+  /* min-width: 50%;
+  min-height: 20%; */
 }
 
 .header-right-big-box {
   display: flex;
 }
 
+
+
+
+
+
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+
+
+
 
 
 .header-bottom-box div {
@@ -103,13 +116,13 @@
   margin-right: 40px;
   
 }
-.header-bottom-box p {
+/* .header-bottom-box p {
   margin-top : 8px;
   margin-bottom: 5px;
   color: #9badc7;
-  font-size: 13px;
+  font-size: 10px;
   font-weight: bolder;
-}
+} */
 
 /* page 드롭다운 */
 @keyframes dropdown {
@@ -126,13 +139,14 @@
   visibility:hidden;
   position: absolute;
   top: 2.5vh;
-  padding-top: 2vh;
-  left: -6.7vh;
-  font-size: 1vw;
+  padding-top: 1vh;
+  left: -5.7vh;
+  font-size: 0.7vw;
 }
 
 .header-category-btn-mypage-ul {
   display: flex;
+  padding-top: 5px;
   flex-direction: column ;
 }
 

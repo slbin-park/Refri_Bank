@@ -29,7 +29,6 @@ function Mywritetable({ get_my_table, mywrite_table, set_table_number, set_modal
     }
 
     const Create_mywrite_table = ({ user }) => {
-        // 제목 클릭하면 내가 작성한 게시글 보여줘야함
         const show_mywrite = (number) => {
             get_table(number)
         }
