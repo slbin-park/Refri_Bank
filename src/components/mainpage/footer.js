@@ -16,7 +16,7 @@ function Footer({ ftable, history, setftable_cnt, page_slice, setftable, aside_c
         });
         setftable(new_arr);
         setlivetable(response.data);
-        setftable_cnt(response.data.length / 16);
+        setftable_cnt(response.data.length / 8);
       })
       .catch((error) => {
         console.log(error);

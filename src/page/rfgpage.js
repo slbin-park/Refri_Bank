@@ -13,7 +13,7 @@ function App({ history, information }) {
   const [thumb_table, set_thumb_table] = useState();
   const [result_box_list, setresult_box_list] = useState([]);
   const [random_select, set_random_select] = useState([]);
-  const [page_slice, set_page_slice] = useState({ start: 0, end: 16 });
+  const [page_slice, set_page_slice] = useState({ start: 0, end: 8 });
   // page_slice - > 이거는 한페이지에서 자르는 개수를 정하는 변수
 
   const [ftable_cnt, set_ftable_cnt] = useState();
@@ -21,12 +21,13 @@ function App({ history, information }) {
 
   useEffect(() => {
     if (random_select.length != 0) {
-      Axios.post('https://qkrtmfqls.gabia.io/gettable', {
-        id: random_select[0],
+      Axios.post('https://qkrtmfqls.gabia.io/getidgrc', {
+        igd: random_select[0],
       })
         .then((response) => {
+          console.log(response.data);
           set_thumb_table(response.data);
-          set_ftable_cnt(response.data.length / 16);
+          set_ftable_cnt(response.data.length / 8);
         })
         .catch((error) => {
           console.log(error);

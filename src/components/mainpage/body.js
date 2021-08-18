@@ -17,7 +17,7 @@ const Body = ({ setftable, setftable_cnt }) => {
       })
         .then((response) => {
           setftable(response.data);
-          setftable_cnt(response.data.length / 16);
+          setftable_cnt(response.data.length / 8);
         })
         .catch((error) => {
           console.log(error);
