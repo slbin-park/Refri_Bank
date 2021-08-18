@@ -1,13 +1,18 @@
 import ingredient_img from "../../img/ingredient_img/ingredient-img";
 import { useEffect, useState, Component } from "react";
-import Rfgfooter from "./rfgfooter";
 import '../../style/rfgpage/rfg.css';
 import Calendar from 'react-calendar';
 import Axios from 'axios';
 import moment from 'moment'
 
-function Func_filter_find_ingredient({result_box_list, setresult_box_list, information}) {
 
+//공용 변수.
+//  result_box_list -> 디비에서 냉장고 정보 가져옴
+// 랜덤 한개 고른게 있잖아요
+// 그거 1개만 state써서 넘겨주는거죠
+
+function Func_filter_find_ingredient({result_box_list, setresult_box_list, information}) {
+    console.log('filterbox 전체 렌더링')
     //date날짜, result_box_list는 오른쪽의 장바구니에 들어있는 리스트, 
     const [date,setdate] = useState(new Date());
     const [igdlist,setigdlist] = useState();;
@@ -21,6 +26,7 @@ function Func_filter_find_ingredient({result_box_list, setresult_box_list, infor
     //123
     
     const basketInput = () => {
+        console.log('재료 선택함')
         const select_eprdate = moment(date).format('YY-MM-DD');
         let check = true
         result_box_list.map((v)=>v.result_igdname == igdlist ? check=false: 0)
@@ -59,28 +65,28 @@ function Func_filter_find_ingredient({result_box_list, setresult_box_list, infor
         });
     } 
 
-    //get 버튼을 클릭시 DB에 저장된 재료리스트 불러옴
-    const Func_reqbutton_getquery = (e) => {
-        if(information !== undefined) {
-            Axios.post("https://qkrtmfqls.gabia.io/getrfg", {
-                id: information.id
-            })
-            .then((response)=> {
-                let res_igdname = response.data[0].Igdname.split(",");
-                let res_eprname = response.data[0].Eprdate.split(",");
-                let new_igdname =[];
-                res_igdname && res_igdname.map((v,index)=> v !== '' ? new_igdname.push({result_igdname : v, eprd : res_eprname[index]}) : 0);
-                setresult_box_list(new_igdname);
-            })
-            .catch((error)=> {
-                console.log(error);
-            });
-        }
-    }
+    // //get 버튼을 클릭시 DB에 저장된 재료리스트 불러옴
+    // const Func_reqbutton_getquery = (e) => {
+    //     if(information !== undefined) {
+    //         Axios.post("https://qkrtmfqls.gabia.io/getrfg", {
+    //             id: information.id
+    //         })
+    //         .then((response)=> {
+    //             let res_igdname = response.data[0].Igdname.split(",");
+    //             let res_eprname = response.data[0].Eprdate.split(",");
+    //             let new_igdname =[];
+    //             res_igdname && res_igdname.map((v,index)=> v !== '' ? new_igdname.push({result_igdname : v, eprd : res_eprname[index]}) : 0);
+    //             setresult_box_list(new_igdname);
+    //         })
+    //         .catch((error)=> {
+    //             console.log(error);
+    //         });
+    //     }
+    // }
         
-    useEffect(()=> {
-        Func_reqbutton_getquery();
-    }, []);
+    // useEffect(()=> {
+    //     Func_reqbutton_getquery();
+    // }, []);
     
     useEffect(() => {
 

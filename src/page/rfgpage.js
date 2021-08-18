@@ -13,7 +13,7 @@ function App({ history, information }) {
   const [thumb_table, set_thumb_table] = useState();
   const [result_box_list, setresult_box_list] = useState([]);
   const [random_select, set_random_select] = useState([]);
-  const [page_slice, set_page_slice] = useState({ start: 0, end: 16 })
+  const [page_slice, set_page_slice] = useState({ start: 0, end: 8 })
   // page_slice - > 이거는 한페이지에서 자르는 개수를 정하는 변수
 
   const [ftable_cnt,set_ftable_cnt] = useState();
@@ -26,7 +26,7 @@ function App({ history, information }) {
       })
         .then((response) => {
           set_thumb_table(response.data);
-          set_ftable_cnt(response.data.length/16)
+          set_ftable_cnt(response.data.length/8)
         })
         .catch((error) => {
           console.log(error);
@@ -94,7 +94,7 @@ function App({ history, information }) {
         <Footer ftable={thumb_table} history={history} page_slice={page_slice} />
       </div>
       <div className="move-footer-form">
-          <div style={{ width: '100%', height: '80%', display: 'flex', 'justify-content': 'center', 'align-items': 'center' }}>
+          <div style={{ width: '100%', height: '80%', display: 'flex','margin-top': '3%','margin-bottom': '3%', 'justify-content': 'center', 'align-items': 'center' }}>
           <div className="like_select_num_btn_form">
               {
                 ftable_cnt &&

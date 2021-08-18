@@ -2,7 +2,6 @@ import '../../style/category/introduce.css';
 
 import logo2 from '../../img/main_body_img/background_img.jpg'
 import logo3 from '../../img/main_body_img/project_logo_img.png'
-
 import logo4 from '../../img/main_body_img/123.png'
 import react_img from '../../img/main_body_img/react.png'
 import html_img from '../../img/main_body_img/html.png'
@@ -12,11 +11,7 @@ import mysql_img from '../../img/main_body_img/mysql.png'
 import express_img from '../../img/main_body_img/express.png'
 import move_top_btn from '../../img/main_body_img/move_top_btn.png'
 
-const introduce = ({ history }) => {
-    // const Func_move_up = (e) => {
-    //     history.push('/introduce');
-    // }
-
+const introduce = () => {
     return (
         <>
             <div className="introduce-big-box">
@@ -65,6 +60,7 @@ const introduce = ({ history }) => {
                                         <div className="nodejs-icon-wrap">
                                             <img className="back-end-box-img" src={node_img} ></img>
                                         </div>
+
                                         <div className="mysql-icon-wrap">
                                             <img className="back-end-box-img" src={mysql_img} ></img>
                                         </div>
@@ -74,11 +70,8 @@ const introduce = ({ history }) => {
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
-
                         </div>
-
                     </div>
 
                     <div className="right-big-box">
@@ -135,7 +128,6 @@ const introduce = ({ history }) => {
                     </div>
                 </div>
             </div>
-
         </>
     )
 }

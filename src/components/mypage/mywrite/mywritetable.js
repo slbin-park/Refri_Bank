@@ -5,8 +5,6 @@ import Alert from "../../../page/alert";
 import Axios from 'axios'
 function Mywritetable({ get_my_table, mywrite_table, set_table_number, set_modal_table, mywrite_page_slice }) {
 
-    // console.log("like", mywrite_page_slice);
-
     const return_mywrite_table = () => {
         const arr = [];
         mywrite_table && mywrite_table.slice(mywrite_page_slice.start, mywrite_page_slice.end).map((v) => arr.push(<Create_mywrite_table user={v} />))
@@ -30,7 +28,6 @@ function Mywritetable({ get_my_table, mywrite_table, set_table_number, set_modal
     }
 
     const Create_mywrite_table = ({ user }) => {
-        // 제목 클릭하면 내가 작성한 게시글 보여줘야함
         const show_mywrite = (number) => {
             get_table(number)
         }

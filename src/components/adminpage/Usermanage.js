@@ -3,7 +3,6 @@ import '../../style/adminpage/sidebar.css';
 import '../../style/adminpage/body.css';
 import '../../style/adminpage/modal.css';
 import 'rodal/lib/rodal.css';
-import Alert from "../../page/alert";
 import Rodal from 'rodal';
 import Axios from 'axios';
 
@@ -67,7 +66,7 @@ function Usermanage({ history }) {
         })
             .then((response) => {
                 if (response.data.success) {
-                    Alert("User",'변경에 성공하셨습니다.')
+                    alert('변경에 성공하셨습니다.')
                     set_show_modal(false)
                 }
             })

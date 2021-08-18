@@ -14,21 +14,21 @@ const Footer_bottom = ({ ftable_cnt, set_page_slice }) => {
     // arrouw_page = 1 
 
     const Func_click_page_slice_btn = (i) => {
-        set_page_slice({ start: (i) * 16, end: (i + 1) * 16 });
+        set_page_slice({ start: (i) * 8, end: (i + 1) * 8 });
         // 16개씩 짤라서 페이지 슬라이스 , 16개 -> 페이지 1 (i)
         set_page_color(i);
     }
 
     useEffect(() => {
         set_arrow_page(0)
-        set_page_slice({ start: 0, end: 16 })
+        set_page_slice({ start: 0, end: 8 })
         set_page_color(0)
     }, [ftable_cnt])
     // page 이동 되면 디폴트로 start:0, end:16 => 처음 화면
 
 
     useEffect(() => {
-        
+        console.log("page", page_color);
         create_button();
     }, [page_color])
 

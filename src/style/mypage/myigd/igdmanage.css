@@ -1,25 +1,60 @@
+@font-face {
+    font-family: 'neon';
+    src: url('../../../Jalnan.ttf') format('truetype');
+}
+
 .igd_main_div{
     color: #333333;
     flex: 10;
-    height: 150vh;
+    height: 100vh;
+    /* background-color: transparent; */
+    padding: 2%;
+    padding-top: 3%;
 }
 
+
 .igd_content_div{
-    background: whitesmoke;
     text-align: center;
-    padding : 5%;
-    height: 110vh;
+    padding : 20%;
+    height: 87vh;
+    padding-top: 2%;
     border-radius: 4vh;
 }
 
-.igd_title_div{
-    text-align: center;
-    background-color: white;
-    height: 13vh;
+.igd_header_title_form {
+    font-weight: 700;
+    font-size: 1.8vw;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'neon';
+    color: rgba(1, 1, 1, 0.75);
+}
+
+.igd_header_sub_form {
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 1vw;
+    width: 100%;
+    height: 50%;
+    margin-top: 1%;
+    align-items: center;
+    /* 저기 */
+    color: rgba(1, 1, 1, 0.6);
 }
 
 .igd_body_div{ 
     height: 90%;
+}
+
+.igd_body_color{
+    border-radius: 4vh;
+    background-color: rgb(223, 239, 250);
+    height: 100%;
+    border: 3px solid black;
 }
 
 .igd_img_div{
@@ -54,59 +89,47 @@
 }
 
 .igd_box_left_top_1{
-    height: 20vh;
+    height: 15vh;
     display: flex;
     align-content: center;
     align-items: center;
-    margin-bottom: 5%;
 }
 
 .igd_box_1{
     width: 46%;
     height: 100%;
-
     border-radius: 4vh;
-    background-color: white;
+    background-color: rgb(171, 228, 248);;
+    border: 3px solid black;
 }
 
 .igd_box_1_content{
     flex-wrap: wrap;
-    height: 80%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .igd_box_img_form {
     width: 80%;
-    height: 100%;
-    display: flex;
-    align-items:center;
-    justify-content: center;
+    font-size: 0.5vw;
+    font-family: 'neon';
 }
 
 .igd_box_img{
-    width: 12vw;
-    height: 12vh;
+    width: 4vw;
+    height: 8vh;
 }
-
-
-
-
-
-
-
-
-
-
 
 .igd_right_box{
     width: 50%;
 }
 
 .igd_box_right_top_1{
-    height: 32vh;
+    height: 22vh;
     padding: 2vh;
-
+    margin-left: 2.5vh;
+    margin-right: 2.5vh;
 }
 
 
@@ -117,14 +140,16 @@
 .igd_box_2{
     height: 100%;
     border-radius: 4vh;
-    background-color: white;
+    background-color: rgb(171, 228, 248);
+    border: 3px solid black;
     display: flex;
 }
 
 .igd_box_2_content{
 
     border-radius: 4vh;
-    background-color: white;
+    background-color: rgb(171, 228, 248);
+    border: 3px solid black;
 }
 
 .igd_box_top1_img{
@@ -132,6 +157,8 @@
     align-items: center;
     justify-content: center;
     width: 50%;
+    font-size: 0.5vw;
+    font-family: 'neon';
 }
 .igd_box_1_cover{
     display: flex;
