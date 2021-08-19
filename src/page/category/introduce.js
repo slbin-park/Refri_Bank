@@ -1,5 +1,4 @@
 import '../../style/category/introduce.css';
-
 import logo2 from '../../img/main_body_img/background_img.jpg'
 import logo3 from '../../img/main_body_img/project_logo_img.png'
 import logo4 from '../../img/main_body_img/123.png'
@@ -122,7 +121,8 @@ const introduce = () => {
                     <div className="introduce-bottom-right">
                         <div className="introduce-bottom-button-form">
                             <button className="introduce-bottom-right-btn">
-                                <img src={move_top_btn} width="60" height="60"></img>
+                                {/* 상단으로 올려주는 버튼 */}
+                                <div onClick={() => window.scrollTo(0,0)} ><img src={move_top_btn} style={{width:"40px", height:"40px", cursor:'pointer'}}/></div>
                             </button>
                         </div>
                     </div>

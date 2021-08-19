@@ -54,7 +54,7 @@ const Func_mywritecontent_show_mywritecontent = ({get_table_number,get_modal_tab
                     <div className="thumbnail-content-createdate"><span>{get_modal_table.created}</span></div>
                 </div>
                 <div className="thumbnail-content-description">
-                    <span>{get_modal_table.description}</span>
+                    <span dangerouslySetInnerHTML={{ __html: get_modal_table.description }}></span>
                 </div>
                 <div className="reaction-num">
                     <img src={likeimg} width="20px" height="20px"/>
