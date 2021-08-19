@@ -1,27 +1,38 @@
 .login-true-form {
-  display: inline-block; 
+  display: inline-block;
   width: 33%;
   height: 100%;
 }
-.login-success-msg1{
-  display: inline-block;  
+.login-success-msg1 {
+  /* display: inline-block;
   width: 33%;
   height: 80%;
-  padding: 0;
-  font-size: 2vw;
-  color: rgb(109, 109, 170);
+  padding: 0; */
+  font-size: 1.5vw;
+  /* color: rgb(109, 109, 170);
   font-weight: bolder;
   margin-top: 7%;
-  margin-left: 20%;
+  margin-left: 20%; */
 }
-.login-success-msg2{
-  display: inline-block;
-  width: 33,3%;
+.login-success-msg2 {
+  /* display: inline-block;
+  width: 33, 3%;
   margin: 0;
-  padding: 0;
-  font-size: 1vw;
-  color: rgb(109, 109, 170);
-  font-weight: bolder;
+  padding: 0; */
+  font-size: 0.8vw;
+  /* color: rgb(109, 109, 170);
+  font-weight: bolder; */
+}
+.header-move-rfgpage-btn {
+  width: 25%;
+  height: 100%;
+}
+.header-move-rfgpage-btn img {
+  width: 75%;
+  height: 80%;
+  cursor: pointer;
+  margin-left: 2vw;
+  margin-bottom: 1.5vh;
 }
 
 .header-myrfg-btn {
@@ -31,8 +42,8 @@
   -moz-transform: scale(1);
   -ms-transform: scale(1);
   -o-transform: scale(1);
-  transition: all 0.3s ease-in-out; 
-  background-color:transparent;
+  transition: all 0.3s ease-in-out;
+  background-color: transparent;
   border: 0;
   width: 100%;
   height: 100%;
@@ -47,7 +58,7 @@
   -moz-transform: scale(1.2);
   -ms-transform: scale(1.2);
   -o-transform: scale(1.2);
-  background-color:transparent;
+  background-color: transparent;
 }
 
 .logout-move-mainpage-btn {
@@ -56,10 +67,10 @@
   -moz-transform: scale(1);
   -ms-transform: scale(1);
   -o-transform: scale(1);
-  transition: all 0.3s ease-in-out; 
-  background-color:transparent;
+  transition: all 0.3s ease-in-out;
+  background-color: transparent;
   border: 0;
-  padding : 0;
+  padding: 0;
 }
 
 .logout-move-mainpage-btn:hover {
@@ -69,11 +80,10 @@
   -moz-transform: scale(1.2);
   -ms-transform: scale(1.2);
   -o-transform: scale(1.2);
-  background-color:transparent;
+  background-color: transparent;
 }
 
-
-.header-logout-btn{
+.header-logout-btn {
   width: 25%;
   height: 100%;
   padding: 0;
@@ -85,22 +95,9 @@
   height: 100%;
 }
 
-.header-move-rfgpage-btn{
-  width: 25%;
-  height: 100%;
-  background-color: to;
-}
-.header-move-rfgpage-btn img {
-  width: 75%;
-  height: 80%;
-  cursor: pointer;
-  margin-left: 2vw;
-  margin-bottom: 1.5vh;
-}
-
-.logout-move-mainpage-btn img{
+.logout-move-mainpage-btn img {
   width: 40%;
   height: 80%;
-  margin-top: 20%;
+  /* margin-top: 20%; */
   cursor: pointer;
 }
