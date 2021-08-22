@@ -149,7 +149,6 @@
   position: relative;
   align-items: center;
   justify-content: center;
-  color: #4b6584;
   font-weight: 600;
 }
 
@@ -158,8 +157,15 @@
   transition: transform 100ms ease-in-out;
 }
 .ingredient-form {
+  color: #4b6584;
   cursor: pointer;
   transition: transform 100ms ease-in-out;
+}
+
+.select-ingredient-form{
+  transform: scale(1.125);
+  z-index: 1000;
+  color: tomato;
 }
 
 .ingredient-form:hover,

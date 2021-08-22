@@ -241,8 +241,8 @@
   width: 800px;
   /* margin-left: 5%; */
   height: 50px;
-  margin-top: 25px;
-  margin-left: 15%;
+  /* margin-top: 25px;
+  margin-left: 15%; */
   /* margin-right: 25%; */
   /* margin-left: 10%; */
   /* display: flex; */
@@ -404,7 +404,8 @@
 }
 
 .write_board{
-    flex-direction: column;
-    display: flex;
-    align-items: center;
+  display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    margin-top: 1%;
 }

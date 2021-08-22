@@ -42,7 +42,7 @@ const Func_freecontent_show_freecontent = ({ get_free_number, information }) => 
         e.preventDefault();
 
         if (information != undefined) {
-            Axios.post("http://localhost:3001/addreply", {
+            Axios.post("https://qkrtmfqls.gabia.io/addreply", {
                 number: get_free_number,
                 userid: information.id,
                 nickname: information.nickname,

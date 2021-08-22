@@ -239,15 +239,6 @@ box-sizing: border-box;
     transform: rotate( 360deg );
 }
 
-
-.move_writeform_btn {
-    width: 800px;
-    height: 60px;
-    margin-top: 25px;
-    background-color: white;
-    border-radius: 20px;
-}
-
 .topcontent-form {
     /* border: 5px blueviolet solid; */
     height: 15%;
@@ -357,10 +348,4 @@ box-sizing: border-box;
     /* height: 30px; */
     border-radius: 20px;
     border: 1px gray solid;
-}
-
-.write_board{
-    flex-direction: column;
-    display: flex;
-    align-items: center;
 }
