@@ -1,7 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @font-face {
     font-family: 'neon';
-    src: url('../../Jalnan.ttf') format('truetype');
+    src: url('../../../Jalnan.ttf') format('truetype');
+}
+
+.root{
+    overflow: hidden;
+width: 100%;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
 }
 .notice-form {
     width:80%;
@@ -36,11 +44,11 @@
     align-items: center;
 }
 
-.notice-nav-form {
-    width: 800px;
-    height: 100%;
-    margin-left: 10%;
-    margin-right: 10%;
+.mobile-notice-nav-form {
+    width: 300px;
+    height: 30px;
+    margin-left: 3%;
+    margin-right: 3%;
     display: flex;
     /* position: relative; 추후 박스 하단에 추가 버튼을 위치시키기 위한 설정 */
     background: white;
@@ -105,24 +113,24 @@
 
 }
 
-.noticeboard-select-btn {
+.mobile-noticeboard-select-btn {
     
-    width: 10%;
-    height: 30px;
+    width: 20%;
+    height: 20px;
 
     display: flex;
-    font-size: 15px;
+    font-size: 5px;
    align-items: center;
     justify-content: center;
     cursor: pointer;
 }
 
-.freeboard-select-btn {
-    width: 20%;
-    height: 30px;
+.mobile-freeboard-select-btn {
+    width: 30%;
+    height: 20px;
     display: flex;
     text-align: center;
-    font-size: 15px;
+    font-size: 5px;
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -258,13 +266,11 @@
     font-family: 'neon';
 }
 
-.middle-content-form {
-    height: 80px; 
+.mobile-middle-content-form {
+    height: 55px; 
     border: gray 2px solid;
     display: flex;
-    width: 800px;
-    margin-left: 10%;
-    margin-right: 10%;
+    width: 300px;
     margin-bottom: 5%;
 
     border-radius: 20px;
@@ -285,28 +291,20 @@
     font-size: 20px;
 }
 
-.middle-content-form-right{
+.mobile-middle-content-form-right{
     align-items: center;
-
-    border-left: 2px black solid;
-    
-    width: 50%;
     height: 100%;
-    /* border: darkblue solid; */
     display: flex;
-    /* margin: 2%; */
-    /* padding-left: 15%; */
-    font-size: 20px;
     display: flex;
 }
 
-.right-img-box {
+.mobile-right-img-box {
     display: flex;
     align-items: center;
     width: 58px;
     height: 100%;
     margin-right: 10px;
-    /* margin: 20px; */
+    margin-left: 10px;
     padding: 0;
 }
 .right-img-box img {
@@ -327,9 +325,8 @@
     align-items: center;
     justify-content: center;
 }
-.send-btn{
-    /* margin-top: 35px; */
-    /* margin-bottom: 20px; */
+.mobile-send-btn{
+    font-size: 15px;
     width: 100%;
     border-radius: 20px;
     color: white;
@@ -337,14 +334,14 @@
     cursor: pointer;
 }
 
-.right-text-box h3 {
-    font-size: 25px;
+.mobile-right-text-box h3 {
+    font-size: 10px;
 
     color: #4d4d4d;
 }
   
-.right-text-box p {
-    font-size: 15px;
+.mobile-right-text-box p {
+    font-size: 5px;
 
 }
 
@@ -353,9 +350,9 @@
     width: 20%;
     /* margin-top: 20px; */
 }
-.search {
+.mobile-search {
     width: 100%;
-    height: 60%;
+    height: 20px;
     /* margin-bottom: 40%; */
     /* height: 30px; */
     border-radius: 20px;

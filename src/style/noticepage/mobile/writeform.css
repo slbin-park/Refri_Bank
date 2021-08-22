@@ -1,0 +1,54 @@
+.writeform-wrapper-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .writeform-wrapper{
+    width: 80%;
+    padding-top: 10vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .title-input {
+    width: 79%;
+    height: 40px;
+    margin: 10px;
+  }
+  
+  .submit-button-box {
+    width: 80%;
+  }
+
+  .submit-button {
+    width:20vw;
+    height: 5vh;
+    font-size: 1.3vw;
+    border: none;
+    background: #e6e6e6;
+    /* box-shadow: none; */
+    margin-top: 3%;
+    /* vertical-align: middle; */
+    /* text-align: center; */
+    cursor: pointer;
+    color: #666666;
+    border-radius: 20px;
+  }
+
+  .submit-button:hover {
+    background-color: #fbb03b;
+    color: white;
+  }
+  
+  .ck.ck-reset.ck-editor.ck-rounded-corners {
+    width: 80%;
+  }
+
+  .ck.ck-editor__editable:not(.ck-editor__nested-editable) {
+    min-height: 280px;
+  }

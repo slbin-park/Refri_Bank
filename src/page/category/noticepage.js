@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import '../../style/noticepage/noticepage.css';
+import '../../style/noticepage/mobile/mobilenoticepage.css';
+
 import 'aos/dist/aos.css';
 import '../../style/mypage/likeit.css';
+import { BrowserView, MobileView, isBrowser, isMobile } from "react-device-detect";
 
 import email_img from '../../img/board/email.png';
 import xbuttom from '../../img/board/xbutton.jpg';
@@ -87,34 +90,62 @@ function App({ information }) {
           </div>
 
           <div className='middle-flex-form'>
-            <div className="middle-content-form">
-              <div className="middle-content-form-left">왼쪽 </div>
-              <div className="middle-content-form-right">
-                <div className="right-img-box">
-                  <img className="email_img" src={email_img} width="50px" height="50px" ></img>
-                </div>
-                <div className="right-text-box">
-                  <h3 > 이메일 문의하기</h3>
-                  <p style={{ 'font-size': '15px' }}> 찾으시는 답변이 없으신가요 ? </p>
-                </div>
-                <div className="right-btn-box">
-                  <button className="send-btn" onClick={() => window.open("mailto:ds4ouj@gmail.com", '_blank')}>E-mail 보내기 </button>
+            {isMobile ?
+              <div className="mobile-middle-content-form">
+                <div className="mobile-middle-content-form-right">
+                  <div className="mobile-right-img-box">
+                    <img className="email_img" src={email_img} width="35px" height="35px" ></img>
+                  </div>
+                  <div className="mobile-right-text-box">
+                    <h3 > 이메일 문의하기</h3>
+                    <p > 찾으시는 답변이 없으신가요 ? </p>
+                  </div>
+                  <div className="right-btn-box">
+                    <button className="mobile-send-btn" onClick={() => window.open("mailto:ds4ouj@gmail.com", '_blank')}>E-mail 보내기 </button>
+                  </div>
                 </div>
               </div>
-            </div>
+              :
+              <div className="middle-content-form">
+                <div className="middle-content-form-left">왼쪽 </div>
+                <div className="middle-content-form-right">
+                  <div className="right-img-box">
+                    <img className="email_img" src={email_img} width="50px" height="50px" ></img>
+                  </div>
+                  <div className="right-text-box">
+                    <h3 > 이메일 문의하기</h3>
+                    <p style={{ 'font-size': '15px' }}> 찾으시는 답변이 없으신가요 ? </p>
+                  </div>
+                  <div className="right-btn-box">
+                    <button className="send-btn" onClick={() => window.open("mailto:ds4ouj@gmail.com", '_blank')}>E-mail 보내기 </button>
+                  </div>
+                </div>
+              </div>}
           </div>
 
           <div className="subcontent-form">
             <div className='notice-nav-flex-form'>
-              <div className="notice-nav-form">
-                <div className="notice-nav">
-                  <div role="button" className="noticeboard-select-btn" onClick={Func_noticepage_toggle_noticeboard}>Notice</div>
-                  <div role="button" className="freeboard-select-btn selectedboard-btn" onClick={Func_noticepage_toggle_freeboard}>BulletinBoard</div>
+              {isMobile ?
+                <div className="mobile-notice-nav-form">
+                  <div className="notice-nav">
+                    <div role="button" className="mobile-noticeboard-select-btn" onClick={Func_noticepage_toggle_noticeboard}>Notice</div>
+                    <div role="button" className="mobile-freeboard-select-btn selectedboard-btn" onClick={Func_noticepage_toggle_freeboard}>BulletinBoard</div>
+                  </div>
+                  <div className="search_box">
+                    <input className="mobile-search"></input>
+                  </div>
                 </div>
-                <div className="search_box">
-                  <input className="search"></input>
+                :
+                <div className="notice-nav-form">
+                  <div className="notice-nav">
+                    <div role="button" className="noticeboard-select-btn" onClick={Func_noticepage_toggle_noticeboard}>Notice</div>
+                    <div role="button" className="freeboard-select-btn selectedboard-btn" onClick={Func_noticepage_toggle_freeboard}>BulletinBoard</div>
+                  </div>
+                  <div className="search_box">
+                    <input className="search"></input>
+                  </div>
                 </div>
-              </div>
+                }
             </div>
             <div className="maincontent-form">
 
@@ -131,8 +162,9 @@ function App({ information }) {
               {page != undefined && button_cnt != undefined ? <Page_button page={page} button_cnt={button_cnt} set_page_slice={set_page_slice} /> : ''}
             </div>
           </div>
-          {information != undefined ? <button className="move_writeform_btn" onClick={Write_open}>게시글 작성하기</button> : ''}
-
+          <div className='write_board'>
+            {information != undefined ? <button className="move_writeform_btn" onClick={Write_open}>게시글 작성하기</button> : ''}
+          </div>
         </div>
         : <Write_form set_write_toggle={set_write_toggle} page={page} information={information} />}
     </>

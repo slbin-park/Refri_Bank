@@ -3,6 +3,10 @@ import '../../style/mypage/index.css';
 import '../../style/mypage/likeit.css';
 
 function Likeit({ button_cnt, page, set_page_slice }) {
+    //button_cnt - > response.data / 10 버튼개수
+    // set_page_slice - > [page_slice,set_page_slice] = useState({start:0,end:10})
+    // page_slice.start page_slice.end 를
+    // arr.slice(page_slice.start,page_slice.end )
 
 
     const [page_color, set_page_color] = useState(0);

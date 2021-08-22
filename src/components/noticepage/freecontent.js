@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from "react";
-import Axios from 'axios';
+
 import '../../style/noticepage/freecontent.css';
 import likeimg from '../../img/board/likeimg.jpg';
 import commentimg from '../../img/board/commentimg.jpg';
+import '../../style/mypage/likeit.css';
+
 import Free_reply from './Freereply';
 import Alert from "../../page/alert";
-import '../../style/mypage/likeit.css';
 import Page_button from './replypage'
+
+import Axios from 'axios';
 import Aos from "aos";
+import moment from 'moment'
+
 
 const Func_freecontent_show_freecontent = ({ get_free_number, information }) => {
     const [commentinput, setcommentinput] = useState('');
@@ -37,11 +42,12 @@ const Func_freecontent_show_freecontent = ({ get_free_number, information }) => 
         e.preventDefault();
 
         if (information != undefined) {
-            Axios.post("https://qkrtmfqls.gabia.io/addreply", {
+            Axios.post("http://localhost:3001/addreply", {
                 number: get_free_number,
                 userid: information.id,
                 nickname: information.nickname,
-                description: commentinput
+                description: commentinput,
+                created: moment(new Date()).format('YY-MM-DD h:mm')
             })
                 .then((response) => {
                     setcommentinput('')
