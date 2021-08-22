@@ -33,6 +33,7 @@ const Footer_bottom = ({ ftable_cnt, set_page_slice }) => {
     }, [page_color])
 
     const create_button = () => {
+        console.log('실행')
         let table_button = []
         // console.log('실행')
         for (let i = (arrow_page * 10); i < (arrow_page * 10) + 10; i++) {

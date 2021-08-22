@@ -61,7 +61,7 @@
 .rfg-result-box {
   display: block;
   width: 100%;
-  height: 30vh;
+  height: 40%;
 }
 
 .rfg-select-box {
@@ -93,8 +93,7 @@
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
-  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   outline: none;
 }
 
@@ -108,8 +107,7 @@
   z-index: -1;
   background-color: #98adca;
   border-radius: 5px;
-  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
@@ -182,11 +180,11 @@
 .rfg-up-box {
   display: flex;
   border-bottom: rgba(1, 1, 1, 0.4) 1px solid;
-  height: 60%;
+  height: 50%;
 }
 
 .rfg-ingredient-up-box {
-  width: 66%;
+  width: 52%;
   height: 100%;
   display: block;
 }

@@ -3,22 +3,23 @@ import '../../../style/mypage/index.css'
 import '../../../style/mypage/likeit.css';
 
 
-function Liketable({table, history, information, like_page_slice}) {
+function Liketable({table, history, like_page_slice}) {
     
-    // console.log("like", like_page_slice);
     const return_like_table = () => {
         const arr = [];
-        table&&table.slice(like_page_slice.start,like_page_slice.end).map((v) => arr.push(<Create_like_table user={v}/>))
+        if(table != undefined){
+             table.data.slice(like_page_slice.start, like_page_slice.end).map((v) => arr.push(<Create_like_table user={v}/>))
         return (
             <>
                 {table && arr}
             </>
         )
     }
+    }
 
     const Create_like_table = ({ user }) => {
         const rcp_change = (e) => {
-            history.push("/recipe/" + user.foodid)
+            history.push("/recipe/" + user.foodid);
         }
     
         return (

@@ -3,6 +3,72 @@
     src: url('../../Jalnan.ttf') format('truetype');
 }
 
+@media all and (max-width: 600px) {
+    .likeit_content{
+        padding: 3%;
+        height: 60%;
+    }
+
+    .likeit_header_title_form {
+        font-weight: 700;
+        font-size: 2.1vw;
+        width: 100%;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'neon';
+        color: rgba(1, 1, 1, 0.75);
+    }
+    
+    .likeit_header_sub_form {
+        display: flex;
+        justify-content: center;
+        font-weight: 400;
+        font-size: 1.8vw;
+        width: 100%;
+        height: 50%;
+        margin-top: 0.5%;
+        align-items: center;
+        /* 저기 */
+        color: rgba(1, 1, 1, 0.6);
+    }
+}
+
+@media all and (min-width: 600px) {
+    .likeit_content{
+        padding: 2%;
+        padding-left: 18%;
+        padding-right: 18%;
+        height: 60%;
+    }
+    
+    .likeit_header_title_form {
+        font-weight: 700;
+        font-size: 1.2vw;
+        width: 100%;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'neon';
+        color: rgba(1, 1, 1, 0.75);
+    }
+    
+    .likeit_header_sub_form {
+        display: flex;
+        justify-content: center;
+        font-weight: 400;
+        font-size: 1vw;
+        width: 100%;
+        height: 50%;
+        margin-top: 0.5%;
+        align-items: center;
+        /* 저기 */
+        color: rgba(1, 1, 1, 0.6);
+    }
+}
+
 .likeit_body{
     border-radius: 20px;
     background: white;
@@ -14,39 +80,6 @@
     width: 100%;
     height: 10%;
 }
-
-.likeit_header_title_form {
-    font-weight: 700;
-    font-size: 1.2vw;
-    width: 100%;
-    height: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'neon';
-    color: rgba(1, 1, 1, 0.75);
-}
-
-.likeit_header_sub_form {
-    display: flex;
-    justify-content: center;
-    font-weight: 400;
-    font-size: 1vw;
-    width: 100%;
-    height: 50%;
-    margin-top: 0.5%;
-    align-items: center;
-    /* 저기 */
-    color: rgba(1, 1, 1, 0.6);
-}
-
-.likeit_content{
-    padding: 2%;
-    padding-left: 18%;
-    padding-right: 18%;
-    height: 60%;
-}
-
 
 .body_main_form{
     font-size : 1.2rem;
@@ -194,7 +227,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 8%;
+    margin-top: 12vh;
 }
 
 .like_select_num_btn_form {
@@ -206,7 +239,7 @@
 }
 
 .like_select_num_btn_sub_form {
-    width: 10%;
+    width: 5%;
     height: 80%;
     display: flex;
     justify-content: center;

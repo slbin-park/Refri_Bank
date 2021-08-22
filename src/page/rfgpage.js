@@ -81,7 +81,7 @@ function App({ history, information }) {
     <>
       <div className="hello-rfg-form">
         <h1> 나만의 냉장고 </h1>
-        <p> 재료 관리 서비스를 마음껏 이용해 보세요! </p>
+        <p> 나의 냉장고 속 재료들로 어떤 요리를 만들 수 있을까요!? </p>
       </div>
       <div className="rfg-form">
         <div className="rfg-select-btn" onClick={() => { settoggle(!toggle) }}>

@@ -22,6 +22,7 @@ const Header = ({ location, information, setinformation, history, page, setpage 
     useEffect(() => {
         let token = window.localStorage.getItem("token")
         token && token_check()
+        //여기에다가 location이 마이페이지 일때 토큰이 없으면 메인으로 이동
     }, [location])
     //로케이션이 바뀔때마다 토큰 체크
 
@@ -32,7 +33,8 @@ const Header = ({ location, information, setinformation, history, page, setpage 
 
     useEffect(() => {
         setwhere_category(location['pathname'])
-    }, [location])
+    }, [location]) 
+    // 바로 서지원 아이디어
     // 로케이션이 변할때마다
 
 
@@ -42,12 +44,14 @@ const Header = ({ location, information, setinformation, history, page, setpage 
         })
             .then((response) => {
                 if (response.data.token.success) {
-                    if (information == undefined) {
+                    if (information === undefined) {
                         setinformation({ id: response.data.token.token.id, nickname: response.data.token.token.nickname })
                     }
                     setpage(true)
                 }
                 else {
+                    //여기서도 메인으로 이동
+                    history.push('/');
                     Alert("Login", '토큰이 만료되었습니다.');
                     window.localStorage.clear();
                 }
@@ -191,6 +195,7 @@ const Header = ({ location, information, setinformation, history, page, setpage 
                             <button className="header-category-btn" id="header-category-button2" onClick={move_noticepage}>Board</button>
                         }
                     </div>
+                    
 
                     <div className="secret_box">
                         {where_category === "/secret" ?
@@ -200,6 +205,7 @@ const Header = ({ location, information, setinformation, history, page, setpage 
                         }
                     </div>
 
+                    
                     <div className="page_box">
                         <button className="header-category-btn" id="header-category-button5">Page
                             <div className="header-category-btn-mypage-div">

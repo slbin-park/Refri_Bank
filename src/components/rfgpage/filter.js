@@ -17,6 +17,7 @@ function Func_filter_find_ingredient({ get_rcp_rfg, result_box_list, setresult_b
     //date날짜, result_box_list는 오른쪽의 장바구니에 들어있는 리스트, 
     const [date, setdate] = useState(new Date());
     const [igdlist, setigdlist] = useState();
+    const [selectingredient, setselectingredient] = useState();
 
 
     const [igd_key_value, set_igd_key_value] = useState(['닭', '오리', '돼지', '소', '소세지', '양파', '당근', '마늘', '버섯', '부추', '고추', '파', '상추', '토마토', '새우', '고등어', '게', '전복', '조개', '바지락', '홍합', '오징어', '생선', '멸치', '간장', '된장', '고추장', '쌈장', '참기름', '깨', '가루', '면', '밀가루', '밥', '계란', '우유', '치즈', '요거트']);
@@ -110,16 +111,20 @@ function Func_filter_find_ingredient({ get_rcp_rfg, result_box_list, setresult_b
     }, [date])
 
     const clickimg = (item) => {
+        setselectingredient(item)
         setigdlist(item);
         Func_igdlist_select();
     }
+    useEffect(()=>{
+        Select_ingredient_thumbnail()
+    },[selectingredient])
 
     const Select_ingredient_thumbnail = () => {
         return (
             igd_key_value.map((v) => {
                 return (
-                    <div key={v} className="ingredient-form">
-                        <div className="ingredient-img-form" role="button" onClick={(e) => { clickimg(v) }}>
+                    <div key={v} className={selectingredient==v ? "select-ingredient-form" : "ingredient-form"} role="button" onClick={(e) => { clickimg(v) }}>
+                        <div className="ingredient-img-form">
                             <img className="ingredient-img" src={ingredient_img[v]} alt={v} />
                         </div>
                         <div className="ingredient-name-form">
@@ -130,7 +135,6 @@ function Func_filter_find_ingredient({ get_rcp_rfg, result_box_list, setresult_b
             })
         )
     }
-
 
     const Result_ingredient_thumbnail = () => {
         return (

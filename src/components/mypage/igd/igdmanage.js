@@ -7,13 +7,15 @@ import Dairy from '../../../img/ingredient_img/dairyproduct-g.png';
 import ingredient_img from "../../../img/ingredient_img/ingredient-img";
 import Func_idg_info from './igdinfo'
 import Axios from 'axios';
+import Alert from '../../../page/alert';
 import moment from 'moment'
 
+function Idgmanage({ information, history }) {
 
-
-
-function Idgmanage({ information }) {
-
+    if (information == undefined) {
+        Alert('Sorry', '로그인 후 이용할 수 있습니다.');
+        history.push('/');
+      } 
     const [igd_info, setigd_info] = useState();
     useEffect(() => {
         console.log('실행')
