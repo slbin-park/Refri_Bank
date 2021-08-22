@@ -46,7 +46,7 @@
   border: none;
   cursor: pointer;
   font-size: 1vw;
-  margin-top: 2vh;
+  margin-top: 2.5vh;
 }
 .logout-move-mainpage-btn-text {
   transition: all 0.5s;
@@ -87,8 +87,8 @@
 }
 
 .logout-move-mainpage-btn img {
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 55px;
   background-color: #9baec8;
   border-radius: 20px;
   /* width: 40%;

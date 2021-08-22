@@ -15,6 +15,9 @@
   width: 100%;
   height: 50%;
   border: none;
+
+  /* font-size: 0.5vh; */
+  font-family: 'neon';
 }
 .aside-bottom-box {
   width: 100%;
@@ -37,9 +40,9 @@
   height: 100%;
   color: rgba(1, 1, 1, 0.8);
   font-size: 1vw;
-  font-weight: lighter;
+  /* font-weight: lighter; */
 
-  font-family: 'neon';
+  /* font-family: 'neon'; */
 }
 .aside-up-icon {
   width: 10%;
@@ -49,9 +52,9 @@
 
 .aside-top-box h4 {
   font-weight: bolder;
-  font-size: 1.2vw;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  font-size: 1vw;
+  margin-top: 5px;
+  margin-bottom: 5px;
   color: #404552;
 }
 

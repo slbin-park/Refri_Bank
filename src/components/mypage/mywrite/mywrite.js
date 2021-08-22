@@ -10,7 +10,7 @@ import Mywritetable from './mywritetable';
 
 function Mywrite({ information, history }) {
   if (information == undefined) {
-    Alert('X', '로그인 후 이용할 수 있습니다.');
+    Alert('Sorry', '로그인 후 이용할 수 있습니다.');
     history.push('/');
   }
 

@@ -73,8 +73,20 @@ const Login = ({ information, setinformation, history, setpage }) => {
         </div>
         <div className="login-input-main-form">
           <div className="login-input-sub-form">
-            <input className="login-wait-id" name="id" type="text" placeholder="Id" onChange={(e) => setlogintext({ ...logintext, id: e.target.value })} />
-            <input className="login-wait-psword" name="pwd" type="password" placeholder="Password" onChange={(e) => setlogintext({ ...logintext, pwd: e.target.value })} />
+            <input
+              className="login-wait-id"
+              name="id"
+              type="text"
+              placeholder="Id"
+              onChange={(e) => setlogintext({ ...logintext, id: e.target.value })}
+            />
+            <input
+              className="login-wait-psword"
+              name="pwd"
+              type="password"
+              placeholder="Password"
+              onChange={(e) => setlogintext({ ...logintext, pwd: e.target.value })}
+            />
             <button className="loginpage_login_btn" onClick={TokenLogin}>
               <div>
                 <span>Login</span>
@@ -82,7 +94,7 @@ const Login = ({ information, setinformation, history, setpage }) => {
             </button>
             <button className="loginpage_signup_btn" onClick={Func_login_move_signup}>
               <div>
-                <span>Signup</span>
+                <span>Sign Up</span>
               </div>
             </button>
           </div>
