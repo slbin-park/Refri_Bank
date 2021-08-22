@@ -212,16 +212,17 @@
 }
 
 .like_select_num_btn_left {
-  transform: scaleX(-1);
-  font-size: 3rem;
   cursor: pointer;
-  color: #fbb032;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .like_select_num_btn_right {
-  font-size: 3rem;
-  color: #fbb032;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .likeit_cancel {
@@ -232,9 +233,6 @@
   align-items: center;
 }
 
-.like_select_num_btn_left {
-  transform: scaleX(-1);
-}
 .likeit_cancel_btn {
   font-size: 1vh;
   overflow: hidden;

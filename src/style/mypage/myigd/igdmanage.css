@@ -118,12 +118,13 @@
     width: 80%;
 
     font-size: 0.5vw;
-    font-family: 'neon';
+    /* font-family: 'neon'; */
 }
 
 .igd_box_img{
     width: 4vw;
     height: 8vh;
+    margin-bottom: 10px
 }
 
 .igd_right_box{
@@ -163,7 +164,7 @@
     justify-content: center;
     width: 50%;
     font-size: 0.5vw;
-    font-family: 'neon';
+    /* font-family: 'neon'; */
 }
 .igd_box_1_cover{
     display: flex;

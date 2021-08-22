@@ -61,7 +61,7 @@
 }
 
 .notice-box {
-  width: 80%;
+  width: 800px;
   margin-top: 10px;
 }
 
@@ -111,7 +111,7 @@
   width: 10%;
   height: 4vh;
   display: flex;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   align-items: center;
   /* margin-bottom: 1%; */
   justify-content: center;
@@ -126,7 +126,7 @@
   height: 4vh;
   display: flex;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
 
   align-items: center;
   justify-content: center;
@@ -241,7 +241,7 @@
   width: 800px;
   /* margin-left: 5%; */
   height: 50px;
-  margin-top: 50px;
+  margin-top: 25px;
   margin-left: 15%;
   /* margin-right: 25%; */
   /* margin-left: 10%; */
@@ -293,7 +293,7 @@
   height: 80px;
   border: gray 2px solid;
   display: flex;
-  width: 800px;
+  width: 600px;
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 5%;
@@ -334,7 +334,7 @@
 .right-img-box {
   display: flex;
   align-items: center;
-  width: 25%;
+  width: 20%;
   height: 100%;
   justify-content: center;
   /* text-align: center; */
@@ -344,7 +344,8 @@
 }
 .right-img-box img {
   /* text-align: center; */
-  width: 30%;
+  width: 50%;
+  /* margin-left: 50%; */
   height: 50%;
   /* margin: 10%; */
 }
@@ -353,7 +354,7 @@
   text-align: center;
 }
 .right-btn-box {
-  width: 25%;
+  width: 30%;
   text-align: center;
 
   /* margin-left: 10px; */
@@ -364,7 +365,7 @@
 .send-btn {
   /* margin-top: 35px; */
   /* margin-bottom: 20px; */
-  width: 50%;
+  width: 65%;
   height: 5vh;
   border-radius: 20px;
   color: white;

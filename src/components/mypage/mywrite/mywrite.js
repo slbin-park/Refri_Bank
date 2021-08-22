@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import '../../../style/mypage/index.css';
 import '../../../style/mypage/mypage.css';
 import '../../../style/mypage/likeit.css';
+import arrow_left from '../../../img/board/arrow_left.png'
+import arrow_right from '../../../img/board/arrow_right.png'
 import xbuttom from '../../../img/board/xbutton.jpg';
 import Open_modal from './mywritecontent';
 import Axios from 'axios';
@@ -9,11 +11,6 @@ import Alert from '../../../page/alert';
 import Mywritetable from './mywritetable';
 
 function Mywrite({ information, history }) {
-  if (information == undefined) {
-    Alert('Sorry', '로그인 후 이용할 수 있습니다.');
-    history.push('/');
-  }
-
   const [modalOn, setModalOn] = useState(false);
   const [get_table_number, set_table_number] = useState();
   const [get_modal_table, set_modal_table] = useState();
@@ -161,7 +158,7 @@ function Mywrite({ information, history }) {
             <div className="likeit_bottom_box">
               {arrow_page > 0 ? (
                 <div className="like_select_num_btn_left" onClick={(e) => Func_paging_minus(e)}>
-                  ‣
+                  <img src={arrow_left} width="11px" height="12px"/>
                 </div>
               ) : (
                 ''
@@ -170,7 +167,7 @@ function Mywrite({ information, history }) {
 
               {(arrow_page + 1) * 10 < mywrite_table_cnt ? (
                 <div className="like_select_num_btn_right" onClick={(e) => Func_paging_plus(e)}>
-                  ‣
+                  <img src={arrow_right} width="11px" height="12px"/>
                 </div>
               ) : (
                 ''

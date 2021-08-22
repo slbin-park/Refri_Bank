@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import '../../../style/mypage/index.css';
 import '../../../style/mypage/mypage.css';
 import '../../../style/mypage/likeit.css';
+import arrow_left from '../../../img/board/arrow_left.png'
+import arrow_right from '../../../img/board/arrow_right.png'
 import Liketable from './liketable';
 import Axios from 'axios';
 import Alert from '../../../page/alert';
@@ -79,11 +81,6 @@ function Likeit({ history, information }) {
     set_arrow_page(arrow_page + 1);
   };
 
-  if (information === undefined) {
-    Alert('Sorry', '로그인 후 이용할 수 있습니다.');
-    history.push('/');
-  }
-
   return (
     <div className="mypage_main">
       <div className="mypage_main_div">
@@ -123,7 +120,7 @@ function Likeit({ history, information }) {
             <div className="likeit_bottom_box">
               {arrow_page > 0 ? (
                 <div className="like_select_num_btn_left" onClick={(e) => Func_paging_minus(e)}>
-                  ‣
+                  <img src={arrow_left} width="11px" height="12px"/>
                 </div>
               ) : (
                 ''
@@ -131,8 +128,8 @@ function Likeit({ history, information }) {
               {like_table_cnt && create_button()}
 
               {(arrow_page + 1) * 10 < like_table_cnt ? (
-                <div className="like_select_num_btn_right" onClick={(e) => Func_paging_plus(e)}>
-                  ‣
+                <div className="like_select_num_btn_right"  onClick={(e) => Func_paging_plus(e)}>
+                  <img src={arrow_right} width="11px" height="12px"/>
                 </div>
               ) : (
                 ''

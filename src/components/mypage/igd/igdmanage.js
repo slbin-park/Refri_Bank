@@ -57,10 +57,6 @@ function Idgmanage({ information, history }) {
         console.log(error);
       });
   };
-  if (information === undefined) {
-    Alert('Sorry', '로그인 후 이용할 수 있습니다.');
-    history.push('/');
-  }
 
   return (
     <div className="igd_main_div">

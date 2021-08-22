@@ -1,9 +1,10 @@
 import '../../style/noticepage/freeboard.css';
-import heart_img from '../../img/board/heart.png';
-import comment_img from '../../img/board/comment.png';
+import heart_img from '../../img/board/likeimg.jpg';
+import comment_img from '../../img/board/commentimg.jpg';
 import React, { useState, useEffect } from 'react';
 import Alert from '../../page/alert';
 import Axios from 'axios';
+
 //4번 렌더링
 function Func_freeboard_show_freeboard({ setModalOn, set_get_free_number, information, set_button_cnt, page_slice }) {
   const [free_table, set_free_table] = useState(); //전체 게시글 데이터
@@ -62,9 +63,9 @@ function Func_freeboard_show_freeboard({ setModalOn, set_get_free_number, inform
                     </div>
                   </div>
                   <div className="reaction-box">
-                    <img src={heart_img} width="30px" height="30px" style={{ 'margin-right': '5px' }} />
+                    <img src={heart_img} width="20px" height="20px" style={{ 'margin-right': '5px' }} />
                     <span style={{ 'margin-right': '15px', 'font-size': '20px' }}>{likeit}</span>
-                    <img src={comment_img} width="28px" height="28px" style={{ 'margin-right': '5px' }} />
+                    <img src={comment_img} width="20px" height="20px" style={{ 'margin-right': '5px' }} />
                     <span style={{ 'font-size': '20px' }}>{count}</span>
                     {information && id == information.id ? <button onClick={(e) => Func_this_delete_content(e, number)}>게시글 삭제</button> : ''}
                   </div>

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import '../../style/mainpage/aside/aside.css';
 import '../../style/mypage/index.css';
 import '../../style/mypage/likeit.css';
+import arrow_left from '../../img/board/arrow_left.png';
+import arrow_right from '../../img/board/arrow_right.png';
 
 const Footer_bottom = ({ ftable_cnt, set_page_slice }) => {
   // console.log("ftable data", ftable.length/16);
@@ -44,7 +46,11 @@ const Footer_bottom = ({ ftable_cnt, set_page_slice }) => {
       // 10페이지씩 짤라
       if (i > ftable_cnt) break;
       table_button.push(
-        <div onClick={(e) => Func_click_page_slice_btn(i)} style={page_color == i ? { color: 'rgba(1, 1, 1, 0.8)' } : { color: 'rgba(1, 1, 1, 0.4)' }} className="like_select_num_btn_sub_form">
+        <div
+          onClick={(e) => Func_click_page_slice_btn(i)}
+          style={page_color == i ? { color: 'rgba(1, 1, 1, 0.8)' } : { color: 'rgba(1, 1, 1, 0.4)' }}
+          className="like_select_num_btn_sub_form"
+        >
           {i + 1}
         </div>,
       );
@@ -65,7 +71,7 @@ const Footer_bottom = ({ ftable_cnt, set_page_slice }) => {
     <>
       {arrow_page > 0 ? (
         <div className="like_select_num_btn_left" onClick={(e) => Func_paging_minus(e)}>
-          ‣
+          <img src={arrow_left} width="11px" height="12px" />
         </div>
       ) : (
         ''
@@ -74,7 +80,7 @@ const Footer_bottom = ({ ftable_cnt, set_page_slice }) => {
 
       {(arrow_page + 1) * 10 < ftable_cnt ? (
         <div className="like_select_num_btn_right" onClick={(e) => Func_paging_plus(e)}>
-          ‣
+          <img src={arrow_right} width="11px" height="12px" />
         </div>
       ) : (
         ''
