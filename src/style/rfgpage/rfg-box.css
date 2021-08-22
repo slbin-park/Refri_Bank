@@ -20,7 +20,7 @@
   margin-left: 20%;
   margin-right: 20%;
   margin-top: 2%;
-  margin-bottom: 5%;
+  margin-bottom: 3.5%;
 }
 
 .rfg-body-form {
@@ -61,7 +61,7 @@
 .rfg-result-box {
   display: block;
   width: 100%;
-  height: 30vh;
+  height: 40%;
 }
 
 .rfg-select-box {
@@ -93,8 +93,7 @@
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
-  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   outline: none;
 }
 
@@ -108,8 +107,7 @@
   z-index: -1;
   background-color: #98adca;
   border-radius: 5px;
-  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
@@ -182,17 +180,17 @@
 .rfg-up-box {
   display: flex;
   border-bottom: rgba(1, 1, 1, 0.4) 1px solid;
-  height: 60%;
+  height: 50%;
 }
 
 .rfg-ingredient-up-box {
-  width: 66%;
+  width: 52%;
   height: 100%;
   display: block;
 }
 .rfg-ingredient-text-box {
-  margin-top: 2vh;
-  margin-bottom: 1vh;
+  margin-top: 9%;
+  margin-bottom: 3%;
   text-align: center;
   width: 100%;
   height: 10%;
@@ -204,16 +202,22 @@
 .rfg-result-text-box {
   text-align: center;
   width: 100%;
-  height: 19%;
-  margin-top: 2%;
+  height: 13%;
+  margin-top: 5.5%;
   color: rgba(1, 1, 1, 0.75);
   font-size: 1.3vw;
   font-weight: 500;
 }
+
 .rfg-recommend-text-box {
   text-align: center;
   width: 100%;
   height: 10vh;
+}
+
+.rfg-recommend-text-box h2 {
+  font-size: 1.7rem;
+  font-family: 'neon';
 }
 
 .rfg-select-box-submit-btn {
@@ -226,13 +230,14 @@
   background-color: rgb(255, 163, 43);
   border-radius: 20px;
   width: 80%;
+  margin-top: 20.2vh;
   margin-left: 10%;
   margin-right: 10%;
   height: 20%;
-  margin-top: 17vh;
   border: none;
   color: white;
   cursor: pointer;
+  font-size: 15px;
 }
 
 .rfg-select-box-submit-btn button:hover {

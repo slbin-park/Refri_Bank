@@ -1,116 +1,121 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
 /* sad */
 
-.eachcontent-block{
-    background: white;
-    /* border-left: 1rem solid #8a8a8a; */
-    /* border-radius: 0.5rem; */
-    box-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.25);
-    font-family: Helvetica;
-    justify-content: space-between;
-    /* padding: 1rem; */
-    overflow: hidden;
-    /* margin: 10px; */
-    margin: 1%;
-    width: 600px;
-    margin-left: 2%;
-    margin-right: 2%;
-    border: 2px solid gray;
-    border-radius: 30px;
+.eachcontent-block {
+  background: white;
+  /* border-left: 1rem solid #8a8a8a; */
+  /* border-radius: 0.5rem; */
+  box-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.25);
+  font-family: Helvetica;
+  justify-content: space-between;
+  /* padding: 1rem; */
+  overflow: hidden;
+  /* margin: 10px; */
+  margin: 1%;
+  width: 800px;
+  /* margin-left: 2%; */
+  /* margin-right: 2%; */
+  border: 1px solid gray;
+  border-radius: 30px;
 }
-
 
 .eachcontent-block:hover {
-    background: rgb(236, 244, 255);
-    cursor: pointer;
+  background: rgb(236, 244, 255);
+  cursor: pointer;
 }
 
-
 .eachcontent {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
 
 .each-content {
-    /* background-color: rgb(211, 222, 240); */
-    /* border-bottom: 1px solid #8a8a8a; */
-    display: flex;
-    height: 22%;
-    align-items: center;
-    justify-content: center;
+  /* background-color: rgb(211, 222, 240); */
+  /* border-bottom: 1px solid #8a8a8a; */
+  display: flex;
+  height: 22%;
+  align-items: center;
+  justify-content: center;
 }
 
 .nickname {
-    width: 100%;
-    font-size: 20px;
-    margin-top: 20px;
-    margin-left: 20px;
+  width: 100%;
+  font-size: 1.8vh;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 
 .createdate {
-    width: 20%;
+  width: 20%;
 }
 
 .content-maincontent {
-    overflow: hidden;
-    margin-top: 10px;
-    font-family: 'Gowun Dodum', sans-serif;
-    margin-bottom: 15px;
+  overflow: hidden;
+  margin-top: 10px;
+  /* font-family: 'Gowun Dodum', sans-serif; */
+  margin-bottom: 10px;
 }
 
 .title {
-    width: 100%;
-    font-size: 28px;
-    margin-left: 20px;
-    margin-bottom : 10px;
-    
+  width: 100%;
+  font-size: 2.5vh;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .description {
-    margin-left: 20px;
+  margin-left: 1.8vh;
 }
 
 .reaction-box {
-    display: flex;
-    height: 40px;
-    margin-left: 20px;
-    margin-bottom: 10px;
-    align-items: flex-end;
+  display: flex;
+  height: 40px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  align-items: flex-end;
 }
 .heart_img_box {
-    width: 20%;
-    height:100%;
-    margin: 0;
-    padding:0;
+  width: 20%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .comment_img_box {
-    width: 20%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+  width: 20%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .reaction-box button {
-    width: 30%;
-    height: 40px;
-    margin-left: 50%;
-    margin-right: 5%; 
+  width: 20%;
+  height: 40px;
+  margin-left: 70%;
+  margin-right: 3%;
 
-    border: none;
-    background-color: rgb(196, 196, 196);
-    border-radius: 20px;
-    cursor: pointer;
+  border: none;
+  background: #e6e6e6;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #666666;
 }
-.reaction-box .heart_img {
-    width: 2vw;
+
+.reaction-box button:hover {
+  background-color: #fbb03b;
+  color: white;
 }
+
+/* .reaction-box .heart_img {
+  width: 2vw;
+}
+
 .reaction-box .comment_img {
-    width: 2vw;
-}
-
-
+  width: 2vw;
+} */

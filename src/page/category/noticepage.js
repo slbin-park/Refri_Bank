@@ -94,7 +94,7 @@ function App({ information }) {
               <div className="mobile-middle-content-form">
                 <div className="mobile-middle-content-form-right">
                   <div className="mobile-right-img-box">
-                    <img className="email_img" src={email_img} width="35px" height="35px" ></img>
+                    <img className="email_img" src={email_img} width="50px" height="50px" ></img>
                   </div>
                   <div className="mobile-right-text-box">
                     <h3 > 이메일 문의하기</h3>
@@ -145,7 +145,7 @@ function App({ information }) {
                     <input className="search"></input>
                   </div>
                 </div>
-                }
+              }
             </div>
             <div className="maincontent-form">
 

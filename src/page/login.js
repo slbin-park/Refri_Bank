@@ -21,13 +21,16 @@ const Login = ({ information, setinformation, history, setpage }) => {
     }
 
     console.log('login id = ', logintext.id);
+
     e.preventDefault();
     Axios.post('https://qkrtmfqls.gabia.io/login', {
       id: logintext.id,
       pwd: logintext.pwd,
     })
+
       .then((response) => {
-        console.log(response.data);
+        console.log('response.data = ', response.data);
+
         if (response.data.success) {
           //로그인 성공시
           console.log(response.data);
@@ -44,10 +47,14 @@ const Login = ({ information, setinformation, history, setpage }) => {
         if (response.data.success == false) {
           window.localStorage.clear();
           setpage(false);
-          Alert('Login', response.data.msg); //실패사유 출력
+          Alert('Login', response.data.msg);
+          //실패사유 출력
+
+          // history.push('/errorpage');
         }
       })
       .catch((error) => {
+        // console.log('로그인 실패하셨어용');
         console.log(error);
       });
   };
@@ -71,30 +78,23 @@ const Login = ({ information, setinformation, history, setpage }) => {
               name="id"
               type="text"
               placeholder="Id"
-              onChange={(e) =>
-                setlogintext({ ...logintext, id: e.target.value })
-              }
+              onChange={(e) => setlogintext({ ...logintext, id: e.target.value })}
             />
             <input
               className="login-wait-psword"
               name="pwd"
               type="password"
               placeholder="Password"
-              onChange={(e) =>
-                setlogintext({ ...logintext, pwd: e.target.value })
-              }
+              onChange={(e) => setlogintext({ ...logintext, pwd: e.target.value })}
             />
             <button className="loginpage_login_btn" onClick={TokenLogin}>
               <div>
                 <span>Login</span>
               </div>
             </button>
-            <button
-              className="loginpage_signup_btn"
-              onClick={Func_login_move_signup}
-            >
+            <button className="loginpage_signup_btn" onClick={Func_login_move_signup}>
               <div>
-                <span>Signup</span>
+                <span>Sign Up</span>
               </div>
             </button>
           </div>
