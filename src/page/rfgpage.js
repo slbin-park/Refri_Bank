@@ -37,37 +37,41 @@ function App({ history, information }) {
 
   useEffect(async () => {
     if (information !== undefined) {
-      await Axios.post('https://qkrtmfqls.gabia.io/getrfg', {
-        id: information.id,
-      })
-        .then((response) => {
-          console.log(response);
-          let res_igdname = response.data[0].Igdname.split(',');
-          let res_eprname = response.data[0].Eprdate.split(',');
-          let new_igdname = [];
-          const random_select1 = [];
-          res_igdname &&
-            res_igdname.map((v, index) => {
-              if (v !== '') {
-                new_igdname.push({ result_igdname: v, eprd: res_eprname[index] });
-                random_select1.push(v);
-              }
-            });
-          setresult_box_list(new_igdname);
-          random_select1.sort(() => Math.random() - 0.5);
-          console.log(random_select1[0]);
-          set_random_select(random_select1);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      get_rcp_rfg();
     }
   }, [information]);
+
+  const get_rcp_rfg = async () => {
+    await Axios.post('https://qkrtmfqls.gabia.io/getrfg', {
+      id: information.id,
+    })
+      .then((response) => {
+        console.log(response);
+        let res_igdname = response.data[0].Igdname.split(',');
+        let res_eprname = response.data[0].Eprdate.split(',');
+        let new_igdname = [];
+        const random_select1 = [];
+        res_igdname &&
+          res_igdname.map((v, index) => {
+            if (v !== '') {
+              new_igdname.push({ result_igdname: v, eprd: res_eprname[index] });
+              random_select1.push(v);
+            }
+          });
+        setresult_box_list(new_igdname);
+        random_select1.sort(() => Math.random() - 0.5);
+        console.log(random_select1[0]);
+        set_random_select(random_select1);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const Func_show_ingredient = () => {
     return (
       <div className="rfg-body-form" style={toggle === true ? { height: '80vh' } : { height: '0vh' }}>
-        <Func_filter_find_ingredient information={information} result_box_list={result_box_list} setresult_box_list={setresult_box_list}></Func_filter_find_ingredient>
+        <Func_filter_find_ingredient get_rcp_rfg={get_rcp_rfg} information={information} result_box_list={result_box_list} setresult_box_list={setresult_box_list}></Func_filter_find_ingredient>
       </div>
     );
   };
@@ -96,7 +100,7 @@ function App({ history, information }) {
         <Footer ftable={thumb_table} history={history} page_slice={page_slice} aside_check={false} />
       </div>
       <div className="move-footer-form">
-        <div style={{ width: '100%', height: '80%', 'margin-top': '5%', 'margin-bottom': '5%', display: 'flex', 'justify-content': 'center', 'align-items': 'center' }}>
+        <div style={{ width: '100%', height: '80%', display: 'flex', 'margin-top': '3%', 'margin-bottom': '3%', 'justify-content': 'center', 'align-items': 'center' }}>
           <div className="like_select_num_btn_form">{ftable_cnt && <Footer_bottom set_page_slice={set_page_slice} ftable_cnt={ftable_cnt} />}</div>
         </div>
       </div>

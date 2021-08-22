@@ -1,29 +1,12 @@
 import React, { useState } from 'react';
 import this_body_show_searchimg from '../../img/main_body_img/search_img2.png';
 import this_body_menu_logo from '../../img/main_body_img/body-menu-logo.png';
-import Axios from 'axios';
 
 import '../../style/mainpage/body/body.css';
-const Body = ({ setftable, setftable_cnt }) => {
-  const [toggle, settoggle] = useState(true);
-  const [text, settext] = useState('');
 
+const Body = ({ text, settext, gettable }) => {
   //gettable
 
-  const gettable = () => {
-    if (text != '') {
-      Axios.post('https://qkrtmfqls.gabia.io/gettable', {
-        id: text,
-      })
-        .then((response) => {
-          setftable(response.data);
-          setftable_cnt(response.data.length / 8);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
-  };
   return (
     <>
       <div className="toggle_btn_box">

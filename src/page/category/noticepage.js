@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import '../../style/noticepage/noticepage.css';
 import 'aos/dist/aos.css';
 import '../../style/mypage/likeit.css';
+
 import email_img from '../../img/board/email.png';
 import xbuttom from '../../img/board/xbutton.jpg';
 
@@ -14,9 +15,8 @@ import Page_button from '../../components/noticepage/pagebutton'
 
 import Alert from "../alert";
 
-
-
 function App({ information }) {
+
   const [page, setpage] = useState('free') // 공지 , 자유게시판 구분용
   const [write_toggle, set_write_toggle] = useState(false); // 게시글 작성하기 위한 토글
   const [get_free_number, set_get_free_number] = useState(); // 게시판 고유 번호
@@ -26,9 +26,8 @@ function App({ information }) {
   const [page_slice, set_page_slice] = useState({ start: 0, end: 10 }) //페이징 버튼 시작 , 끝
 
   useEffect(() => {
-    
-  }, [button_cnt]);
-
+    console.log(button_cnt)
+  }, [button_cnt])
   const Write_open = (e) => {
     if (page == 'notice') {
       if (information.id == 'smpts00' || information.id == '1') {
@@ -87,30 +86,34 @@ function App({ information }) {
             <p> 찾는 내용이 없으시다면 고객센터를 방문해바라 이 말이다</p>
           </div>
 
-          <div className="middle-content-form">
-            <div className="middle-content-form-left">왼쪽 </div>
-            <div className="middle-content-form-right">
-              <div className="right-img-box">
-                <img className="email_img" src={email_img} width="50" height="50" ></img>
-              </div>
-              <div className="right-text-box">
-                <h3> 이메일 문의하기</h3>
-                <p> 찾으시는 답변이 없으신가요 ? </p>
-              </div>
-              <div className="right-btn-box">
-                <button className="send-btn" onClick={() => window.open("mailto:ds4ouj@gmail.com", '_blank')}>E-mail 보내기 </button>
+          <div className='middle-flex-form'>
+            <div className="middle-content-form">
+              <div className="middle-content-form-left">왼쪽 </div>
+              <div className="middle-content-form-right">
+                <div className="right-img-box">
+                  <img className="email_img" src={email_img} width="50px" height="50px" ></img>
+                </div>
+                <div className="right-text-box">
+                  <h3 > 이메일 문의하기</h3>
+                  <p style={{ 'font-size': '15px' }}> 찾으시는 답변이 없으신가요 ? </p>
+                </div>
+                <div className="right-btn-box">
+                  <button className="send-btn" onClick={() => window.open("mailto:ds4ouj@gmail.com", '_blank')}>E-mail 보내기 </button>
+                </div>
               </div>
             </div>
           </div>
 
           <div className="subcontent-form">
-            <div className="notice-nav-form">
-              <div className="notice-nav">
-                <div role="button" className="noticeboard-select-btn" onClick={Func_noticepage_toggle_noticeboard}>Notice</div>
-                <div role="button" className="freeboard-select-btn selectedboard-btn" onClick={Func_noticepage_toggle_freeboard}>BulletinBoard</div>
-              </div>
-              <div className="search_box">
-                <input className="search"></input>
+            <div className='notice-nav-flex-form'>
+              <div className="notice-nav-form">
+                <div className="notice-nav">
+                  <div role="button" className="noticeboard-select-btn" onClick={Func_noticepage_toggle_noticeboard}>Notice</div>
+                  <div role="button" className="freeboard-select-btn selectedboard-btn" onClick={Func_noticepage_toggle_freeboard}>BulletinBoard</div>
+                </div>
+                <div className="search_box">
+                  <input className="search"></input>
+                </div>
               </div>
             </div>
             <div className="maincontent-form">
@@ -125,7 +128,7 @@ function App({ information }) {
           </div>
           <div style={{ width: '100%', height: '80%', display: 'flex', 'justify-content': 'center', 'align-items': 'center' }}>
             <div className="like_select_num_btn_form">
-              <Page_button page={page} button_cnt={button_cnt} set_page_slice={set_page_slice} page_slice={page_slice} />
+              {page != undefined && button_cnt != undefined ? <Page_button page={page} button_cnt={button_cnt} set_page_slice={set_page_slice} /> : ''}
             </div>
           </div>
           {information != undefined ? <button className="move_writeform_btn" onClick={Write_open}>게시글 작성하기</button> : ''}

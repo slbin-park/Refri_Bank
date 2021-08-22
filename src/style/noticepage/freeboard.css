@@ -14,10 +14,9 @@
     overflow: hidden;
     /* margin: 10px; */
     margin: 1%;
-    width: 25%;
+    width: 600px;
     margin-left: 2%;
     margin-right: 2%;
-    height: 30%; 
     border: 2px solid gray;
     border-radius: 30px;
 }
@@ -47,11 +46,9 @@
 
 .nickname {
     width: 100%;
-    font-family: 'Lobster', cursive;
-    font-size: 23px;
-    text-align: center;
-    margin-left: 4%;
-    margin-bottom: 2%;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 .createdate {
@@ -59,41 +56,36 @@
 }
 
 .content-maincontent {
-    height: 100%;
-    margin: 4%;
     overflow: hidden;
+    margin-top: 10px;
     font-family: 'Gowun Dodum', sans-serif;
-    /* border: 1px solid black; */
+    margin-bottom: 15px;
 }
 
 .title {
-    font-size: 1.5vw;
-    font-weight: bold;
-    margin-bottom: 2%;
+    width: 100%;
+    font-size: 28px;
+    margin-left: 20px;
+    margin-bottom : 10px;
+    
 }
 
 .description {
-    width: 100%;
-    height: 100%;
+    margin-left: 20px;
 }
 
 .reaction-box {
-    width: 100%;
-    height: 18%;
     display: flex;
-    align-items: center;
-    /* justify-content: center; */
-    margin: 4%;
+    height: 40px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    align-items: flex-end;
 }
 .heart_img_box {
     width: 20%;
     height:100%;
     margin: 0;
     padding:0;
-    /* border: 3px solid black; */
-}
-.heart_img_box img {
-    /* margin-left: 5%; */
 }
 
 .comment_img_box {
@@ -101,13 +93,12 @@
     height: 100%;
     margin: 0;
     padding: 0;
-    /* border: 3px solid red; */
 }
 
 .reaction-box button {
     width: 30%;
-    height: 100%;
-    margin-left: 15%;
+    height: 40px;
+    margin-left: 50%;
     margin-right: 5%; 
 
     border: none;

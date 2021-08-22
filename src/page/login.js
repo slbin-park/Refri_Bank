@@ -43,8 +43,8 @@ const Login = ({ information, setinformation, history, setpage }) => {
           Alert('Login', '로그인에 성공하셨습니다.');
           history.push('/');
         }
+
         if (response.data.success == false) {
-          console.log('로그인 실패');
           window.localStorage.clear();
           setpage(false);
           Alert('Login', response.data.msg);
@@ -74,13 +74,7 @@ const Login = ({ information, setinformation, history, setpage }) => {
         <div className="login-input-main-form">
           <div className="login-input-sub-form">
             <input className="login-wait-id" name="id" type="text" placeholder="Id" onChange={(e) => setlogintext({ ...logintext, id: e.target.value })} />
-            <input
-              className="login-wait-psword"
-              name="pwd"
-              type="password"
-              placeholder="Password"
-              onChange={(e) => setlogintext({ ...logintext, pwd: e.target.value })}
-            />
+            <input className="login-wait-psword" name="pwd" type="password" placeholder="Password" onChange={(e) => setlogintext({ ...logintext, pwd: e.target.value })} />
             <button className="loginpage_login_btn" onClick={TokenLogin}>
               <div>
                 <span>Login</span>

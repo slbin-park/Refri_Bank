@@ -1,12 +1,12 @@
 .hello-rfg-form p {
-  font-size: 1.3rem;
+  font-size: 1rem;
   text-align: center;
   color: rgba(1, 1, 1, 0.75);
 }
 
 .hello-rfg-form h1 {
-  padding-top: 5vh;
-  font-size: 2.5rem;
+  padding-top: 4vh;
+  font-size: 1.7rem;
   text-align: center;
   font-style: none;
   color: rgba(1, 1, 1, 0.75);
@@ -15,11 +15,11 @@
 
 /* 선택하는 상자 담는 상자 분리 */
 .rfg-form {
-  width: 80%;
+  width: 60%;
   height: 100%;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 2%;
   margin-bottom: 5%;
 }
 
@@ -61,7 +61,7 @@
 .rfg-result-box {
   display: block;
   width: 100%;
-  height: 30vh;
+  height: 40%;
 }
 
 .rfg-select-box {
@@ -93,8 +93,7 @@
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
-  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   outline: none;
 }
 
@@ -108,8 +107,7 @@
   z-index: -1;
   background-color: #98adca;
   border-radius: 5px;
-  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
@@ -129,8 +127,8 @@
 .ingredient-img-form,
 .rfg-result-img-form {
   background-color: white;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   border: #fff9f8 1px solid;
   margin: 10px;
   display: flex;
@@ -182,22 +180,22 @@
 .rfg-up-box {
   display: flex;
   border-bottom: rgba(1, 1, 1, 0.4) 1px solid;
-  height: 60%;
+  height: 50%;
 }
 
 .rfg-ingredient-up-box {
-  width: 66%;
+  width: 52%;
   height: 100%;
   display: block;
 }
 .rfg-ingredient-text-box {
   margin-top: 2vh;
-  margin-bottom: 3vh;
+  margin-bottom: 1vh;
   text-align: center;
   width: 100%;
   height: 10%;
   color: rgba(1, 1, 1, 0.75);
-  font-size: 1.6vw;
+  font-size: 1.3vw;
   font-weight: 500;
 }
 
@@ -205,9 +203,9 @@
   text-align: center;
   width: 100%;
   height: 19%;
-  margin-top: 1%;
+  margin-top: 2%;
   color: rgba(1, 1, 1, 0.75);
-  font-size: 1.6vw;
+  font-size: 1.3vw;
   font-weight: 500;
 }
 .rfg-recommend-text-box {

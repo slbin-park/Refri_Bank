@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { HashRouter as Router, Route } from 'react-router-dom';
 import signup from './page/register';
 import mainpage from './page/mainpage';
@@ -16,15 +16,13 @@ import Mywrite from './components/mypage/mywrite/mywrite';
 import Error from './page/errorpage';
 
 const App = () => {
-  const [this_header_set_inputs, setthis_header_set_inputs] = useState({
-    id: '',
-    pwd: '',
-  });
-  const [information, setinformation] = useState();
-  const [page, setpage] = useState(false);
+  const [this_header_set_inputs, setthis_header_set_inputs] = useState({ id: "", pwd: "" });
+  const [information, setinformation] = useState()
+  const [page, setpage] = useState(false)
   useEffect(() => {
-    // console.log(information)
-  }, [information]);
+    //console.log(information)
+  }, [information])
+
   return (
     <div className="main-form">
       <Router>

@@ -21,6 +21,7 @@ const Header = ({ location, information, setinformation, history, page, setpage 
   useEffect(() => {
     let token = window.localStorage.getItem('token');
     token && token_check();
+    //여기에다가 location이 마이페이지 일때 토큰이 없으면 메인으로 이동
   }, [location]);
   //로케이션이 바뀔때마다 토큰 체크
 
@@ -32,6 +33,7 @@ const Header = ({ location, information, setinformation, history, page, setpage 
   useEffect(() => {
     setwhere_category(location['pathname']);
   }, [location]);
+  // 바로 서지원 아이디어
   // 로케이션이 변할때마다
 
   const token_check = async () => {
@@ -40,11 +42,13 @@ const Header = ({ location, information, setinformation, history, page, setpage 
     })
       .then((response) => {
         if (response.data.token.success) {
-          if (information == undefined) {
+          if (information === undefined) {
             setinformation({ id: response.data.token.token.id, nickname: response.data.token.token.nickname });
           }
           setpage(true);
         } else {
+          //여기서도 메인으로 이동
+          history.push('/');
           Alert('Login', '토큰이 만료되었습니다.');
           window.localStorage.clear();
         }
@@ -134,6 +138,7 @@ const Header = ({ location, information, setinformation, history, page, setpage 
                 <div className="login-wait-form">
                   <button className="login-move-loginpage-btn" onClick={() => move_loginpage()}>
                     <img src={login_btn} className="login-move-loginpage-img"></img>
+                    <p className="login-move-loginpage-text">로그인</p>
                   </button>
                 </div>
               </>
@@ -146,12 +151,14 @@ const Header = ({ location, information, setinformation, history, page, setpage 
                 <div className="header-move-rfgpage-btn">
                   <button className="header-myrfg-btn" onClick={() => move_myrfg()}>
                     <img align="center" src={show_rgfimg} />
+                    <p className="header-myrfg-btn-text">나만의 냉장고</p>
                   </button>
                 </div>
 
                 <div className="header-logout-btn">
                   <button className="logout-move-mainpage-btn" onClick={(e) => move_logout()}>
-                    <img align="center" src={logout_btn} />
+                    <img align="center" src={login_btn} />
+                    <p className="logout-move-mainpage-btn-text">로그아웃</p>
                   </button>
                 </div>
               </div>
@@ -196,7 +203,7 @@ const Header = ({ location, information, setinformation, history, page, setpage 
             )}
           </div>
 
-          <div>
+          <div className="secret_box">
             {where_category === '/secret' ? (
               <button className="header-category-btn" id="header-category-button3" onClick={move_secret}>
                 시크릿
@@ -208,29 +215,23 @@ const Header = ({ location, information, setinformation, history, page, setpage 
             )}
           </div>
 
-          <div>
-            {where_category === '/page' ? (
-              <button className="header-category-btn" id="header-category-button5">
-                페이지
-              </button>
-            ) : (
-              <button className="header-category-btn" id="header-category-button5">
-                Page
-                <div className="header-category-btn-mypage-div">
-                  <ul className="header-category-btn-mypage-ul">
-                    <li className="header-category-btn-mypage-li" onClick={move_my_igd}>
-                      재료 관리
-                    </li>
-                    <li className="header-category-btn-mypage-li" onClick={move_like}>
-                      좋아요한 레시피
-                    </li>
-                    <li className="header-category-btn-mypage-li" onClick={move_my_write}>
-                      내가 작성한 게시글
-                    </li>
-                  </ul>
-                </div>
-              </button>
-            )}
+          <div className="page_box">
+            <button className="header-category-btn" id="header-category-button5">
+              Page
+              <div className="header-category-btn-mypage-div">
+                <ul className="header-category-btn-mypage-ul">
+                  <li className="header-category-btn-mypage-li" onClick={move_my_igd}>
+                    재료 관리
+                  </li>
+                  <li className="header-category-btn-mypage-li" onClick={move_like}>
+                    좋아요한 레시피
+                  </li>
+                  <li className="header-category-btn-mypage-li" onClick={move_my_write}>
+                    내가 작성한 게시글
+                  </li>
+                </ul>
+              </div>
+            </button>
           </div>
         </div>
       </div>

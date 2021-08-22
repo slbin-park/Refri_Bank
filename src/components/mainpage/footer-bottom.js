@@ -12,7 +12,6 @@ const Footer_bottom = ({ ftable_cnt, set_page_slice }) => {
   // 오른쪽인든 왼쪽이든 누르면
   // 오른쪽을 누르면 arrow_page가 +1 이 되잖아
   // arrouw_page = 1
-
   const Func_click_page_slice_btn = (i) => {
     set_page_slice({ start: i * 8, end: (i + 1) * 8 });
     // 16개씩 짤라서 페이지 슬라이스 , 16개 -> 페이지 1 (i)
@@ -27,6 +26,14 @@ const Footer_bottom = ({ ftable_cnt, set_page_slice }) => {
   // page 이동 되면 디폴트로 start:0, end:16 => 처음 화면
 
   useEffect(() => {
+    set_arrow_page(0);
+    set_page_slice({ start: 0, end: 8 });
+    set_page_color(0);
+  }, [ftable_cnt]);
+  // page 이동 되면 디폴트로 start:0, end:16 => 처음 화면
+
+  useEffect(() => {
+    console.log('page', page_color);
     create_button();
   }, [page_color]);
 

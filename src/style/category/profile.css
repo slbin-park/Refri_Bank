@@ -1,18 +1,50 @@
-.profile-body , ul,h2, p, h3, li{
-    margin : 0;
-    padding : 0;
-    list-style-type: none;
+.profile-body,
+ul,
+h2,
+p,
+h3,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
-.wrapper {
+@media only screen and (max-width: 600px) {
+  /* 모바일 */
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 200px;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .wrapper {
     display: flex;
     height: 80vh;
     justify-content: center;
     align-items: center;
-
+    /* background-color: #404552; */
+  }
 }
-
-.team {
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+@media only screen and (max-width: 600px) {
+  .team {
+    margin-left: 30px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .team {
     margin: 0;
     padding: 0;
     display: flex;
@@ -20,171 +52,331 @@
     align-items: center;
     width: 100%;
     height: 90%;
+  }
 }
-.team-item {
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+@media only screen and (max-width: 600px) {
+  .team-item {
+    /* flex-basis: 15%; */
+    margin: 2% 0;
+    border-radius: 20px;
+  }
+
+  .team-item img {
+    width: 45vw;
+    height: 25vh;
+    border-radius: 20px;
+    /* margin-left: 50px; */
+  }
+
+  .team-item:hover img {
+    /* flex-basis: 20%; */
+    width: 50vw;
+    height: 45vh;
+    margin: 10% 0%;
+    /* margin-left: 100px; */
+    /* flex-shrink: 0; */
+    transition: all 0.4s;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .team-item {
     flex-basis: 15%;
     margin: 0 1%;
     border-radius: 20px;
-}
+  }
 
-.team-item img {
+  .team-item img {
     width: 100%;
     border-radius: 20px;
-}
+  }
 
-.team-item:hover {
+  .team-item:hover {
     flex-basis: 20%;
     margin: 0 2%;
     flex-shrink: 0;
-    transition: all .4s;
+    transition: all 0.4s;
+  }
 }
 
-.profile {
-    background-color: transparent;
-    position: relative;
-}
-
-.profile-contents {
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+@media only screen and (max-width: 600px) {
+  .profile {
+    display: flex;
+  }
+  .profile-contents {
     position: absolute;
-    left: 0;
-    bottom: 0;
-
-    padding: 3%;
-}
-
-.profile-contents h2 {
-    font-size: 35px;
-}
-.profile-contents h3 {
-    display: block;
-    font-size: 25px;
-}
-
-.profile-contents p {
-   font-size: 20px;
+    left: 300px;
+    margin-top: 40px;
+    margin-left: 40px;
+    /* top: 100px; */
+  }
+  .profile-contents p {
+    font-size: 20px;
     max-height: 0;
     min-width: 150px;
     overflow: hidden;
     line-height: 1.2;
-    transition: all .4s;
+    transition: all 0.2s;
     opacity: 0;
-}
+  }
 
-.team-item:hover .profile-contents p {
+  .team-item:hover .profile-contents p {
     max-height: 6em;
     opacity: 1;
-}
+  }
 
-
-
-.name1 , .job1 {
-    color:red;
+  .name1,
+  .job1 {
+    color: red;
     font-weight: bolder;
-}
-.coffee1 {
-    color: white;
-}
-.myself1 {
-    color: white;
-    font-style:italic;
-}
-.team-item:hover .coffee1 {
+  }
+  .coffee1 {
+    color: black;
+  }
+  .myself1 {
+    color: black;
+    font-style: italic;
+  }
+  .team-item:hover .coffee1 {
     margin-top: 10px;
     margin-bottom: 7px;
     transition: all 1s;
-}
-.team-item:hover .myself1 {
+  }
+  .team-item:hover .myself1 {
     transition: all 2s;
-}
+  }
 
-
-.name2, .job2 {
-    color:yellow;
+  .name2,
+  .job2 {
+    color: blue;
     font-weight: bolder;
-}
+  }
 
-.coffee2 {
-    color: white;
-}
-.myself2 {
-    color: white;
-    font-style:italic;
-}
-.team-item:hover .coffee2 {
+  .coffee2 {
+    color: black;
+  }
+  .myself2 {
+    color: black;
+    font-style: italic;
+  }
+  .team-item:hover .coffee2 {
     margin-top: 10px;
     margin-bottom: 7px;
     transition: all 1s;
-}
-.team-item:hover .myself2 {
+  }
+  .team-item:hover .myself2 {
     transition: all 2s;
-}
+  }
 
-
-.name3 , .job3 {
-    color:rgb(255, 0, 170);
+  .name3,
+  .job3 {
+    color: rgb(255, 0, 170);
     font-weight: bolder;
-    
-}
-.coffee3 {
-    color: white;
-}
-.myself3 {
-    color: white;
-    font-style:italic;
-}
-.team-item:hover .coffee3 {
+  }
+  .coffee3 {
+    color: black;
+  }
+  .myself3 {
+    color: black;
+    font-style: italic;
+  }
+  .team-item:hover .coffee3 {
     margin-top: 10px;
     margin-bottom: 7px;
     transition: all 1s;
-}
-.team-item:hover .myself3 {
+  }
+  .team-item:hover .myself3 {
     transition: all 2s;
-}
+  }
 
-
-.name4, .job4 {
+  .name4,
+  .job4 {
     color: skyblue;
     font-weight: bolder;
-}
-.coffee4 {
-    color: white;
-}
-.myself4 {
-    color: white;
-    font-style:italic;
-}
-.team-item:hover .coffee4 {
+  }
+  .coffee4 {
+    color: black;
+  }
+  .myself4 {
+    color: black;
+    font-style: italic;
+  }
+  .team-item:hover .coffee4 {
     margin-top: 10px;
     margin-bottom: 7px;
     transition: all 1s;
-}
-.team-item:hover .myself4 {
+  }
+  .team-item:hover .myself4 {
     transition: all 2s;
-}
+  }
 
-
-.name5, .job5{
-    color:white;
+  .name5,
+  .job5 {
+    color: black;
     font-weight: bolder;
-}
-.coffee5 {
-    color: white;
-}
-.myself5 {
-    color: white;
-    font-style:italic;
-}
-.team-item:hover .coffee5 {
+  }
+  .coffee5 {
+    color: black;
+  }
+  .myself5 {
+    color: black;
+    font-style: italic;
+  }
+  .team-item:hover .coffee5 {
     margin-top: 10px;
     margin-bottom: 7px;
     transition: all 1s;
-}
-.team-item:hover .myself5 {
+  }
+  .team-item:hover .myself5 {
     transition: all 2s;
+  }
 }
+@media only screen and (min-width: 600px) {
+  .profile {
+    background-color: transparent;
+    position: relative;
+  }
 
+  .profile-contents {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 3%;
+  }
 
-.team-item:hover img {
+  .profile-contents h2 {
+    font-size: 35px;
+  }
+  .profile-contents h3 {
+    /* display: block; */
+    font-size: 25px;
+  }
+
+  .profile-contents p {
+    font-size: 20px;
+    max-height: 0;
+    min-width: 150px;
+    overflow: hidden;
+    line-height: 1.2;
+    transition: all 0.4s;
+    opacity: 0;
+  }
+
+  .team-item:hover .profile-contents p {
+    max-height: 6em;
+    opacity: 1;
+  }
+
+  .name1,
+  .job1 {
+    color: red;
+    font-weight: bolder;
+  }
+  .coffee1 {
+    color: white;
+  }
+  .myself1 {
+    color: white;
+    font-style: italic;
+  }
+  .team-item:hover .coffee1 {
+    margin-top: 10px;
+    margin-bottom: 7px;
+    transition: all 1s;
+  }
+  .team-item:hover .myself1 {
+    transition: all 2s;
+  }
+
+  .name2,
+  .job2 {
+    color: yellow;
+    font-weight: bolder;
+  }
+
+  .coffee2 {
+    color: white;
+  }
+  .myself2 {
+    color: white;
+    font-style: italic;
+  }
+  .team-item:hover .coffee2 {
+    margin-top: 10px;
+    margin-bottom: 7px;
+    transition: all 1s;
+  }
+  .team-item:hover .myself2 {
+    transition: all 2s;
+  }
+
+  .name3,
+  .job3 {
+    color: rgb(255, 0, 170);
+    font-weight: bolder;
+  }
+  .coffee3 {
+    color: white;
+  }
+  .myself3 {
+    color: white;
+    font-style: italic;
+  }
+  .team-item:hover .coffee3 {
+    margin-top: 10px;
+    margin-bottom: 7px;
+    transition: all 1s;
+  }
+  .team-item:hover .myself3 {
+    transition: all 2s;
+  }
+
+  .name4,
+  .job4 {
+    color: skyblue;
+    font-weight: bolder;
+  }
+  .coffee4 {
+    color: white;
+  }
+  .myself4 {
+    color: white;
+    font-style: italic;
+  }
+  .team-item:hover .coffee4 {
+    margin-top: 10px;
+    margin-bottom: 7px;
+    transition: all 1s;
+  }
+  .team-item:hover .myself4 {
+    transition: all 2s;
+  }
+
+  .name5,
+  .job5 {
+    color: white;
+    font-weight: bolder;
+  }
+  .coffee5 {
+    color: white;
+  }
+  .myself5 {
+    color: white;
+    font-style: italic;
+  }
+  .team-item:hover .coffee5 {
+    margin-top: 10px;
+    margin-bottom: 7px;
+    transition: all 1s;
+  }
+  .team-item:hover .myself5 {
+    transition: all 2s;
+  }
+
+  .team-item:hover img {
     transition: all 1s;
     filter: brightness(35%);
+  }
 }

@@ -1,243 +1,250 @@
 @font-face {
-    font-family: 'neon';
-    src: url('../../Jalnan.ttf') format('truetype');
+  font-family: 'neon';
+  src: url('../../Jalnan.ttf') format('truetype');
 }
 
-.likeit_body{
-    border-radius: 20px;
-    background: white;
-    width: 100%;
-    height: 100%;
+.likeit_body {
+  border-radius: 20px;
+  background: white;
+  width: 100%;
+  height: 80%;
 }
 
-.likeit_header_main_form{
-    width: 100%;
-    height: 15%;
+.likeit_header_main_form {
+  width: 100%;
+  height: 10%;
 }
 
 .likeit_header_title_form {
-    font-weight: 700;
-
-    font-size: 1.7vw;
-    width: 100%;
-    height: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'neon';
-    color: rgba(1, 1, 1, 0.75);
+  font-weight: 700;
+  font-size: 1.2vw;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'neon';
+  color: rgba(1, 1, 1, 0.75);
 }
 
 .likeit_header_sub_form {
-    display: flex;
-    justify-content: center;
-    font-weight: 400;
-    font-size: 1.3vw;
-    width: 100%;
-    height: 50%;
-    align-items: center;
-    /* 저기 */
-    color: rgba(1, 1, 1, 0.6);
+  display: flex;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 1vw;
+  width: 100%;
+  height: 50%;
+  margin-top: 0.5%;
+  align-items: center;
+  /* 저기 */
+  color: rgba(1, 1, 1, 0.6);
 }
 
-.likeit_content{
-    padding: 2%;
-    padding-left:10%;
-    padding-right: 10%;
-    height: 60%;
+.likeit_content {
+  padding: 2%;
+  padding-left: 18%;
+  padding-right: 18%;
+  height: 60%;
 }
 
-
-.body_main_form{
-    font-size : 1.2rem;
-    width:100%;
-    height: 90%;
+.body_main_form {
+  font-size: 1.2rem;
+  width: 100%;
+  height: 38vh;
 }
 
 .body_sub_form {
-    height: 12%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 12%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.body_header_main_form{
-    width: 100%;
-    height: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.body_header_main_form {
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .body_header_sub_form {
-    width: 90%;
-    height: 100%;
-
-    font-size :1.3vw;
-    color: rgba(1, 1, 1, 0.75);
-    display: flex;
-    align-items: center;
-    border-top: 3px rgba(1, 1, 1, 0.5) solid;
-    border-bottom: 3px rgba(1, 1, 1, 0.5) solid;
-    background-color: rgba(1, 1, 1, 0.03);
+  width: 90%;
+  height: 100%;
+  font-size: 1.7vh;
+  color: rgba(1, 1, 1, 0.75);
+  display: flex;
+  align-items: center;
+  border-top: 2px rgba(1, 1, 1, 0.5) solid;
+  border-bottom: 2px rgba(1, 1, 1, 0.5) solid;
+  background-color: rgba(1, 1, 1, 0.03);
 }
 
 /* 버튼 따로 둠 */
-.admin_change_btn{
-    border-radius: 12px;
-    background-color: #d7e1ed;
-    width: 50%;
-    height: 60%;
-    text-align: center;
+.admin_change_btn {
+  border-radius: 12px;
+  background-color: #d7e1ed;
+  width: 50%;
+  height: 60%;
+  text-align: center;
 }
-.admin_kick_btn{
-    border-radius: 12px;
-    background-color: #d7e1ed;
-    width: 50%;
-    height: 55%;
-    text-align: center;
-}
-
-
-
-.body_footer{
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    height: 17%;
+.admin_kick_btn {
+  border-radius: 12px;
+  background-color: #d7e1ed;
+  width: 50%;
+  height: 55%;
+  text-align: center;
 }
 
-.page_btn{
-    height: 30%;
-    border-radius: 7px;
-    margin-left: 3%;
-    margin-right: 3%;
-    background-color: #f0f0f5;
-    width: 6%;
-    text-align: center;
-    
+.body_footer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 17%;
 }
 
+.page_btn {
+  height: 30%;
+  border-radius: 7px;
+  margin-left: 3%;
+  margin-right: 3%;
+  background-color: #f0f0f5;
+  width: 6%;
+  text-align: center;
+}
 
 /* 테이블 */
 .likeit_no {
-    width: 15%;
-    
-    text-align: center;
+  width: 10%;
+
+  text-align: center;
 }
 
 .likeit_title {
-    width: 70%;
-    text-align: center;
+  width: 80%;
+  text-align: center;
 }
 
 .likeit_title_content {
-    width:70%;
-
+  width: 75%;
+  margin-left: 5%;
+  cursor: pointer;
 }
 
-.likeit_cancel{
-    width: 15%;
-    text-align: center;
+.likeit_title_content:hover {
+  font-weight: bold;
+}
+
+.likeit_cancel {
+  width: 15%;
+  text-align: center;
 }
 
 /* 바디 테이블들 */
 .mywrite_no {
-    width: 15%;
-    
-    text-align: center;
+  width: 10%;
+
+  text-align: center;
 }
 
 .mywrite_title {
-    width: 60%;
-    text-align: center;
+  width: 60%;
+  text-align: center;
 }
 
 .mywrite_title_content {
-    width:60%;
-
+  width: 55%;
+  margin-left: 5%;
+  cursor: pointer;
+}
+.mywrite_title_content:hover {
+  font-weight: bold;
 }
 
 .mywrite_date {
-    width: 15%;
-    text-align: center;
+  width: 20%;
+  text-align: center;
 }
 
-.mywrite_cancel{
-    width: 10%;
-    text-align: center;
+.mywrite_cancel {
+  width: 10%;
+  text-align: center;
 }
 
 .likeit_content_one {
-    display: flex;
-    width: 90%;
-    height: 100%;
-    border-bottom: 1px solid #babcbf;
-    align-items: center;
+  display: flex;
+  width: 90%;
+  height: 100%;
+  border-bottom: 1px solid #babcbf;
+  align-items: center;
 
-    color: rgba(1, 1, 1, 0.65);
-    font-size: 1.2vw;
+  color: rgba(1, 1, 1, 0.65);
+  font-size: 1.6vh;
 }
 
 .likeit_bottom_box {
-    height: 10%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 15%;
+  height: 90%;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
 }
 
 .like_select_num_btn_form {
-    width: 40%;
-    height: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 40%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .like_select_num_btn_sub_form {
-    width: 10%;
-    height: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+  width: 10%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .like_select_num_btn_left {
-    transform: scaleX(-1);
-    font-size: 3rem;
-    cursor: pointer;
-    color: #FBB032;
+  transform: scaleX(-1);
+  font-size: 3rem;
+  cursor: pointer;
+  color: #fbb032;
 }
 
 .like_select_num_btn_right {
-    font-size: 3rem;
-    color: #FBB032;
-    cursor: pointer;
+  font-size: 3rem;
+  color: #fbb032;
+  cursor: pointer;
 }
 
 .likeit_cancel {
-    width: 10%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .like_select_num_btn_left {
-    transform: scaleX(-1);
+  transform: scaleX(-1);
 }
-.likeit_cancel_btn { 
-    display:block; 
-    width:50%; 
-    height:50%; 
-    background-color:#fbb03b; 
-    text-align:center; 
-    cursor: pointer; 
-    color:white; 
-    border: none;
-    border-radius: 20px;
-} 
+.likeit_cancel_btn {
+  font-size: 1vh;
+  overflow: hidden;
+  display: block;
+  width: 50%;
+  height: 50%;
+  background-color: #fbb03b;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  border: none;
+  border-radius: 20px;
+}
