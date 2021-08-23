@@ -1,10 +1,11 @@
 .login-true-form {
-  display: inline-block; 
+  display: inline-block;
   width: 33%;
   height: 100%;
 }
-.login-success-msg1{
-  display: block;  
+
+.login-success-msg1 {
+  display: block;
   width: 30%;
   height: 100%;
   padding-left: 30%;
@@ -13,7 +14,7 @@
   font-weight: bolder;
   margin-top: 4.5vh;
 }
-.login-success-msg2{
+.login-success-msg2 {
   display: block;
   width: 100%;
   height: 100%;
@@ -32,8 +33,8 @@
   font-size: 1vw;
 }
 .header-myrfg-btn-text {
-    transition: all 0.5s;
-    opacity: 0;
+  transition: all 0.5s;
+  opacity: 0;
 }
 .header-myrfg-btn:hover .header-myrfg-btn-text {
   max-height: 3vh;
@@ -45,21 +46,20 @@
   border: none;
   cursor: pointer;
   font-size: 1vw;
-  margin-top: 2vh;
+  margin-top: 2.5vh;
 }
 .logout-move-mainpage-btn-text {
   transition: all 0.5s;
   opacity: 0;
 }
 
-.logout-move-mainpage-btn:hover .logout-move-mainpage-btn-text{
+.logout-move-mainpage-btn:hover .logout-move-mainpage-btn-text {
   max-height: 3vh;
   opacity: 1;
   margin-top: 1vh;
 }
 
-
-.header-logout-btn{
+.header-logout-btn {
   width: 23%;
   height: 100%;
   /* padding: 0;
@@ -71,7 +71,7 @@
   height: 100%;
 }
 
-.header-move-rfgpage-btn{
+.header-move-rfgpage-btn {
   width: 23%;
   height: 100%;
 }
@@ -86,11 +86,10 @@
   margin-bottom: 1.5vh; */
 }
 
-.logout-move-mainpage-btn img{
-  width: 60px;
-  height: 60px;
-  background-color: 
-  #9baec8;
+.logout-move-mainpage-btn img {
+  width: 45px;
+  height: 55px;
+  background-color: #9baec8;
   border-radius: 20px;
   /* width: 40%;
   height: 80%;

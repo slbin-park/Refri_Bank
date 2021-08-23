@@ -22,27 +22,16 @@ const Aside = ({ livetable }) => {
             <h4> 실시간 Top 10 </h4>
           </div>
         </button>
-
-        {/* { recommand_onoff_btn ? 
-            <>
-            <AsideBottomLi/> 
-            </> 
-            : 
-            <></>
-        } */}
-        {/* <AsideBottomLi/> */}
         <div className="aside-bottom-box">
           {livetable &&
-            livetable
-              .slice(0, 10)
-              .map(({ FoodId, FoodN, FoodT, FoodC }, index) => {
-                return (
-                  <div className="aside-food-block">
-                    <div className="aside-food-num">{index + 1}</div>
-                    <div className="aside-food-name">{FoodN}</div>
-                  </div>
-                );
-              })}
+            livetable.slice(0, 10).map(({ FoodN }, index) => {
+              return (
+                <div className="aside-food-block">
+                  <div className="aside-food-num">{index + 1}</div>
+                  <div className="aside-food-name">{FoodN}</div>
+                </div>
+              );
+            })}
         </div>
       </div>
     </>

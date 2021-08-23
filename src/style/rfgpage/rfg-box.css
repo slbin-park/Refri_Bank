@@ -20,7 +20,7 @@
   margin-left: 20%;
   margin-right: 20%;
   margin-top: 2%;
-  margin-bottom: 5%;
+  margin-bottom: 3.5%;
 }
 
 .rfg-body-form {
@@ -189,8 +189,8 @@
   display: block;
 }
 .rfg-ingredient-text-box {
-  margin-top: 2vh;
-  margin-bottom: 1vh;
+  margin-top: 9%;
+  margin-bottom: 3%;
   text-align: center;
   width: 100%;
   height: 10%;
@@ -202,16 +202,22 @@
 .rfg-result-text-box {
   text-align: center;
   width: 100%;
-  height: 19%;
-  margin-top: 2%;
+  height: 13%;
+  margin-top: 5.5%;
   color: rgba(1, 1, 1, 0.75);
   font-size: 1.3vw;
   font-weight: 500;
 }
+
 .rfg-recommend-text-box {
   text-align: center;
   width: 100%;
   height: 10vh;
+}
+
+.rfg-recommend-text-box h2 {
+  font-size: 1.7rem;
+  font-family: 'neon';
 }
 
 .rfg-select-box-submit-btn {
@@ -224,13 +230,14 @@
   background-color: rgb(255, 163, 43);
   border-radius: 20px;
   width: 80%;
+  margin-top: 20.2vh;
   margin-left: 10%;
   margin-right: 10%;
   height: 20%;
-  margin-top: 17vh;
   border: none;
   color: white;
   cursor: pointer;
+  font-size: 20px;
 }
 
 .rfg-select-box-submit-btn button:hover {

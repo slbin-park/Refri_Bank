@@ -16,30 +16,18 @@ function Func_filter_find_ingredient({ get_rcp_rfg, result_box_list, setresult_b
     console.log('filterbox 전체 렌더링')
     //date날짜, result_box_list는 오른쪽의 장바구니에 들어있는 리스트, 
     const [date, setdate] = useState(new Date());
-    const [igdlist, setigdlist] = useState();
-    const [selectingredient, setselectingredient] = useState();
+    const [igdlist, setigdlist] = useState();;
 
-
-    const [igd_key_value, set_igd_key_value] = useState(['닭', '오리', '돼지', '소', '소세지', '양파', '당근', '마늘', '버섯', '부추', '고추', '파', '상추', '토마토', '새우', '고등어', '게', '전복', '조개', '바지락', '홍합', '오징어', '생선', '멸치', '간장', '된장', '고추장', '쌈장', '참기름', '깨', '가루', '면', '밀가루', '밥', '계란', '우유', '치즈', '요거트']);
-    //const igd_key_value = ['닭', '오리', '돼지', '소', '소세지', '양파', '당근', '마늘', '버섯', '부추', '고추', '파', '상추', '토마토', '새우', '고등어', '게', '전복', '조개', '바지락', '홍합', '오징어', '생선', '멸치', '간장', '된장', '고추장', '쌈장', '참기름', '깨', '가루', '면', '밀가루', '밥', '계란', '우유', '치즈', '요거트'];
-    // igd_key_value.sort(() => Math.random() - 0.5);
+    const igd_key_value = ['닭', '오리', '돼지', '소', '소세지', '양파', '당근', '마늘', '버섯', '부추', '고추', '파', '상추', '토마토', '새우', '고등어', '게', '전복', '조개', '바지락', '홍합', '오징어', '생선', '멸치', '간장', '된장', '고추장', '쌈장', '참기름', '깨', '가루', '면', '밀가루', '밥', '계란', '우유', '치즈', '요거트'];
+    igd_key_value.sort(() => Math.random() - 0.5);
 
     const Func_igdlist_select = ((e) => {
         document.querySelector('.rfg-calendar-box').classList.toggle('calendar-toggle');
     })
-    useEffect(() => {
-        set_igd_key_value(igd_key_value.sort(() => Math.random() - 0.5))
-    }, [])
     //123
-    console.log(result_box_list)
-    useEffect(() => {
-        let delete_igd = []
-        result_box_list.map((v) => delete_igd.push(v.result_igdname))
-
-        set_igd_key_value(igd_key_value.filter((v) => !delete_igd.includes(v)))
-    }, [result_box_list])
 
     const basketInput = () => {
+        console.log('재료 선택함')
         const select_eprdate = moment(date).format('YY-MM-DD');
         let check = true
         result_box_list.map((v) => v.result_igdname == igdlist ? check = false : 0)
@@ -111,20 +99,16 @@ function Func_filter_find_ingredient({ get_rcp_rfg, result_box_list, setresult_b
     }, [date])
 
     const clickimg = (item) => {
-        setselectingredient(item)
         setigdlist(item);
         Func_igdlist_select();
     }
-    useEffect(()=>{
-        Select_ingredient_thumbnail()
-    },[selectingredient])
 
     const Select_ingredient_thumbnail = () => {
         return (
             igd_key_value.map((v) => {
                 return (
-                    <div key={v} className={selectingredient==v ? "select-ingredient-form" : "ingredient-form"} role="button" onClick={(e) => { clickimg(v) }}>
-                        <div className="ingredient-img-form">
+                    <div key={v} className="ingredient-form">
+                        <div className="ingredient-img-form" role="button" onClick={(e) => { clickimg(v) }}>
                             <img className="ingredient-img" src={ingredient_img[v]} alt={v} />
                         </div>
                         <div className="ingredient-name-form">
@@ -135,6 +119,7 @@ function Func_filter_find_ingredient({ get_rcp_rfg, result_box_list, setresult_b
             })
         )
     }
+
 
     const Result_ingredient_thumbnail = () => {
         return (
@@ -199,7 +184,7 @@ function Func_filter_find_ingredient({ get_rcp_rfg, result_box_list, setresult_b
                         <Result_ingredient_thumbnail />
                     </div>
                     <div className="rfg-select-box-submit-btn">
-                        <button onClick={() => Func_reqbutton_diquery()}>submit</button>
+                        <button onClick={() => Func_reqbutton_diquery()}>SUBMIT</button>
                     </div>
                 </div>
             </div>
