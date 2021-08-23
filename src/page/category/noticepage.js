@@ -152,13 +152,15 @@ function App({ information }) {
               )}
             </div>
           </div>
-          {information != undefined ? (
-            <button className="move_writeform_btn" onClick={Write_open}>
-              게시글 작성하기
-            </button>
-          ) : (
-            ''
-          )}
+          <div className='write_board'>
+            {information != undefined ? (
+              <button className="move_writeform_btn" onClick={Write_open}>
+                게시글 작성하기
+              </button>
+            ) : (
+              ''
+            )}
+          </div>
         </div>
       ) : (
         <Write_form set_write_toggle={set_write_toggle} page={page} information={information} />

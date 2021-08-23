@@ -62,7 +62,7 @@ const App = () => {
               <Route exact path="/my_igd" component={Myigd}>
                 <Myigd history={history} information={information} />
               </Route>
-              <Route exact path="/like" exact component={Likeit}>
+              <Route restricted exact path="/like" exact component={Likeit}>
                 <Likeit history={history} information={information} />
               </Route>
               <Route exact path="/my_write" exact component={Mywrite}>

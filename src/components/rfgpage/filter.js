@@ -5,31 +5,22 @@ import Calendar from 'react-calendar';
 import Axios from 'axios';
 import moment from 'moment';
 
-//공용 변수.
-//  result_box_list -> 디비에서 냉장고 정보 가져옴
-// 랜덤 한개 고른게 있잖아요
-// 그거 1개만 state써서 넘겨주는거죠
-
 function Func_filter_find_ingredient({ get_rcp_rfg, result_box_list, setresult_box_list, information }) {
   console.log('filterbox 전체 렌더링')
   //date날짜, result_box_list는 오른쪽의 장바구니에 들어있는 리스트, 
   const [date, setdate] = useState(new Date());
   const [igdlist, setigdlist] = useState();
   const [selectingredient, setselectingredient] = useState();
-
-
   const [igd_key_value, set_igd_key_value] = useState(['닭', '오리', '돼지', '소', '소세지', '양파', '당근', '마늘', '버섯', '부추', '고추', '파', '상추', '토마토', '새우', '고등어', '게', '전복', '조개', '바지락', '홍합', '오징어', '생선', '멸치', '간장', '된장', '고추장', '쌈장', '참기름', '깨', '가루', '면', '밀가루', '밥', '계란', '우유', '치즈', '요거트']);
-  //const igd_key_value = ['닭', '오리', '돼지', '소', '소세지', '양파', '당근', '마늘', '버섯', '부추', '고추', '파', '상추', '토마토', '새우', '고등어', '게', '전복', '조개', '바지락', '홍합', '오징어', '생선', '멸치', '간장', '된장', '고추장', '쌈장', '참기름', '깨', '가루', '면', '밀가루', '밥', '계란', '우유', '치즈', '요거트'];
-  // igd_key_value.sort(() => Math.random() - 0.5);
 
   const Func_igdlist_select = ((e) => {
     document.querySelector('.rfg-calendar-box').classList.toggle('calendar-toggle');
   })
+
   useEffect(() => {
     set_igd_key_value(igd_key_value.sort(() => Math.random() - 0.5))
   }, [])
-  //123
-  console.log(result_box_list)
+
   useEffect(() => {
     let delete_igd = []
     result_box_list.map((v) => delete_igd.push(v.result_igdname))
@@ -48,9 +39,8 @@ function Func_filter_find_ingredient({ get_rcp_rfg, result_box_list, setresult_b
   }
 
   const result_basket = (src) => {
+    set_igd_key_value([...igd_key_value, src])
     setresult_box_list(result_box_list.filter(i => i.result_igdname !== src));
-    //누르면 지워지게
-    //post 버튼을 누르면 result_basket에 들어있는걸 백에 넘겨준다.
   }
 
   //submit 클릭시 기존의 result_box_list를 초기화하고 새롭게 insert하는 DI 쿼리 날림

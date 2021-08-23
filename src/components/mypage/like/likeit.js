@@ -22,20 +22,24 @@ function Likeit({ history, information }) {
 
   useEffect(() => {
     if (information !== undefined) {
-      Axios.post('https://qkrtmfqls.gabia.io/likeitpage', {
-        id: information.id,
-      })
-        .then((response) => {
-          console.log('response.data', response.data);
-          set_like_table(response.data);
-          set_like_table_cnt(response.data.data.length / 10);
-        })
-
-        .catch((error) => {
-          console.log(error);
-        });
+      get_likeit_table()
     }
   }, []);
+
+  const get_likeit_table = () => {
+    Axios.post('https://qkrtmfqls.gabia.io/likeitpage', {
+      id: information.id,
+    })
+      .then((response) => {
+        console.log('response.data', response.data);
+        set_like_table(response.data);
+        set_like_table_cnt(response.data.data.length / 10);
+      })
+
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
   // 페이지 버튼 함수
 
@@ -103,7 +107,7 @@ function Likeit({ history, information }) {
             </div>
 
             <div className="body_main_form">
-              {like_table && <Liketable history={history} table={like_table} like_page_slice={like_page_slice}></Liketable>}
+              {like_table && <Liketable get_likeit_table={get_likeit_table} information={information} history={history} table={like_table} like_page_slice={like_page_slice}></Liketable>}
             </div>
 
             {/* <div
@@ -120,7 +124,7 @@ function Likeit({ history, information }) {
             <div className="likeit_bottom_box">
               {arrow_page > 0 ? (
                 <div className="like_select_num_btn_left" onClick={(e) => Func_paging_minus(e)}>
-                  <img src={arrow_left} width="11px" height="12px"/>
+                  <img src={arrow_left} width="11px" height="12px" />
                 </div>
               ) : (
                 ''
@@ -128,8 +132,8 @@ function Likeit({ history, information }) {
               {like_table_cnt && create_button()}
 
               {(arrow_page + 1) * 10 < like_table_cnt ? (
-                <div className="like_select_num_btn_right"  onClick={(e) => Func_paging_plus(e)}>
-                  <img src={arrow_right} width="11px" height="12px"/>
+                <div className="like_select_num_btn_right" onClick={(e) => Func_paging_plus(e)}>
+                  <img src={arrow_right} width="11px" height="12px" />
                 </div>
               ) : (
                 ''
