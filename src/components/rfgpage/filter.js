@@ -194,7 +194,7 @@ function Func_filter_find_ingredient({ get_rcp_rfg, result_box_list, setresult_b
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 

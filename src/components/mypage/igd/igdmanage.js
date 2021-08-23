@@ -44,10 +44,10 @@ function Idgmanage({ information, history }) {
           res_igdname.map((v, index) =>
             v !== ''
               ? new_igdname.push({
-                  result_igdname: v,
-                  eprd: res_eprname[index],
-                  eprd_remain: moment(res_eprname[index], 'YY-MM-DD').diff(moment(new Date(), 'YY-MM-DD'), 'days'),
-                })
+                result_igdname: v,
+                eprd: res_eprname[index],
+                eprd_remain: moment(res_eprname[index], 'YY-MM-DD').diff(moment(new Date(), 'YY-MM-DD'), 'days'),
+              })
               : 0,
           );
         setigd_info(new_igdname);
@@ -168,7 +168,7 @@ function Idgmanage({ information, history }) {
               {/* 오른쪽 첫번째 끝 */}
 
               {/* 위에2개 시작 */}
-              <div style={{ padding: '2vh' }}>
+              <div>
                 {/* 위에2개 시작 */}
                 <div style={{ padding: '2vh' }}>
                   <div className="igd_box_left_top_1">
@@ -365,7 +365,7 @@ function Idgmanage({ information, history }) {
                 </div>
               </div>
               {/* 오른쪽 첫번째 끝 */} {/* 오른쪽 첫번째 끝 */}
-              <div className="igd_box_right_top_1" style={{ 'padding-top': '4vh' }}>
+              <div className="igd_box_right_top_1" >
                 <div className="igd_box_2_all">
                   <div className="igd_box_2">
                     <div className="igd_box_top1_img">
