@@ -54,13 +54,13 @@ function Func_freeboard_show_freeboard({ setModalOn, set_get_free_number, inform
                                 <div className="eachcontent" border-color="#008554">
                                     <div onClick={(e) => Click_free(e, number)}>
                                         <div className="content-maincontent">
-                                            <div className="title" dangerouslySetInnerHTML={{ __html: title }}></div>
+                                            <div className="content-header">
+                                                <div className="title" dangerouslySetInnerHTML={{ __html: title }}></div>
+                                                <div className="nickname">| {nickname}</div>
+                                            </div>
                                             <div className="description" dangerouslySetInnerHTML={{ __html: description }}></div>
                                         </div>
-                                        <div className="content-header">
-                                            <div className="nickname">{nickname}</div>
-                                            <div createdate="createdate">{createdate}</div>
-                                        </div>
+                                        
                                     </div>
                                     <div className="reaction-box">
                                         <img src={heart_img} width="20px" height="20px" style={{ 'margin-right': '5px' }} />

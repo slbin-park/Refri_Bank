@@ -6,8 +6,7 @@ import Axios from 'axios';
 import moment from 'moment';
 
 function Func_filter_find_ingredient({ get_rcp_rfg, result_box_list, setresult_box_list, information }) {
-  console.log('filterbox 전체 렌더링')
-  //date날짜, result_box_list는 오른쪽의 장바구니에 들어있는 리스트, 
+
   const [date, setdate] = useState(new Date());
   const [igdlist, setigdlist] = useState();
   const [selectingredient, setselectingredient] = useState();
@@ -27,7 +26,7 @@ function Func_filter_find_ingredient({ get_rcp_rfg, result_box_list, setresult_b
 
     set_igd_key_value(igd_key_value.filter((v) => !delete_igd.includes(v)))
   }, [result_box_list])
-
+  
   const basketInput = () => {
     const select_eprdate = moment(date).format('YY-MM-DD');
     let check = true
@@ -52,7 +51,6 @@ function Func_filter_find_ingredient({ get_rcp_rfg, result_box_list, setresult_b
       eprarr += v.eprd;
       eprarr += ',';
     });
-    // console.log(igdarr);
     Axios.post("https://qkrtmfqls.gabia.io/individual", {
       id: information.id,
       igdname: igdarr,
@@ -65,30 +63,6 @@ function Func_filter_find_ingredient({ get_rcp_rfg, result_box_list, setresult_b
         console.log(error);
       });
   }
-
-
-  // //get 버튼을 클릭시 DB에 저장된 재료리스트 불러옴
-  // const Func_reqbutton_getquery = (e) => {
-  //     if(information !== undefined) {
-  //         Axios.post("https://qkrtmfqls.gabia.io/getrfg", {
-  //             id: information.id
-  //         })
-  //         .then((response)=> {
-  //             let res_igdname = response.data[0].Igdname.split(",");
-  //             let res_eprname = response.data[0].Eprdate.split(",");
-  //             let new_igdname =[];
-  //             res_igdname && res_igdname.map((v,index)=> v !== '' ? new_igdname.push({result_igdname : v, eprd : res_eprname[index]}) : 0);
-  //             setresult_box_list(new_igdname);
-  //         })
-  //         .catch((error)=> {
-  //             console.log(error);
-  //         });
-  //     }
-  // }
-
-  // useEffect(()=> {
-  //     Func_reqbutton_getquery();
-  // }, []);
 
   useEffect(() => {
 
@@ -104,7 +78,6 @@ function Func_filter_find_ingredient({ get_rcp_rfg, result_box_list, setresult_b
     Func_igdlist_select();
   }
   useEffect(() => {
-    console.log(selectingredient)
     Select_ingredient_thumbnail()
   }, [selectingredient])
 
@@ -185,7 +158,6 @@ function Func_filter_find_ingredient({ get_rcp_rfg, result_box_list, setresult_b
           <p>장바구니</p>
         </div>
         <div className="rfg-select-box">
-          {/*  버튼 클릭시 보여지는 페이지*/}
           <div className="rfg-select-box-thumbnail-box">
             <Result_ingredient_thumbnail />
           </div>
