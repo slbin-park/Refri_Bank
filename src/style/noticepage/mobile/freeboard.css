@@ -70,9 +70,9 @@
     
 }
 
-.description {
+.content-maincontent .description {
     margin-left: 20px;
-}
+  }
 
 .reaction-box {
     display: flex;
