@@ -4,7 +4,7 @@ import logo from '../img/main_body_img/login-logo.png';
 import Alert from './alert';
 import Axios from 'axios';
 
-const Login = ({ information, setinformation, history, setpage }) => {
+const Login = ({ setinformation, history, setpage }) => {
   // 만약에 전달안해줬는데? 여기서 히스토리 받았자나 => 그럼 안되지
   const [logintext, setlogintext] = useState({ id: '', pwd: '' });
 
@@ -20,7 +20,7 @@ const Login = ({ information, setinformation, history, setpage }) => {
       return;
     }
 
-    console.log('login id = ', logintext.id);
+    // console.log('login id = ', logintext.id);
 
     e.preventDefault();
     Axios.post('https://qkrtmfqls.gabia.io/login', {
@@ -32,8 +32,6 @@ const Login = ({ information, setinformation, history, setpage }) => {
         console.log('response.data = ', response.data);
 
         if (response.data.success) {
-          //로그인 성공시
-          console.log(response.data);
           setpage(true);
           setinformation({
             id: response.data.id,
@@ -48,13 +46,9 @@ const Login = ({ information, setinformation, history, setpage }) => {
           window.localStorage.clear();
           setpage(false);
           Alert('Login', response.data.msg);
-          //실패사유 출력
-
-          // history.push('/errorpage');
         }
       })
       .catch((error) => {
-        // console.log('로그인 실패하셨어용');
         console.log(error);
       });
   };

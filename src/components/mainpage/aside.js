@@ -10,14 +10,11 @@ const Aside = ({ livetable }) => {
 
   return (
     <>
-      <p className="hint_msg">3초간 눌러보세요!</p>
+      {/* <p className="hint_msg">3초간 눌러보세요!</p> */}
       <div className="Big">
         {/*  <> 이게 제일 큰 박스인데 지금 부모에서 aside-form 으로 픽스되어있음 */}
 
-        <button
-          className="recommand_onoff_btn"
-          onClick={() => Func_recommand_onoff_btn()}
-        >
+        <button className="recommand_onoff_btn" onClick={() => Func_recommand_onoff_btn()}>
           <div className="aside-top-box">
             <h4> 실시간 Top 10 </h4>
           </div>
