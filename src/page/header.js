@@ -18,10 +18,20 @@ const Header = ({ location, information, setinformation, history, page, setpage 
   const [nickname, setnickname] = useState(information && information.nickname);
   const [where_category, setwhere_category] = useState('default');
 
+
+  // /my_write
+  // /my_igd
+  // /like
+
   useEffect(() => {
     let token = window.localStorage.getItem('token');
-    token && token_check();
-    //여기에다가 location이 마이페이지 일때 토큰이 없으면 메인으로 이동
+    if (token != undefined) {
+      token_check();
+    }
+    else if (location['pathname'] == '/my_write' || location['pathname'] == '/my_igd' || location['pathname'] == '/like') {
+      Alert('마이페이지', '로그인 후에 이용하실수있습니다.')
+      history.push('/')
+    }
   }, [location]);
   //로케이션이 바뀔때마다 토큰 체크
 
@@ -51,9 +61,10 @@ const Header = ({ location, information, setinformation, history, page, setpage 
           history.push('/');
           Alert('Login', '토큰이 만료되었습니다.');
           window.localStorage.clear();
+          setpage(false);
         }
       })
-      .catch((error) => {});
+      .catch((error) => { });
   };
 
   //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -62,7 +73,6 @@ const Header = ({ location, information, setinformation, history, page, setpage 
     //홈으로 돌아가기
     if (location['pathname'] !== '/') {
       // 현재 위치가 루트가 아닐때만 이동하게 함
-      console.log('여긴 홈페이지가 아니야, 홈페이지로 이동해');
       history.push('/');
     } else {
       console.log('여긴 이미 홈페이지야, 그대로 있어');

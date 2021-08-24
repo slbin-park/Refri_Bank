@@ -6,7 +6,7 @@ import kcal from '../../img/recipe/kcal.jpg';
 import Alert from '../../page/alert';
 import Axios from 'axios';
 
-function thumbnail_info({ data, click_like, setclick_like, information }) {
+function thumbnail_info({ data, information }) {
   //foodid 는 axios요청할때 푸드아이디
   //like 는 좋아요를 안눌렀을떄
 
@@ -28,11 +28,8 @@ function thumbnail_info({ data, click_like, setclick_like, information }) {
     return igdcnt_list;
   };
   const Func_this_likeit_plus = () => {
-    console.log(information);
     if (information == undefined) {
       Alert('Recipe', '로그인 후 이용할 수있습니다.');
-    } else if (click_like) {
-      Alert('Recipe', '이미 좋아요를 눌렀습니다.');
     } else {
       Axios.post('https://qkrtmfqls.gabia.io/addlike', {
         id: data[0].FoodId,
@@ -40,8 +37,13 @@ function thumbnail_info({ data, click_like, setclick_like, information }) {
         foodname: data[0].FoodN,
       })
         .then((response) => {
-          Alert('Recipe', '좋아요를 눌렀습니다.');
-          setclick_like(true);
+          if (response.data.success) {
+            Alert('좋아요', '좋아요를 누르셨습니다.')
+          }
+          else {
+            Alert('좋아요', '좋아요를 이미 누르셨습니다.')
+          }
+
         })
         .catch((error) => {
           console.log(error);

@@ -69,7 +69,7 @@ const App = ({ history }) => {
   return (
     <>
       <div className="body-top-form">
-        <Body gettable={gettable} settext={settext} text={text} history={history} />
+        <Body gettable={gettable} settext={settext} text={text} />
       </div>
       <div className="body-bottom-form">
         <div className="footer-form">

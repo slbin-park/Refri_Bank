@@ -44,4 +44,4 @@ function footer({ ftable, history, page_slice }) {
   );
 }
 
-export default footer;
+export default React.memo(footer);

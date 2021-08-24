@@ -10,7 +10,7 @@ import Axios from 'axios';
 import moment from 'moment';
 import Alert from '../../../page/alert';
 
-function Idgmanage({ information, history }) {
+function Idgmanage({ information }) {
   const [igd_info, setigd_info] = useState();
   useEffect(() => {
     console.log('실행');

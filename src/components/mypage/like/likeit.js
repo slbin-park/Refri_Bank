@@ -21,10 +21,8 @@ function Likeit({ history, information }) {
   };
 
   useEffect(() => {
-    if (information !== undefined) {
-      get_likeit_table()
-    }
-  }, []);
+    information && get_likeit_table()
+  }, [information])
 
   const get_likeit_table = () => {
     Axios.post('https://qkrtmfqls.gabia.io/likeitpage', {

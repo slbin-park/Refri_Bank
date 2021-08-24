@@ -149,7 +149,6 @@ function Mywrite({ information, history }) {
                   get_my_table={get_my_table}
                   set_table_number={set_table_number}
                   set_modal_table={set_modal_table}
-                  set_modal_table={set_modal_table}
                   mywrite_table={mywrite_table}
                   mywrite_page_slice={mywrite_page_slice}
                 ></Mywritetable>
@@ -158,7 +157,7 @@ function Mywrite({ information, history }) {
             <div className="likeit_bottom_box">
               {arrow_page > 0 ? (
                 <div className="like_select_num_btn_left" onClick={(e) => Func_paging_minus(e)}>
-                  <img src={arrow_left} width="11px" height="12px"/>
+                  <img src={arrow_left} width="11px" height="12px" />
                 </div>
               ) : (
                 ''
@@ -167,7 +166,7 @@ function Mywrite({ information, history }) {
 
               {(arrow_page + 1) * 10 < mywrite_table_cnt ? (
                 <div className="like_select_num_btn_right" onClick={(e) => Func_paging_plus(e)}>
-                  <img src={arrow_right} width="11px" height="12px"/>
+                  <img src={arrow_right} width="11px" height="12px" />
                 </div>
               ) : (
                 ''
