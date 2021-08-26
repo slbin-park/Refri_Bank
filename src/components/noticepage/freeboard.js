@@ -25,6 +25,7 @@ function Func_freeboard_show_freeboard({ setModalOn, set_get_free_number, inform
     };
 
     const Click_free = (e, number) => {
+        e.preventDefault();
         setModalOn(true);
         set_get_free_number(number);
     };
@@ -49,6 +50,7 @@ function Func_freeboard_show_freeboard({ setModalOn, set_get_free_number, inform
                 {/* slice 넣어야함 */}
                 {free_table &&
                     free_table.slice(page_slice.start, page_slice.end).map(({ number, id, nickname, title, description, createdate, count, likeit, index }) => {
+                        console.log(id)
                         return (
                             <div key={index} className="eachcontent-block">
                                 <div className="eachcontent" border-color="#008554">
@@ -60,14 +62,14 @@ function Func_freeboard_show_freeboard({ setModalOn, set_get_free_number, inform
                                             </div>
                                             <div className="description" dangerouslySetInnerHTML={{ __html: description }}></div>
                                         </div>
-                                        
+
                                     </div>
                                     <div className="reaction-box">
                                         <img src={heart_img} width="20px" height="20px" style={{ 'margin-right': '5px' }} />
                                         <span style={{ 'margin-right': '15px', 'font-size': '20px' }}>{likeit}</span>
                                         <img src={comment_img} width="20px" height="20px" style={{ 'margin-right': '5px' }} />
                                         <span style={{ 'font-size': '20px' }}>{count}</span>
-                                        {information && id == information.id ? <button onClick={(e) => Func_this_delete_content(e, number)}>게시글 삭제</button> : ''}
+                                        {information != undefined ? id == information.id || information.id == 'smpts00' ? <button onClick={(e) => Func_this_delete_content(e, number)}>게시글 삭제</button> : '' : ''}
                                     </div>
                                 </div>
                             </div>
