@@ -1,3 +1,4 @@
+@media all and (min-width:600px) {
 .main-form{
     background-color: white;
     width: 100%;
@@ -95,3 +96,109 @@
     margin-top: 6.5%;
     margin-left: 10%;
 }
+}
+
+
+@media all and (max-width:600px) {
+    .main-form{
+        background-color: white;
+        width: 100%;
+        height: 100%;
+    }
+    .body-top-form{
+        justify-content: center;
+        margin-top :30px;
+        display: flex;
+        background-clip: border-box;
+        width: 100%;
+        height: 50px;
+        margin: 0;
+        padding: 0;
+    }
+    .body-bottom-form {
+        width: 100%;
+        height: 35%;
+        display: flex;
+    }
+    .search_bar_box {
+        display: flex;
+        align-items: center;
+        width: 64%;
+    
+    }
+    .search_bar {
+        text-align: center;
+        margin: 5px;  
+        width: 100%;
+        height: 60%;
+        border-radius: 20px;
+        background-color: #F3F6F8;
+        border: none;
+        outline: none;
+    }
+    
+    @font-face {
+        font-family: "JalnanOTF";
+        src: url("../../fonts/JalnanOTF.otf");
+    }
+    
+    .toggle_btn {
+        width: 15%;
+        height: 100%;
+        margin-left: 73%;
+        padding: 0;
+        border: none;
+        background-color:transparent;
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transition: all 0.3s ease-in-out; 
+    
+    }
+    
+    .toggle_btn:hover {
+        transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+    }
+    
+    .search_btn {
+        width: 10%;
+        height: 100%;
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .search_btn img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .toggle_img1 {
+        width: 8vw;
+        height: 8vh;
+        cursor: pointer;
+    }
+    
+    .toggle_img2 {
+       width: 9vw;
+       height: 9vh;
+       cursor: pointer;
+    }
+    
+    .toggle_btn_box {
+            display: none;
+        width: 20%;
+        height: 100%;
+        margin-top: 6.5%;
+        margin-left: 10%;
+    }
+    }
+
+    

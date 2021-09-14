@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import '../style/mainpage/header/header.css';
 import Alert from './alert';
 // css 파일
-
 import show_logo from '../img/main_body_img/logo_img_good.png';
 import show_rgfimg from '../img/main_body_img/rfgimg2.png';
 import login_btn from '../img/main_body_img/login_btn.jpeg';
@@ -14,7 +13,7 @@ import Axios from 'axios';
 
 const Header = ({ location, information, setinformation, history, page, setpage }) => {
   // 함수가 아니고 컴포넌트 처음 시작은 무조건 대문자
-
+  const [hbg, sethbg] = useState(false)
   const [nickname, setnickname] = useState(information && information.nickname);
   const [where_category, setwhere_category] = useState('default');
 
@@ -134,7 +133,11 @@ const Header = ({ location, information, setinformation, history, page, setpage 
       {/* 이거 컴포넌트 나눠서 해줘요 */}
       <div className="header-form">
         <div className="header-top-box">
-          <div className="header-null-form"></div>
+          <div className="header-null-form">
+            <div onClick={() => sethbg(!hbg)} className="header-null-form">
+              햄버거
+            </div>
+          </div>
           <div className="header-logo-main-form">
             <div className="header-logo-sub-form">
               <img className="header-logo-img" onClick={() => move_home()} src={show_logo} />
@@ -244,6 +247,33 @@ const Header = ({ location, information, setinformation, history, page, setpage 
             </button>
           </div>
         </div>
+        {hbg ? <div className="mobiel-header-bottom-box" >
+          <div>
+            <button className="header-category-btn" onClick={() => move_introduce()} id="header-category-button1">Introduce</button>
+          </div>
+          <div>
+
+            <button className="header-category-btn" onClick={move_profile} id="header-category-button4">Profile</button>
+          </div>
+          <div>
+
+            <button className="header-category-btn" id="header-category-button2" onClick={move_noticepage}>Board</button>
+          </div>
+          <div>
+            <button className="header-category-btn" id="header-category-button3" onClick={move_secret}>Secret</button>
+          </div>
+          <div className="page_box">
+            <button className="header-category-btn" id="header-category-button5">Page
+                            <div className="header-category-btn-mypage-div">
+                <ul className="header-category-btn-mypage-ul">
+                  <li className="header-category-btn-mypage-li" onClick={move_my_igd}>재료 관리</li>
+                  <li className="header-category-btn-mypage-li" onClick={move_like}>좋아요한 레시피</li>
+                  <li className="header-category-btn-mypage-li" onClick={move_my_write}>내가 작성한 게시글</li>
+                </ul>
+              </div>
+            </button>
+          </div>
+        </div> : ''}
       </div>
     </>
   );

@@ -7,6 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
 
+@media all and (min-width:600px) {
 .header-form {
   /* position: sticky; */
   /* display: flex; */
@@ -169,3 +170,137 @@
   color: black;
   font-weight: 700;
 }
+}
+
+
+@media all and (max-width:600px) {
+  .header-null-form {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .header-top-box {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    border-bottom: 1px rgb(161, 161, 161) solid;
+    background-color: white;
+  }
+  .mobiel-header-bottom-box {
+    animation-name: dropdown;
+    animation-duration: 0.7s;
+    animation-direction: normal;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: rgb(109, 109, 170);
+  }
+  .header-bottom-box {
+    display: none;
+    width: 100%;
+    height: 30%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+  .header-logo-sub-form {
+    display: none;
+  }
+  .header-logo-img {
+    display: none;
+  }
+  .header-category-btn-mypage-li {
+    font-size: 5px;
+    text-align: left;
+    background-color: white;
+  }
+  .header-form {
+    justify-content: center;
+    align-items: center;
+    height: 20%; 
+    display: block;
+  }
+  .header-null-form-big{
+    width: 33.3%;
+    height: 100%;
+  }
+  
+  .login-window-form {
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+  }
+  
+  .header-category-btn {
+    display: inline-block;
+    border: 0;
+    background-color: transparent;
+    font-size: 1.3vw;
+    color: #404552;
+    font-weight: bolder;
+    padding: 0;
+    margin-top: 1.5vh;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .header-category-btn:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    border-bottom: #FBB032 3px solid;
+  }
+  
+  .header-logo-main-form {
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }  
+  
+  .header-right-big-box {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .header-bottom-box div {
+    margin-left: 40px;
+    margin-right: 40px;
+    
+  }
+  
+  .header-category-btn-mypage-div {
+    visibility:hidden;
+    position: absolute;
+    top: 2.5vh;
+    padding-top: 1vh;
+    left: -5.7vh;
+    font-size: 0.7vw;
+  }
+  
+  .header-category-btn-mypage-ul {
+    display: flex;
+    padding-top: 5px;
+    flex-direction: column ;
+  }
+  
+  #header-category-button5:hover .header-category-btn-mypage-div {
+    visibility: visible;
+    font-weight: 400;
+    animation-name: dropdown;
+    animation-duration: 0.7s;
+    animation-direction: normal;
+  }
+  
+  .header-category-btn-mypage-li:hover {
+    color: black;
+    font-weight: 700;
+  }
+
+}
+
+

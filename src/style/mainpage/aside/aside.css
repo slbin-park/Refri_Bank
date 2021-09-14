@@ -2,7 +2,114 @@
   font-family: 'neon';
   src: url('../../../Jalnan.ttf') format('truetype');
 }
+@media all and (max-width:600px) {
+  .aside-form {
+    display: none;
+    width: 20vw;
+    height: 100%;
+    background-color: white;
+    margin-top: 6%;
+  }
+  
+  .aside-top-box {
+    text-align: center;
+    width : 100%;
+    height : 50%;
+    border: none;
+    
+  }
+  .aside-bottom-box {
+    
+    width : 100%;
+    height: 50%;
+  
+  }
+  
+  .aside-food-block {
+    display: flex;
+  
+  }
+  .aside-food-num {
+    color: #fbb032;
+    width: 10%;
+    height: 100%;
+    font-size: 1vw;
+  
+    margin-left: 17%;
+  }
+  .aside-food-name {
+  
+    width: 90%;
+    height: 100%;
+    color: rgba(1, 1, 1, 0.8);
+  
+    font-size: 1vw;
+  
+  }
+  .aside-up-icon {
+    width: 10%;
+    height: 100%;
+    color: tomato;
+  }
+  
+  .aside-top-box h4{
+    font-weight: bolder;
+    font-size: 1.2vw;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    color: #404552;
+  }
+  
+  .recommand_onoff_btn {
+    width:55%;
+    height: 20%;
+    cursor: pointer;
+    border-radius: 15px;
+    border: none;
+    margin-bottom: 5%;
+  
+    margin-left: 22.5%;
+    margin-right: 22.5%;
+  }
+  
+  @keyframes dropdown {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  
+  .aside-bottom-box .aside-food-block{
+    overflow: hidden;
+    transition: all 2s;
+    opacity: 0;
+    height: 0;
+  }
+  
+  .recommand_onoff_btn:active ~ .aside-bottom-box .aside-food-block{
+    opacity: 1;
+    height:25px;
+  }
+  .hint_msg {
+    width: 100%;
+    height: 10%;
+   text-align: center;
+   font-size: 0.8vw;
+   color: #404552;
+   margin-bottom: 3%;
+  }
+  
+  .Big {
+    width: 100%;
+    height: 50%;
+  }
+}
 
+@media all and (min-width:600px) {
 .aside-form {
   width: 20vw;
   height: 100%;
@@ -107,3 +214,5 @@
   height: 40%;
   padding-top: 15%;
 }
+}
+
