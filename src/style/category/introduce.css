@@ -1,246 +1,496 @@
-.introduce-big-box {
+@media only screen and (min-width: 600px) {
+  .introduce-big-box {
     display: block;
-    width : 100%;
-    height : 80vh;
+    width: 100%;
+    height: 80vh;
     background-color: white;
-}
-.introduce-top-box {
+  }
+  .introduce-top-box {
     display: flex;
     height: 80%;
     width: 100%;
-}
+  }
 
-.left-big-box {
-    float : left;
+  .left-big-box {
+    float: left;
     width: 50%;
     height: 100%;
     margin-top: 3%;
-}
+  }
 
-.left-first-box {
-    height : 50%;
+  .left-first-box {
+    height: 50%;
     width: 63%;
     margin: 2% 2% 2% 2%;
     margin-left: 35%;
-}
+  }
 
-.left-first-box-img-form {
+  .left-first-box-img-form {
     width: 100%;
     height: 65%;
     display: flex;
     align-items: center;
     justify-content: center;
-}
+  }
 
-.left-first-box-img-content {
+  .left-first-box-img-content {
     width: 30%;
     height: 70%;
     margin-left: 5%;
-}
+  }
 
-.left-first-box-text {
+  .left-first-box-text {
     width: 100%;
     height: 30%;
     display: flex;
     align-items: center;
     justify-content: center;
-}
+  }
 
-.left-first-box img {
+  .left-first-box img {
     width: 100%;
     height: 100%;
- }
-.left-first-box h3 {
-   font-size: 1.2vw;
+  }
+  .left-first-box h3 {
+    font-size: 1.2vw;
     color: rgba(1, 1, 1, 0.4);
-}
+  }
 
-.left-second-box {
-    height : 50%;
+  .left-second-box {
+    height: 50%;
     width: 63%;
 
     margin: 2% 2% 2% 2%;
     margin-left: 35%;
+  }
 
-}
-
-.right-big-box {
-    float :right;
+  .right-big-box {
+    float: right;
     width: 50%;
     height: 100%;
+  }
 
-}
-
-.hello-box  p{
+  .hello-box p {
     font-size: 1.7vh;
-    color:gray;
-}
+    color: gray;
+  }
 
-.hello-box {
+  .hello-box {
     margin: 5% 5% 5% 5%;
     margin-top: 11vh;
+  }
 
-}
-
-.front-end-box {
+  .front-end-box {
     height: 50%;
-}
+  }
 
-.front-end-box-title-form {
+  .front-end-box-title-form {
     width: 100%;
     height: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+  }
 
-.front-end-box-title {
+  .front-end-box-title {
     width: 58%;
     height: 100%;
-}
+  }
 
-.front-end-box-icon-form {
+  .front-end-box-icon-form {
     width: 100%;
-    height: 75%;   
+    height: 75%;
 
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.front-end-box-icon {
+  }
+  .front-end-box-icon {
     width: 60%;
     height: 100%;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
+  }
 
-.back-end-box-icon {
+  .back-end-box-icon {
     width: 70%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
+  }
 
-.nodejs-icon-wrap {
+  .nodejs-icon-wrap {
     width: 10%;
     height: 40%;
-}
+  }
 
-.mysql-icon-wrap {
+  .mysql-icon-wrap {
     width: 30%;
     height: 35%;
-}
+  }
 
-.express-icon-wrap {
+  .express-icon-wrap {
     width: 30%;
     height: 30%;
-}
+  }
 
-.front-end-box-icon-wrap {
+  .front-end-box-icon-wrap {
     width: 15%;
     height: 40%;
-}
-.back-end-box-img {
+  }
+  .back-end-box-img {
     width: 90%;
     height: 90%;
-}
+  }
 
-.front-end-box-icon-wrap img {
+  .front-end-box-icon-wrap img {
     width: 90%;
     height: 100%;
-}
+  }
 
-.react-icon {
+  .react-icon {
     width: 90%;
     height: 90%;
-}
+  }
 
-.front-end-box  ul{
+  .front-end-box ul {
     font-size: 1.3vw;
-}
-.back-end-box {
+  }
+  .back-end-box {
     /* border: rgb(234, 0, 255) 5px solid; */
     height: 50%;
-}
+  }
 
-.back-end-box  ul{
+  .back-end-box ul {
     font-size: 1.2rem;
-}
-.back-end-box img {
-    margin : 5px 5px 5px 5px;
+  }
+  .back-end-box img {
+    margin: 5px 5px 5px 5px;
     margin-right: 50px;
     margin-bottom: 20px;
-}
+  }
 
-.introduce-bottom-box{
+  .introduce-bottom-box {
     display: flex;
     width: 78%;
     height: 15%;
     margin-left: 22%;
     margin-top: 5%;
-}
+  }
 
-
-.introduce-bottom-left {
+  .introduce-bottom-left {
     width: 40%;
     height: 90%;
     margin-top: 10%;
-}
+  }
 
-.introduce-bottom-img-form {
+  .introduce-bottom-img-form {
     width: 100%;
     display: flex;
     height: 50%;
     align-items: center;
-}
+  }
 
-.introduce-bottom-box .culcha{
+  .introduce-bottom-box .culcha {
     font-size: 2.5vh;
     color: gray;
-}
-.where-is-from{
+  }
+  .where-is-from {
     margin-top: 2%;
     margin-bottom: 2%;
-    color: gray ;
+    color: gray;
     font-size: 2vh;
-}
+  }
 
-
-.refribank-img-form img {
+  .refribank-img-form img {
     margin-top: 10vh;
     width: 8vw;
     height: 8vh;
-}
+  }
 
-.project-img-form img {
+  .project-img-form img {
     margin-top: 10vh;
     width: 12vw;
     margin-left: 3vw;
     height: 8vh;
-}
+  }
 
-
-.introduce-bottom-right {
+  .introduce-bottom-right {
     width: 60%;
     height: 90%;
     margin-top: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
-}
+  }
 
-.introduce-bottom-button-form {
+  .introduce-bottom-button-form {
     width: 80%;
     height: 80%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-}
- .introduce-bottom-right-btn {
-     border: 0;
-     padding: 0;
-     margin: 0;
   }
+  .introduce-bottom-right-btn {
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2 */
+
+@media only screen and (max-width: 600px) {
+  .introduce-big-box {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+  }
+  .introduce-top-box {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
+  .left-big-box {
+    /* float: ; */
+    width: 100%;
+    height: 95%;
+    margin-top: 5%;
+  }
+
+  .left-first-box {
+    height: 100%;
+    width: 100%;
+    /* margin: 2% 2% 2% 2%; */
+    /* margin-left: 35%; */
+  }
+
+  .left-first-box-img-form {
+    width: 100%;
+    height: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left-first-box-img-content {
+    width: 30%;
+    height: 70%;
+    margin-left: 5%;
+  }
+
+  .left-first-box-text {
+    width: 100%;
+    height: 30%;
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left-first-box img {
+    width: 100%;
+    height: 100%;
+  }
+  .left-first-box h3 {
+    font-size: 1.2vw;
+    color: rgba(1, 1, 1, 0.4);
+  }
+
+  .left-second-box {
+    height: 90%;
+    margin-top: 10%;
+    width: 100%;
+
+    /* margin: 2% 2% 2% 2%;
+    margin-left: 35%; */
+  }
+
+  .right-big-box {
+    /* float: right; */
+    width: 100%;
+    height: 100%;
+  }
+
+  .hello-box p {
+    font-size: 1.7vh;
+    color: gray;
+  }
+
+  .hello-box {
+    margin: 5% 5% 5% 5%;
+    margin-top: 11vh;
+  }
+
+  .front-end-box {
+    height: 100%;
+  }
+
+  .front-end-box-title-form {
+    width: 100%;
+    height: 25%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .front-end-box-title {
+    width: 58%;
+    height: 100%;
+  }
+
+  .front-end-box-icon-form {
+    width: 100%;
+    height: 75%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .front-end-box-icon {
+    width: 60%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .back-end-box-icon {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nodejs-icon-wrap {
+    width: 10%;
+    height: 40%;
+  }
+
+  .mysql-icon-wrap {
+    width: 30%;
+    height: 35%;
+  }
+
+  .express-icon-wrap {
+    width: 30%;
+    height: 30%;
+  }
+
+  .front-end-box-icon-wrap {
+    width: 15%;
+    height: 40%;
+  }
+  .back-end-box-img {
+    width: 90%;
+    height: 90%;
+  }
+
+  .front-end-box-icon-wrap img {
+    width: 90%;
+    height: 100%;
+  }
+
+  .react-icon {
+    width: 90%;
+    height: 90%;
+  }
+
+  .front-end-box ul {
+    font-size: 1.3vw;
+  }
+  .back-end-box {
+    /* border: rgb(234, 0, 255) 5px solid; */
+    height: 50%;
+  }
+
+  .back-end-box ul {
+    font-size: 1.2rem;
+  }
+  .back-end-box img {
+    margin: 5px 5px 5px 5px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+  }
+
+  .introduce-bottom-box {
+    display: flex;
+    width: 100%;
+    height: 15%;
+    /* margin-left: 5%; */
+    margin-top: 100px;
+    border-top: gray 2px solid;
+  }
+
+  .introduce-bottom-left {
+    width: 80%;
+    height: 90%;
+    margin-top: 10%;
+    margin: 5% 5% 5% 5%;
+  }
+
+  .introduce-bottom-img-form {
+    width: 100%;
+    display: flex;
+    height: 50%;
+    /* align-items: center; */
+  }
+
+  .introduce-bottom-box .culcha {
+    font-size: 2.5vh;
+    color: gray;
+    /* margin-top: 50px; */
+  }
+  .where-is-from {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    color: gray;
+    font-size: 2vh;
+  }
+
+  .refribank-img-form img {
+    margin-top: 10vh;
+    width: 120px;
+    height: 8vh;
+  }
+
+  .project-img-form img {
+    margin-top: 10vh;
+    width: 150px;
+    margin-left: 50px;
+    height: 8vh;
+  }
+
+  .introduce-bottom-right {
+    display: none;
+    /* width: 20%;
+    height: 90%;
+    margin-top: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center; */
+  }
+
+  .introduce-bottom-button-form {
+    width: 40%;
+    height: 40%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .introduce-bottom-right-btn {
+    width: 30px;
+    height: 30px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+}

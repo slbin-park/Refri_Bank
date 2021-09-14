@@ -71,7 +71,7 @@ const Login = ({ setinformation, history, setpage }) => {
               className="login-wait-id"
               name="id"
               type="text"
-              placeholder="Id"
+              placeholder="ID"
               onChange={(e) => setlogintext({ ...logintext, id: e.target.value })}
             />
             <input

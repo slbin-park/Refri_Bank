@@ -71,7 +71,12 @@ function App({ history, information }) {
   const Func_show_ingredient = () => {
     return (
       <div className="rfg-body-form" style={toggle === true ? { height: '80vh' } : { height: '0vh' }}>
-        <Func_filter_find_ingredient get_rcp_rfg={get_rcp_rfg} information={information} result_box_list={result_box_list} setresult_box_list={setresult_box_list}></Func_filter_find_ingredient>
+        <Func_filter_find_ingredient
+          get_rcp_rfg={get_rcp_rfg}
+          information={information}
+          result_box_list={result_box_list}
+          setresult_box_list={setresult_box_list}
+        ></Func_filter_find_ingredient>
       </div>
     );
   };
@@ -83,7 +88,12 @@ function App({ history, information }) {
         <p> 재료 관리 서비스를 마음껏 이용해 보세요! </p>
       </div>
       <div className="rfg-form">
-        <div className="rfg-select-btn" onClick={() => {settoggle(!toggle);}}>
+        <div
+          className="rfg-select-btn"
+          onClick={() => {
+            settoggle(!toggle);
+          }}
+        >
           <div className="ingredient-toggle-btn">{toggle ? '그만 담고 검색하기' : '내 냉장고에 재료 추가하기'}</div>
         </div>
         {Func_show_ingredient()}
@@ -95,7 +105,17 @@ function App({ history, information }) {
         <Footer ftable={thumb_table} history={history} page_slice={page_slice} aside_check={false} />
       </div>
       <div className="move-footer-form">
-        <div style={{ width: '100%', height: '80%', display: 'flex', 'margin-top': '3%', 'margin-bottom': '3%', 'justify-content': 'center', 'align-items': 'center' }}>
+        <div
+          style={{
+            width: '100%',
+            height: '80%',
+            display: 'flex',
+            'margin-top': '3%',
+            'margin-bottom': '3%',
+            'justify-content': 'center',
+            'align-items': 'center',
+          }}
+        >
           <div className="like_select_num_btn_form">{ftable_cnt && <Footer_bottom set_page_slice={set_page_slice} ftable_cnt={ftable_cnt} />}</div>
         </div>
       </div>
