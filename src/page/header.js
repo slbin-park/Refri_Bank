@@ -6,21 +6,20 @@ import show_logo from '../img/main_body_img/logo_img_good.png';
 import show_rgfimg from '../img/main_body_img/rfgimg2.png';
 import login_btn from '../img/main_body_img/login_btn.jpeg';
 import logout_btn from '../img/main_body_img/logout_btn.jpeg';
-
+import Hamburger from '../components/mypage/hamburger';
 // 이미지 파일
 
 import Axios from 'axios';
 
+
+
 const Header = ({ location, information, setinformation, history, page, setpage }) => {
   // 함수가 아니고 컴포넌트 처음 시작은 무조건 대문자
-  const [hbg, sethbg] = useState(false)
+  const [hbg, sethbg] = useState(false);
+  const [pagetoggle, setpagetoggle] = useState(false);
   const [nickname, setnickname] = useState(information && information.nickname);
   const [where_category, setwhere_category] = useState('default');
-
-
-  // /my_write
-  // /my_igd
-  // /like
+  
 
   useEffect(() => {
     let token = window.localStorage.getItem('token');
@@ -68,6 +67,14 @@ const Header = ({ location, information, setinformation, history, page, setpage 
 
   //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
+
+  function hamburger_toggle() {
+    const sidebarBtn = document.querySelector(".header-hbg-btn"),
+      sidebarBox = document.querySelector(".mobiel-header-bottom-box");
+      sidebarBox.classList.toggle('hamburger_active');
+      sidebarBtn.classList.toggle('active');
+  }
+
   const move_home = () => {
     //홈으로 돌아가기
     if (location['pathname'] !== '/') {
@@ -80,36 +87,48 @@ const Header = ({ location, information, setinformation, history, page, setpage 
 
   const move_myrfg = (e) => {
     // 나만의 냉장고페이지
+    hamburger_toggle();
     history.push('/rfgpage');
   };
   const move_profile = (e) => {
     // 개발자 프로필
+    hamburger_toggle();
     history.push('/profile');
   };
   const move_introduce = (e) => {
     // 웹 소개 페이지
+    hamburger_toggle();
     history.push('/introduce');
   };
   const move_noticepage = (e) => {
     // 커뮤니티 페이지
+    hamburger_toggle();
     history.push('/noticepage');
   };
   const move_secret = (e) => {
     // 시크릿 페이지
+    hamburger_toggle();
     Alert('Page', '준비중인 페이지입니다.');
+  };
+  const select_page = (e) => {
+    // 시크릿 페이지
+    hamburger_toggle();
   };
 
   //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
   const move_like = (e) => {
+    hamburger_toggle();
     history.push('/like');
   };
 
   const move_my_igd = (e) => {
+    hamburger_toggle();
     history.push('/my_igd');
   };
 
   const move_my_write = (e) => {
+    hamburger_toggle();
     history.push('/my_write');
   };
 
@@ -118,6 +137,7 @@ const Header = ({ location, information, setinformation, history, page, setpage 
   const move_loginpage = (e) => {
     //  로그인 페이지
     history.push('/login');
+    hamburger_toggle();
   };
 
   const move_logout = (e) => {
@@ -125,17 +145,21 @@ const Header = ({ location, information, setinformation, history, page, setpage 
     window.localStorage.clear();
     setinformation();
     setpage(false);
+    hamburger_toggle();
     history.push('/');
   };
+
 
   return (
     <>
       {/* 이거 컴포넌트 나눠서 해줘요 */}
       <div className="header-form">
         <div className="header-top-box">
-          <div className="header-null-form">
-            <div onClick={() => sethbg(!hbg)} className="header-null-form">
-              햄버거
+          <div onClick={() => hamburger_toggle()} className="header-null-form">
+            <div className="header-hbg-btn">
+              <div className='header-hbg-btn-top'></div>
+              <div className='header-hbg-btn-middle'></div>
+              <div className='header-hbg-btn-bottom'></div>
             </div>
           </div>
           <div className="header-logo-main-form">
@@ -150,7 +174,6 @@ const Header = ({ location, information, setinformation, history, page, setpage 
               <>
                 <div className="login-wait-form">
                   <button className="login-move-loginpage-btn" onClick={() => move_loginpage()}>
-                    <img src={login_btn} className="login-move-loginpage-img"></img>
                     <p className="login-move-loginpage-text">로그인</p>
                   </button>
                 </div>
@@ -170,7 +193,6 @@ const Header = ({ location, information, setinformation, history, page, setpage 
 
                 <div className="header-logout-btn">
                   <button className="logout-move-mainpage-btn" onClick={(e) => move_logout()}>
-                    <img align="center" src={login_btn} />
                     <p className="logout-move-mainpage-btn-text">로그아웃</p>
                   </button>
                 </div>
@@ -247,36 +269,55 @@ const Header = ({ location, information, setinformation, history, page, setpage 
             </button>
           </div>
         </div>
-        {hbg ? <div className="mobiel-header-bottom-box" >
-          <div>
+        <div className="mobiel-header-bottom-box" >
+          <div className="header-bottom-box-items">
             <button className="header-category-btn" onClick={() => move_introduce()} id="header-category-button1">Introduce</button>
           </div>
-          <div>
-
+          <div className="header-bottom-box-items">
             <button className="header-category-btn" onClick={move_profile} id="header-category-button4">Profile</button>
           </div>
-          <div>
-
+          <div className="header-bottom-box-items">
             <button className="header-category-btn" id="header-category-button2" onClick={move_noticepage}>Board</button>
           </div>
-          <div>
+          <div className="header-bottom-box-items">
             <button className="header-category-btn" id="header-category-button3" onClick={move_secret}>Secret</button>
           </div>
-          <div className="page_box">
-            <button className="header-category-btn" id="header-category-button5">Page
-                            <div className="header-category-btn-mypage-div">
+          <div className="page_box header-bottom-box-items">
+            <button className="header-category-btn" id="header-category-button5" onClick={()=>setpagetoggle(!pagetoggle)}>Page</button>
+            {pagetoggle ? 
+              <div className="header-category-btn-mypage-div">
                 <ul className="header-category-btn-mypage-ul">
                   <li className="header-category-btn-mypage-li" onClick={move_my_igd}>재료 관리</li>
                   <li className="header-category-btn-mypage-li" onClick={move_like}>좋아요한 레시피</li>
                   <li className="header-category-btn-mypage-li" onClick={move_my_write}>내가 작성한 게시글</li>
                 </ul>
-              </div>
-            </button>
+              </div> 
+              : ""
+            }
+            
           </div>
-        </div> : ''}
+          <div className="header-bottom-box-items"> 
+            {page != true ? (
+              <>
+                  <button className="header-category-btn" onClick={() => move_loginpage()}>
+                    Login
+                  </button>
+              </>
+              ) : (
+                  <button className="header-category-btn" onClick={(e) => move_logout()}>
+                    Logout
+                  </button>
+            )}
+
+          </div>
+          
+        </div>
       </div>
     </>
   );
 };
+
+
+
 
 export default Header;
