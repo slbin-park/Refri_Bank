@@ -3,18 +3,15 @@
   font-family: 'neon';
   src: url('../../Jalnan.ttf') format('truetype');
 }
+
+@media all and (max-width: 600px) {
 .notice-form {
-  width: 80%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   background-color: white;
-  margin-left: 10%;
-  margin-right: 10%;
-  /* margin-top: 5%; */
   margin-bottom: 10%;
-
-  /* border: 5px red solid ; */
 }
 
 .subcontent-form {
@@ -24,10 +21,7 @@
   justify-content: center;
   width: 100%;
   height: 60%;
-  /* padding-top: 7%; */
   background-color: white;
-
-  /* border: 5px blue solid ; */
 }
 
 .notice-nav-flex-form {
@@ -37,27 +31,22 @@
 }
 
 .notice-nav-form {
-  width: 800px;
+  width: 95%;
   height: 100%;
   margin-left: 10%;
   margin-right: 10%;
   display: flex;
-  /* position: relative; 추후 박스 하단에 추가 버튼을 위치시키기 위한 설정 */
   background: white;
-
-  border-bottom: 4px gray solid;
+  border-bottom: 3px gray solid;
 }
 
 .maincontent-form {
   width: 100%;
   height: 50%;
-
   display: flex;
   background: white;
   flex-direction: column;
   align-items: center;
-
-  /* border: 5px green solid ; */
 }
 
 .notice-box {
@@ -108,10 +97,10 @@
 }
 
 .noticeboard-select-btn {
-  width: 10%;
-  height: 4vh;
+  width: 70px;
+  height: 20px;
   display: flex;
-  font-size: 0.9rem;
+  font-size: 8px;
   align-items: center;
   /* margin-bottom: 1%; */
   justify-content: center;
@@ -121,13 +110,11 @@
 }
 
 .freeboard-select-btn {
-  /* background-color: rgb(221, 218, 215); */
-  width: 20%;
-  height: 4vh;
+  width: 70px;
+  height: 20px;
   display: flex;
   text-align: center;
-  font-size: 0.9rem;
-
+  font-size: 8px;
   align-items: center;
   justify-content: center;
   /* margin-bottom: 1%; */
@@ -237,30 +224,15 @@
 }
 
 .move_writeform_btn {
-  /* align-content: center; */
-  width: 800px;
-  /* margin-left: 5%; */
-  height: 50px;
-  /* margin-top: 25px;
-  margin-left: 15%; */
-  /* margin-right: 25%; */
-  /* margin-left: 10%; */
-  /* display: flex; */
-  /* text-align: center; */
-  /* align-items: center; */
-  /* justify-content: center; */
+  width: 90%;
+  height: 30px;
   background-color: white;
   border-radius: 20px;
-
-  font-size: 1.3vw;
+  font-size: 10px;
   border: none;
   background: #e6e6e6;
-
-  /* vertical-align: middle; */
-  /* text-align: center; */
   cursor: pointer;
   color: #666666;
-  /* border-radius: 20px; */
 }
 
 .move_writeform_btn:hover {
@@ -270,18 +242,11 @@
 
 .topcontent-form {
   /* border: 5px blueviolet solid; */
-  height: 15%;
+  height: 5%;
   margin: 3%;
 }
-
-.topcontent-form p {
-  font-size: 20px;
-  text-align: center;
-  margin-top: 2%;
-  margin-bottom: 1%;
-}
 .topcontent-form h1 {
-  font-size: 40px;
+  font-size: 20px;
   text-align: center;
   /* margin-top: 3%; */
   margin-bottom: 1%;
@@ -289,13 +254,22 @@
   font-family: 'neon';
 }
 
+.topcontent-form p {
+  font-size: 10px;
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+
 .middle-content-form {
-  height: 80px;
+  height: 40px;
+  width:80%;
   border: gray 2px solid;
   display: flex;
-  width: 600px;
-  margin-left: 10%;
-  margin-right: 10%;
+  /* width: 600px; */
+  margin-left: 5%;
+  margin-right: 5%;
   margin-bottom: 5%;
 
   border-radius: 20px;
@@ -307,20 +281,8 @@
   align-items: center;
 }
 
-/* .middle-content-form-left{
-    width: 50%;
-    height: 100%;
-    /* border: skyblue 5px solid; 
-    display: flex;
-    margin: 2%;
-    font-size: 20px;
-} */
-
 .middle-content-form-right {
   align-items: center;
-
-  /* border-left: 2px black solid; */
-
   width: 100%;
   height: 100%;
   /* border: darkblue solid; */
@@ -343,57 +305,47 @@
   padding: 0;
 }
 .right-img-box img {
-  /* text-align: center; */
   width: 50%;
-  /* margin-left: 50%; */
   height: 50%;
-  /* margin: 10%; */
 }
+
 .right-text-box {
   width: 50%;
   text-align: center;
 }
+
 .right-btn-box {
+  display: flex;
+  justify-content: center;
   width: 30%;
+  height: 18px;
   text-align: center;
-
-  /* margin-left: 10px; */
-
-  /* align-items: center;
-  justify-content: center; */
+  
 }
+
 .send-btn {
-  /* margin-top: 35px; */
-  /* margin-bottom: 20px; */
-  width: 65%;
-  height: 5vh;
+  /* height: ; */
   border-radius: 20px;
   color: white;
   background-color: #404552;
   cursor: pointer;
-
-  /* align-items: center;
-  justify-content: center; */
+  font-size: 1px;
 }
 
 .right-text-box h3 {
-  /* margin-top: 3%; */
-  font-size: 2.5vh;
-  /* margin-top: 25px;
-    margin-bottom: 5px; */
+  font-size: 1px;
   color: #4d4d4d;
 }
 
 .right-text-box p {
-  font-size: 1.8vh;
-  /* margin-bottom: 20px; */
+  font-size: 0px; 
 }
 
 .search_box {
   display: flex;
   width: 20%;
-  /* margin-top: 20px; */
 }
+
 .search {
   width: 100%;
   height: 60%;
@@ -409,3 +361,411 @@
     /* align-items: center; */
     margin-top: 1%;
 }
+}
+
+@media all and (min-width: 600px) {
+  .notice-form {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin-left: 10%;
+    margin-right: 10%;
+    /* margin-top: 5%; */
+    margin-bottom: 10%;
+  
+    /* border: 5px red solid ; */
+  }
+  
+  .subcontent-form {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60%;
+    /* padding-top: 7%; */
+    background-color: white;
+  
+    /* border: 5px blue solid ; */
+  }
+  
+  .notice-nav-flex-form {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+  }
+  
+  .notice-nav-form {
+    width: 800px;
+    height: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    /* position: relative; 추후 박스 하단에 추가 버튼을 위치시키기 위한 설정 */
+    background: white;
+  
+    border-bottom: 4px gray solid;
+  }
+  
+  .maincontent-form {
+    width: 100%;
+    height: 50%;
+  
+    display: flex;
+    background: white;
+    flex-direction: column;
+    align-items: center;
+  
+    /* border: 5px green solid ; */
+  }
+  
+  .notice-box {
+    width: 800px;
+    margin-top: 10px;
+  }
+  
+  .notice-head {
+    width: 100%;
+    height: 50px;
+    /* padding-top: 48px;
+      padding-left: 32px;
+      padding-right: 32px;
+      padding-bottom: 24px; */
+    border-bottom: 1px solid #535558;
+  }
+  
+  .notice_img_box {
+    position: relative;
+  }
+  
+  .community {
+    position: absolute;
+    left: 37%;
+    transform: translateX(-50%);
+    font-size: 33px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Lobster', cursive;
+  }
+  
+  .notice-nav {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    /* margin: 10px; */
+  }
+  .notice-nav div {
+    /* width: 10%; */
+    /* height: 100%; */
+    margin-right: 2%;
+    margin-bottom: 2%;
+    border: 1px rgba(1, 1, 1, 0.5) solid;
+    border-radius: 20px;
+    /* font-size: 1rem; */
+    /* display:inline-block; */
+    /* float: right; */
+  }
+  
+  .noticeboard-select-btn {
+    width: 10%;
+    height: 4vh;
+    display: flex;
+    font-size: 0.9rem;
+    align-items: center;
+    /* margin-bottom: 1%; */
+    justify-content: center;
+    cursor: pointer;
+    /* padding: 1%; */
+    /* transition:all 0.9s, color 0.3; */
+  }
+  
+  .freeboard-select-btn {
+    /* background-color: rgb(221, 218, 215); */
+    width: 20%;
+    height: 4vh;
+    display: flex;
+    text-align: center;
+    font-size: 0.9rem;
+  
+    align-items: center;
+    justify-content: center;
+    /* margin-bottom: 1%; */
+    cursor: pointer;
+    /* padding: 1%; */
+  }
+  
+  .selectedboard-btn {
+    background-color: rgba(1, 1, 1, 0.2);
+    color: rgba(1, 1, 1, 0.75);
+    border: 1px solid gray;
+  }
+  
+  .main-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .notice_content_header {
+    display: flex;
+  
+    height: 70px;
+  
+    border-bottom: 3px solid #babcbf;
+    align-items: center;
+  }
+  
+  .notice_each_content {
+    display: flex;
+  
+    height: 70px;
+  
+    border-bottom: 1px solid #babcbf;
+    align-items: center;
+  }
+  
+  .notice_no {
+    width: 10%;
+    text-align: center;
+  }
+  
+  .notice_title_a {
+    width: 70%;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .notice_title {
+    width: 70%;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .notice_title:hover {
+    text-decoration: underline;
+  }
+  
+  .notice_day {
+    width: 20%;
+    text-align: center;
+  }
+  
+  .allcontent-block {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 1%;
+  
+    overflow: scroll;
+    overflow: auto;
+  }
+  
+  .modal {
+    box-shadow: rgba(0, 0, 0, 0.5) 0 0 0 9999px;
+    z-index: 1;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    /* height: 70%; */
+    background-color: white;
+  }
+  
+  .closebtnbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transform: rotate(720deg);
+    margin-bottom: 5%;
+    position: absolute;
+    right: 15px;
+    /* transform:translateX(-50%); */
+    top: 15px;
+    /* transform:translateY(-50%); */
+  }
+  
+  .closebtn {
+    transition: all ease 1s;
+  }
+  
+  .closebtn:hover {
+    transform: rotate(360deg);
+  }
+  
+  .move_writeform_btn {
+    /* align-content: center; */
+    width: 800px;
+    /* margin-left: 5%; */
+    height: 50px;
+    /* margin-top: 25px;
+    margin-left: 15%; */
+    /* margin-right: 25%; */
+    /* margin-left: 10%; */
+    /* display: flex; */
+    /* text-align: center; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    background-color: white;
+    border-radius: 20px;
+  
+    font-size: 1.3vw;
+    border: none;
+    background: #e6e6e6;
+  
+    /* vertical-align: middle; */
+    /* text-align: center; */
+    cursor: pointer;
+    color: #666666;
+    /* border-radius: 20px; */
+  }
+  
+  .move_writeform_btn:hover {
+    background-color: #fbb03b;
+    color: white;
+  }
+  
+  .topcontent-form {
+    /* border: 5px blueviolet solid; */
+    height: 15%;
+    margin: 3%;
+  }
+  
+  .topcontent-form p {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 1%;
+  }
+  .topcontent-form h1 {
+    font-size: 40px;
+    text-align: center;
+    /* margin-top: 3%; */
+    margin-bottom: 1%;
+  
+    font-family: 'neon';
+  }
+  
+  .middle-content-form {
+    height: 80px;
+    border: gray 2px solid;
+    display: flex;
+    width: 600px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+  
+    border-radius: 20px;
+  }
+  
+  .middle-flex-form {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* .middle-content-form-left{
+      width: 50%;
+      height: 100%;
+      /* border: skyblue 5px solid; 
+      display: flex;
+      margin: 2%;
+      font-size: 20px;
+  } */
+  
+  .middle-content-form-right {
+    align-items: center;
+  
+    /* border-left: 2px black solid; */
+  
+    width: 100%;
+    height: 100%;
+    /* border: darkblue solid; */
+    display: flex;
+    /* margin: 2%; */
+    /* padding-left: 15%; */
+    font-size: 20px;
+    display: flex;
+  }
+  
+  .right-img-box {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+    justify-content: center;
+    /* text-align: center; */
+    /* margin-right: 10px; */
+    /* margin: 20px; */
+    padding: 0;
+  }
+  .right-img-box img {
+    /* text-align: center; */
+    width: 50%;
+    /* margin-left: 50%; */
+    height: 50%;
+    /* margin: 10%; */
+  }
+  .right-text-box {
+    width: 50%;
+    text-align: center;
+  }
+  .right-btn-box {
+    width: 30%;
+    text-align: center;
+  
+    /* margin-left: 10px; */
+  
+    /* align-items: center;
+    justify-content: center; */
+  }
+  .send-btn {
+    /* margin-top: 35px; */
+    /* margin-bottom: 20px; */
+    width: 65%;
+    height: 5vh;
+    border-radius: 20px;
+    color: white;
+    background-color: #404552;
+    cursor: pointer;
+  
+    /* align-items: center;
+    justify-content: center; */
+  }
+  
+  .right-text-box h3 {
+    font-size: 2.5vh;
+    margin-bottom: 5px;
+    color: #4d4d4d;
+  }
+  
+  .right-text-box p {
+    font-size: 10px;
+    /* margin-bottom: 20px; */
+  }
+  
+  .search_box {
+    display: flex;
+    width: 20%;
+    /* margin-top: 20px; */
+  }
+  .search {
+    width: 100%;
+    height: 60%;
+    /* margin-bottom: 40%; */
+    /* height: 30px; */
+    border-radius: 20px;
+    border: 1px gray solid;
+  }
+  
+  .write_board{
+    display: flex;
+      justify-content: center;
+      /* align-items: center; */
+      margin-top: 1%;
+  }
+  }

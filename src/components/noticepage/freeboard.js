@@ -66,9 +66,9 @@ function Func_freeboard_show_freeboard({ setModalOn, set_get_free_number, inform
                                     </div>
                                     <div className="reaction-box">
                                         <img src={heart_img} width="20px" height="20px" style={{ 'margin-right': '5px' }} />
-                                        <span style={{ 'margin-right': '15px', 'font-size': '20px' }}>{likeit}</span>
+                                        <span style={{ 'margin-right': '15px'}}>{likeit}</span>
                                         <img src={comment_img} width="20px" height="20px" style={{ 'margin-right': '5px' }} />
-                                        <span style={{ 'font-size': '20px' }}>{count}</span>
+                                        <span>{count}</span>
                                         {information != undefined ? id == information.id || information.id == 'smpts00' ? <button onClick={(e) => Func_this_delete_content(e, number)}>게시글 삭제</button> : '' : ''}
                                     </div>
                                 </div>
