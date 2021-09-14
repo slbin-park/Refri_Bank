@@ -68,7 +68,7 @@ function Idgmanage({ information }) {
         <div className="igd_body_color">
           <div className="igd_body_div">
             <div className="igd_left_box">
-              <div style={{ padding: '2vh' }}>
+              <div className='igd_left_in_box' >
                 {/* 위에2개 시작 */}
                 <div className="igd_box_left_top_1">
                   <div className="igd_box_1_cover">
@@ -170,7 +170,7 @@ function Idgmanage({ information }) {
               {/* 위에2개 시작 */}
               <div>
                 {/* 위에2개 시작 */}
-                <div style={{ padding: '2vh' }}>
+                <div className='igd_left_in_box'>
                   <div className="igd_box_left_top_1">
                     <div className="igd_box_1_cover">
                       <div className="igd_box_1">
@@ -214,7 +214,7 @@ function Idgmanage({ information }) {
                 {/* 위에2개 끝 */}
 
                 {/* 위에2개 시작 */}
-                <div style={{ padding: '2vh' }}>
+                <div className='igd_left_in_box'>
                   <div className="igd_box_left_top_1">
                     <div className="igd_box_1_cover">
                       <div className="igd_box_1">
@@ -313,7 +313,7 @@ function Idgmanage({ information }) {
                 </div>
               </div>
               {/* 오른쪽 첫번째 끝 */} {/* 오른쪽 첫번째 끝 */}
-              <div className="igd_box_right_top_1" style={{ 'padding-bottom': '3vh', 'padding-top': '4vh' }}>
+              <div className="igd_box_right_top_1" >
                 <div className="igd_box_2_all">
                   <div className="igd_box_2">
                     <div className="igd_box_top1_img">
