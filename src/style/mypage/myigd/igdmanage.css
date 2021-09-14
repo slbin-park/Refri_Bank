@@ -9,21 +9,22 @@
     flex: 10;
     height: 100vh;
     /* background-color: transparent; */
-    padding: 2%;
+
     padding-top: 3%;
+}
+.igd_left_in_box{
+    
 }
 
 .igd_content_div{
     text-align: center;
-    padding : 3%;
-    height: 70vh;
-    padding-top: 2%;
-    border-radius: 4vh;
+    padding-top: 20px;
+
 }
 
 .igd_header_title_form {
     font-weight: 700;
-    font-size: 4vw;
+    font-size: 25px;
     width: 100%;
     height: 50%;
     display: flex;
@@ -37,7 +38,7 @@
     display: flex;
     justify-content: center;
     font-weight: 400;
-    font-size: 1vw;
+    font-size: 13px;
     width: 100%;
     height: 50%;
     margin-top: 1%;
@@ -52,11 +53,8 @@
 }
 
 .igd_body_color{
-    border-radius: 4vh;
-
-    background-color: rgb(223, 239, 250);
     height: 100%;
-    border: 3px solid black;
+
 }
 
 .igd_img_div{
@@ -85,8 +83,8 @@
 }
 
 .igd_box_left_top_1{
-    height: 12vh;
     display: flex;
+
     align-content: center;
     align-items: center;
 }
@@ -94,9 +92,6 @@
 .igd_box_1{
     width: 40%;
     height: 90%;
-    border-radius: 3vh;
-    background-color: rgb(171, 228, 248);;
-    border: 3px solid black;
 }
 
 .igd_box_1_content{
@@ -113,8 +108,8 @@
 }
 
 .igd_box_img{
-    width: 4vw;
-    height: 3vh;
+    width: 52.98px;
+    height: 52.98px;
     margin-bottom: 8px
 }
 
@@ -123,8 +118,6 @@
 }
 
 .igd_box_right_top_1{
-    height: 18vh;
-    padding: 2vh;
     /* margin-left: 2.5vh;
     margin-right: 2.5vh; */
 }
@@ -136,10 +129,9 @@
 
 .igd_box_2{
     height: 100%;
-    border-radius: 4vh;
-    background-color: rgb(171, 228, 248);
-    border: 3px solid black;
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .igd_box_2_content{
@@ -160,11 +152,13 @@
 
 .igd_box_1_cover{
     display: flex;
+    flex-direction: column;
     width: 92%;
     height: 100%;
     justify-content: space-between;
     padding-left: 4%;
     padding-right: 4%;
+    align-items: center;
 }
 }
 
@@ -177,6 +171,9 @@
     /* background-color: transparent; */
     padding: 2%;
     padding-top: 3%;
+}
+.igd_left_in_box{
+    padding: 2vh;
 }
 
 
@@ -302,6 +299,8 @@
     padding: 2vh;
     margin-left: 2.5vh;
     margin-right: 2.5vh;
+    padding-bottom: 3vh;
+    padding-top: 4vh ;
 }
 
 
@@ -333,6 +332,7 @@
     /* font-family: 'neon'; */
 }
 .igd_box_1_cover{
+    
     display: flex;
     width: 92%;
     height: 100%;
