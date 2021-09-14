@@ -13,10 +13,9 @@ import Axios from 'axios';
 
 const Header = ({ location, information, setinformation, history, page, setpage }) => {
   // 함수가 아니고 컴포넌트 처음 시작은 무조건 대문자
-  const [hbg, sethbg] = useState(false)
+  const [hbg, sethbg] = useState(false);
   const [nickname, setnickname] = useState(information && information.nickname);
   const [where_category, setwhere_category] = useState('default');
-
 
   // /my_write
   // /my_igd
@@ -26,10 +25,9 @@ const Header = ({ location, information, setinformation, history, page, setpage 
     let token = window.localStorage.getItem('token');
     if (token != undefined) {
       token_check();
-    }
-    else if (location['pathname'] == '/my_write' || location['pathname'] == '/my_igd' || location['pathname'] == '/like') {
-      Alert('마이페이지', '로그인 후에 이용하실수있습니다.')
-      history.push('/')
+    } else if (location['pathname'] == '/my_write' || location['pathname'] == '/my_igd' || location['pathname'] == '/like') {
+      Alert('마이페이지', '로그인 후에 이용하실수있습니다.');
+      history.push('/');
     }
   }, [location]);
   //로케이션이 바뀔때마다 토큰 체크
@@ -63,7 +61,7 @@ const Header = ({ location, information, setinformation, history, page, setpage 
           setpage(false);
         }
       })
-      .catch((error) => { });
+      .catch((error) => {});
   };
 
   //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -149,7 +147,7 @@ const Header = ({ location, information, setinformation, history, page, setpage 
             {page != true ? (
               <>
                 <div className="login-wait-form">
-                  <button className="login-move-loginpage-btn" onClick={() => move_loginpage()}>
+                  <button className="login-move-loginpage-btn" onClick={() => move_loginpage}>
                     <img src={login_btn} className="login-move-loginpage-img"></img>
                     <p className="login-move-loginpage-text">로그인</p>
                   </button>
@@ -162,7 +160,7 @@ const Header = ({ location, information, setinformation, history, page, setpage 
                 </div>
 
                 <div className="header-move-rfgpage-btn">
-                  <button className="header-myrfg-btn" onClick={() => move_myrfg()}>
+                  <button className="header-myrfg-btn" onClick={() => move_myrfg}>
                     <img align="center" src={show_rgfimg} />
                     <p className="header-myrfg-btn-text">나만의 냉장고</p>
                   </button>
@@ -247,33 +245,50 @@ const Header = ({ location, information, setinformation, history, page, setpage 
             </button>
           </div>
         </div>
-        {hbg ? <div className="mobiel-header-bottom-box" >
-          <div>
-            <button className="header-category-btn" onClick={() => move_introduce()} id="header-category-button1">Introduce</button>
+        {hbg ? (
+          <div className="mobiel-header-bottom-box">
+            <div>
+              <button className="header-category-btn" onClick={() => move_introduce()} id="header-category-button1">
+                Introduce
+              </button>
+            </div>
+            <div>
+              <button className="header-category-btn" onClick={move_profile} id="header-category-button4">
+                Profile
+              </button>
+            </div>
+            <div>
+              <button className="header-category-btn" id="header-category-button2" onClick={move_noticepage}>
+                Board
+              </button>
+            </div>
+            <div>
+              <button className="header-category-btn" id="header-category-button3" onClick={move_secret}>
+                Secret
+              </button>
+            </div>
+            <div className="page_box">
+              <button className="header-category-btn" id="header-category-button5">
+                Page
+                <div className="header-category-btn-mypage-div">
+                  <ul className="header-category-btn-mypage-ul">
+                    <li className="header-category-btn-mypage-li" onClick={move_my_igd}>
+                      재료 관리
+                    </li>
+                    <li className="header-category-btn-mypage-li" onClick={move_like}>
+                      좋아요한 레시피
+                    </li>
+                    <li className="header-category-btn-mypage-li" onClick={move_my_write}>
+                      내가 작성한 게시글
+                    </li>
+                  </ul>
+                </div>
+              </button>
+            </div>
           </div>
-          <div>
-
-            <button className="header-category-btn" onClick={move_profile} id="header-category-button4">Profile</button>
-          </div>
-          <div>
-
-            <button className="header-category-btn" id="header-category-button2" onClick={move_noticepage}>Board</button>
-          </div>
-          <div>
-            <button className="header-category-btn" id="header-category-button3" onClick={move_secret}>Secret</button>
-          </div>
-          <div className="page_box">
-            <button className="header-category-btn" id="header-category-button5">Page
-                            <div className="header-category-btn-mypage-div">
-                <ul className="header-category-btn-mypage-ul">
-                  <li className="header-category-btn-mypage-li" onClick={move_my_igd}>재료 관리</li>
-                  <li className="header-category-btn-mypage-li" onClick={move_like}>좋아요한 레시피</li>
-                  <li className="header-category-btn-mypage-li" onClick={move_my_write}>내가 작성한 게시글</li>
-                </ul>
-              </div>
-            </button>
-          </div>
-        </div> : ''}
+        ) : (
+          ''
+        )}
       </div>
     </>
   );
